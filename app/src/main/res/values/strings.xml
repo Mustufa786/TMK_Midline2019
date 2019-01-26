@@ -1,3 +1,160 @@
 <resources>
-    <string name="app_name">TMK_Midline</string>
+    <string name="app_name">TMK Midline</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Login</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dcstatus"> انٽرويو جو نتيجو</string>
+    <string name="istatus1"> مڪمل ٿيو </string>
+    <string name="istatus2"> انڪار ڪيو </string>
+    <string name="istatus3"> گھر مستقل طور بند آھي </string>
+    <string name="istatus4"> گھر عارضي طور بند آھي </string>
+    <string name="istatus5"> رڪيل </string>
+    <string name="istatus6"> گھر خالي ھو </string>
+    <string name="istatus7"> مڪمل نه ٿيو </string>
+    <string name="end_interview"> اختتام </string>
+    <string name="start_interview"> انٽرويو شروع ڪريو </string>
+    <string name="male"> مرد</string>
+    <string name="female"> عورت </string>
+    <string name="yes"> ھا </string>
+    <string name="no"> نه </string>
+    <string name="dkn"> خبر نه آھي </string>
+    <string name="day"> ڏينهن </string>
+    <string name="month"> مهينو </string>
+    <string name="year"> سال </string>
+    <string name="hour"> ڪلاڪ </string>
+    <string name="min"> منٽ </string>
+    <string name="other"> ٻيو ڪو وضاحت ڪريو. </string>
+    <string name="name">ٻار جو نالو</string>
+
+    <string name="tcheading">C: HH Identification, Introduction And Consent</string>
+    <string name="tdheading">D: HOUSEHOLD MEMBERS’ INFORMATION </string>
+
+
+
+    <string name="checkHHpresent"> Selected Head name present (A/C Line listing) </string>
+    <string name="ta01"> Cluster Number </string>
+    <string name="ta02"> Cluster type </string>
+    <string name="ta02a"> LHW Covered </string>
+    <string name="ta02b"> LHW UnCovered </string>
+    <string name="ta02c"> LHW Partially Covered </string>
+    <!--      <string name="ta03"> Name of Province </string>
+          <string name="ta03a"> Sindh </string>
+          <string name="ta04"> Name of District </string>
+          <string name="ta04a"> Tando Mohammad Khan </string>-->
+    <string name="ta03"> Name of Tehsil/Taluka </string>
+    <string name="ta03a"> Tando Mohammad Khan </string>
+    <string name="ta03b"> Tando Ghulam Hyder </string>
+    <string name="ta03c"> Bulri Shah Karim </string>
+    <string name="ta04"> Name of Union Council </string>
+    <string name="ta04a"> Lakhat </string>
+    <string name="ta04b"> Shaikh Bhirkio </string>
+    <string name="ta04c"> Tando Saeendad </string>
+    <string name="ta04d"> TMK 01 </string>
+    <string name="ta04e"> . TMK 02 </string>
+    <string name="ta04f"> TMK 03 </string>
+    <string name="ta04g"> Dando </string>
+    <string name="ta04h"> Ghulam Shah Bagrani </string>
+    <string name="ta04i"> Nazarpur </string>
+    <string name="ta04j"> Tando Ghulam Hyder </string>
+    <string name="ta04k"> Allah Yar Turk </string>
+    <string name="ta04l"> Jinhan Soomro </string>
+    <string name="ta04m"> Bulri Shah Karim </string>
+    <string name="ta04n"> Saeed Khan Lund </string>
+    <string name="ta04o"> Mullakatiar </string>
+    <string name="ta04p"> Saeed Matto </string>
+    <string name="ta04q"> Saeedpur </string>
+    <!--    <string name="ta07"> Location </string>
+        <string name="ta07a"> Urban </string>
+        <string name="ta07b"> Rural </string>
+        <string name="ta07c"> Mixed </string>-->
+    <string name="ta05"> House No </string>
+    <string name="ta05h"> House No </string>
+    <string name="ta05kh"> Khandan number </string>
+    <string name="ta05u"> Gas or electricity bill No </string>
+    <string name="ta06"> Village </string>
+    <string name="ta07"> Block/mohalla </string>
+    <string name="ta08"> Street </string>
+    <string name="ta09"> Have you got the permission to start interview? </string>
+    <string name="ta09c"> گھرو آف / اجازت دستياب ناهي. </string>
+
+    <string name="tbAge"> تاريخ پيدائش / عمر </string>
+    <string name="tbAge02"> عمر </string>
+    <string name="tbdob01"> تاريخ پيدائش </string>
+    <string name="tb01"> گھر ڀاتيءَ جو سريل نمبر </string>
+    <string name="tb02"> نالو </string>
+    <string name="tb03"> گھر جي سربراھ سان رشتو </string>
+    <string name="tb03a"> Head of HH </string>
+    <string name="tb03b"> Wife/Husband </string>
+    <string name="tb03c"> Son/Daughter </string>
+    <string name="tb03d"> Son in law/Daughter in law </string>
+    <string name="tb03e"> Grand child </string>
+    <string name="tb03f"> Parents </string>
+    <string name="tb03g"> Parents in law </string>
+    <string name="tb03h"> Brother/Sister </string>
+    <string name="tb03i"> Brother in law/Sister in law </string>
+    <string name="tb03j"> Niece/Nephew </string>
+    <string name="tb03k"> Grand Parents </string>
+    <string name="tb03l"> Aunts/Uncle </string>
+    <string name="tb03m"> Adopted/Step child </string>
+    <string name="tb03n"> Domestic Servant </string>
+    <string name="tb04"> جنس </string>
+    <string name="tb05"> پيءُ جو نالو </string>
+    <string name="tb06">
+  ماءُ جو نالو </string>
+    <string name="tb07"> پيدائش جي تاريخ
+    ڪارڊ/سرٽيفيڪٽ/ياداشت ذريعي پيدائش جي تاريخ لکو
+    </string>
+    <string name="tb08"> عمر </string>
+    <string name="tb09"> تعليم </string>
+    <string name="tb10"> ڌنڌو </string>
+    <string name="tb10a"> Housewife </string>
+    <string name="tb10b"> Professional /Managerial </string>
+    <string name="tb10c"> Clerical/technical </string>
+    <string name="tb10d"> Sales and Services </string>
+    <string name="tb10e"> Skilled manual </string>
+    <string name="tb10f"> Unskilled manual </string>
+    <string name="tb10g"> Agriculture </string>
+    <string name="tb10h"> Business </string>
+    <string name="tb10ia"> Student-School </string>
+    <string name="tb10ib"> Student-Madrasah </string>
+    <string name="tb10j"> Unemployed </string>
+    <string name="tb10k"> Retired </string>
+    <string name="tb10l"> Teacher </string>
+    <string name="tb10999"> Not Applicable </string>
+    <string name="tb11"> ازدواجي حيثيت </string>
+    <string name="tb11a"> Single </string>
+    <string name="tb11b"> Married </string>
+    <string name="tb11c"> Unmarried </string>
+    <string name="tb11d"> Widowed </string>
+    <string name="tb11e"> Divorced/Separate </string>
+    <string name="tb12"> مڪمل گھر ڀاتين جو تعداد </string>
+    <string name="tb13"> گھر ۾ مڪمل شادي شده عورتن جو تعداد </string>
+    <string name="tb14"> گھر ۾ پنجن سالن کان گھٽ عمر وارن ٻارن جو تعداد </string>
+    <string name="tc0101"> Natural floor </string>
+    <string name="tc0102"> Rudimentary floor </string>
+    <string name="tc0103"> Finished floor </string>
+    <string name="tc01"> فرش ڪهڙي قسم جو آهي </string>
+    <string name="tc01a"> زمين / واري / مٽي </string>
+    <string name="tc01b"> ڇيڻن جو ٿلهو يا راڳوو  </string>
+    <string name="tc01c"> ڪاٺين جو فرش </string>
+    <string name="tc01d"> بانس </string>
+    <string name="tc01e"> پالش ٿيل ڪاٺ جو  </string>
+    <string name="tc01f"> اسفالٽ سٽرپس </string>
+    <string name="tc01g"> ٽائلس </string>
+    <string name="tc01h"> سيمينٽ </string>
+    <string name="tc01i"> قالين </string>
+    <string name="tc01j"> سرن جو </string>
+    <string name="tc01k"> چتائي </string>
+    <string name="tc01l"> ماربل </string>
+    <string name="tc0201"> Natural roof </string>
+    <string name="tc0202"> Rudimentary roofing </string>
+    <string name="tc0203"> Finished roofing </string>
+    <string name="tc02"> ڇت ڪهڙي قسم جي آهي
+    </string>
+
+
+
+
+
 </resources>
