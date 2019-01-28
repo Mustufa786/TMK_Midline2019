@@ -182,7 +182,7 @@
 
 
             <RadioButton
-                android:id="@+id/tk0188"
+                android:id="@+id/tk0196"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -192,7 +192,7 @@
         </RadioGroup>
 
         <EditText
-            android:id="@+id/tk0188x"
+            android:id="@+id/tk0196x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
@@ -344,7 +344,7 @@
 
 
             <RadioButton
-                android:id="@+id/tk0288"
+                android:id="@+id/tk0296"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -354,7 +354,7 @@
         </RadioGroup>
 
         <EditText
-            android:id="@+id/tk0288x"
+            android:id="@+id/tk0296x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
@@ -422,7 +422,7 @@
                 android:maxLength="2" />
 
             <CheckBox
-                android:id="@+id/tk04888"
+                android:id="@+id/tk0498"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -544,7 +544,7 @@
 
 
             <RadioButton
-                android:id="@+id/tk07888"
+                android:id="@+id/tk0798"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -582,7 +582,7 @@
 
 
             <RadioButton
-                android:id="@+id/tk08888"
+                android:id="@+id/tk0898"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -661,7 +661,7 @@
                     android:text="@string/tk09g" />
 
                 <RadioButton
-                    android:id="@+id/tk0988"
+                    android:id="@+id/tk0998"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
@@ -671,7 +671,7 @@
             </RadioGroup>
 
             <EditText
-                android:id="@+id/tk0988x"
+                android:id="@+id/tk0998x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
@@ -733,7 +733,7 @@
                 android:text="@string/tk10e" />
 
             <RadioButton
-                android:id="@+id/tk1088"
+                android:id="@+id/tk1098"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -743,7 +743,7 @@
         </RadioGroup>
 
         <EditText
-            android:id="@+id/tk1088x"
+            android:id="@+id/tk1098x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
@@ -906,7 +906,7 @@
 
 
             <RadioButton
-                android:id="@+id/tk12888"
+                android:id="@+id/tk1298"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -982,7 +982,7 @@
 
 
                 <RadioButton
-                    android:id="@+id/tk14888"
+                    android:id="@+id/tk1498"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
