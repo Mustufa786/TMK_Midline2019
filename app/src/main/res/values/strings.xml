@@ -30,6 +30,7 @@
     <string name="taheading">A: HH Identification, Introduction And Consent</string>
     <string name="tcheading">C: HH Identification, Introduction And Consent</string>
     <string name="tdheading">D: HOUSEHOLD MEMBERS’ INFORMATION </string>
+    <string name="tiheading">I: </string>
 
 
     <string name="checkHHpresent"> Selected Head name present (A/C Line listing) </string>
@@ -152,6 +153,91 @@
     <string name="tc0203"> Finished roofing </string>
     <string name="tc02"> ڇت ڪهڙي قسم جي آهي
     </string>
+
+
+    <string name="tk01"> توهان جي گھر ۾ پيئڻ جي پاڻي جو مکيه ذريعو ڪھڙو آهي؟ </string>
+    <string name="tk01a"> گھر جي اندر پاڻي جي لائن اچي ٿي </string>
+    <string name="tk01b"> گھر جي ٻاهر پاڻي جي لائن اچي ٿي </string>
+    <string name="tk01c"> پاڙي ۾ اندر جي پاڻي جي لائن اچي ٿي </string>
+    <string name="tk01d"> عوامي نلڪو لڳل آهي </string>
+    <string name="tk01e"> صاف پاڻي جو فلٽر پلانٽ </string>
+    <string name="tk01f"> بورنگ جو پاڻي </string>
+    <string name="tk01g"> نلڪي جو پاڻي (handpump) </string>
+    <string name="tk01h"> چوڌاري پڪي  کوهه جو پاڻي </string>
+    <string name="tk01i"> بنا چوڌاري ڪچي  کوهه جو پاڻي </string>
+    <string name="tk01j"> مينهن جو پاڻي </string>
+    <string name="tk01k"> ٽينڪروارو پاڻي </string>
+    <string name="tk01l"> گڏهه گاڏي سان پاڻي جو ٽئنڪ </string>
+    <string name="tk01m"> ندي، دريا جو وهندڙ پاڻي </string>
+    <string name="tk01n"> بوتل وارو پاڻي </string>
+    <string name="tk02"> توهان جي گھر ۾ رڌ پچاءُ ۽ ھٿ ڌوئڻ لاءِ پاڻي جو مکيه ذريعو ڪھڙو آهي؟ </string>
+    <string name="tk02a"> گھر جي اندر پاڻي جي لائن اچي ٿي </string>
+    <string name="tk02b"> گھر جي ٻاهر پاڻي جي لائن اچي ٿي </string>
+    <string name="tk02c"> پاڙي ۾ اندر جي پاڻي جي لائن اچي ٿي </string>
+    <string name="tk02d"> عوامي نلڪو لڳل آهي </string>
+    <string name="tk02e"> صاف پاڻي جو فلٽر پلانٽ </string>
+    <string name="tk02f"> بورنگ جو پاڻي </string>
+    <string name="tk02g"> نلڪي جو پاڻي (handpump) </string>
+    <string name="tk02h"> چوڌاري پڪي کوه  جو پاڻي  </string>
+    <string name="tk02i">بنا چوڌاري ڪچي کوهه جو پاڻي </string>
+    <string name="tk02j"> مينهن جو پاڻي </string>
+    <string name="tk02k"> ٽينڪروارو پاڻي </string>
+    <string name="tk02l"> گڏهه گاڏي سان پاڻي جو ٽئنڪ </string>
+    <string name="tk02m"> ندي، دريا جو وهندڙ پاڻي </string>
+    <string name="tk02n"> بوتل وارو پاڻي </string>
+    <string name="tk03"> پاڻي ڪٿا آندو ويندو آھي؟ / پاڻي ڪهڙي جاءِ کان آڻيندا آهيو؟ </string>
+    <string name="tk03a"> پنھنجي گھر </string>
+    <string name="tk03b"> پلاٽ / گھر جي ٻاهر </string>
+    <string name="tk03c"> ٻئي جڳھ تان </string>
+    <string name="tk04"> پاڻي ڀرڻ ۽ واپس اچڻ تائين ڪيترو وقت لڳندو آھي؟ </string>
+    <string name="tk04a"> وقت منٽن ۾ </string>
+    <string name="tk05"> توھان جي گھر مان اڪثر ڪري ڪير پاڻي ڀرڻ ويندو آھي؟پڇا ڪيو ته ڇا اھو ماڻھو 15 سالن جي عمر کان گھٽ آھي؟ جنس ڇا آھي؟ </string>
+    <string name="tk05a"> عورت (عمر 15 سالن کان وڌيڪ) </string>
+    <string name="tk05b"> مرد (عمر 15 سالن کان وڌيڪ) </string>
+    <string name="tk05c"> عورت (عمر 15 سالن کان گھٽ) </string>
+    <string name="tk05d"> مرد (عمر 15 سالن کان گھٽ) </string>
+    <string name="tk05e"> جيڪو موجود ھوندو آھي </string>
+    <string name="tk06"> جيڪو پاڻي توھان گھر ۾ استعمال ڪندا آھيو ڇا ان جو ذائقو مٺو يا کارو آھي؟ </string>
+    <string name="tk06a"> مٺو پاڻي </string>
+    <string name="tk06b"> کارو پاڻي </string>
+    <string name="tk07"> ڇا پاڻي ڀرڻ وقت اھو صاف ھوندو آھي يا ميرو ھوندو آھي؟ </string>
+    <string name="tk07a"> صاف </string>
+    <string name="tk07b"> ميرو </string>
+    <string name="tk08"> ڇا توهان پيئڻ جي پاڻي کي صاف ڪرڻ لاءِ ڪجهه آهيو؟ </string>
+    <string name="tk09"> پاڻي کي پيئڻ جي قابل ڪرڻ لاءِ اڪثر ڪهڙو طريقو استعمال ڪندا آهيو؟ </string>
+    <string name="tk09a"> گرم / اۡٻاريندا  آهيون </string>
+    <string name="tk09b"> ڪلورين/بليچ جون گوريون شامل ڪرڻ  </string>
+    <string name="tk09c"> ڪپڙي سان ڇاڻيندا آهيون </string>
+    <string name="tk09d"> پاڻي جي فلٽر جو استعمال  </string>
+    <string name="tk09e"> سج جي روشني </string>
+    <string name="tk09f"> رکندا آهيون ۽ ڇڻي وڃي </string>
+    <string name="tk09g"> ڦٽڪي جي ذريعي </string>
+    <string name="tk10"> توهان پنهنجي گھر ۾ پاڻي ڪيئن جمع ڪندا آهيو؟ </string>
+    <string name="tk10a"> جمع نه ڪندا آهيون </string>
+    <string name="tk10b"> واٽر ٽنئڪ </string>
+    <string name="tk10c"> بوتلون </string>
+    <string name="tk10d"> جيريڪين </string>
+    <string name="tk10e"> بالٽي </string>
+    <string name="tk11"> گھر ۾ ڪهڙي قسم جو ٽوائلٽ/ڪاڪوس استعمال ڪندا آهيو؟ </string>
+    <string name="tk11a"> گٽر نالي وارو </string>
+    <string name="tk11b"> فليش ٽينڪ </string>
+    <string name="tk11c"> کڏي وارو ڪاڪوس </string>
+    <string name="tk11d"> ٻاهر اڇلائڻ </string>
+    <string name="tk11e"> اڻ سڃاتل جڳھ تي/پڪ نه آھي / خبر نه آھي ڪٿي </string>
+    <string name="tk11f"> هوادار بهتر کڏي وارو ڪاڪوس </string>
+    <string name="tk11g"> کڏي وارو ڍڪيل ڪاڪوس </string>
+    <string name="tk11h"> کڏي وارو بنا ڍڪيل / کليل </string>
+    <string name="tk11i"> ڪمپوزٽنگ ٽوائلٽ </string>
+    <string name="tk11j"> ٽوڪري وارو ڪاڪوس </string>
+    <string name="tk11k"> ڪا به سهولت نه آهي/ کليل ميدان ۾ </string>
+    <string name="tk12"> ڇا ٻين گھرن جا ڀاتي به اهيو ڪاڪوس استعمال ڪندا آهن؟ </string>
+    <string name="tk13"> ڇا ٻين گھرن جا ڀاتي به اهيو ٽوائلٽ / ڪاڪوس استعمال ڪندا آهن جنھن کي توھان سڃاڻيندا آھيو يا عوامي طور تي استعمال ٿيندو آھي؟ </string>
+    <string name="tk13a"> صرف ٻين گھرن کي (عوامي نه آھي) </string>
+    <string name="tk13b"> عوامي آھي </string>
+    <string name="tk14"> توھان جي گھر سميت ٻيا ڪيترا  گھر( ٽوٽل) ھي ٽوائلٽ / ڪاڪوس استعمال ڪندا آھن؟ </string>
+    <string name="tk14a"> گھرن جو تعداد (10 کان گھٽ) </string>
+    <string name="tk14b"> ڏھ يا ڏھن کان وڌيڪ گهر </string>
+    <string name="nextSection"> اڳيون سيڪشن </string>
 
 
 </resources>
