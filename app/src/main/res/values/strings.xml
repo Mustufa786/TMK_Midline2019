@@ -27,9 +27,9 @@
     <string name="other"> ٻيو ڪو وضاحت ڪريو. </string>
     <string name="name">ٻار جو نالو</string>
 
+    <string name="taheading">A: HH Identification, Introduction And Consent</string>
     <string name="tcheading">C: HH Identification, Introduction And Consent</string>
     <string name="tdheading">D: HOUSEHOLD MEMBERS’ INFORMATION </string>
-
 
 
     <string name="checkHHpresent"> Selected Head name present (A/C Line listing) </string>
@@ -51,7 +51,7 @@
     <string name="ta04b"> Shaikh Bhirkio </string>
     <string name="ta04c"> Tando Saeendad </string>
     <string name="ta04d"> TMK 01 </string>
-    <string name="ta04e"> . TMK 02 </string>
+    <string name="ta04e"> TMK 02 </string>
     <string name="ta04f"> TMK 03 </string>
     <string name="ta04g"> Dando </string>
     <string name="ta04h"> Ghulam Shah Bagrani </string>
@@ -152,9 +152,6 @@
     <string name="tc0203"> Finished roofing </string>
     <string name="tc02"> ڇت ڪهڙي قسم جي آهي
     </string>
-
-
-
 
 
 </resources>

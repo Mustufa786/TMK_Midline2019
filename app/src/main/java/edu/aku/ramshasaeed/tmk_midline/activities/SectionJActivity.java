@@ -5,12 +5,11 @@ import android.os.Bundle;
 
 import edu.aku.ramshasaeed.tmk_midline.R;
 
-public class SectionA extends AppCompatActivity {
+public class SectionJActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.activity_sectiona);
+        setContentView(R.layout.activity_section_j);
     }
 }
