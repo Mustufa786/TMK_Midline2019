@@ -11,4 +11,21 @@
     <color name="red">#f44336</color>
 
 
+    <color name="colorPrimaryAlpha">#c9ff4c4c</color>
+    <color name="colorPrimaryBeta">#f50057</color>
+
+
+
+    <!--custom-->
+    <color name="ticker_red">#80ff0000</color>
+
+    <!--Coppied-->
+    <color name="selectedBlue">#2b3581</color>
+    <color name="gray">#757575</color>
+    <color name="grayOverlay">#7f7f7f7f</color>
+
+    <color name="dullWhile">#d6d6d6</color>
+    <color name="dullWhileOverlay">#99d6d6d6</color>
+
+
 </resources>
