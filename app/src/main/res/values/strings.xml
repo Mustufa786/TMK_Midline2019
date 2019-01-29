@@ -13,6 +13,7 @@
     <string name="istatus6"> گھر خالي ھو </string>
     <string name="istatus7"> مڪمل نه ٿيو </string>
     <string name="end_interview"> اختتام </string>
+    <string name="next_section"> اختتام </string>
     <string name="start_interview"> انٽرويو شروع ڪريو </string>
     <string name="male"> مرد</string>
     <string name="female"> عورت </string>
@@ -152,6 +153,139 @@
     <string name="tc0203"> Finished roofing </string>
     <string name="tc02"> ڇت ڪهڙي قسم جي آهي
     </string>
+
+
+    <!--Section E-->
+    <string name="te01"> ڇا گذريل ٻن ھفتن جي دوران توھان جي گھر ۾ 5 سالن کان گھٽ عمر جي ٻارن کي دستن جي بيماري ٿي؟ </string>
+    <string name="te01a"> ھا </string>
+    <string name="te01b"> نه </string>
+    <string name="te0198"> خبر نه آھي </string>
+
+    <string name="te02"> گذريل ٻن ھفتن ۾ ڪيترن ٻارن کي دستن جي بيماري ٿي؟ </string>
+    <string name="te02num"> ٻارن جو تعداد </string>
+
+    <string name="te03"> گذريل ٻن ھفتن جي دوران توھان جي گھر ۾ ڪھڙي ٻارکي سڀني کان آخر۾ياويجھي عرصي ۾دستن جي بيماري ٿي ھئي؟ </string>
+    <string name="te03a"> ٻارجونالو </string>
+
+    <string name="te04"> (نالو) کي ڪيترن ڏينھن تائين دستن جي بيماري ھئي؟ </string>
+    <string name="te04num"> ڏينھن </string>
+
+    <string name="te05"> ڇا دستن ۾ رت آيو؟ </string>
+    <string name="te05a"> ھا </string>
+    <string name="te05b"> نه </string>
+    <string name="te0598"> خبر نه آھي </string>
+
+    <string name="te06"> ڇا توھان (نالو)جي دستن جي بيماري جو شروعاتي علاج ڪرايو؟ </string>
+    <string name="te06a"> ھا </string>
+    <string name="te06b"> نه </string>
+    <string name="te0698"> خبر نه آھي </string>
+
+    <string name="te07"> توھان (نالو) جي دستن جي بيماري جو شروعاتي علاج ڇو نه ڪرايو؟ </string>
+    <string name="te07a"> ايڏو وڏو مسئلو نه ھو </string>
+    <string name="te07b"> پئسا نه ھئا </string>
+    <string name="te07c"> سواري نه ھئي </string>
+    <string name="te07d"> مرد جي غيرموجودگي جي ڪري </string>
+    <string name="te07e"> گھر جي سربراھ/مڙس/سس جي اجازت نه ھئي </string>
+    <string name="te07f"> صحت مرڪز پري آھي </string>
+    <string name="te07g"> صحت مرڪز کليل نه ھو </string>
+    <string name="te07h"> غير معياري سھولتون </string>
+    <string name="te07i"> ٻيو ڪو وضاحت ڪريو </string>
+
+    <string name="te08"> (نالو) کي دستن جي بيماري جي ڪيترن ڏينهن کان پوءِ علاج ڪرايو؟ </string>
+    <string name="te08a"> ڏينھن </string>
+
+    <string name="te09"> توھان (نالو) دستن جي بيماري دوران شروعاتي علاج ڪٿان ڪرايو؟ </string>
+    <string name="te09a"> گھر ۾ </string>
+    <string name="te09b"> سرڪاري صحت مرڪز </string>
+    <string name="te09c"> پرائيويٽ صحت مرڪز </string>
+    <string name="te09d"> اين جي او (NGO)صحت مرڪز </string>
+
+    <string name="te10"> توھان (نالو) دستن جي بيماري دوران شروعاتي علاج ڪنھن کان ڪرايو؟ </string>
+    <string name="te10a"> پنھنجو پاڻ </string>
+    <string name="te10b"> ايل ايڇ ڊبليو (ليڊي ھيلٿ ورڪر) </string>
+    <string name="te10c"> ڊاڪٽر </string>
+    <string name="te10d"> نرس </string>
+    <string name="te10e"> ڊسپينسر/ ڪمپائوڊر </string>
+    <string name="te10f"> ڪيمسٽ ميڊيڪل اسٽور </string>
+    <string name="te10g"> ايل ايڇ وي (ليڊي ھيلٿ وزيٽر) </string>
+    <string name="te10h"> ھوميوپيٿڪ / حڪيم </string>
+    <string name="te10i"> غير سرڪاري تنظيم ( اين جي او) جو عملو </string>
+    <string name="te10j"> سي ايم ڊبليو (ڪميونٽي مڊوائف) </string>
+    <string name="te10k"> دائي / ٽي بي اي </string>
+
+    <string name="te11"> نالو) کي دستن جي بيماري لاءِ ڪھڙو علاج ڏنوويو؟ </string>
+    <string name="te11a"> او آر ايس مان ٺھيل پاڻياٺ </string>
+    <string name="te11b"> گھر ۾ ٺھندڙپاڻياٺا کاڌا </string>
+    <string name="te11c"> اينٽي بائيوٽڪ دوا </string>
+    <string name="te11d"> اينٽي موٽلٽي دوا </string>
+    <string name="te11e"> زنڪ سپليمينٽ </string>
+    <string name="te11f"> فليجل </string>
+    <string name="te11g"> ٿيليون </string>
+    <string name="te11h"> گھريلو ٽوٽڪا </string>
+    <string name="te11i"> اڻڄاتل گوري/ شربت </string>
+    <string name="te11j"> اڻڄاتل سوئي </string>
+
+    <string name="te12"> (نالو) کي دستن جي بيماري جي علاج لاءِ ڪنھن ٻئي هنڌ موڪليو ويو؟ </string>
+    <string name="te12a"> ھا </string>
+    <string name="te12b"> نه </string>
+
+    <string name="te13"> ڇا (نالو) کي دستن جي بيماري لاءِ داخل ڪيوويوھو؟ </string>
+    <string name="te13a"> ھا </string>
+    <string name="te13b"> نه </string>
+
+    <string name="te14"> (نالو) کي ڪٿي داخل ڪيو ويو؟ </string>
+    <string name="te14a"> سرڪاري صحت مرڪز </string>
+    <string name="te14b"> پرائيويٽ صحت مرڪز </string>
+    <string name="te14c"> اين جي او (NGO)صحت مرڪز </string>
+
+    <string name="te15"> (نالو) دستن جي داخلي دوران علاج ڪنھن ڪيو؟ </string>
+    <string name="te15a"> ڊاڪٽر </string>
+    <string name="te15b"> ايل ايڇ وي (ليڊي ھيلٿ وزيٽر) </string>
+    <string name="te15c"> نرس </string>
+    <string name="te15d"> سي ايم ڊبليو (ڪميونٽي مڊوائف) </string>
+    <string name="te15e"> ڊسپينسر/ ڪمپائوڊر </string>
+
+    <string name="te16"> (نالو) کي داخلي دوران لاءِ ڪھڙوعلاج ڏنوويو؟ </string>
+    <string name="te16a"> او آر ايس مان ٺھيل پاڻياٺ </string>
+    <string name="te16b"> اينٽي بائيوٽڪ دوا </string>
+    <string name="te16c"> اينٽي موٽلٽي </string>
+    <string name="te16d"> زنڪ سپليمينٽ </string>
+    <string name="te16e"> فليجل </string>
+    <string name="te16f"> ٿيليون </string>
+    <string name="te16g"> اڻڄاتل گوري/ شربت </string>
+    <string name="te16h"> اڻڄاتل سوئي </string>
+
+    <string name="te17"> (نالو) دستن جي بيماري جي علاج لاءِ ڪيترا ڏينھن اسپتال ۾ داخل ھيو؟ </string>
+    <string name="te17a"> ڪلاڪ </string>
+    <string name="te17b"> ڏينھن </string>
+    <string name="te17c"> اڃا داخل آھي </string>
+
+    <string name="te18"> ٻار جي بيماري جو نتيجو ڇا نڪتو؟ </string>
+    <string name="te18a"> تندرست ٿي ويوهو </string>
+    <string name="te18b"> اڃا بيمار آھي </string>
+    <string name="te18c"> مري ويو </string>
+
+    <string name="te19"> ڇا توھان ڪڏھن او آر ايس (ORS) جي باري ۾ ٻڌو آھي؟ </string>
+    <string name="te19a"> ھا </string>
+    <string name="te19b"> نه </string>
+
+    <string name="te20"> ڇا توھان کي او آر ايس (ORS) تيار ڪرڻ جي طريقي ڪار جي خبر آھي؟ </string>
+    <string name="te20a">  </string>
+    <string name="te20b">  </string>
+
+    <string name="te21"> توھان او آر ايس ٺاھڻ ڪٿان سکيو؟ </string>
+    <string name="te21a"> خاندان جي فرد/دوست کان </string>
+    <string name="te21b"> ايل ايڇ ڊبليو (ليڊي ھيلٿ ورڪر) </string>
+    <string name="te21c"> ڊاڪٽر </string>
+    <string name="te21d"> نرس </string>
+    <string name="te21e"> ڊسپينسر/ ڪمپائوڊر </string>
+    <string name="te21f"> ڪيمسٽ ميڊيڪل اسٽور </string>
+    <string name="te21g"> ايل ايڇ وي (ليڊي ھيلٿ وزيٽر) </string>
+    <string name="te21h"> ھوميوپيٿڪ / حڪيم </string>
+    <string name="te21i"> غير سرڪاري تنظيم ( اين جي او) جو عملو </string>
+    <string name="te21j"> سي ايم ڊبليو (ڪميونٽي مڊوائف) </string>
+    <string name="te21k"> دائي / ٽي بي اي </string>
+
 
 
 </resources>
