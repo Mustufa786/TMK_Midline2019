@@ -22,7 +22,8 @@
         <activity android:name=".activities.SectionGActivity" />
         <activity android:name=".activities.SectionHActivity" />
         <activity android:name=".activities.SectionIActivity" />
-        <activity android:name=".activities.SectionJActivity"></activity>
+        <activity android:name=".activities.SectionJActivity" />
+        <activity android:name=".activities.SectionKActivity"></activity>
     </application>
 
 </manifest>
