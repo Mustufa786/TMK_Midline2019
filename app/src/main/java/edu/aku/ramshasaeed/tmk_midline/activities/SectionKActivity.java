@@ -1,6 +1,7 @@
 package edu.aku.ramshasaeed.tmk_midline.activities;
 
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -11,14 +12,19 @@ import org.json.JSONObject;
 import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
+import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionEBinding;
+import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionKBinding;
 import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
 
 public class SectionKActivity extends AppCompatActivity {
+    ActivitySectionKBinding bi;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section_k);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_k);
+        bi.setCallback(this);
 
     }
 

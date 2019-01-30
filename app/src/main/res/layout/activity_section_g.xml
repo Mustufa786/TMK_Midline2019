@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".activities.SectionGActivity">
 
     <data>
@@ -12,13 +13,10 @@
             type="edu.aku.ramshasaeed.tmk_midline.activities.SectionGActivity" />
     </data>
 
-    <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <android.support.v4.widget.NestedScrollView
         android:id="@+id/activity_section_a"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="edu.aku.ramshasaeed.tmk_midline.activities.SectionGActivity">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -145,7 +143,7 @@
                     android:text="@string/ti02d" />
 
                 <CheckBox
-                    android:id="@+id/ti0288"
+                    android:id="@+id/ti0296"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
@@ -153,7 +151,7 @@
 
 
                 <EditText
-                    android:id="@+id/ti0288x"
+                    android:id="@+id/ti0296x"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
@@ -1885,7 +1883,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:layout_marginTop="16dp"
-                        android:background="@color/colorHeading"
+                        android:background="@color/colorPrimary"
                         android:gravity="center"
                         android:text="@string/at10weeks"
                         android:textColor="@color/colorPrimaryDark"
@@ -2867,7 +2865,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:layout_marginTop="16dp"
-                        android:background="@color/colorHeading"
+                        android:background="@color/colorPrimary"
                         android:gravity="center"
                         android:text="@string/at14weeks"
                         android:textColor="@color/colorPrimaryDark"
@@ -4167,7 +4165,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:layout_marginTop="16dp"
-                        android:background="@color/colorHeading"
+                        android:background="@color/colorPrimary"
                         android:gravity="center"
                         android:text="@string/at9month"
                         android:textColor="@color/colorPrimaryDark"
@@ -4518,7 +4516,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:layout_marginTop="16dp"
-                        android:background="@color/colorHeading"
+                        android:background="@color/colorPrimary"
                         android:gravity="center"
                         android:text="@string/at15month"
                         android:textColor="@color/colorPrimaryDark"

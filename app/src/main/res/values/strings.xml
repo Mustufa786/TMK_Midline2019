@@ -646,8 +646,6 @@
     <string name="time2pvpc"> Private Clinic </string>
     <string name="time2pvph"> Private Hospital </string>
     <string name="time2pvh"> Home </string>
-
-
     <string name="card"> Vaccine Card </string>
     <string name="recall">Reported by care taker</string>
     <string name="place"> Place of Vaccine </string>
@@ -668,6 +666,19 @@
     <string name="at6weeks"> At the of 6 weeks </string>
     <string name="opv1"> OPV-1 (Oral Polio Vaccine first dose) </string>
     <string name="penta1"> Penta-1 (Pentavalent-1 (DPTHepBHib) </string>
-
+    <string name="opv0"> OPV-0 (Oral Polio Vaccine dose at birth) </string>
+    <string name="at10weeks"> At the of 10 weeks </string>
+    <string name="opv2"> OPV-2 (Oral Polio vaccine 2nd dose) </string>
+    <string name="penta2"> Penta-2 (Pentavalent-2 (DPTHepBHib) </string>
+    <string name="pcv2"> PCV-2 (Pneumococcal Conjugate Vaccine 2nd dose) </string>
+    <string name="at14weeks"> At the of 14 weeks </string>
+    <string name="opv3"> OPV-3 (Oral Polio vaccine 3rd dose) </string>
+    <string name="penta3"> Penta-3 (Pentavalent 3 (DPTHepBHib) </string>
+    <string name="pcv3"> PCV 3 (Pneumococcal Conjugate Vaccine 3rd dose) </string>
+    <string name="ipv"> IPV (Injectable Polio Vaccine) </string>
+    <string name="at9month"> At age of 9 months </string>
+    <string name="measles1"> Measles-1 (Measles vaccine first dose) </string>
+    <string name="at15month"> At age 15 months </string>
+    <string name="measles2"> Measels-2 (Measles vaccine second dose) </string>
 
 </resources>

@@ -1,6 +1,7 @@
 package edu.aku.ramshasaeed.tmk_midline.activities;
 
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,14 +21,17 @@ import java.util.HashMap;
 import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
+import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionHBinding;
+import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionJBinding;
 import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
 
 public class SectionJActivity extends AppCompatActivity {
-
+    ActivitySectionJBinding bi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section_j);
+        bi = DataBindingUtil.setContentView(this,R.layout.activity_section_j);
+        bi.setCallback(this);
 
 
 
@@ -115,14 +119,14 @@ public class SectionJActivity extends AppCompatActivity {
             }
         });
 
-        bi.tl0988.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        bi.tl0996.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    bi.tl0988x.setVisibility(View.VISIBLE);
+                    bi.tl0996x.setVisibility(View.VISIBLE);
                 } else {
-                    bi.tl0988x.setVisibility(View.GONE);
-                    bi.tl0988x.setText(null);
+                    bi.tl0996x.setVisibility(View.GONE);
+                    bi.tl0996x.setText(null);
                 }
             }
         });
@@ -204,8 +208,8 @@ public class SectionJActivity extends AppCompatActivity {
         sL.put("tl08i", bi.tl08i.isChecked() ? "9" : "0");
 
         sL.put("tl09", bi.tl09a.isChecked() ? "1" : bi.tl09b.isChecked() ? "2" : bi.tl09c.isChecked() ? "3"
-                : bi.tl09d.isChecked() ? "4" : bi.tl0988.isChecked() ? "88" : "0");
-        sL.put("tl0988x", bi.tl0988x.getText().toString());
+                : bi.tl09d.isChecked() ? "4" : bi.tl0996.isChecked() ? "96" : "0");
+        sL.put("tl0996x", bi.tl0996x.getText().toString());
 
         sL.put("tl10", bi.tl10a.isChecked() ? "1" : bi.tl10b.isChecked() ? "2" : bi.tl10c.isChecked() ? "3"
                 : bi.tl10d.isChecked() ? "4" : bi.tl1096.isChecked() ? "96" : "0");
@@ -235,7 +239,7 @@ public class SectionJActivity extends AppCompatActivity {
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
-        if (!validatorClass.EmptyRadioButton(this, bi.tl01, bi.tl0196, tl0196x, getString(R.string.tl01))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.tl01, bi.tl0196, bi.tl0196x, getString(R.string.tl01))) {
             return false;
         }
         if (!validatorClass.EmptyRadioButton(this, bi.tl02, bi.tl02a, getString(R.string.tl02))) {
@@ -244,7 +248,7 @@ public class SectionJActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.tl03, bi.tl03a, getString(R.string.tl03))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tl04, bi.tl04a, getString(R.string.tl04))) {
+        if (!validatorClass.EmptyCheckBox(this, bi.fldGrptl04, bi.tl04a, getString(R.string.tl04))) {
             return false;
         }
         if (!validatorClass.EmptyRadioButton(this, bi.tl05, bi.tl05a, getString(R.string.tl05))) {
@@ -253,10 +257,10 @@ public class SectionJActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.tl06, bi.tl06a, getString(R.string.tl06))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tl07, bi.tl07a, getString(R.string.tl07))) {
+        if (!validatorClass.EmptyCheckBox(this, bi.fldGrptl07, bi.tl07a, getString(R.string.tl07))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tl08, bi.tl08a, getString(R.string.tl08))) {
+        if (!validatorClass.EmptyCheckBox(this, bi.fldGrptl08, bi.tl08a, getString(R.string.tl08))) {
             return false;
         }
         if (!validatorClass.EmptyRadioButton(this, bi.tl09, bi.tl0996,bi.tl0996x, getString(R.string.tl09))) {

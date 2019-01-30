@@ -1,6 +1,7 @@
 package edu.aku.ramshasaeed.tmk_midline.activities;
 
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,20 +17,28 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.contracts.FamilyMembersContract;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
+import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionHBinding;
 import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
 
 public class SectionHActivity extends AppCompatActivity {
+    Map<String, FamilyMembersContract> childsMap;
+    ArrayList<String> lstChild;
 
+    int position;
+    Long months;
+
+    ActivitySectionHBinding bi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section_h);
-
+        bi = DataBindingUtil.setContentView(this,R.layout.activity_section_h);
+        bi.setCallback(this);
 
         childsMap = new HashMap<>();
         lstChild = new ArrayList<>();
@@ -163,10 +172,10 @@ public class SectionHActivity extends AppCompatActivity {
         bi.tj04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (i == R.id.bi.tj04a) {
+                if (i == R.id.tj04a) {
                     bi.fldGrpti05.setVisibility(View.VISIBLE);
                 } else {
-                    fldGrpti05.setVisibility(View.GONE);
+                    bi.fldGrpti05.setVisibility(View.GONE);
                     bi.tj05a.setChecked(false);
                     bi.tj05b.setChecked(false);
                     bi.tj05c.setChecked(false);
@@ -352,7 +361,7 @@ public class SectionHActivity extends AppCompatActivity {
 
         JSONObject sJ = new JSONObject();
 
-        sJ.put("tjchildSerial", childsMap.get(tj01.getSelectedItem().toString()).getSerialNo());
+        sJ.put("tjchildSerial", childsMap.get(bi.tj01.getSelectedItem().toString()).getSerialNo());
 //        sJ.put("tjchildName", tj01.getSelectedItem().toString());
 
         sJ.put("tj01", bi.tj01.getSelectedItem().toString());
@@ -432,10 +441,10 @@ public class SectionHActivity extends AppCompatActivity {
         MainApp.fc.setsJ(String.valueOf(sJ));
     }
     public boolean formValidation() {
-        if (!validatorClass.EmptyTextBox(this, bi.tj01, getString(R.string.tj01))) {
+        if (!validatorClass.EmptySpinner(this, bi.tj01, getString(R.string.tj01))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tj02,bi.tj0296,tj0296x, getString(R.string.tj02))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.tj02,bi.tj0296,bi.tj0296x, getString(R.string.tj02))) {
             return false;
         }
         if (!validatorClass.EmptyRadioButton(this, bi.tj03,bi.tj0398, getString(R.string.tj03))) {
@@ -444,16 +453,16 @@ public class SectionHActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.tj04,bi.tj04a, getString(R.string.tj04))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tj05,bi.tj05a, getString(R.string.tj05))) {
+        if (!validatorClass.EmptyCheckBox(this, bi.fldGrpti05,bi.tj05a, getString(R.string.tj05))) {
             return false;
         }
         if (!validatorClass.EmptyRadioButton(this, bi.tj06,bi.tj06a, getString(R.string.tj06))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tj07,bi.tj0796,bi.tj0796x, getString(R.string.tj07))) {
+        if (!validatorClass.EmptyCheckBox(this, bi.fldGrpti07,bi.tj0796,bi.tj0796x, getString(R.string.tj07))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tj08,bi.tj0896,bi.tj0896x, getString(R.string.tj08))) {
+        if (!validatorClass.EmptyCheckBox(this, bi.fldGrpti08,bi.tj0896,bi.tj0896x, getString(R.string.tj08))) {
             return false;
         }
         if (!validatorClass.EmptyRadioButton(this, bi.tj09,bi.tj09a, getString(R.string.tj09))) {
@@ -480,7 +489,7 @@ public class SectionHActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.tj13,bi.tj13b,bi.tj13m, getString(R.string.tj13)+ getString(R.string.month))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tj14,bi.tj1496,bi.tj496x, getString(R.string.tj14))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.tj14,bi.tj1496,bi.tj1496x, getString(R.string.tj14))) {
             return false;
         }
 

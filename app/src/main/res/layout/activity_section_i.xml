@@ -661,7 +661,7 @@
                     android:text="@string/tk09g" />
 
                 <RadioButton
-                    android:id="@+id/tk0998"
+                    android:id="@+id/tk0996"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
@@ -671,7 +671,7 @@
             </RadioGroup>
 
             <EditText
-                android:id="@+id/tk0998x"
+                android:id="@+id/tk0996x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
@@ -733,7 +733,7 @@
                 android:text="@string/tk10e" />
 
             <RadioButton
-                android:id="@+id/tk1098"
+                android:id="@+id/tk1096"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -743,7 +743,7 @@
         </RadioGroup>
 
         <EditText
-            android:id="@+id/tk1098x"
+            android:id="@+id/tk1096x"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"

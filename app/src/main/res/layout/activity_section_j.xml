@@ -12,8 +12,7 @@
             type="edu.aku.ramshasaeed.tmk_midline.activities.SectionJActivity" />
     </data>
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="horizontal">
@@ -334,73 +333,80 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@color/colorPrimaryDark" />
 
-            <CheckBox
-                android:id="@+id/tl08a"
+            <LinearLayout
+                android:id="@+id/fldGrptl08"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/tl08a" />
+                android:orientation="vertical">
 
-            <CheckBox
-                android:id="@+id/tl08b"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/tl08b" />
+                <CheckBox
+                    android:id="@+id/tl08a"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tl08a" />
 
-            <CheckBox
-                android:id="@+id/tl08c"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/tl08c" />
+                <CheckBox
+                    android:id="@+id/tl08b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tl08b" />
 
-            <CheckBox
-                android:id="@+id/tl08d"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/tl08d" />
+                <CheckBox
+                    android:id="@+id/tl08c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tl08c" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@android:color/white" />
+                <CheckBox
+                    android:id="@+id/tl08d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tl08d" />
 
-            <CheckBox
-                android:id="@+id/tl08e"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/tl08e" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@android:color/white" />
 
-            <CheckBox
-                android:id="@+id/tl08f"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/tl08f" />
+                <CheckBox
+                    android:id="@+id/tl08e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tl08e" />
 
-            <CheckBox
-                android:id="@+id/tl08g"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/tl08g" />
+                <CheckBox
+                    android:id="@+id/tl08f"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tl08f" />
 
-            <CheckBox
-                android:id="@+id/tl08h"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/tl08h" />
+                <CheckBox
+                    android:id="@+id/tl08g"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tl08g" />
 
-            <CheckBox
-                android:id="@+id/tl08i"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:text="@string/tl08i" />
+                <CheckBox
+                    android:id="@+id/tl08h"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tl08h" />
+
+                <CheckBox
+                    android:id="@+id/tl08i"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/tl08i" />
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -441,7 +447,7 @@
                     android:text="@string/tl09d" />
 
                 <RadioButton
-                    android:id="@+id/tl096"
+                    android:id="@+id/tl0996"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -450,7 +456,7 @@
             </RadioGroup>
 
             <EditText
-                android:id="@+id/tl096x"
+                android:id="@+id/tl0996x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -614,3 +620,4 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+</layout>

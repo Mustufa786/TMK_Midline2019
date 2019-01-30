@@ -3,6 +3,7 @@ package edu.aku.ramshasaeed.tmk_midline.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.DatabaseUtils;
+import android.databinding.DataBindingUtil;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,38 +21,40 @@ import java.util.concurrent.ExecutionException;
 import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
+import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionIBinding;
 import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
 
 public class SectionIActivity extends AppCompatActivity {
     ActivitySectionIBinding bi;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DatabaseUtils.setContentView(this, R.layout.activity_section_i);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_i);
         bi.setCallback(this);
 
 
-        bi.tk0188.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        bi.tk0196.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    bi.tk0188x.setVisibility(View.VISIBLE);
+                    bi.tk0196x.setVisibility(View.VISIBLE);
                 } else {
-                    bi.tk0188x.setVisibility(View.GONE);
-                    bi.tk0188x.setText(null);
+                    bi.tk0196x.setVisibility(View.GONE);
+                    bi.tk0196x.setText(null);
                 }
             }
         });
 
-        bi.tk0288.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        bi.tk0296.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    bi.tk0288x.setVisibility(View.VISIBLE);
+                    bi.tk0296x.setVisibility(View.VISIBLE);
                 } else {
-                    bi.tk0288x.setVisibility(View.GONE);
-                    bi.tk0288x.setText(null);
+                    bi.tk0296x.setVisibility(View.GONE);
+                    bi.tk0296x.setText(null);
                 }
             }
         });
@@ -90,31 +93,31 @@ public class SectionIActivity extends AppCompatActivity {
                 } else {
                     bi.fldGrptk09.setVisibility(View.GONE);
                     bi.tk09.clearCheck();
-                    bi.tk0988x.setText(null);
+                    bi.tk0996x.setText(null);
                 }
             }
         });
 
-        bi.tk0988.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        bi.tk0996.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    bi.tk0988x.setVisibility(View.VISIBLE);
+                    bi.tk0996x.setVisibility(View.VISIBLE);
                 } else {
-                    bi.tk0988x.setVisibility(View.GONE);
-                    bi.tk0988x.setText(null);
+                    bi.tk0996x.setVisibility(View.GONE);
+                    bi.tk0996x.setText(null);
                 }
             }
         });
 
-        bi.tk1098.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        bi.tk1096.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    bi.tk1098x.setVisibility(View.VISIBLE);
+                    bi.tk1096x.setVisibility(View.VISIBLE);
                 } else {
-                    bi.tk1098x.setVisibility(View.GONE);
-                    bi.tk1098x.setText(null);
+                    bi.tk1096x.setVisibility(View.GONE);
+                    bi.tk1096x.setText(null);
                 }
             }
         });
@@ -159,12 +162,12 @@ public class SectionIActivity extends AppCompatActivity {
         sK.put("tk07", bi.tk07a.isChecked() ? "1" : bi.tk07b.isChecked() ? "2" : bi.tk0798.isChecked() ? "98" : "0");
         sK.put("tk08", bi.tk08a.isChecked() ? "1" : bi.tk08b.isChecked() ? "2" : bi.tk0898.isChecked() ? "98" : "0");
         sK.put("tk09", bi.tk09a.isChecked() ? "1" : bi.tk09b.isChecked() ? "2" : bi.tk09c.isChecked() ? "3" : bi.tk09d.isChecked() ? "4"
-                : bi.tk09e.isChecked() ? "5" : bi.tk09f.isChecked() ? "6" : bi.tk09g.isChecked() ? "7" : bi.tk0998.isChecked() ? "88" : "0");
-        sK.put("tk0998x", bi.tk0998x.getText().toString());
+                : bi.tk09e.isChecked() ? "5" : bi.tk09f.isChecked() ? "6" : bi.tk09g.isChecked() ? "7" : bi.tk0996.isChecked() ? "96" : "0");
+        sK.put("tk0996x", bi.tk0996x.getText().toString());
 
         sK.put("tk10", bi.tk10a.isChecked() ? "1" : bi.tk10b.isChecked() ? "2" : bi.tk10c.isChecked() ? "3" : bi.tk10d.isChecked() ? "4"
-                : bi.tk10e.isChecked() ? "5" : bi.tk1098.isChecked() ? "88" : "0");
-        sK.put("tk1098x", bi.tk1098x.getText().toString());
+                : bi.tk10e.isChecked() ? "5" : bi.tk1096.isChecked() ? "88" : "0");
+        sK.put("tk1096x", bi.tk1096x.getText().toString());
 
         sK.put("tk11", bi.tk11a.isChecked() ? "1" : bi.tk11b.isChecked() ? "2" : bi.tk11c.isChecked() ? "3" : bi.tk11d.isChecked() ? "4"
                 : bi.tk11e.isChecked() ? "5" : bi.tk11f.isChecked() ? "6" : bi.tk11g.isChecked() ? "7" : bi.tk11h.isChecked() ? "8"
@@ -183,13 +186,13 @@ public class SectionIActivity extends AppCompatActivity {
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
       
-            if (!validatorClass.EmptyRadioButton(this, bi.tk01,bi.tk0196,tk0196x, getString(R.string.tk01))) {
+            if (!validatorClass.EmptyRadioButton(this, bi.tk01,bi.tk0196,bi.tk0196x, getString(R.string.tk01))) {
                 return false;
             }
-            if (!validatorClass.EmptyRadioButton(this, bi.tk02,bi.tk0296,tk0296x, getString(R.string.tk02))) {
+            if (!validatorClass.EmptyRadioButton(this, bi.tk02,bi.tk0296,bi.tk0296x, getString(R.string.tk02))) {
                 return false;
             }
-            if (!validatorClass.EmptyRadioButton(this, bi.tk03, getString(R.string.tk03))) {
+            if (!validatorClass.EmptyRadioButton(this, bi.tk03,bi.tk03a, getString(R.string.tk03))) {
                 return false;
             }
             if(!bi.tk0498.isChecked()){
@@ -197,38 +200,37 @@ public class SectionIActivity extends AppCompatActivity {
                     return false;
                 }
             }
-        if (!validatorClass.EmptyRadioButton(this, bi.tk05, getString(R.string.tk05))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.tk05,bi.tk05a, getString(R.string.tk05))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tk06, getString(R.string.tk06))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.tk06,bi.tk06a, getString(R.string.tk06))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tk07, getString(R.string.tk07))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.tk07, bi.tk07a, getString(R.string.tk07))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tk08, getString(R.string.tk08))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.tk08, bi.tk08a, getString(R.string.tk08))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tk0996, bi.tk0996x, getString(R.string.tk09))) {
+        if (!validatorClass.EmptyRadioButton(this,bi.tk09, bi.tk0996, bi.tk0996x, getString(R.string.tk09))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tk1096, bi.tk1096x, getString(R.string.tk10))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.tk10, bi.tk1096, bi.tk1096x, getString(R.string.tk10))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tk11, getString(R.string.tk11))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.tk11,bi.tk11a, getString(R.string.tk11))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tk12, getString(R.string.tk12))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.tk12,bi.tk12a, getString(R.string.tk12))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tk13, getString(R.string.tk13))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.tk13,bi.tk13a, getString(R.string.tk13))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tk14, getString(R.string.tk14))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.tk14, bi.tk14a, getString(R.string.tk14))) {
             return false;
         }
 
-      
         return true;
     }
 
