@@ -27,6 +27,7 @@
     <string name="other"> ٻيو ڪو وضاحت ڪريو. </string>
     <string name="name">ٻار جو نالو</string>
     <string name="month">month</string>
+    <string name="Respondent">respondent</string>
 
     <string name="taheading">SECTION A: HH Identification, Introduction And Consent</string>
     <string name="tcheading">SECTION C: HH Identification, Introduction And Consent</string>
@@ -34,6 +35,28 @@
     <string name="tkheading">SECTION H: BREAST FEEDING AND NUTRITION </string>
     <string name="tiheading">SECTION I:ھٿ ڌوئڻ    </string>
     <string name="tjheading">SECTION K: WASH (Spot Check)</string>
+
+
+    <string name="tda"> اي. گهرڀاتين جو ڪل تعداد </string>
+    <string name="tdb"> ب. مرد </string>
+    <string name="tdc"> ت. عورتون </string>
+    <string name="tdd"> د. ٻار0 ڏينهن کان 5سالن تائين(ڇوڪرا) </string>
+    <string name="tde"> اي. ٻار0 ڏينهن کان 5سالن تائين (ڇوڪريون) </string>
+    <string name="tdf"> ف. ٻار 5 کان 14 سالن تائين جي عمر جا (ڇوڪرا) </string>
+    <string name="tdg"> ف. ٻار 5 کان 14 سالن تائين جي عمر جا (ڇوڪريون) </string>
+    <string name="tdh"> هه. شادي شده عورتون 15کان 49 سالن تائين </string>
+    <string name="tdsub"> گهر۾موجود 5 سالن کان گھٽ عمروارن ٻارن جا نالا۽ پيدائش جي تاريخ (ڪارڊ/سرٽيفيڪٽ/ياداشت ذريعي پيدائش جي تاريخ) لکو پاڻمرادوطريقي ڪارسان01 کان شروع ڪيو ويندو. </string>
+    <string name="td00"> ٻارجوسريل نمبر </string>
+    <string name="td01"> ٻار جو نالو </string>
+    <string name="td02"> پيءُ جو نالو </string>
+    <string name="td03"> جنس </string>
+    <string name="td04"> پيدائش جي تاريخ </string>
+    <string name="td04a"> ڏينهن </string>
+    <string name="td04b"> مھينو </string>
+    <string name="td04c"> سال </string>
+    <string name="td05"> عمر (جيڪڏھن توھان کي پيدائش جي تاريخ ياد نه آھي ته عمر ياداشت ذريعي لکو فقط مھينا ۽ سال) </string>
+    <string name="td05a"> سال </string>
+    <string name="td05b"> مھينا </string>
 
 
     <string name="checkHHpresent"> Selected Head name present (A/C Line listing) </string>
@@ -104,11 +127,9 @@
     <string name="tb03n"> Domestic Servant </string>
     <string name="tb04"> جنس </string>
     <string name="tb05"> پيءُ جو نالو </string>
-    <string name="tb06">
-  ماءُ جو نالو </string>
+    <string name="tb06">  ماءُ جو نالو</string>
     <string name="tb07"> پيدائش جي تاريخ
-    ڪارڊ/سرٽيفيڪٽ/ياداشت ذريعي پيدائش جي تاريخ لکو
-    </string>
+    ڪارڊ/سرٽيفيڪٽ/ياداشت ذريعي پيدائش جي تاريخ لکو</string>
     <string name="tb08"> عمر </string>
     <string name="tb09"> تعليم </string>
     <string name="tb10"> ڌنڌو </string>
@@ -680,5 +701,6 @@
     <string name="measles1"> Measles-1 (Measles vaccine first dose) </string>
     <string name="at15month"> At age 15 months </string>
     <string name="measles2"> Measels-2 (Measles vaccine second dose) </string>
+    <string name="addMember"> افراد کا اندراج </string>
 
 </resources>

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#263238</color>
+    <color name="colorPrimary">#37474f</color>
+    <color name="colorPrimaryAlpha">#90a4ae</color>
+    <color name="colorPrimaryBeta">#f50057</color>
+
     <color name="colorAccent">#FF4081</color>
     <color name="green">#4caf50</color>
     <color name="black_overlay">#66000000</color>
@@ -11,8 +14,7 @@
     <color name="red">#f44336</color>
 
 
-    <color name="colorPrimaryAlpha">#c9ff4c4c</color>
-    <color name="colorPrimaryBeta">#f50057</color>
+
 
 
 

@@ -66,6 +66,7 @@ public class MainActivity extends Activity {
     private Boolean exit = false;
     private String rSumText = "";
     ActivityMainBinding bi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,7 +78,7 @@ public class MainActivity extends Activity {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
-        bi.lblheader.setText("Welcome! You're assigned to block ' " + MainApp.regionDss + " '" + MainApp.userName);
+//        bi.lblheader.setText("Welcome! You're assigned to block ' " + MainApp.regionDss + " '" + MainApp.userName);
 
         if (MainApp.admin) {
             bi.adminsec.setVisibility(View.VISIBLE);
@@ -223,104 +224,19 @@ public class MainActivity extends Activity {
 
         if (bi.spAreas.getSelectedItemPosition() != 0) {
 
-            if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
-               /* Intent oF = new Intent(MainActivity.this, SectionAActivity.class).putExtra("flag", true);
-                startActivity(oF);*/
+            if (!MainApp.userName.equals("0000")) {
+                Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
+                startActivity(oF);
             } else {
-
-                builder = new AlertDialog.Builder(MainActivity.this);
-                ImageView img = new ImageView(getApplicationContext());
-                img.setImageResource(R.drawable.tagimg);
-                img.setPadding(0, 15, 0, 15);
-                builder.setCustomTitle(img);
-
-                final EditText input = new EditText(MainActivity.this);
-                input.setInputType(InputType.TYPE_CLASS_TEXT);
-                builder.setView(input);
-
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        m_Text = input.getText().toString();
-                        if (!m_Text.equals("")) {
-                            editor.putString("tagName", m_Text);
-                            editor.commit();
-
-                            if (!MainApp.userName.equals("0000")) {
-                              /*  Intent oF = new Intent(MainActivity.this, SectionAActivity.class).putExtra("flag", true);
-                                startActivity(oF);*/
-                            }
-                        }
-                    }
-                });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-
-                builder.show();
+                Toast.makeText(this, "Please restart your Application!!!", Toast.LENGTH_SHORT).show();
             }
         } else {
             Toast.makeText(getApplicationContext(), "Please select data from combobox!!", Toast.LENGTH_LONG).show();
         }
     }
-
-    public void openForm1(View v) {
-
-        if (bi.spAreas.getSelectedItemPosition() != 0) {
-
-            if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
-                /*Intent oF = new Intent(MainActivity.this, SectionAActivity.class).putExtra("flag", false);
-                startActivity(oF);*/
-            } else {
-
-                builder = new AlertDialog.Builder(MainActivity.this);
-                ImageView img = new ImageView(getApplicationContext());
-                img.setImageResource(R.drawable.tagimg);
-                img.setPadding(0, 15, 0, 15);
-                builder.setCustomTitle(img);
-
-                final EditText input = new EditText(MainActivity.this);
-                input.setInputType(InputType.TYPE_CLASS_TEXT);
-                builder.setView(input);
-
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        m_Text = input.getText().toString();
-                        if (!m_Text.equals("")) {
-                            editor.putString("tagName", m_Text);
-                            editor.commit();
-
-                            if (!MainApp.userName.equals("0000")) {
-                              /*  Intent oF = new Intent(MainActivity.this, SectionAActivity.class).putExtra("flag", false);
-                                startActivity(oF);*/
-                            }
-                        }
-                    }
-                });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-
-                builder.show();
-            }
-        } else {
-            Toast.makeText(getApplicationContext(), "Please select data from combobox!!", Toast.LENGTH_LONG).show();
-        }
-    }
-public void openMembers(){
-
-}
-
     public void openA(View v) {
-      /*  Intent iA = new Intent(this, SectionAActivity.class);
-        startActivity(iA);*/
+        Intent iA = new Intent(this, SectionAActivity.class);
+        startActivity(iA);
     }
 
     public void openB(View v) {

@@ -58,7 +58,7 @@
         <item name="android:elevation">5dp</item>
     </style>
 
-    <style name="AppTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
+   <!-- <style name="AppTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:scrollViewStyle">@style/BackgroundStyle</item>
         <item name="android:textViewStyle">@style/labels</item>
         <item name="android:editTextStyle">@style/textInput</item>
@@ -68,8 +68,9 @@
         <item name="spinnerStyle">@style/spinner</item>
         <item name="toolbarStyle">@style/ActionBar</item>
 
-        <!-- Customize your theme here. -->
+
     </style>
+    -->
 
     <style name="BackgroundStyle" parent="android:Widget.Material.Light.ScrollView">
         <item name="android:background">#e4e4e4</item>
@@ -255,5 +256,55 @@
         <item name="android:textSize">25sp</item>
     </style>
     <!--Button View End-->
+
+    <style name="radiogroup">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">right</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:background">#d6d6d6</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:padding">16dp</item>
+
+    </style>
+    <style name="AppTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:scrollViewStyle">@style/BackgroundStyle</item>
+        <item name="android:textViewStyle">@style/labels</item>
+        <item name="android:editTextStyle">@style/textInput</item>
+        <item name="android:buttonStyle">@style/buttons</item>
+        <item name="android:checkboxStyle">@style/checkbox</item>
+        <item name="android:radioButtonStyle">@style/radiobutton</item>
+        <item name="android:spinnerStyle">@style/spinnerStyle</item>
+        <item name="android:spinnerItemStyle">@style/SpinnerItem</item>
+        <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItem</item>
+        <item name="android:actionBarStyle">@style/ActionBarTheme</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="SpinnerItem">
+        <item name="android:textAppearance">@style/SpinnerItemText</item>
+    </style>
+
+    <style name="SpinnerItemText">
+        <item name="android:textSize">24sp</item>
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <style name="spinnerStyle">
+        <item name="android:background">#efefef</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="SpinnerDropDownItem">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:background">#efefef</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="ActionBarTheme" parent="android:Widget.ActionBar">
+        <item name="android:background">@drawable/background_grad_new</item>
+        <item name="background">@drawable/background_grad_new</item>
+    </style>
 
 </resources>

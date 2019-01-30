@@ -46,59 +46,6 @@ public class SectionAActivity extends Activity {
 
     private static final String TAG = SectionAActivity.class.getName();
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
-
-    Boolean flag;
-/*
-    @BindView(R.id.ta01)
-    EditText ta01;
-    @BindView(R.id.ta02)
-    RadioGroup ta02;
-    @BindView(R.id.ta02a)
-    RadioButton ta02a;
-    @BindView(R.id.ta02b)
-    RadioButton ta02b;
-    @BindView(R.id.ta02c)
-    RadioButton ta02c;*/
-    /*    @BindView(R.id.ta03)
-        RadioGroup ta03;
-        @BindView(R.id.ta03a)
-        RadioButton ta03a;
-        @BindView(R.id.ta03b)
-        RadioButton ta03b;
-        @BindView(R.id.ta03c)
-        RadioButton ta03c;
-        @BindView(R.id.ta04)
-        Spinner ta04;*/
-   /* @BindView(R.id.ta05h)
-    EditText ta05h;
-    @BindView(R.id.ta05u)
-    EditText ta05u;
-    @BindView(R.id.ta06)
-    EditText ta06;
-    @BindView(R.id.ta07)
-    EditText ta07;
-    @BindView(R.id.ta08)
-    EditText ta08;
-    @BindView(R.id.ta09)
-    RadioGroup ta09;
-    @BindView(R.id.ta09a)
-    RadioButton ta09a;
-    @BindView(R.id.ta09b)
-    RadioButton ta09b;
-    @BindView(R.id.ta09c)
-    RadioButton ta09c;
-    @BindView(R.id.btn_Continue)
-    Button btn_Continue;
-    @BindView(R.id.btn_End)
-    Button btn_End;
-
-    @BindView(R.id.hh_name)
-    TextView hhName;
-    @BindView(R.id.checkHHHeadpresent)
-    CheckBox checkHHHeadpresent;
-    @BindView(R.id.fldGrpt03)
-    LinearLayout fldGrpt03;*/
-
     Collection<BLRandomContract> selected;
 
     DatabaseHelper db;
@@ -148,8 +95,6 @@ public class SectionAActivity extends Activity {
 
 
         db = new DatabaseHelper(this);
-        flag = getIntent().getExtras().getBoolean("flag");
-
 
         MainApp.familyMembersList = new ArrayList<>();
 
@@ -318,11 +263,8 @@ public class SectionAActivity extends Activity {
 
                 finish();
 
-                if (flag) {
-//                    startActivity(new Intent(this, SectionBActivity.class));
-                } else {
-//                    startActivity(new Intent(this, SectionMActivity.class));
-                }
+                    startActivity(new Intent(this, SectionDActivity.class));
+
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -431,148 +373,6 @@ public class SectionAActivity extends Activity {
     public boolean formValidation() {
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
-//        01
-        /*
-        if (ta01.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.ta01), Toast.LENGTH_SHORT).show();
-            ta01.setError("This data is Required! ");    // Set Error on last radio button
-            ta01.requestFocus();
-            Log.i(TAG, "ta01: This data is Required!");
-            return false;
-        } else {
-            ta01.setError(null);
-        }
-*/
-//        03
-/*        if (ta03.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.ta03), Toast.LENGTH_SHORT).show();
-            ta03c.setError("This data is Required!");    // Set Error on last radio button
-            ta03c.setFocusableInTouchMode(true);
-            ta03c.setFocusable(true);
-            ta03c.requestFocus();
-            Log.i(TAG, "ta03: This data is Required!");
-            return false;
-        } else {
-            ta03c.setError(null);
-        }*/
-
-//        04
-/*        if (ta04.getSelectedItem() == "....") {
-            Toast.makeText(this, "ERROR(Empty)" + getString(R.string.ta04), Toast.LENGTH_SHORT).show();
-            ((TextView) ta04.getSelectedView()).setText("This Data is Required");
-            ((TextView) ta04.getSelectedView()).setTextColor(Color.RED);
-            ta04.requestFocus();
-            Log.i(TAG, "ta04: This Data is Required!");
-            return false;
-        } else {
-            ((TextView) ta04.getSelectedView()).setError(null);
-        }*/
-
-//        05
-        /*
-        if (ta05h.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.ta05h), Toast.LENGTH_SHORT).show();
-            ta05h.setError("This data is Required! ");    // Set Error on last radio button
-            ta05h.requestFocus();
-            Log.i(TAG, "ta05h: This data is Required!");
-            return false;
-        } else {
-            ta05h.setError(null);
-        }
-*/
-//        New HHHead
-/*
-        if (!checkHHHeadpresent.isChecked()) {
-            if (newHHheadname.getText().toString().isEmpty()) {
-                Toast.makeText(this, "ERROR(empty): New head name", Toast.LENGTH_SHORT).show();
-                newHHheadname.setError("This data is Required! ");    // Set Error on last radio button
-                newHHheadname.requestFocus();
-                Log.i(TAG, "newHHheadname: This data is Required!");
-                return false;
-            } else {
-                newHHheadname.setError(null);
-            }
-        }
-*/
-//        02
-        /*
-        if (ta02.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.ta02), Toast.LENGTH_SHORT).show();
-            ta02c.setError("This data is Required!");    // Set Error on last radio button
-
-            ta02c.setFocusable(true);
-            ta02c.setFocusableInTouchMode(true);
-            ta02c.requestFocus();
-            Log.i(TAG, "ta02: This data is Required!");
-            return false;
-        } else {
-            ta02c.setError(null);
-        }
-
-
-        if (ta05u.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.ta05u), Toast.LENGTH_SHORT).show();
-            ta05u.setError("This data is Required! ");    // Set Error on last radio button
-            ta05u.requestFocus();
-            Log.i(TAG, "ta05u: This data is Required!");
-            return false;
-        } else {
-            ta05u.setError(null);
-        }
-*/
-//        06
-        /*
-        if (ta06.getText().toString().equals("N/A")) {
-            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.ta06), Toast.LENGTH_SHORT).show();
-            ta06.setError("Change cluster no! ");    // Set Error on last radio button
-            ta06.requestFocus();
-            Log.i(TAG, "ta06: Change cluster no!");
-            return false;
-        } else {
-            ta06.setError(null);
-        }
-*/
-//        07
-
-/*        if (ta07.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.ta07), Toast.LENGTH_SHORT).show();
-            ta07.setError("This data is Required! ");    // Set Error on last radio button
-
-            Log.i(TAG, "ta07: This data is Required!");
-            return false;
-        } else {
-            ta07.setError(null);
-        } */
-
-//        08
-
-/*        if (ta08.getText().toString().isEmpty()) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.ta08), Toast.LENGTH_SHORT).show();
-            ta08.setError("This data is Required! ");    // Set Error on last radio button
-
-            Log.i(TAG, "ta08: This data is Required!");
-            return false;
-        } else {
-            ta08.setError(null);
-        }*/
-
-//        09
-        /*
-        if (ta09.getCheckedRadioButtonId() == -1) {
-            Toast.makeText(this, "ERROR(empty): " + getString(R.string.ta09), Toast.LENGTH_SHORT).show();
-            ta09c.setError("This data is Required!");    // Set Error on last radio button
-            ta09c.setFocusable(true);
-            ta09c.setFocusableInTouchMode(true);
-            ta09c.requestFocus();
-            Log.i(TAG, "ta09: This data is Required!");
-            return false;
-        } else {
-            ta09c.setError(null);
-        }
-
-        return true;
-    }
-*/
         return true;
     }
 }

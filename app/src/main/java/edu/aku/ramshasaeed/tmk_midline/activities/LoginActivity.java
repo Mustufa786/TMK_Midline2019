@@ -537,9 +537,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
                 } else {
                    /* mPasswordView.setError(getString(R.string.error_incorrect_password));
-                    mPasswordView.requestFocus();
+                    mPasswordView.requestFocus();*/
                     Toast.makeText(LoginActivity.this, mEmail + " " + mPassword, Toast.LENGTH_SHORT).show();
-                    */
                 }
             } else {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
