@@ -127,6 +127,7 @@
                             android:background="@drawable/round_button"
                             android:drawableStart="@drawable/ic_remove_red_eye_black_24dp"
                             android:gravity="center"
+                            android:onClick="@{() -> callback.onShowPasswordClick()}"
                             android:padding="3dp"
                             android:textSize="18sp" />
 
@@ -189,6 +190,7 @@
                         android:drawableStart="@drawable/ic_cloud_download_black_24dp"
                         android:padding="15dp"
                         android:text="Sync Data"
+                        android:onClick="@{() -> callback.onSyncDataClick()}"
                         android:textStyle="bold" />
 
                     <Button
@@ -201,6 +203,7 @@
                         android:background="#56ae51"
                         android:padding="16dp"
                         android:text="@string/action_sign_in"
+                        android:onClick="@{() -> callback.gotoMain()}"
                         android:textStyle="bold" />
                 </LinearLayout>
 

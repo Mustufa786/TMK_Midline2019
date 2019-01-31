@@ -46,6 +46,7 @@ import edu.aku.ramshasaeed.tmk_midline.core.AndroidDatabaseManager;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivityMainBinding;
+import edu.aku.ramshasaeed.tmk_midline.get.GetBLRandom;
 
 
 public class MainActivity extends Activity {
@@ -85,44 +86,6 @@ public class MainActivity extends Activity {
         } else {
             bi.adminsec.setVisibility(View.GONE);
         }
-
-
-        /*TagID Start*/
-        sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
-        editor = sharedPref.edit();
-
-        builder = new AlertDialog.Builder(MainActivity.this);
-        ImageView img = new ImageView(getApplicationContext());
-        img.setImageResource(R.drawable.tagimg);
-        img.setPadding(0, 15, 0, 15);
-        builder.setCustomTitle(img);
-
-        final EditText input = new EditText(MainActivity.this);
-        input.setInputType(InputType.TYPE_CLASS_TEXT);
-        builder.setView(input);
-
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                m_Text = input.getText().toString();
-                if (!m_Text.equals("")) {
-                    editor.putString("tagName", m_Text);
-                    editor.commit();
-                }
-            }
-        });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-
-        if (sharedPref.getString("tagName", null) == "" || sharedPref.getString("tagName", null) == null) {
-            builder.show();
-        }
-        /*TagID End*/
-
 
         DatabaseHelper db = new DatabaseHelper(this);
         Collection<FormsContract> todaysForms = db.getTodayForms();
@@ -237,72 +200,6 @@ public class MainActivity extends Activity {
     public void openA(View v) {
         Intent iA = new Intent(this, SectionAActivity.class);
         startActivity(iA);
-    }
-
-    public void openB(View v) {
-       /* Intent iB = new Intent(this, SectionBActivity.class);
-        startActivity(iB);*/
-    }
-
-    public void openC(View v) {
-       /* Intent iC = new Intent(this, SectionCActivity.class);
-        startActivity(iC);*/
-    }
-
-    public void openD(View v) {
-       /* Intent iD = new Intent(this, SectionDActivity.class);
-        startActivity(iD);*/
-    }
-
-    public void openE(View v) {
-       /* Intent iE = new Intent(this, SectionEActivity.class);
-        startActivity(iE);*/
-    }
-
-    public void openF(View v) {
-        /*Intent iF = new Intent(this, SectionFActivity.class);
-        startActivity(iF);*/
-    }
-
-    public void openG(View v) {
-       /* Intent iG = new Intent(this, SectionGActivity.class);
-        startActivity(iG);*/
-    }
-
-    public void openI(View v) {
-       /* Intent iI = new Intent(this, SectionIActivity.class);
-        startActivity(iI);*/
-    }
-
-    public void openJ(View v) {
-        /*Intent iJ = new Intent(this, SectionJActivity.class);
-        startActivity(iJ);*/
-    }
-
-    public void openK(View v) {
-        /*Intent iK = new Intent(this, SectionKActivity.class);
-        startActivity(iK);*/
-    }
-
-    public void openL(View v) {
-      /*  Intent iL = new Intent(this, SectionLActivity.class);
-        startActivity(iL);*/
-    }
-
-    public void openM(View v) {
-       /* Intent iM = new Intent(this, SectionMActivity.class);
-        startActivity(iM);*/
-    }
-
-
-    public void openHA(View v) {
-       /* Intent iB = new Intent(this, SectionHAActivity.class);
-        startActivity(iB);*/
-    }
-
-    public void openHB(View v) {
-       /* Intent iB = new Intent(this, SectionHBActivity.class);
-        startActivity(iB);*/
     }
 
     public void opendownload(View v) {
@@ -430,8 +327,8 @@ public class MainActivity extends Activity {
 
             Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
 //            new SyncForms(this, true).execute();
-
-            /*Toast.makeText(getApplicationContext(), "Syncing Family Members", Toast.LENGTH_SHORT).show();
+/*
+            Toast.makeText(getApplicationContext(), "Syncing Family Members", Toast.LENGTH_SHORT).show();
             new SyncFamilyMembers(this).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing MWRAs", Toast.LENGTH_SHORT).show();
@@ -467,7 +364,7 @@ public class MainActivity extends Activity {
         if (networkInfo != null && networkInfo.isConnected()) {
 
             // Sync Random
-            /*new GetBLRandom(this).execute();*/
+            new GetBLRandom(this).execute();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();

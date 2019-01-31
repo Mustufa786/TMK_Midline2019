@@ -114,6 +114,7 @@
                 android:onClick="openA"
                 android:paddingTop="8dp"
                 android:text="Open A"
+                android:visibility="gone"
                 android:textColor="@color/white"
                 android:textSize="22sp" />
 

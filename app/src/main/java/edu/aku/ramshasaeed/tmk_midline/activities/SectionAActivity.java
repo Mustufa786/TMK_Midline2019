@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.IdRes;
@@ -41,9 +42,10 @@ import edu.aku.ramshasaeed.tmk_midline.contracts.FormsContract;
 import edu.aku.ramshasaeed.tmk_midline.contracts.VillagesContract;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
+import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionABinding;
 
 public class SectionAActivity extends Activity {
-
+    ActivitySectionABinding bi;
     private static final String TAG = SectionAActivity.class.getName();
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
     Collection<BLRandomContract> selected;
@@ -91,8 +93,8 @@ public class SectionAActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_section_a);
-
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a);
+        bi.setCallback(this);
 
         db = new DatabaseHelper(this);
 
@@ -110,28 +112,28 @@ public class SectionAActivity extends Activity {
                 SubVillagesMap.put(vil.getVillagename(), vil.getVillagecode());
             }
         }
-/*
-        spSubVillages.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lablesSubVillages));
 
-        spSubVillages.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.spSubVillages.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lablesSubVillages));
+
+        bi.spSubVillages.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                if (spSubVillages.getSelectedItemPosition() != 0) {
-                    MainApp.cluster = SubVillagesMap.get(spSubVillages.getSelectedItem().toString());
+                if ( bi.spSubVillages.getSelectedItemPosition() != 0) {
+                    MainApp.cluster = SubVillagesMap.get( bi.spSubVillages.getSelectedItem().toString());
 
-                    ta01.setText(MainApp.cluster);
+                    bi.ta01.setText(MainApp.cluster);
 
-                    ta06.setText(spSubVillages.getSelectedItem().toString());
+                    bi.ta06.setText( bi.spSubVillages.getSelectedItem().toString());
                 } else {
 
-                    ta01.setText(null);
+                    bi.ta01.setText(null);
 
-                    ta06.setText("N/A");
+                    bi.ta06.setText("N/A");
 
-                    fldGrpt03.setVisibility(View.GONE);
+                    bi.fldGrpt03.setVisibility(View.GONE);
 
-                    hhName.setText(null);
+                    bi.hhName.setText(null);
                 }
             }
 
@@ -139,7 +141,7 @@ public class SectionAActivity extends Activity {
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
-        });*/
+        });
 
 /*
         ta09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -192,14 +194,11 @@ public class SectionAActivity extends Activity {
 */
     }
 
-    //    @OnClick(R.id.checkHH)
-    void onCheckHHClick() {
-        //TODO implement
-/*
+    public void onCheckHHClick() {
 
-        if (!ta01.getText().toString().trim().isEmpty() && !ta05h.getText().toString().trim().isEmpty()) {
+        if (!bi.ta01.getText().toString().trim().isEmpty() && !bi.ta05h.getText().toString().trim().isEmpty()) {
 
-            selected = db.getAllBLRandom(ta01.getText().toString(), ta05h.getText().toString().toUpperCase());
+            selected = db.getAllBLRandom(bi.ta01.getText().toString(), bi.ta05h.getText().toString().toUpperCase());
 
             if (selected.size() != 0) {
 
@@ -207,13 +206,13 @@ public class SectionAActivity extends Activity {
                     MainApp.selectedHead = new BLRandomContract(rnd);
                 }
 
-                hhName.setText(MainApp.selectedHead.getHhhead().toUpperCase());
+                bi.hhName.setText(MainApp.selectedHead.getHhhead().toUpperCase());
 
-                fldGrpt03.setVisibility(View.VISIBLE);
+                bi.fldGrpt03.setVisibility(View.VISIBLE);
             } else {
-                hhName.setText(null);
+                bi.hhName.setText(null);
 
-                fldGrpt03.setVisibility(View.GONE);
+                bi.fldGrpt03.setVisibility(View.GONE);
 
                 Toast.makeText(this, "No Head found in this HH.", Toast.LENGTH_SHORT).show();
             }
@@ -221,13 +220,11 @@ public class SectionAActivity extends Activity {
         } else {
             Toast.makeText(this, "Not found.", Toast.LENGTH_SHORT).show();
         }
-*/
+
 
     }
 
-    //    @OnClick(R.id.btn_End)
     void onBtnEndClick() {
-        //TODO implement
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
@@ -263,7 +260,7 @@ public class SectionAActivity extends Activity {
 
                 finish();
 
-                    startActivity(new Intent(this, SectionDActivity.class));
+                startActivity(new Intent(this, SectionDActivity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
