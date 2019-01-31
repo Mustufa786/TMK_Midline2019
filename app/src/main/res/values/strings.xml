@@ -28,12 +28,13 @@
     <string name="name">ٻار جو نالو</string>
     <string name="Respondent">respondent</string>
 
-    <string name="taheading">SECTION A: HH Identification, Introduction And Consent</string>
-    <string name="tcheading">SECTION C: HH Identification, Introduction And Consent</string>
+    <string name="taheading">SECTION A: HH Identification</string>
+    <string name="tcheading">SECTION C: Introduction And Consent</string>
     <string name="tdheading">SECTION D: HOUSEHOLD MEMBERS’ INFORMATION </string>
     <string name="tkheading">SECTION H: BREAST FEEDING AND NUTRITION </string>
-    <string name="tiheading">SECTION I:ھٿ ڌوئڻ    </string>
-    <string name="tjheading">SECTION K: WASH (Spot Check)</string>
+    <string name="tiheading">SECTION I:  WATER AND SANITATION  </string>
+    <string name="tjheading">SECTION K: ھٿ ڌوئڻ</string>
+    <string name="thheading">SECTION H: WASH (Spot Check)</string>
 
 
     <string name="tda"> اي. گهرڀاتين جو ڪل تعداد </string>
