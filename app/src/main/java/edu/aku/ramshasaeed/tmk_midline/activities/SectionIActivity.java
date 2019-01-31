@@ -22,7 +22,7 @@ import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionIBinding;
-import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
+
 
 public class SectionIActivity extends AppCompatActivity {
     ActivitySectionIBinding bi;
