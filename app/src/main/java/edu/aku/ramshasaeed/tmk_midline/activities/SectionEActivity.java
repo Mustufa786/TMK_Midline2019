@@ -1,6 +1,5 @@
 package edu.aku.ramshasaeed.tmk_midline.activities;
 
-import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,7 +10,6 @@ import org.json.JSONObject;
 
 import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionEBinding;
-import edu.aku.ramshasaeed.tmk_midline.validation.ValidatorClass;
 
 public class SectionEActivity extends AppCompatActivity {
 
@@ -173,9 +171,9 @@ public class SectionEActivity extends AppCompatActivity {
 
     private boolean formValidation() {
 
-        if(!ValidatorClass.EmptyCheckingContainer(this,bi.fldGrpSecE)){
+       /* if(!validatorClass.EmptyCheckingContainer(this,bi.fldGrpSecE)){
             return false;
-        }
+        }*/
         return true;
     }
 

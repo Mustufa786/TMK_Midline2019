@@ -1,13 +1,10 @@
 package edu.aku.ramshasaeed.tmk_midline.activities;
 
-import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -15,13 +12,9 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
-import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionHBinding;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionJBinding;
 import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
 

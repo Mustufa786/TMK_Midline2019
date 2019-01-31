@@ -143,20 +143,20 @@ public class SectionAActivity extends Activity {
             }
         });
 
-/*
-        ta09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+        bi.ta09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
                 if (i == R.id.ta09a) {
-                    btn_Continue.setVisibility(View.VISIBLE);
-                    btn_End.setVisibility(View.GONE);
+                    bi.btnContinue.setVisibility(View.VISIBLE);
+                    bi.btnEnd.setVisibility(View.GONE);
                 } else {
-                    btn_Continue.setVisibility(View.GONE);
-                    btn_End.setVisibility(View.VISIBLE);
+                    bi.btnContinue.setVisibility(View.GONE);
+                    bi.btnEnd.setVisibility(View.VISIBLE);
                 }
             }
         });
-
+/*
         ta05h.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -244,10 +244,7 @@ public class SectionAActivity extends Activity {
         }
     }
 
-    //    @OnClick(R.id.btn_Continue)
-    void onBtnContinueClick() {
-        //TODO implement
-
+    public void onBtnContinueClick() {
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {

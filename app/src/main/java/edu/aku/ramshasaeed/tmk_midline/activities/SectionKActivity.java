@@ -12,7 +12,6 @@ import org.json.JSONObject;
 import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
-import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionEBinding;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionKBinding;
 import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
 

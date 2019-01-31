@@ -83,8 +83,10 @@ public class MainActivity extends Activity {
 
         if (MainApp.admin) {
             bi.adminsec.setVisibility(View.VISIBLE);
+            bi.adminsec1.setVisibility(View.VISIBLE);
         } else {
             bi.adminsec.setVisibility(View.GONE);
+            bi.adminsec1.setVisibility(View.GONE);
         }
 
         DatabaseHelper db = new DatabaseHelper(this);
@@ -139,6 +141,7 @@ public class MainActivity extends Activity {
 
         if (MainApp.admin) {
             bi.adminsec.setVisibility(View.VISIBLE);
+            bi.adminsec1.setVisibility(View.VISIBLE);
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             rSumText += "Last Data Download: \t" + syncPref.getString("LastDownSyncServer", "Never Updated");
             rSumText += "\r\n";
@@ -197,6 +200,47 @@ public class MainActivity extends Activity {
             Toast.makeText(getApplicationContext(), "Please select data from combobox!!", Toast.LENGTH_LONG).show();
         }
     }
+    public void openD() {
+        Intent oF = new Intent(MainActivity.this, SectionDActivity.class);
+        startActivity(oF);
+
+    }
+    public void openE() {
+        Intent oF = new Intent(MainActivity.this, SectionEActivity.class);
+        startActivity(oF);
+
+    }
+    public void openF() {
+        Intent oF = new Intent(MainActivity.this, SectionFActivity.class);
+        startActivity(oF);
+
+    }
+    public void openG() {
+        Intent oF = new Intent(MainActivity.this, SectionGActivity.class);
+        startActivity(oF);
+
+    }
+    public void openH() {
+        Intent oF = new Intent(MainActivity.this, SectionHActivity.class);
+        startActivity(oF);
+
+    }
+    public void openI() {
+        Intent oF = new Intent(MainActivity.this, SectionIActivity.class);
+        startActivity(oF);
+
+    }
+    public void openJ() {
+        Intent oF = new Intent(MainActivity.this, SectionJActivity.class);
+        startActivity(oF);
+
+    }
+    public void openK() {
+        Intent oF = new Intent(MainActivity.this, SectionKActivity.class);
+        startActivity(oF);
+
+    }
+
     public void openA(View v) {
         Intent iA = new Intent(this, SectionAActivity.class);
         startActivity(iA);

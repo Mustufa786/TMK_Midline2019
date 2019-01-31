@@ -14,170 +14,91 @@
     </data>
 
     <ScrollView
-    android:id="@+id/activity_main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="72dp">
-
-    <LinearLayout
+        android:id="@+id/activity_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <!-- Login progress -->
-
-        <TextView
-            android:id="@+id/lblMainMenu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="16dp"
-            android:text="Main Menu"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/recordSummary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:background="@color/black"
-            android:padding="20dp"
-            android:text="Records Summary"
-            android:textColor="@color/green"
-            android:textSize="14sp"
-            android:typeface="monospace"
-
-            />
+        android:layout_height="match_parent"
+        android:paddingTop="72dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
-
+            android:orientation="vertical">
+            <!-- Login progress -->
             <TextView
-                style="?android:textAppearanceMedium"
-                android:layout_width="wrap_content"
+                android:id="@+id/testing"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_weight="3"
-                android:background="@android:color/transparent"
-                android:text="AREA: "
-                android:textAlignment="center"
+                android:background="@color/red"
+                android:elevation="2dp"
+                android:gravity="center_horizontal"
+                android:keepScreenOn="true"
+                android:text="ONLY FOR TESTING"
+                android:textColor="@color/dullWhile"
+                android:textSize="32sp"
                 android:textStyle="bold" />
 
-            <Spinner
-                android:id="@+id/spAreas"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_weight="35"
-                android:gravity="center"
-                android:popupBackground="#ffffff" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="40dp">
-
-            <Button
-                android:id="@+id/OpenForm"
+            <TextView
+                android:id="@+id/lblMainMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
                 android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:drawableLeft="@android:drawable/ic_menu_search"
-                android:drawableTint="@color/colorPrimaryBeta"
-                android:onClick="openForm"
-                android:paddingTop="8dp"
-                android:text="Open Form"
-                android:textColor="@color/white"
-                android:textSize="22sp" />
-            <Button
-                android:id="@+id/OpenA"
+                android:text="Main Menu"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/recordSummary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:drawableLeft="@android:drawable/ic_menu_search"
-                android:drawableTint="@color/colorPrimaryBeta"
-                android:onClick="openA"
-                android:paddingTop="8dp"
-                android:text="Open A"
-                android:visibility="gone"
-                android:textColor="@color/white"
-                android:textSize="22sp" />
+                android:layout_gravity="center_horizontal"
+                android:background="@color/black"
+                android:padding="20dp"
+                android:text="Records Summary"
+                android:textColor="@color/green"
+                android:textSize="14sp"
+                android:typeface="monospace"
 
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:paddingTop="8dp"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:visibility="invisible" />
-            <Button
-                android:id="@+id/syncServer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
-                android:drawableLeft="@android:drawable/ic_menu_upload"
-                android:onClick="syncServer"
-                android:paddingTop="8dp"
-                android:drawableTint="@color/colorPrimaryBeta"
-                android:text="Upload Data"
-                android:textColor="@color/white"
-                android:textSize="22sp" />
-
-
-
-
-            <Button
-                android:id="@+id/syncDevice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="16dp"
-                android:drawableTint="@color/colorPrimaryBeta"
-                android:background="@color/colorPrimary"
-                android:drawableLeft="@android:drawable/stat_notify_sync"
-                android:onClick="syncDevice"
-                android:paddingTop="8dp"
-                android:text="Download Data"
-                android:textColor="@color/white"
-                android:textSize="22sp" />
+                />
 
             <LinearLayout
-                android:id="@+id/adminsec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="?android:textAppearanceMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="3"
+                    android:background="@android:color/transparent"
+                    android:text="AREA: "
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spAreas"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="35"
+                    android:gravity="center"
+                    android:popupBackground="#ffffff" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="invisible"
-                tools:visibility="visible">
+                android:padding="40dp">
 
                 <Button
-                    android:id="@+id/openDB"
+                    android:id="@+id/OpenForm"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -185,16 +106,168 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
-                    android:drawableLeft="@android:drawable/ic_menu_manage"
+                    android:drawableLeft="@android:drawable/ic_menu_search"
                     android:drawableTint="@color/colorPrimaryBeta"
-                    android:onClick="openDB"
+                    android:onClick="openForm"
                     android:paddingTop="8dp"
-                    android:text="Open Database Manager"
+                    android:text="Open Form"
                     android:textColor="@color/white"
                     android:textSize="22sp" />
 
+                <LinearLayout
+                    android:id="@+id/adminsec1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="invisible"
+                    tools:visibility="visible">
+
+                    <Button
+                        android:id="@+id/OpenD"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:drawableLeft="@android:drawable/ic_menu_search"
+                        android:drawableTint="@color/colorPrimaryBeta"
+                        android:onClick="@{() -> callback.openD()}"
+                        android:paddingTop="8dp"
+                        android:text="Open D"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        android:visibility="visible" />
+
+                    <Button
+                        android:id="@+id/OpenE"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:drawableLeft="@android:drawable/ic_menu_search"
+                        android:drawableTint="@color/colorPrimaryBeta"
+                        android:onClick="@{() -> callback.openE()}"
+                        android:paddingTop="8dp"
+                        android:text="Open E"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        android:visibility="visible" />
+
+                    <Button
+                        android:id="@+id/OpenF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:drawableLeft="@android:drawable/ic_menu_search"
+                        android:drawableTint="@color/colorPrimaryBeta"
+                        android:onClick="@{() -> callback.openF()}"
+                        android:paddingTop="8dp"
+                        android:text="Open F"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        android:visibility="visible" />
+
+                    <Button
+                        android:id="@+id/OpenG"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:drawableLeft="@android:drawable/ic_menu_search"
+                        android:drawableTint="@color/colorPrimaryBeta"
+                        android:onClick="@{() -> callback.openG()}"
+                        android:paddingTop="8dp"
+                        android:text="Open G"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        android:visibility="visible" />
+
+                    <Button
+                        android:id="@+id/OpenH"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:drawableLeft="@android:drawable/ic_menu_search"
+                        android:drawableTint="@color/colorPrimaryBeta"
+                        android:onClick="@{() -> callback.openH()}"
+                        android:paddingTop="8dp"
+                        android:text="Open H"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        android:visibility="visible" />
+
+                    <Button
+                        android:id="@+id/OpenI"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:drawableLeft="@android:drawable/ic_menu_search"
+                        android:drawableTint="@color/colorPrimaryBeta"
+                        android:onClick="@{() -> callback.openI()}"
+                        android:paddingTop="8dp"
+                        android:text="Open I"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        android:visibility="visible" />
+
+                    <Button
+                        android:id="@+id/OpenJ"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:drawableLeft="@android:drawable/ic_menu_search"
+                        android:drawableTint="@color/colorPrimaryBeta"
+                        android:onClick="@{() -> callback.openJ()}"
+                        android:paddingTop="8dp"
+                        android:text="Open J"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        android:visibility="visible" />
+
+                    <Button
+                        android:id="@+id/OpenK"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:drawableLeft="@android:drawable/ic_menu_search"
+                        android:drawableTint="@color/colorPrimaryBeta"
+                        android:onClick="@{() -> callback.openK()}"
+                        android:paddingTop="8dp"
+                        android:text="Open K"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        android:visibility="visible" />
+                </LinearLayout>
+
                 <Button
-                    android:id="@+id/testGPS"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
@@ -202,44 +275,117 @@
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
-                    android:drawableLeft="@android:drawable/ic_dialog_map"
-                    android:drawableTint="@color/colorPrimaryBeta"
-                    android:onClick="testGPS"
                     android:paddingTop="8dp"
-                    android:text="Test GPS Coordinates"
                     android:textColor="@color/white"
-                    android:textSize="22sp" />
-
-                <!--
-                                    <Button
-                                        android:id="@+id/downloadApp"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginBottom="8dp"
-                                        android:layout_marginTop="16dp"
-                                        android:background="@color/red"
-                                        android:onClick="opendownload"
-                                        android:text="DOWNLOAD APP"
-                                        android:textColor="@color/white"
-                                        android:visibility="gone" />-->
-
+                    android:textSize="22sp"
+                    android:visibility="invisible" />
 
                 <Button
-                    android:id="@+id/updateApp"
+                    android:id="@+id/syncServer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
                     android:layout_marginTop="16dp"
-                    android:background="#D60000"
-                    android:onClick="updateApp"
-                    android:text="Update App"
-                    android:visibility="gone" />
+                    android:background="@color/colorPrimary"
+                    android:drawableLeft="@android:drawable/ic_menu_upload"
+                    android:drawableTint="@color/colorPrimaryBeta"
+                    android:onClick="syncServer"
+                    android:paddingTop="8dp"
+                    android:text="Upload Data"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
+
+                <Button
+                    android:id="@+id/syncDevice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/colorPrimary"
+                    android:drawableLeft="@android:drawable/stat_notify_sync"
+                    android:drawableTint="@color/colorPrimaryBeta"
+                    android:onClick="syncDevice"
+                    android:paddingTop="8dp"
+                    android:text="Download Data"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
+
+                <LinearLayout
+                    android:id="@+id/adminsec"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="invisible"
+                    tools:visibility="visible">
+
+                    <Button
+                        android:id="@+id/openDB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:drawableLeft="@android:drawable/ic_menu_manage"
+                        android:drawableTint="@color/colorPrimaryBeta"
+                        android:onClick="openDB"
+                        android:paddingTop="8dp"
+                        android:text="Open Database Manager"
+                        android:textColor="@color/white"
+                        android:textSize="22sp" />
+
+                    <Button
+                        android:id="@+id/testGPS"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:drawableLeft="@android:drawable/ic_dialog_map"
+                        android:drawableTint="@color/colorPrimaryBeta"
+                        android:onClick="testGPS"
+                        android:paddingTop="8dp"
+                        android:text="Test GPS Coordinates"
+                        android:textColor="@color/white"
+                        android:textSize="22sp" />
+
+                    <!--
+                                        <Button
+                                            android:id="@+id/downloadApp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="8dp"
+                                            android:layout_marginTop="16dp"
+                                            android:background="@color/red"
+                                            android:onClick="opendownload"
+                                            android:text="DOWNLOAD APP"
+                                            android:textColor="@color/white"
+                                            android:visibility="gone" />-->
 
 
+                    <Button
+                        android:id="@+id/updateApp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="16dp"
+                        android:background="#D60000"
+                        android:onClick="updateApp"
+                        android:text="Update App"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
             </LinearLayout>
+
+
         </LinearLayout>
-
-
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
 </layout>

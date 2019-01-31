@@ -57,7 +57,19 @@
                     android:textColor="@color/colorPrimary"
                     android:textSize="32sp"
                     android:textStyle="bold" />
-
+                <TextView
+                    android:id="@+id/testing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/red"
+                    android:elevation="2dp"
+                    android:gravity="center_horizontal"
+                    android:keepScreenOn="true"
+                    android:text="ONLY FOR TESTING"
+                    android:textColor="@color/dullWhile"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
                 <TextView
 
                     android:layout_width="match_parent"

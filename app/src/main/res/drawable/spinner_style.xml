@@ -14,11 +14,11 @@
 
 
     </item>
-    <item>
+  <!--  <item>
         <bitmap android:src="@drawable/ic_arrow"
             android:gravity="center_vertical|start"/>
 
     </item>
-
+-->
 
 </layer-list>
