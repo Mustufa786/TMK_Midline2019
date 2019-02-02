@@ -10,6 +10,7 @@ import org.json.JSONObject;
 
 import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionEBinding;
+import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
 
 public class SectionEActivity extends AppCompatActivity {
 
@@ -21,6 +22,9 @@ public class SectionEActivity extends AppCompatActivity {
 
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_e);
         bi.setCallback(this);
+        this.setTitle(getResources().getString(R.string.teheading));
+        validatorClass.setScrollViewFocus(bi.svsece);
+
 
 
     }

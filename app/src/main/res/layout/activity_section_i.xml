@@ -13,7 +13,7 @@
     </data>
 
     <ScrollView
-        android:id="@+id/ti_scrollview"
+        android:id="@+id/svseci"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/dullWhile">
@@ -25,14 +25,6 @@
         android:layoutDirection="rtl"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="2dp"
-            android:background="@color/colorPrimaryDark"
-            android:gravity="center"
-            android:textSize="40sp" />
 
         <View
             android:layout_width="match_parent"

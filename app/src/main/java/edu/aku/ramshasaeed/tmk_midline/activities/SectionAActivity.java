@@ -43,6 +43,7 @@ import edu.aku.ramshasaeed.tmk_midline.contracts.VillagesContract;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionABinding;
+import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
 
 public class SectionAActivity extends Activity {
     ActivitySectionABinding bi;
@@ -95,7 +96,7 @@ public class SectionAActivity extends Activity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a);
         bi.setCallback(this);
-
+        validatorClass.setScrollViewFocus(bi.svseca);
         db = new DatabaseHelper(this);
 
         MainApp.familyMembersList = new ArrayList<>();

@@ -1,5 +1,6 @@
 package edu.aku.ramshasaeed.tmk_midline.activities;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +26,8 @@ public class SectionJActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this,R.layout.activity_section_j);
         bi.setCallback(this);
+        this.setTitle(getResources().getString(R.string.tjheading));
+        validatorClass.setScrollViewFocus(bi.svsecj);
 
 
 
@@ -46,17 +49,7 @@ public class SectionJActivity extends AppCompatActivity {
             }
         });
 
-        bi.tl0196.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    bi.tl0196x.setVisibility(View.VISIBLE);
-                } else {
-                    bi.tl0196x.setVisibility(View.GONE);
-                    bi.tl0196x.setText(null);
-                }
-            }
-        });
+
 
         bi.tl03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -112,43 +105,7 @@ public class SectionJActivity extends AppCompatActivity {
             }
         });
 
-        bi.tl0996.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    bi.tl0996x.setVisibility(View.VISIBLE);
-                } else {
-                    bi.tl0996x.setVisibility(View.GONE);
-                    bi.tl0996x.setText(null);
-                }
-            }
-        });
-
-        bi.tl1096.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    bi.tl1096x.setVisibility(View.VISIBLE);
-                } else {
-                    bi.tl1096x.setVisibility(View.GONE);
-                    bi.tl1096x.setText(null);
-                }
-            }
-        });
-
-        bi.tl1196.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    bi.tl1196x.setVisibility(View.VISIBLE);
-                } else {
-                    bi.tl1196x.setVisibility(View.GONE);
-                    bi.tl1196x.setText(null);
-                }
-            }
-        });
-
-        bi.tl10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+     /*   bi.tl10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
@@ -156,22 +113,45 @@ public class SectionJActivity extends AppCompatActivity {
                     bi.fldGrptl10.setVisibility(View.VISIBLE);
                 } else {
                     bi.fldGrptl10.setVisibility(View.GONE);
-                    bi.tl10.clearCheck();
+//                    bi.tl10.clearCheck();
                     bi.tl1096x.setText(null);
                     bi.tl11.clearCheck();
                     bi.tl1196x.setText(null);
                 }
             }
-        });
+        });*/
+    }
+    public void BtnEnd() {
+        MainApp.endActivity(this, this);
     }
 
+    public void onBtnContinueClick() {
+        //TODO implement
+        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+        if (ValidateForm()) {
+            try {
+                SaveDraft();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         JSONObject sL = new JSONObject();
 
         sL.put("tl01", bi.tl01a.isChecked() ? "1" : bi.tl01b.isChecked() ? "2" : bi.tl01c.isChecked() ? "3"
-                : bi.tl0196.isChecked() ? "88" : "0");
+                : bi.tl0196.isChecked() ? "96" : "0");
         sL.put("tl0196x", bi.tl0196x.getText().toString());
 
         sL.put("tl02", bi.tl02a.isChecked() ? "1" : bi.tl02b.isChecked() ? "2" : "0");

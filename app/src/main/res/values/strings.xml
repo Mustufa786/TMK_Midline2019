@@ -31,10 +31,13 @@
     <string name="taheading">SECTION A: HH Identification</string>
     <string name="tcheading">SECTION C: Introduction And Consent</string>
     <string name="tdheading">SECTION D: HOUSEHOLD MEMBERS’ INFORMATION </string>
-    <string name="tkheading">SECTION H: BREAST FEEDING AND NUTRITION </string>
-    <string name="tiheading">SECTION I:  WATER AND SANITATION  </string>
-    <string name="tjheading">SECTION K: ھٿ ڌوئڻ</string>
-    <string name="thheading">SECTION H: WASH (Spot Check)</string>
+    <string name="teheading">سيڪشن E: ٻار جي صحت(دستن جي بيماري جي باري ۾)</string>
+    <string name="tfheading">سيڪشن F: ساھ کڻڻ ۾ تڪليف</string>
+    <string name="tgheading">سيڪشن G: حفاظتي ٽڪن جي معلومات</string>
+    <string name="thheading">SECTION H: BREAST FEEDING AND NUTRITION </string>
+    <string name="tiheading">سيڪشن I: پاڻي ۽ صفائي </string>
+    <string name="tjheading">  سيڪشن J: ھٿ ڌوئڻ</string>
+    <string name="tkheading">SECTION K: WASH (Spot Check)</string>
 
 
     <string name="tda"> اي. گهرڀاتين جو ڪل تعداد </string>

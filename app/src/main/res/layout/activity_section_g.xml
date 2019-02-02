@@ -38,18 +38,21 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
+                android:layout_marginTop="5dp"
                 android:background="@color/colorPrimary" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/colorPrimaryAlpha"
                 android:text="@string/name"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
-
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorPrimary" />
             <Spinner
                 android:id="@+id/tiname"
                 android:layout_width="match_parent"
@@ -214,10 +217,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
+                        android:background="@color/colorPrimaryAlpha"
                         android:gravity="center"
                         android:text="@string/atbirth"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/colorPrimary"
                         android:textSize="30sp"
                         android:textStyle="bold"
                         tools:typeface="serif" />
@@ -247,6 +250,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
                                     android:text="@string/bcg"
+                                    android:background="@color/colorPrimary"
                                     android:textAlignment="center" />
 
 
@@ -336,6 +340,7 @@
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
                                                             android:text="@string/date"
+                                                            android:background="#efefef"
                                                             android:textAlignment="center" />
 
                                                         <LinearLayout
@@ -479,6 +484,8 @@
                                                 android:layout_height="wrap_content"
                                                 android:layout_marginTop="5dp"
                                                 android:text="@string/place"
+                                                android:textColor="@color/colorPrimary"
+                                                android:background="#efefef"
                                                 android:textAlignment="center" />
 
                                             <RadioGroup
@@ -4856,7 +4863,6 @@
 
 
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -4868,8 +4874,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/green"
-                    android:onClick="startInterview"
+                    android:onClick="@{() -> callback.onBtnContinueClick()}"
                     android:text="@string/nextSection"
                     android:textColor="#1ed61e" />
 
@@ -4878,8 +4883,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/red"
-                    android:onClick="endInterview"
+                    android:onClick="@{() -> callback.BtnEnd()}"
                     android:text="@string/end_interview"
                     android:textColor="#ff1e1e" />
 
@@ -4887,7 +4891,9 @@
 
 
                 <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
+
             </LinearLayout>
+
 
 
         </LinearLayout>

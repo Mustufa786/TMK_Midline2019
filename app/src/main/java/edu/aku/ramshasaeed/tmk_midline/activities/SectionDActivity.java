@@ -16,6 +16,7 @@ import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionDBinding;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionJBinding;
+import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
 
 public class SectionDActivity extends AppCompatActivity {
 ActivitySectionDBinding bi;
@@ -27,7 +28,8 @@ ActivitySectionDBinding bi;
         bi = DataBindingUtil.setContentView(this,R.layout.activity_section_d);
         bi.setCallback(this);
         db = new DatabaseHelper(this);
-
+        this.setTitle(getResources().getString(R.string.tdheading));
+        validatorClass.setScrollViewFocus(bi.svsecd);
 
     }
 

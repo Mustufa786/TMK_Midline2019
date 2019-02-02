@@ -24,10 +24,16 @@ public class SectionKActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_k);
         bi.setCallback(this);
+        this.setTitle(getResources().getString(R.string.tkheading));
+        validatorClass.setScrollViewFocus(bi.svseck);
+
 
     }
+    public void BtnEnd() {
+        MainApp.endActivity(this, this);
+    }
 
-    void onBtnContinueClick() {
+   public void onBtnContinueClick() {
         //TODO implement
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {

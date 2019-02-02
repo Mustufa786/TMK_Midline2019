@@ -39,6 +39,8 @@ public class SectionHActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this,R.layout.activity_section_h);
         bi.setCallback(this);
+        this.setTitle(getResources().getString(R.string.thheading));
+        validatorClass.setScrollViewFocus(bi.svsech);
 
         childsMap = new HashMap<>();
         lstChild = new ArrayList<>();
@@ -46,7 +48,7 @@ public class SectionHActivity extends AppCompatActivity {
         childsMap.put("....", new FamilyMembersContract());
         lstChild.add("....");
 
-        for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
+       /* for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
             if (MainApp.familyMembersList.get(i).getAgeLess5().equals("3")) {
                 childsMap.put(MainApp.familyMembersList.get(i).getName(), new FamilyMembersContract(MainApp.familyMembersList.get(i)));
                 lstChild.add(MainApp.familyMembersList.get(i).getName());
@@ -54,7 +56,7 @@ public class SectionHActivity extends AppCompatActivity {
         }
 
         bi.tj01.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstChild));
-
+*/
         bi.tj0296.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {

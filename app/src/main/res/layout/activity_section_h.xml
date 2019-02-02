@@ -13,6 +13,7 @@
     </data>
 
     <ScrollView
+        android:id="@+id/svsech"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layoutDirection="rtl">
@@ -29,6 +30,7 @@
                 android:layout_gravity="center_horizontal"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
+                android:visibility="gone"
                 android:text="@string/tjheading"
                 android:textSize="40sp" />
 
@@ -40,12 +42,15 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/colorPrimaryAlpha"
                 android:text="@string/tj01"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorPrimary" />
             <Spinner
                 android:id="@+id/tj01"
                 android:layout_width="match_parent"
@@ -265,6 +270,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@color/colorPrimary"
                     android:text="@string/tj05" />
 
                 <CheckBox
@@ -362,6 +368,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@color/colorPrimary"
                     android:text="@string/tj07" />
 
                 <CheckBox
@@ -450,6 +457,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@color/colorPrimary"
                     android:text="@string/tj08" />
 
                 <CheckBox
@@ -537,7 +545,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/tj09" />
+                android:text="@string/tj09"
+                android:background="@color/colorPrimary"
+                />
 
             <RadioGroup
                 android:id="@+id/tj09"
@@ -564,7 +574,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/tj10" />
+                android:text="@string/tj10"
+                android:background="@color/colorPrimary"
+                />
 
             <RadioGroup
                 android:id="@+id/tj10"
@@ -597,7 +609,9 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/tj11" />
+                    android:text="@string/tj11"
+                    android:background="@color/colorPrimary"
+                    />
 
                 <RadioGroup
                     android:id="@+id/tj11"
@@ -658,7 +672,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/tj12" />
+                android:text="@string/tj12"
+                android:background="@color/colorPrimary"
+                />
 
             <RadioGroup
                 android:id="@+id/tj12"
@@ -717,7 +733,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/tj13" />
+                android:text="@string/tj13"
+                android:background="@color/colorPrimary"
+                />
 
             <RadioGroup
                 android:id="@+id/tj13"
@@ -773,7 +791,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/tj14" />
+                android:text="@string/tj14"
+                android:background="@color/colorPrimary"
+                />
 
             <RadioGroup
                 android:id="@+id/tj14"
