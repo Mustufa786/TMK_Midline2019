@@ -2,10 +2,16 @@ package edu.aku.ramshasaeed.tmk_midline.contracts;
 
 
 import android.database.Cursor;
+import android.graphics.Color;
 import android.provider.BaseColumns;
+import android.util.Log;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import edu.aku.ramshasaeed.tmk_midline.R;
 
 public class AreasContract {
 
@@ -76,3 +82,5 @@ public class AreasContract {
         public static final String _URI = "areas.php";
     }
 }
+
+

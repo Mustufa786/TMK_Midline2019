@@ -19,7 +19,6 @@
         android:layout_height="wrap_content">
 
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,9 +31,9 @@
                 android:layout_gravity="center_horizontal"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
-                android:visibility="gone"
                 android:text="@string/tdheading"
-                android:textSize="40sp" />
+                android:textSize="40sp"
+                android:visibility="gone" />
 
             <View
                 android:layout_width="match_parent"
@@ -46,184 +45,209 @@
                 android:layout_height="wrap_content"
                 android:layoutDirection="rtl"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
 
                     >
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
                         android:background="@color/colorPrimaryAlpha"
                         android:gravity="center"
-
                         android:text="@string/tda"
-                        android:layout_weight="1"
                         android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_weight="1"
                         android:background="@color/colorPrimaryAlpha"
                         android:gravity="center"
                         android:text="@string/tdb"
-                        android:layout_marginRight="1dp"
-                        android:layout_marginLeft="1dp"
-                        android:layout_weight="1"
                         android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
                         android:background="@color/colorPrimaryAlpha"
                         android:gravity="center"
                         android:text="@string/tdc"
-                        android:layout_weight="1"
                         android:textSize="14sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
+
                     <EditText
                         android:id="@+id/tda"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:digits="0123456789"
                         android:hint="@string/tda"
-                        android:layout_weight="1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:maxLength="99" />
+
                     <EditText
                         android:id="@+id/tdb"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:digits="0123456789"
                         android:hint="@string/tdb"
-                        android:layout_weight="1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:maxLength="99" />
+
                     <EditText
                         android:id="@+id/tdc"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:digits="0123456789"
                         android:hint="@string/tdc"
-                        android:layout_weight="1"
-                        android:inputType="number" />
+                        android:inputType="number"
+
+                        android:maxLength="99" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
                         android:background="@color/colorPrimaryAlpha"
                         android:gravity="center"
                         android:text="@string/tdd"
-                        android:layout_weight="1"
                         android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginRight="1dp"
+                        android:layout_weight="1"
                         android:background="@color/colorPrimaryAlpha"
                         android:gravity="center"
-                        android:layout_marginRight="1dp"
-                        android:layout_marginLeft="1dp"
                         android:text="@string/tde"
-                        android:layout_weight="1"
                         android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
                         android:background="@color/colorPrimaryAlpha"
                         android:gravity="center"
                         android:text="@string/tdf"
-                        android:layout_weight="1"
                         android:textSize="14sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
+
                     <EditText
                         android:id="@+id/tdd"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:digits="0123456789"
                         android:hint="@string/tdd"
-                        android:layout_weight="1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:maxLength="99" />
+
                     <EditText
                         android:id="@+id/tde"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:digits="0123456789"
                         android:hint="@string/tde"
-                        android:layout_weight="1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:maxLength="99" />
+
                     <EditText
                         android:id="@+id/tdf"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:digits="0123456789"
                         android:hint="@string/tdf"
-                        android:layout_weight="1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:maxLength="99" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:layout_marginEnd="1dp"
+                        android:layout_weight="1"
                         android:background="@color/colorPrimaryAlpha"
                         android:gravity="center"
                         android:text="@string/tdg"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="1dp"
                         android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
                         android:background="@color/colorPrimaryAlpha"
                         android:gravity="center"
                         android:text="@string/tdh"
-                        android:layout_weight="1"
                         android:textSize="14sp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
+
                     <EditText
                         android:id="@+id/tdg"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:digits="0123456789"
                         android:hint="@string/tdg"
-                        android:layout_weight="1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:maxLength="99" />
+
                     <EditText
                         android:id="@+id/tdh"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:digits="0123456789"
                         android:hint="@string/tdh"
-                        android:layout_weight="1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:maxLength="99" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -231,6 +255,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:background="@color/colorPrimary" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

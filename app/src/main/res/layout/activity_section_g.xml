@@ -212,15 +212,16 @@
                     android:background="@drawable/bacground_border1"
                     android:orientation="vertical">
 
+
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimaryAlpha"
                         android:gravity="center"
                         android:text="@string/atbirth"
                         android:textColor="@color/colorPrimary"
+                        android:background="@color/colorPrimaryAlpha"
                         android:textSize="30sp"
                         android:textStyle="bold"
                         tools:typeface="serif" />
@@ -248,7 +249,6 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
                                     android:text="@string/bcg"
                                     android:background="@color/colorPrimary"
                                     android:textAlignment="center" />
@@ -276,7 +276,7 @@
 
                                             <LinearLayout
                                                 android:id="@+id/fldGrpBcgM"
-                                                android:layout_width="match_parent"
+                                                android:layout_width="0dp"
                                                 android:layout_height="wrap_content"
                                                 android:layout_weight="50"
                                                 android:orientation="vertical">
@@ -335,13 +335,19 @@
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
 
+
+
                                                         <TextView
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
-                                                            android:text="@string/date"
                                                             android:background="#efefef"
-                                                            android:textAlignment="center" />
+                                                            android:text="@string/date"
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
+
 
                                                         <LinearLayout
                                                             android:layout_width="match_parent"
@@ -384,7 +390,7 @@
 
                                             <LinearLayout
                                                 android:id="@+id/fldGrpBcgC"
-                                                android:layout_width="match_parent"
+                                                android:layout_width="0dp"
                                                 android:layout_height="wrap_content"
                                                 android:layout_weight="50"
                                                 android:orientation="vertical">
@@ -444,13 +450,19 @@
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
 
+
                                                         <TextView
                                                             android:id="@+id/text1"
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
+
 
                                                         <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                                                             android:id="@+id/bcgDate"
@@ -479,14 +491,19 @@
                                             android:layout_height="wrap_content"
                                             android:orientation="vertical">
 
+
                                             <TextView
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:layout_marginTop="5dp"
-                                                android:text="@string/place"
-                                                android:textColor="@color/colorPrimary"
                                                 android:background="#efefef"
-                                                android:textAlignment="center" />
+                                                android:text="@string/place"
+                                                android:textAlignment="center"
+                                                android:textColor="@color/colorPrimaryDark"
+                                                android:textStyle="bold" />
+
+
+
 
                                             <RadioGroup
                                                 android:id="@+id/bcgPov"
@@ -574,11 +591,12 @@
                                 android:orientation="vertical"
                                 android:padding="8px">
 
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
                                     android:text="@string/opv0"
+                                    android:background="@color/colorPrimary"
                                     android:textAlignment="center" />
 
                                 <!-- Scrollview-->
@@ -663,12 +681,18 @@
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
 
+
                                                         <TextView
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
+
 
                                                         <LinearLayout
                                                             android:layout_width="match_parent"
@@ -770,13 +794,18 @@
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
 
+
                                                         <TextView
                                                             android:id="@+id/text2"
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
 
                                                         <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                                                             android:id="@+id/opv0Date"
@@ -808,8 +837,11 @@
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:layout_marginTop="5dp"
+                                                android:background="#efefef"
                                                 android:text="@string/place"
-                                                android:textAlignment="center" />
+                                                android:textAlignment="center"
+                                                android:textColor="@color/colorPrimaryDark"
+                                                android:textStyle="bold" />
 
                                             <RadioGroup
                                                 android:id="@+id/opv0Pov"
@@ -897,19 +929,28 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/bacground_border1"
                     android:orientation="vertical">
-
+                    <View
+                        android:layout_width="3dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimaryDark"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
                         android:gravity="center"
                         android:text="@string/at6weeks"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/colorPrimary"
+                        android:background="@color/colorPrimaryAlpha"
                         android:textSize="30sp"
                         android:textStyle="bold"
                         tools:typeface="serif" />
+                    <View
+                        android:layout_width="3dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="16dp"
+                        android:background="@color/colorPrimaryDark"/>
 
                     <android.support.v4.widget.NestedScrollView
                         android:id="@+id/sc6wks"
@@ -931,11 +972,13 @@
                                 android:orientation="vertical"
                                 android:padding="8px">
 
+
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
                                     android:text="@string/opv1"
+                                    android:background="@color/colorPrimary"
                                     android:textAlignment="center" />
 
                                 <android.support.v4.widget.NestedScrollView
@@ -1017,12 +1060,17 @@
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
 
+
                                                         <TextView
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
 
                                                         <LinearLayout
                                                             android:layout_width="match_parent"
@@ -1059,7 +1107,7 @@
                                             <View
                                                 android:layout_width="3dp"
                                                 android:layout_height="match_parent"
-                                                android:background="@color/colorPrimaryDark"></View>
+                                                android:background="@color/colorPrimaryDark"/>
 
 
                                             <LinearLayout
@@ -1124,13 +1172,19 @@
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
 
+
                                                         <TextView
                                                             android:id="@+id/text3"
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
+
 
                                                         <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                                                             android:id="@+id/opv1Date"
@@ -1162,8 +1216,12 @@
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:layout_marginTop="5dp"
+                                                android:background="#efefef"
                                                 android:text="@string/place"
-                                                android:textAlignment="center" />
+                                                android:textAlignment="center"
+                                                android:textColor="@color/colorPrimaryDark"
+                                                android:textStyle="bold" />
+
 
                                             <RadioGroup
                                                 android:id="@+id/opv1Pov"
@@ -1236,6 +1294,335 @@
 
                             </LinearLayout>
 
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bacground_border"
+                                android:orientation="vertical"
+                                android:padding="8px">
+
+
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/rota1"
+                                    android:background="@color/colorPrimary"
+                                    android:textAlignment="center" />
+
+                                <android.support.v4.widget.NestedScrollView
+                                    android:id="@+id/sc15"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="900px"
+                                    android:fillViewport="false"
+                                    android:scrollbars="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            android:weightSum="100">
+
+                                            <LinearLayout
+                                                android:id="@+id/fldGrprota1M"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="50"
+                                                android:orientation="vertical">
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="5dp"
+                                                    android:background="#efefef"
+                                                    android:gravity="center"
+                                                    android:text="@string/recall"
+                                                    android:textColor="@color/colorPrimaryDark"
+                                                    android:textStyle="bold" />
+
+                                                <RadioGroup
+                                                    android:id="@+id/rota1M"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="horizontal">
+
+                                                    <RadioButton
+                                                        android:id="@+id/rota1M01"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginLeft="1dp"
+                                                        android:layout_marginTop="1dp"
+                                                        android:layout_weight="1"
+                                                        android:text="@string/yes" />
+
+                                                    <RadioButton
+                                                        android:id="@+id/rota1M02"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:layout_weight="1"
+                                                        android:text="@string/no" />
+
+                                                </RadioGroup>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrprota1MCheck"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <CheckBox
+                                                        android:id="@+id/rota1datenr"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:text="@string/datenr" />
+
+                                                    <LinearLayout
+                                                        android:id="@+id/fldGrprota1MDate"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical">
+
+
+                                                        <TextView
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
+                                                            android:text="@string/date"
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
+
+                                                        <LinearLayout
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:orientation="horizontal">
+
+                                                            <EditText
+                                                                android:id="@+id/rota1DateM_year"
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="wrap_content"
+                                                                android:layout_weight="1"
+                                                                android:hint="@string/year"
+                                                                android:inputType="number"
+                                                                android:maxLength="4" />
+
+                                                            <EditText
+                                                                android:id="@+id/rota1DateM_mon"
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="wrap_content"
+                                                                android:layout_weight="1"
+                                                                android:hint="@string/month"
+                                                                android:inputType="number"
+                                                                android:maxLength="2" />
+
+
+                                                        </LinearLayout>
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
+                                            <View
+                                                android:layout_width="3dp"
+                                                android:layout_height="match_parent"
+                                                android:background="@color/colorPrimaryDark"/>
+
+
+                                            <LinearLayout
+                                                android:id="@+id/fldGrprota1C"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="50"
+                                                android:orientation="vertical"
+                                                android:visibility="visible">
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="5dp"
+                                                    android:background="#efefef"
+                                                    android:text="@string/card"
+                                                    android:textAlignment="center"
+                                                    android:textColor="@color/colorPrimaryDark"
+                                                    android:textStyle="bold" />
+
+                                                <RadioGroup
+                                                    android:id="@+id/rota1C"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="horizontal">
+
+                                                    <RadioButton
+                                                        android:id="@+id/rota1C01"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginLeft="1dp"
+                                                        android:layout_marginTop="1dp"
+                                                        android:layout_weight="1"
+                                                        android:text="@string/yes" />
+
+                                                    <RadioButton
+                                                        android:id="@+id/rota1C02"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:layout_weight="1"
+                                                        android:text="@string/no" />
+
+                                                </RadioGroup>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrprota1CCheck"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <CheckBox
+                                                        android:id="@+id/rota1datenp"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:text="@string/datenp" />
+
+                                                    <LinearLayout
+                                                        android:id="@+id/fldGrprota1CDate"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical">
+
+
+                                                        <TextView
+                                                            android:id="@+id/text15"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
+                                                            android:text="@string/date"
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
+
+
+                                                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                                            android:id="@+id/rota1Date"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginTop="1dp"
+                                                            android:focusable="false"
+                                                            android:hint="@string/date"
+                                                            android:textColor="@android:color/black"
+                                                            app:dateFormat="dd-MM-yyyy" />
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
+
+                                        </LinearLayout>
+
+
+                                        <LinearLayout
+                                            android:id="@+id/fldGrpprota1"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="5dp"
+                                                android:background="#efefef"
+                                                android:text="@string/place"
+                                                android:textAlignment="center"
+                                                android:textColor="@color/colorPrimaryDark"
+                                                android:textStyle="bold" />
+
+
+                                            <RadioGroup
+                                                android:id="@+id/rota1Pov"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content">
+
+                                                <RadioButton
+                                                    android:id="@+id/rota1Pova"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginBottom="1dp"
+                                                    android:text="@string/place01" />
+
+                                                <RadioButton
+                                                    android:id="@+id/rota1Povb"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginBottom="1dp"
+                                                    android:text="@string/place02" />
+
+                                                <RadioButton
+                                                    android:id="@+id/rota1Povc"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginBottom="1dp"
+                                                    android:text="@string/place03" />
+
+                                                <RadioButton
+                                                    android:id="@+id/rota1Povd"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginBottom="1dp"
+                                                    android:text="@string/place04" />
+
+                                                <RadioButton
+                                                    android:id="@+id/rota1Pove"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginBottom="1dp"
+                                                    android:text="@string/place05" />
+
+                                                <RadioButton
+                                                    android:id="@+id/rota1Povf"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginBottom="1dp"
+                                                    android:text="@string/place06" />
+
+                                                <RadioButton
+                                                    android:id="@+id/rota1Povg"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginBottom="1dp"
+                                                    android:text="@string/place07" />
+
+                                                <RadioButton
+                                                    android:id="@+id/rota1Povh"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginBottom="1dp"
+                                                    android:text="@string/place08" />
+
+
+                                            </RadioGroup>
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+                                </android.support.v4.widget.NestedScrollView>
+
+                            </LinearLayout>
+
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -1249,9 +1636,10 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
                                     android:text="@string/penta1"
+                                    android:background="@color/colorPrimary"
                                     android:textAlignment="center" />
+
 
                                 <android.support.v4.widget.NestedScrollView
                                     android:id="@+id/sc4"
@@ -1331,13 +1719,17 @@
                                                         android:layout_width="match_parent"
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
-
                                                         <TextView
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
+
 
                                                         <LinearLayout
                                                             android:layout_width="match_parent"
@@ -1439,14 +1831,18 @@
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
 
-
                                                         <TextView
                                                             android:id="@+id/text4"
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
+
 
                                                         <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                                                             android:id="@+id/penta1Date"
@@ -1475,13 +1871,18 @@
                                             android:layout_height="wrap_content"
                                             android:orientation="vertical">
 
-
                                             <TextView
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:layout_marginTop="5dp"
+                                                android:background="#efefef"
                                                 android:text="@string/place"
-                                                android:textAlignment="center" />
+                                                android:textAlignment="center"
+                                                android:textColor="@color/colorPrimaryDark"
+                                                android:textStyle="bold" />
+
+
+
 
                                             <RadioGroup
                                                 android:id="@+id/penta1Pov"
@@ -1566,8 +1967,8 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
                                     android:text="@string/pcv1"
+                                    android:background="@color/colorPrimary"
                                     android:textAlignment="center" />
 
                                 <android.support.v4.widget.NestedScrollView
@@ -1653,8 +2054,13 @@
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
+
 
                                                         <LinearLayout
                                                             android:layout_width="match_parent"
@@ -1755,15 +2161,17 @@
                                                         android:layout_width="match_parent"
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
-
-
                                                         <TextView
                                                             android:id="@+id/text5"
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
 
                                                         <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                                                             android:id="@+id/pcv1Date"
@@ -1794,8 +2202,11 @@
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:layout_marginTop="5dp"
+                                                android:background="#efefef"
                                                 android:text="@string/place"
-                                                android:textAlignment="center" />
+                                                android:textAlignment="center"
+                                                android:textColor="@color/colorPrimaryDark"
+                                                android:textStyle="bold" />
 
                                             <RadioGroup
                                                 android:id="@+id/pcv1Pov"
@@ -1889,15 +2300,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
                         android:gravity="center"
                         android:text="@string/at10weeks"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/colorPrimary"
+                        android:background="@color/colorPrimaryAlpha"
                         android:textSize="30sp"
                         android:textStyle="bold"
                         tools:typeface="serif" />
-
 
                     <android.support.v4.widget.NestedScrollView
                         android:id="@+id/sc10wks"
@@ -1918,13 +2327,13 @@
                                 android:orientation="vertical"
                                 android:padding="8px">
 
-
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
                                     android:text="@string/opv2"
+                                    android:background="@color/colorPrimary"
                                     android:textAlignment="center" />
+
 
                                 <android.support.v4.widget.NestedScrollView
                                     android:id="@+id/sc6"
@@ -2005,13 +2414,16 @@
                                                         android:layout_width="match_parent"
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
-
                                                         <TextView
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
 
                                                         <LinearLayout
                                                             android:layout_width="match_parent"
@@ -2113,15 +2525,18 @@
                                                         android:layout_width="match_parent"
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
-
-
                                                         <TextView
                                                             android:id="@+id/text6"
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
+
 
                                                         <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                                                             android:id="@+id/opv2Date"
@@ -2153,8 +2568,13 @@
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:layout_marginTop="5dp"
+                                                android:background="#efefef"
                                                 android:text="@string/place"
-                                                android:textAlignment="center" />
+                                                android:textAlignment="center"
+                                                android:textColor="@color/colorPrimaryDark"
+                                                android:textStyle="bold" />
+
+
 
                                             <RadioGroup
                                                 android:id="@+id/opv2Pov"
@@ -2226,7 +2646,334 @@
                                 </android.support.v4.widget.NestedScrollView>
 
                             </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bacground_border"
+                                android:orientation="vertical"
+                                android:padding="8px">
 
+
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/rota2"
+                                    android:background="@color/colorPrimary"
+                                    android:textAlignment="center" />
+
+                                <android.support.v4.widget.NestedScrollView
+                                    android:id="@+id/sc16"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="900px"
+                                    android:fillViewport="false"
+                                    android:scrollbars="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            android:weightSum="100">
+
+                                            <LinearLayout
+                                                android:id="@+id/fldGrprota2M"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="50"
+                                                android:orientation="vertical">
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="5dp"
+                                                    android:background="#efefef"
+                                                    android:gravity="center"
+                                                    android:text="@string/recall"
+                                                    android:textColor="@color/colorPrimaryDark"
+                                                    android:textStyle="bold" />
+
+                                                <RadioGroup
+                                                    android:id="@+id/rota2M"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="horizontal">
+
+                                                    <RadioButton
+                                                        android:id="@+id/rota2M01"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginLeft="1dp"
+                                                        android:layout_marginTop="1dp"
+                                                        android:layout_weight="1"
+                                                        android:text="@string/yes" />
+
+                                                    <RadioButton
+                                                        android:id="@+id/rota2M02"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:layout_weight="1"
+                                                        android:text="@string/no" />
+
+                                                </RadioGroup>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrprota2MCheck"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <CheckBox
+                                                        android:id="@+id/rota2datenr"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:text="@string/datenr" />
+
+                                                    <LinearLayout
+                                                        android:id="@+id/fldGrprota2MDate"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical">
+
+
+                                                        <TextView
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
+                                                            android:text="@string/date"
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
+
+                                                        <LinearLayout
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:orientation="horizontal">
+
+                                                            <EditText
+                                                                android:id="@+id/rota2DateM_year"
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="wrap_content"
+                                                                android:layout_weight="1"
+                                                                android:hint="@string/year"
+                                                                android:inputType="number"
+                                                                android:maxLength="4" />
+
+                                                            <EditText
+                                                                android:id="@+id/rota2DateM_mon"
+                                                                android:layout_width="match_parent"
+                                                                android:layout_height="wrap_content"
+                                                                android:layout_weight="1"
+                                                                android:hint="@string/month"
+                                                                android:inputType="number"
+                                                                android:maxLength="2" />
+
+
+                                                        </LinearLayout>
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
+                                            <View
+                                                android:layout_width="3dp"
+                                                android:layout_height="match_parent"
+                                                android:background="@color/colorPrimaryDark"/>
+
+
+                                            <LinearLayout
+                                                android:id="@+id/fldGrprota2C"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_weight="50"
+                                                android:orientation="vertical"
+                                                android:visibility="visible">
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginTop="5dp"
+                                                    android:background="#efefef"
+                                                    android:text="@string/card"
+                                                    android:textAlignment="center"
+                                                    android:textColor="@color/colorPrimaryDark"
+                                                    android:textStyle="bold" />
+
+                                                <RadioGroup
+                                                    android:id="@+id/rota2C"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="horizontal">
+
+                                                    <RadioButton
+                                                        android:id="@+id/rota2C01"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginLeft="1dp"
+                                                        android:layout_marginTop="1dp"
+                                                        android:layout_weight="1"
+                                                        android:text="@string/yes" />
+
+                                                    <RadioButton
+                                                        android:id="@+id/rota2C02"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:layout_weight="1"
+                                                        android:text="@string/no" />
+
+                                                </RadioGroup>
+
+                                                <LinearLayout
+                                                    android:id="@+id/fldGrprota2CCheck"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+
+                                                    <CheckBox
+                                                        android:id="@+id/rota2datenp"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="1dp"
+                                                        android:text="@string/datenp" />
+
+                                                    <LinearLayout
+                                                        android:id="@+id/fldGrprota2CDate"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:orientation="vertical">
+
+
+                                                        <TextView
+                                                            android:id="@+id/text16"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
+                                                            android:text="@string/date"
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
+
+
+                                                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                                                            android:id="@+id/rota2Date"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginTop="1dp"
+                                                            android:focusable="false"
+                                                            android:hint="@string/date"
+                                                            android:textColor="@android:color/black"
+                                                            app:dateFormat="dd-MM-yyyy" />
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
+
+                                        </LinearLayout>
+
+
+                                        <LinearLayout
+                                            android:id="@+id/fldGrpprota2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="5dp"
+                                                android:background="#efefef"
+                                                android:text="@string/place"
+                                                android:textAlignment="center"
+                                                android:textColor="@color/colorPrimaryDark"
+                                                android:textStyle="bold" />
+
+
+                                            <RadioGroup
+                                                android:id="@+id/rota2Pov"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content">
+
+                                                <RadioButton
+                                                    android:id="@+id/rota2Pova"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginBottom="1dp"
+                                                    android:text="@string/place01" />
+
+                                                <RadioButton
+                                                    android:id="@+id/rota2Povb"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginBottom="1dp"
+                                                    android:text="@string/place02" />
+
+                                                <RadioButton
+                                                    android:id="@+id/rota2Povc"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginBottom="1dp"
+                                                    android:text="@string/place03" />
+
+                                                <RadioButton
+                                                    android:id="@+id/rota2Povd"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginBottom="1dp"
+                                                    android:text="@string/place04" />
+
+                                                <RadioButton
+                                                    android:id="@+id/rota2Pove"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginBottom="1dp"
+                                                    android:text="@string/place05" />
+
+                                                <RadioButton
+                                                    android:id="@+id/rota2Povf"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginBottom="1dp"
+                                                    android:text="@string/place06" />
+
+                                                <RadioButton
+                                                    android:id="@+id/rota2Povg"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginBottom="1dp"
+                                                    android:text="@string/place07" />
+
+                                                <RadioButton
+                                                    android:id="@+id/rota2Povh"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginBottom="1dp"
+                                                    android:text="@string/place08" />
+
+
+                                            </RadioGroup>
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+                                </android.support.v4.widget.NestedScrollView>
+
+                            </LinearLayout>
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -2238,9 +2985,10 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
                                     android:text="@string/penta2"
+                                    android:background="@color/colorPrimary"
                                     android:textAlignment="center" />
+
 
                                 <android.support.v4.widget.NestedScrollView
                                     android:id="@+id/sc7"
@@ -2321,13 +3069,16 @@
                                                         android:layout_width="match_parent"
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
-
                                                         <TextView
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
 
                                                         <LinearLayout
                                                             android:layout_width="match_parent"
@@ -2434,8 +3185,13 @@
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
+
 
                                                         <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                                                             android:id="@+id/penta2Date"
@@ -2462,12 +3218,16 @@
                                             android:layout_height="wrap_content"
                                             android:orientation="vertical">
 
+
                                             <TextView
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:layout_marginTop="5dp"
+                                                android:background="#efefef"
                                                 android:text="@string/place"
-                                                android:textAlignment="center" />
+                                                android:textAlignment="center"
+                                                android:textColor="@color/colorPrimaryDark"
+                                                android:textStyle="bold" />
 
                                             <RadioGroup
                                                 android:id="@+id/penta2Pov"
@@ -2548,12 +3308,14 @@
                                 android:orientation="vertical"
                                 android:padding="8px">
 
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
                                     android:text="@string/pcv2"
+                                    android:background="@color/colorPrimary"
                                     android:textAlignment="center" />
+
 
                                 <android.support.v4.widget.NestedScrollView
                                     android:id="@+id/sc8"
@@ -2639,8 +3401,11 @@
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
 
                                                         <LinearLayout
                                                             android:layout_width="match_parent"
@@ -2741,15 +3506,17 @@
                                                         android:layout_width="match_parent"
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
-
-
                                                         <TextView
                                                             android:id="@+id/text8"
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
 
                                                         <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                                                             android:id="@+id/pcv2Date"
@@ -2781,8 +3548,12 @@
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:layout_marginTop="5dp"
+                                                android:background="#efefef"
                                                 android:text="@string/place"
-                                                android:textAlignment="center" />
+                                                android:textAlignment="center"
+                                                android:textColor="@color/colorPrimaryDark"
+                                                android:textStyle="bold" />
+
 
                                             <RadioGroup
                                                 android:id="@+id/pcv2Pov"
@@ -2866,20 +3637,27 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/bacground_border1"
                     android:orientation="vertical">
-
+                    <View
+                        android:layout_width="3dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimaryDark"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
                         android:gravity="center"
                         android:text="@string/at14weeks"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/colorPrimary"
+                        android:background="@color/colorPrimaryAlpha"
                         android:textSize="30sp"
                         android:textStyle="bold"
                         tools:typeface="serif" />
-
+                    <View
+                        android:layout_width="3dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="16dp"
+                        android:background="@color/colorPrimaryDark"/>
                     <android.support.v4.widget.NestedScrollView
                         android:id="@+id/sc14wks"
                         android:layout_width="match_parent"
@@ -2900,12 +3678,15 @@
                                 android:orientation="vertical"
                                 android:padding="8px">
 
+
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
                                     android:text="@string/opv3"
+                                    android:background="@color/colorPrimary"
                                     android:textAlignment="center" />
+
 
                                 <android.support.v4.widget.NestedScrollView
                                     android:id="@+id/sc9"
@@ -2986,13 +3767,16 @@
                                                         android:layout_width="match_parent"
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
-
                                                         <TextView
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
 
                                                         <LinearLayout
                                                             android:layout_width="match_parent"
@@ -3095,14 +3879,17 @@
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
 
-
                                                         <TextView
                                                             android:id="@+id/text9"
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
 
                                                         <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                                                             android:id="@+id/opv3Date"
@@ -3129,13 +3916,16 @@
                                             android:layout_height="wrap_content"
                                             android:orientation="vertical">
 
-
                                             <TextView
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:layout_marginTop="5dp"
+                                                android:background="#efefef"
                                                 android:text="@string/place"
-                                                android:textAlignment="center" />
+                                                android:textAlignment="center"
+                                                android:textColor="@color/colorPrimaryDark"
+                                                android:textStyle="bold" />
+
 
                                             <RadioGroup
                                                 android:id="@+id/opv3Pov"
@@ -3216,12 +4006,14 @@
                                 android:orientation="vertical"
                                 android:padding="8px">
 
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
                                     android:text="@string/penta3"
+                                    android:background="@color/colorPrimary"
                                     android:textAlignment="center" />
+
 
                                 <android.support.v4.widget.NestedScrollView
                                     android:id="@+id/sc10"
@@ -3307,8 +4099,13 @@
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
+
 
                                                         <LinearLayout
                                                             android:layout_width="match_parent"
@@ -3410,14 +4207,19 @@
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
 
-
                                                         <TextView
                                                             android:id="@+id/text10"
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
+
+
 
                                                         <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                                                             android:id="@+id/penta3Date"
@@ -3450,8 +4252,12 @@
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:layout_marginTop="5dp"
+                                                android:background="#efefef"
                                                 android:text="@string/place"
-                                                android:textAlignment="center" />
+                                                android:textAlignment="center"
+                                                android:textColor="@color/colorPrimaryDark"
+                                                android:textStyle="bold" />
+
 
                                             <RadioGroup
                                                 android:id="@+id/penta3Pov"
@@ -3532,12 +4338,11 @@
                                 android:orientation="vertical"
                                 android:padding="8px">
 
-
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
                                     android:text="@string/pcv3"
+                                    android:background="@color/colorPrimary"
                                     android:textAlignment="center" />
 
                                 <android.support.v4.widget.NestedScrollView
@@ -3624,8 +4429,13 @@
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
+
 
                                                         <LinearLayout
                                                             android:layout_width="match_parent"
@@ -3727,14 +4537,16 @@
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
 
-
                                                         <TextView
                                                             android:id="@+id/text11"
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
 
                                                         <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                                                             android:id="@+id/pcv3Date"
@@ -3766,8 +4578,12 @@
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:layout_marginTop="5dp"
+                                                android:background="#efefef"
                                                 android:text="@string/place"
-                                                android:textAlignment="center" />
+                                                android:textAlignment="center"
+                                                android:textColor="@color/colorPrimaryDark"
+                                                android:textStyle="bold" />
+
 
                                             <RadioGroup
                                                 android:id="@+id/pcv3Pov"
@@ -3852,8 +4668,8 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
                                     android:text="@string/ipv"
+                                    android:background="@color/colorPrimary"
                                     android:textAlignment="center" />
 
                                 <android.support.v4.widget.NestedScrollView
@@ -3940,8 +4756,12 @@
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
 
                                                         <LinearLayout
                                                             android:layout_width="match_parent"
@@ -4049,8 +4869,12 @@
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
 
                                                         <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                                                             android:id="@+id/ipvDate"
@@ -4081,8 +4905,12 @@
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:layout_marginTop="5dp"
+                                                android:background="#efefef"
                                                 android:text="@string/place"
-                                                android:textAlignment="center" />
+                                                android:textAlignment="center"
+                                                android:textColor="@color/colorPrimaryDark"
+                                                android:textStyle="bold" />
+
 
                                             <RadioGroup
                                                 android:id="@+id/ipvPov"
@@ -4166,20 +4994,27 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/bacground_border1"
                     android:orientation="vertical">
-
+                    <View
+                        android:layout_width="3dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimaryDark"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
                         android:gravity="center"
                         android:text="@string/at9month"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/colorPrimary"
+                        android:background="@color/colorPrimaryAlpha"
                         android:textSize="30sp"
                         android:textStyle="bold"
                         tools:typeface="serif" />
-
+                    <View
+                        android:layout_width="3dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="16dp"
+                        android:background="@color/colorPrimaryDark"/>
                     <android.support.v4.widget.NestedScrollView
                         android:id="@+id/sc9M"
                         android:layout_width="match_parent"
@@ -4200,11 +5035,13 @@
                                 android:orientation="vertical"
                                 android:padding="8px">
 
+
+
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
                                     android:text="@string/measles1"
+                                    android:background="@color/colorPrimary"
                                     android:textAlignment="center" />
 
                                 <android.support.v4.widget.NestedScrollView
@@ -4285,13 +5122,15 @@
                                                         android:layout_width="match_parent"
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
-
                                                         <TextView
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
 
                                                         <LinearLayout
                                                             android:layout_width="match_parent"
@@ -4393,14 +5232,18 @@
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
 
-
                                                         <TextView
                                                             android:id="@+id/text13"
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
+
 
                                                         <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                                                             android:id="@+id/measles1Date"
@@ -4432,8 +5275,11 @@
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:layout_marginTop="5dp"
+                                                android:background="#efefef"
                                                 android:text="@string/place"
-                                                android:textAlignment="center" />
+                                                android:textAlignment="center"
+                                                android:textColor="@color/colorPrimaryDark"
+                                                android:textStyle="bold" />
 
                                             <RadioGroup
                                                 android:id="@+id/measles1Pov"
@@ -4522,11 +5368,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
                         android:gravity="center"
                         android:text="@string/at15month"
-                        android:textColor="@color/colorPrimaryDark"
+                        android:textColor="@color/colorPrimary"
+                        android:background="@color/colorPrimaryAlpha"
                         android:textSize="30sp"
                         android:textStyle="bold"
                         tools:typeface="serif" />
@@ -4553,8 +5398,8 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginTop="5dp"
                                     android:text="@string/measles2"
+                                    android:background="@color/colorPrimary"
                                     android:textAlignment="center" />
 
                                 <android.support.v4.widget.NestedScrollView
@@ -4636,12 +5481,19 @@
                                                         android:layout_height="wrap_content"
                                                         android:orientation="vertical">
 
+
                                                         <TextView
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
+
+
 
                                                         <LinearLayout
                                                             android:layout_width="match_parent"
@@ -4744,13 +5596,18 @@
                                                         android:orientation="vertical">
 
 
+
                                                         <TextView
                                                             android:id="@+id/text14"
                                                             android:layout_width="match_parent"
                                                             android:layout_height="wrap_content"
                                                             android:layout_marginTop="5dp"
+                                                            android:background="#efefef"
                                                             android:text="@string/date"
-                                                            android:textAlignment="center" />
+                                                            android:textAlignment="center"
+                                                            android:textColor="@color/colorPrimaryDark"
+                                                            android:textStyle="bold" />
+
 
                                                         <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
                                                             android:id="@+id/measles2Date"
@@ -4781,8 +5638,13 @@
                                                 android:layout_width="match_parent"
                                                 android:layout_height="wrap_content"
                                                 android:layout_marginTop="5dp"
+                                                android:background="#efefef"
                                                 android:text="@string/place"
-                                                android:textAlignment="center" />
+                                                android:textAlignment="center"
+                                                android:textColor="@color/colorPrimaryDark"
+                                                android:textStyle="bold" />
+
+
 
                                             <RadioGroup
                                                 android:id="@+id/measles2Pov"

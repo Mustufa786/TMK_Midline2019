@@ -1,8 +1,11 @@
 package edu.aku.ramshasaeed.tmk_midline.activities;
 
 import android.databinding.DataBindingUtil;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -175,9 +178,8 @@ public class SectionEActivity extends AppCompatActivity {
 
     private boolean formValidation() {
 
-       /* if(!validatorClass.EmptyCheckingContainer(this,bi.fldGrpSecE)){
-            return false;
-        }*/
+        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
+
         return true;
     }
 

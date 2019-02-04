@@ -821,10 +821,12 @@
     <string name="pcv1"> PCV-1 (Pneumococcal Conjugate Vaccine 1st dose) </string>
     <string name="at6weeks"> At the of 6 weeks </string>
     <string name="opv1"> OPV-1 (Oral Polio Vaccine first dose) </string>
+    <string name="rota1"> Rota-1(Oral Vaccine for Diarrhoea 1st dose) </string>
     <string name="penta1"> Penta-1 (Pentavalent-1 (DPTHepBHib) </string>
     <string name="opv0"> OPV-0 (Oral Polio Vaccine dose at birth) </string>
     <string name="at10weeks"> At the of 10 weeks </string>
     <string name="opv2"> OPV-2 (Oral Polio vaccine 2nd dose) </string>
+    <string name="rota2"> Rota-2(Oral Vaccine for Diarrhoea 2st dose) </string>
     <string name="penta2"> Penta-2 (Pentavalent-2 (DPTHepBHib) </string>
     <string name="pcv2"> PCV-2 (Pneumococcal Conjugate Vaccine 2nd dose) </string>
     <string name="at14weeks"> At the of 14 weeks </string>
@@ -842,4 +844,109 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
+
+
+
+
+    <!--section F-->
+
+    <string name="thb01"> ڇا توھان جي گھر ۾ 5 سالن کان گھٽ عمر وارن ٻارن کي گذريل ٻن ھفتن ۾ بخار ٿيو </string>
+    <string name="thb02"> گذريل ٻن ھفتن جي دوران ڪيترن ٻار کي بخار ٿيو؟ </string>
+    <string name="thb02num"> ٻارن جو تعداد </string>
+    <string name="thb03"> ڇا توھان جي گھر ۾ 5 سالن کان گھٽ عمر وارن ٻارن کي گذريل ٻن ھفتن ۾ کنگھ، تڪڙا ساھ کڻڻ يا ساھ کڻڻ ۾ تڪليف ٿي؟ </string>
+    <string name="thb04"> ڪيترن ٻارن کي گذريل ٻن ھفتن جي دوران کنگھ جي بيماري، تڪڙا ساھ کڻڻ يا ساھ کڻڻ ۾ تڪليف ھئي </string>
+    <string name="thb04num"> ٻارن جو تعداد </string>
+    <string name="thb05"> گذريل ٻن ھفتن جي دوران توھان جي گھر ۾ ڪھڙي ٻارکي سڀني کان آخر۾يا ويجھي عرصي ۾کنگھ جي بيماري، تڪڙا ساھ کڻڻ يا ساھ کڻڻ ۾ تڪليف جي بيماري ٿي ھئي؟ </string>
+    <string name="thb05a"> ٻارجونالو </string>
+    <string name="thb06"> (نالو) کي ڪيترا ڏينھن بخار ، کنگھ ۽ تڪڙا ساه کڻڻ جي بيماري ھئي؟ </string>
+    <string name="thb06a"> ڏينھن </string>
+    <string name="thb07"> ڇا (نالو) جو توھان کنگھ ۽ تڪڙا ساھ کڻڻ جو شروعاتي علاج ڪرايو؟ </string>
+    <string name="thb07a"> ھا </string>
+    <string name="thb07b"> نه </string>
+    <string name="thb07c"> خبر نه آھي </string>
+    <string name="thb08"> توھان (نالو) جو بخار، کنگھ ۽ تڪڙا ساھ کڻڻ جي بيماري جو علاج ڇو نه ڪرايو؟ </string>
+    <string name="thb08a"> ايڏو وڏو مسئلو نه ھو </string>
+    <string name="thb08b"> پئسا نه ھئا </string>
+    <string name="thb08c"> سواري نه ھئي </string>
+    <string name="thb08d"> مرد جي غيرموجودگي جي ڪري </string>
+    <string name="thb08e"> گھر جي سربراھ/مڙس/سس جي اجازت نه ھئي </string>
+    <string name="thb08f"> صحت مرڪز پري آھي </string>
+    <string name="thb08g"> صحت مرڪز کليل نه ھو </string>
+    <string name="thb08h"> غير معياري سھولتون </string>
+    <string name="thb08i"> ٻيو ڪو وضاحت ڪريو </string>
+    <string name="thb09"> (نالو) کي کنگھ ۽ تڪڙا ساھ کڻڻ جي بيماري ٿيئڻ جي ڪيترن ڏينھن کان پوءِ علاج ڏنو ويو؟ </string>
+    <string name="thb09a"> ڏينھن </string>
+    <string name="thb10"> (نالو) جو توھان کنگھ ۽ تڪڙا ساھ کڻڻ جو شروعاتي علاج ڪٿان ڪرايو؟ </string>
+    <string name="thb10a"> گھر ۾ </string>
+    <string name="thb10b"> سرڪاري صحت مرڪز </string>
+    <string name="thb10c"> پرائيويٽ صحت مرڪز </string>
+    <string name="thb10d"> اين جي او (NGO)صحت مرڪز </string>
+    <string name="thb11"> توھان (نالو) کي کنگھ ۽ تڪڙا ساھ کڻڻ جي بيماري جو شروعاتي علاج لاءِ ڪنھن کان ڪرايوويو؟ </string>
+    <string name="thb11a"> پنھنجو پاڻ </string>
+    <string name="thb11b"> ايل ايڇ ڊبليو (ليڊي ھيلٿ ورڪر) </string>
+    <string name="thb11c"> ڊاڪٽر </string>
+    <string name="thb11d"> نرس </string>
+    <string name="thb11e"> ڊسپينسر/ ڪمپائوڊر </string>
+    <string name="thb11f"> ڪيمسٽ ميڊيڪل اسٽور </string>
+    <string name="thb11g"> ايل ايڇ وي (ليڊي ھيلٿ وزيٽر) </string>
+    <string name="thb11h"> ھوميوپيٿڪ / حڪيم </string>
+    <string name="thb11i"> غير سرڪاري تنظيم ( اين جي او) جو عملو </string>
+    <string name="thb11j"> سي ايم ڊبليو (ڪميونٽي مڊوائف) </string>
+    <string name="thb11k"> دائي / ٽي بي اي </string>
+    <string name="thb12"> (نالو) کي کنگھ ۽ تڪڙا ساھ کڻڻ جي بيماري جو شروعاتي علاج ڪھڙو ڏنو ويوھيو؟ </string>
+    <string name="thb12a"> اينٽي بائيوٽڪ گوريون/سيرپ </string>
+    <string name="thb12b"> اينٽي بائيوٽڪ سئي </string>
+    <string name="thb12c"> بخارگھٽ ڪرڻ واري دوا </string>
+    <string name="thb12d"> کنگھ جو شربت </string>
+    <string name="thb12e"> گھريلوٽوٽڪا </string>
+    <string name="thb12f"> اينٽي مليريا </string>
+    <string name="thb12g"> اڻڄاتل گوري/ شربت </string>
+    <string name="thb12h"> اڻڄاتل سوئيون (انجيڪشن) </string>
+    <string name="thb13"> (نالو) کي کنگھ ۽ تڪڙا ساھ کڻڻ جي بيماري جي علاج لاءِ ڪنھن ٻئي هنڌ موڪليو ويو؟ </string>
+    <string name="thb14"> ڇا (نالو) کي کنگھ ۽ تڪڙا ساھ کڻڻ جي بيماري جي علاج لاءِ داخل ڪيو ويو ھو؟ </string>
+    <string name="thb15"> (نالو) کي ڪٿي داخل ڪيو ويو؟ </string>
+    <string name="thb15a"> سرڪاري صحت مرڪز </string>
+    <string name="thb15b"> پرائيويٽ صحت مرڪز </string>
+    <string name="thb15c"> اين جي او (NGO)صحت مرڪز </string>
+    <string name="thb16"> (نالو) داخلي دوران کنگھ ۽ تڪڙا ساھ کڻڻ جي بيماري جوعلاج ڪنھن ڪيو؟ </string>
+    <string name="thb16a"> ڊاڪٽر </string>
+    <string name="thb16b"> ايل ايڇ وي (ليڊي ھيلٿ وزيٽر) </string>
+    <string name="thb16c"> نرس </string>
+    <string name="thb16d"> سي ايم ڊبليو (ڪميونٽي مڊوائف) </string>
+    <string name="thb16e"> ڊسپينسر/ ڪمپائوڊر </string>
+
+    <string name="thb17"> داخلي دوران (نالو) کي کنگھ ۽ تڪڙا ساھ کڻڻ جي بيماري جو ڪھڙو علاج ڏنو ويو؟ </string>
+    <string name="thb17a"> اينٽي بائيوٽڪ گوريون/سيرپ </string>
+    <string name="thb17b"> اينٽي بائيوٽڪ سئي </string>
+    <string name="thb17c"> بخارگھٽ ڪرڻ واري دوا </string>
+    <string name="thb17d"> کنگھ جو شربت </string>
+    <string name="thb17e"> اينٽي مليريا </string>
+    <string name="thb17f"> اڻڄاتل گوري/ شربت </string>
+    <string name="thb17g"> ڻڄاتل سوئيون (انجيڪشن) </string>
+    <string name="thb18"> (نالو) کنگھ ۽ تڪڙا ساھ کڻڻ جي بيماري جي علاج لاءِ ڪيترا ڏينھن اسپتال ۾ داخل ھيو؟ </string>
+    <string name="thb18a"> ڪلاڪ </string>
+    <string name="thb18b"> ڏينھن </string>
+    <string name="thb18c"> اڃا داخل آھي </string>
+    <string name="thb19"> (نالو) جي بيماري جو نتيجو ڇا نڪتو؟ </string>
+    <string name="thb19a"> تندرست ٿي ويوهو </string>
+    <string name="thb19b"> اڃا بيمار آھي </string>
+    <string name="thb19c"> مري ويو </string>
+    <string name="thb20"> ڇا (نالو) کي اسپتال ۾ ڪڏھن به آڪسيجن لگائي وئي ھئي؟ </string>
+    <string name="thb21"> ڇا (نالو) جي ڇاتي جو ڪڏھن به ايڪسري ڪيوويو؟ </string>
+    <string name="thb22"> ڇا (نالو) جي بيماري دوران ٽيسٽ ڪرڻ لاءِ آڱر يا پير جي کڙي مان رت ڪڍيو ويو؟ </string>
+    <string name="thb23"> ڪڏھن ڪڏھن ٻارن کي شديد بيماري جي ڪري صحت مرڪز ڏانھن وٺي وڃڻو پوندو آھي، اھي ڪھڙيون علامتن/بيمارين جي ڪري توھان پنجن سالن کان گھٽ عمر وارن ٻار کي صحت مرڪز کڻي ويندا آھيو؟ </string>
+    <string name="thb23a"> ٻار ٿڃ پي نه سگھندو آھي </string>
+    <string name="thb23b"> ٻار چڙ چڙو ھوندو آھي </string>
+    <string name="thb23c"> ٻار کي بخار ھوندو آھي </string>
+    <string name="thb23d"> ٻار کي تڪڙا ساھ کڻندو آھي </string>
+    <string name="thb23e"> ٻار کي ساھ کڻڻ ۾ تڪليف ھوندي آھي </string>
+    <string name="thb23f"> ٻار جي پئخاني/ ڪاڪوس ۾ رت ايندو آھي </string>
+    <string name="thb23g"> ٻار الٽي ڪندو آھي </string>
+    <string name="thb23h"> ٻار کي جھٽڪا ھوندا آھن </string>
+    <string name="thb23i"> ٻار سست ھوندو آھي </string>
+    <string name="thb23j"> ٻار بيھوش ھوندو آھي </string>
+    <string name="thb23k"> ٻار جي چمڙي ڦڪي ٿيندي آھي </string>
+    <string name="thb23l"> ٻيو ڪجھ (وضاحت ڪريو) </string>
+
+
 </resources>
