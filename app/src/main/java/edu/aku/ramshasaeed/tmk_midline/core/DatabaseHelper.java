@@ -799,8 +799,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_GPSLNG, fc.getGpsLng());
         values.put(FormsTable.COLUMN_GPSDATE, fc.getGpsDT());
         values.put(FormsTable.COLUMN_GPSACC, fc.getGpsAcc());
-        values.put(FormsTable.COLUMN_DEVICETAGID, fc.getDevicetagID());
-        values.put(FormsTable.COLUMN_DEVICEID, fc.getDeviceID());
+        values.put(FormsTable.COLUMN_DEVICETAGID, fc.getd05vicetagID());
+        values.put(FormsTable.COLUMN_DEVICEID, fc.getd05viceID());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
@@ -825,8 +825,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(familyMembers.COLUMN_USER, fmc.getUser());
         values.put(familyMembers.COLUMN_ISTATUS, fmc.getIstatus());
         values.put(familyMembers.COLUMN_SB, fmc.getsB());
-        values.put(familyMembers.COLUMN_DEVICETAGID, fmc.getDevicetagID());
-        values.put(familyMembers.COLUMN_DEVICEID, fmc.getDeviceId());
+        values.put(familyMembers.COLUMN_DEVICETAGID, fmc.getd05vicetagID());
+        values.put(familyMembers.COLUMN_DEVICEID, fmc.getd05viceId());
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
@@ -850,8 +850,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(MWRATable.COLUMN_FORMDATE, mc.getFormDate());
         values.put(MWRATable.COLUMN_USER, mc.getUser());
         values.put(MWRATable.COLUMN_SD, mc.getsD());
-        values.put(MWRATable.COLUMN_DEVICEID, mc.getDeviceId());
-        values.put(MWRATable.COLUMN_DEVICETAGID, mc.getDevicetagID());
+        values.put(MWRATable.COLUMN_DEVICEID, mc.getd05viceId());
+        values.put(MWRATable.COLUMN_DEVICETAGID, mc.getd05vicetagID());
 
         // SYNCED INFORMATION IS NEVER INSERTED WITH NEW RECORD.
      /*   values.put(MWRATable.COLUMN_SYNCED, mc.getSynced());
@@ -884,8 +884,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //        values.put(singleIm.COLUMN_MM, ims.getMm());
         //values.put(singleIm.COLUMN_CHILDID, ims.getChildID());
 //        values.put(singleIm.COLUMN_DSSID, ims.getDssID());
-        values.put(singleIm.COLUMN_DEVICEID, ims.getDeviceId());
-        values.put(singleIm.COLUMN_DEVICETAGID, ims.getDevicetagID());
+        values.put(singleIm.COLUMN_DEVICEID, ims.getd05viceId());
+        values.put(singleIm.COLUMN_DEVICETAGID, ims.getd05vicetagID());
 
 
         // Insert the new row, returning the primary key value of the new row
@@ -909,8 +909,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(DeceasedMother.COLUMN_UID, dc.get_UID());
         values.put(DeceasedMother.COLUMN_UUID, dc.get_UUID());
         values.put(DeceasedMother.COLUMN_FORMDATE, dc.getFormDate());
-        values.put(DeceasedMother.COLUMN_DEVICEID, dc.getDeviceId());
-        values.put(DeceasedMother.COLUMN_DEVICETAGID, dc.getDevicetagID());
+        values.put(DeceasedMother.COLUMN_DEVICEID, dc.getd05viceId());
+        values.put(DeceasedMother.COLUMN_DEVICETAGID, dc.getd05vicetagID());
         values.put(DeceasedMother.COLUMN_USER, dc.getUser());
         values.put(DeceasedMother.COLUMN_SE, dc.getsE());
 
@@ -934,8 +934,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(DeceasedChild.COLUMN_UID, dc.get_UID());
         values.put(DeceasedChild.COLUMN_UUID, dc.get_UUID());
         values.put(DeceasedChild.COLUMN_FORMDATE, dc.getFormDate());
-        values.put(DeceasedChild.COLUMN_DEVICEID, dc.getDeviceId());
-        values.put(DeceasedChild.COLUMN_DEVICETAGID, dc.getDevicetagID());
+        values.put(DeceasedChild.COLUMN_DEVICEID, dc.getd05viceId());
+        values.put(DeceasedChild.COLUMN_DEVICETAGID, dc.getd05vicetagID());
         values.put(DeceasedChild.COLUMN_USER, dc.getUser());
         values.put(DeceasedChild.COLUMN_SF, dc.getsF());
 
@@ -1659,7 +1659,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     // ANDROID DATABASE MANAGER
-    public ArrayList<Cursor> getData(String Query) {
+    public ArrayList<Cursor> getd01ta(String Query) {
         //get writable database
         SQLiteDatabase sqlDB = this.getWritableDatabase();
         String[] columns = new String[]{"message"};

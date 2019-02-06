@@ -80,6 +80,22 @@ public class FamilyMembersContract {
         this.dob = fm.dob;
     }
 
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
+
+    public String getDevicetagID() {
+        return devicetagID;
+    }
+
+    public void setDevicetagID(String devicetagID) {
+        this.devicetagID = devicetagID;
+    }
+
     public String getProjectName() {
         return projectName;
     }
@@ -132,11 +148,11 @@ public class FamilyMembersContract {
         this.formDate = formDate;
     }
 
-    public String getDeviceId() {
+    public String getd05viceId() {
         return deviceId;
     }
 
-    public void setDeviceId(String deviceId) {
+    public void setd05viceId(String deviceId) {
         this.deviceId = deviceId;
     }
 
@@ -428,11 +444,11 @@ public class FamilyMembersContract {
         this.istatus = istatus;
     }
 
-    public String getDevicetagID() {
+    public String getd05vicetagID() {
         return devicetagID;
     }
 
-    public void setDevicetagID(String devicetagID) {
+    public void setd05vicetagID(String devicetagID) {
         this.devicetagID = devicetagID;
     }
 

@@ -258,7 +258,7 @@ public class SectionAActivity extends Activity {
 
                 finish();
 
-                startActivity(new Intent(this, SectionDActivity.class));
+                startActivity(new Intent(this, SectionBActivity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -274,10 +274,10 @@ public class SectionAActivity extends Activity {
 
         MainApp.fc = new FormsContract();
 
-        MainApp.fc.setDevicetagID(sharedPref.getString("tagName", null));
+        MainApp.fc.setd05vicetagID(sharedPref.getString("tagName", null));
         MainApp.fc.setFormDate(dtToday);
         MainApp.fc.setUser(MainApp.userName);
-        MainApp.fc.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
+        MainApp.fc.setd05viceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID));
 
         JSONObject sa = new JSONObject();
@@ -325,7 +325,7 @@ public class SectionAActivity extends Activity {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
             MainApp.fc.setUID(
-                    (MainApp.fc.getDeviceID() + MainApp.fc.get_ID()));
+                    (MainApp.fc.getd05viceID() + MainApp.fc.get_ID()));
             db.updateFormID();
 
             return true;

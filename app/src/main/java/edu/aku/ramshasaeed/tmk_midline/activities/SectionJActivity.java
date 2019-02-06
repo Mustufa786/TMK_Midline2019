@@ -21,14 +21,14 @@ import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
 
 public class SectionJActivity extends AppCompatActivity {
     ActivitySectionJBinding bi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this,R.layout.activity_section_j);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_j);
         bi.setCallback(this);
         this.setTitle(getResources().getString(R.string.tjheading));
         validatorClass.setScrollViewFocus(bi.svsecj);
-
 
 
         bi.tl01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -48,7 +48,6 @@ public class SectionJActivity extends AppCompatActivity {
                 }
             }
         });
-
 
 
         bi.tl03.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -121,6 +120,7 @@ public class SectionJActivity extends AppCompatActivity {
             }
         });*/
     }
+
     public void BtnEnd() {
         MainApp.endActivity(this, this);
     }
@@ -139,12 +139,13 @@ public class SectionJActivity extends AppCompatActivity {
 
                 finish();
 
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+                startActivity(new Intent(this, SectionKActivity.class));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
         }
     }
+
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
@@ -208,21 +209,29 @@ public class SectionJActivity extends AppCompatActivity {
             return false;
         }
     }
+
     public boolean ValidateForm() {
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
-
+/*
         if (!validatorClass.EmptyRadioButton(this, bi.tl01, bi.tl0196, bi.tl0196x, getString(R.string.tl01))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tl02, bi.tl02a, getString(R.string.tl02))) {
-            return false;
-        }
-        if (!validatorClass.EmptyRadioButton(this, bi.tl03, bi.tl03a, getString(R.string.tl03))) {
-            return false;
-        }
-        if (!validatorClass.EmptyCheckBox(this, bi.fldGrptl04, bi.tl04a, getString(R.string.tl04))) {
-            return false;
+        if (bi.tl01a.isChecked()) {
+
+            if (!validatorClass.EmptyRadioButton(this, bi.tl02, bi.tl02a, getString(R.string.tl02))) {
+                return false;
+            }
+            if (!validatorClass.EmptyRadioButton(this, bi.tl03, bi.tl03a, getString(R.string.tl03))) {
+                return false;
+            }
+            if (bi.tl03a.isChecked()) {
+
+                if (!validatorClass.EmptyCheckBox(this, bi.fldGrptl04, bi.tl04a, getString(R.string.tl04))) {
+                    return false;
+                }
+            }
+
         }
         if (!validatorClass.EmptyRadioButton(this, bi.tl05, bi.tl05a, getString(R.string.tl05))) {
             return false;
@@ -236,16 +245,16 @@ public class SectionJActivity extends AppCompatActivity {
         if (!validatorClass.EmptyCheckBox(this, bi.fldGrptl08, bi.tl08a, getString(R.string.tl08))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tl09, bi.tl0996,bi.tl0996x, getString(R.string.tl09))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.tl09, bi.tl0996, bi.tl0996x, getString(R.string.tl09))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tl10, bi.tl1096,bi.tl1096x, getString(R.string.tl10))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.tl10, bi.tl1096, bi.tl1096x, getString(R.string.tl10))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tl11, bi.tl1196,bi.tl1196x, getString(R.string.tl11))) {
+        if (!validatorClass.EmptyRadioButton(this, bi.tl11, bi.tl1196, bi.tl1196x, getString(R.string.tl11))) {
             return false;
         }
-
+*/
         return true;
     }
 

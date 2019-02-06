@@ -194,14 +194,17 @@ public class SectionIActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.tk03, bi.tk03a, getString(R.string.tk03))) {
             return false;
         }
-        if (!bi.tk0498.isChecked()) {
-            if (!validatorClass.EmptyTextBox(this, bi.tk04, getString(R.string.tk04))) {
+        if (bi.tk03c.isChecked()) {
+            if (!bi.tk0498.isChecked()) {
+                if (!validatorClass.EmptyTextBox(this, bi.tk04, getString(R.string.tk04))) {
+                    return false;
+                }
+            }
+            if (!validatorClass.EmptyRadioButton(this, bi.tk05, bi.tk05a, getString(R.string.tk05))) {
                 return false;
             }
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tk05, bi.tk05a, getString(R.string.tk05))) {
-            return false;
-        }
+
         if (!validatorClass.EmptyRadioButton(this, bi.tk06, bi.tk06a, getString(R.string.tk06))) {
             return false;
         }
@@ -211,23 +214,31 @@ public class SectionIActivity extends AppCompatActivity {
         if (!validatorClass.EmptyRadioButton(this, bi.tk08, bi.tk08a, getString(R.string.tk08))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tk09, bi.tk0996, bi.tk0996x, getString(R.string.tk09))) {
-            return false;
+        if (bi.tk08a.isChecked()) {
+
+            if (!validatorClass.EmptyRadioButton(this, bi.tk09, bi.tk0996, bi.tk0996x, getString(R.string.tk09))) {
+                return false;
+            }
         }
+
         if (!validatorClass.EmptyRadioButton(this, bi.tk10, bi.tk1096, bi.tk1096x, getString(R.string.tk10))) {
             return false;
         }
+
         if (!validatorClass.EmptyRadioButton(this, bi.tk11, bi.tk11a, getString(R.string.tk11))) {
             return false;
         }
         if (!validatorClass.EmptyRadioButton(this, bi.tk12, bi.tk12a, getString(R.string.tk12))) {
             return false;
         }
-        if (!validatorClass.EmptyRadioButton(this, bi.tk13, bi.tk13a, getString(R.string.tk13))) {
-            return false;
-        }
-        if (!validatorClass.EmptyRadioButton(this, bi.tk14, bi.tk14a, getString(R.string.tk14))) {
-            return false;
+        if (bi.tk12a.isChecked()) {
+
+            if (!validatorClass.EmptyRadioButton(this, bi.tk13, bi.tk13a, getString(R.string.tk13))) {
+                return false;
+            }
+            if (!validatorClass.EmptyRadioButton(this, bi.tk14, bi.tk14a, getString(R.string.tk14))) {
+                return false;
+            }
         }
 
         return true;
@@ -235,29 +246,20 @@ public class SectionIActivity extends AppCompatActivity {
 
 
     private boolean UpdateDB() {
-
         DatabaseHelper db = new DatabaseHelper(this);
 
-        Long updcount = db.addChild(MainApp.ims);
-        MainApp.ims.set_ID(String.valueOf(updcount));
+        int updcount = db.updateSK();
 
-        if (updcount != -1) {
+        if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
-
-            MainApp.ims.setUID(
-                    (MainApp.fc.getDeviceID() + MainApp.ims.get_ID()));
-            db.updateChildID();
-
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
         }
-
     }
 
     public void BtnContinue() {
-
         if (ValidateForm()) {
             try {
                 SaveDraft();
@@ -267,28 +269,10 @@ public class SectionIActivity extends AppCompatActivity {
             if (UpdateDB()) {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
-                //finish();
+                finish();
 
-                if (MainApp.imsCount < MainApp.totalImsCount) {
-                    finish();
-
-                    MainApp.imsCount++;
-
-                    MainApp.lstChild.remove(MainApp.positionIm);
-                    MainApp.childsMap.remove(MainApp.positionIm);
-                    MainApp.flag = false;
-                    Intent secNext = new Intent(this, SectionIActivity.class);
-                    //tiname.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MainApp.lstChild));
-                    startActivity(secNext);
-
-
-                } else {
-                    MainApp.imsCount = 0;
-
-                    Intent secNext = new Intent(this, SectionJActivity.class);
-                    startActivity(secNext);
-                }
-
+                Intent secNext = new Intent(this, SectionJActivity.class);
+                startActivity(secNext);
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }

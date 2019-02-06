@@ -309,7 +309,7 @@ public class SectionHActivity extends AppCompatActivity {
             }
         });
     }
-    void onBtnContinueClick() {
+    public void onBtnContinueClick() {
         //TODO implement
 
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
@@ -323,7 +323,7 @@ public class SectionHActivity extends AppCompatActivity {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
-                startActivity(new Intent(this, SectionIActivity.class));
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete",true));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -355,18 +355,18 @@ public class SectionHActivity extends AppCompatActivity {
 
         MainApp.ims = new SectionJIMContract();
 
-        MainApp.ims.setDevicetagID(sharedPref.getString("tagName", null));
+        MainApp.ims.setd05vicetagID(sharedPref.getString("tagName", null));
         MainApp.ims.setFormDate(MainApp.dtToday);
         MainApp.ims.setUser(MainApp.userName);
-        MainApp.ims.setDeviceId(Settings.Secure.getString(getApplicationContext().getContentResolver(),
+        MainApp.ims.setd05viceId(Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID));*/
 
         JSONObject sJ = new JSONObject();
 
-        sJ.put("tjchildSerial", childsMap.get(bi.tj01.getSelectedItem().toString()).getSerialNo());
+//        sJ.put("tjchildSerial", childsMap.get(bi.tj01.getSelectedItem().toString()).getSerialNo());
 //        sJ.put("tjchildName", tj01.getSelectedItem().toString());
 
-        sJ.put("tj01", bi.tj01.getSelectedItem().toString());
+//        sJ.put("tj01", bi.tj01.getSelectedItem().toString());
 
         sJ.put("tj02", bi.tj02a.isChecked() ? "1" : bi.tj02b.isChecked() ? "2" : bi.tj02c.isChecked() ? "3"
                 : bi.tj02d.isChecked() ? "4" : bi.tj02e.isChecked() ? "5" : bi.tj02f.isChecked() ? "6"

@@ -2,6 +2,7 @@ package edu.aku.ramshasaeed.tmk_midline.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -10,16 +11,18 @@ import org.json.JSONException;
 import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
+import edu.aku.ramshasaeed.tmk_midline.databinding.ActivityEndingBinding;
 
 public class EndingActivity extends Activity {
 
     private static final String TAG = EndingActivity.class.getSimpleName();
-
+    ActivityEndingBinding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ending);
+        bi = DataBindingUtil.setContentView(this,R.layout.activity_ending);
+        bi.setCallback(this);
 
 
         Boolean check = getIntent().getExtras().getBoolean("complete");
@@ -57,7 +60,7 @@ public class EndingActivity extends Activity {
 
     }
 
-    void onBtnEndClick() {
+   public void endInterview() {
 
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
@@ -89,7 +92,7 @@ public class EndingActivity extends Activity {
 //    Total No of Alive members got from Section B
 
 /*                MainApp.currentStatusCount = 0;
-                MainApp.currentDeceasedCheck = 0;
+                MainApp.currentd05ceasedCheck = 0;
                 MainApp.currentMotherCheck = 0;*/
 
                 MainApp.selectedPos = -1;
@@ -138,7 +141,7 @@ public class EndingActivity extends Activity {
         /*if (MainApp.memFlag != 0) {
             db.updateFamilyMember();
         }
-        if (MainApp.currentDeceasedCheck != 0) {
+        if (MainApp.currentd05ceasedCheck != 0) {
             db.updateDeceasedMother();
         }
         if (MainApp.currentMotherCheck != 0) {

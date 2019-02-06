@@ -452,8 +452,8 @@ public class SectionFActivity extends AppCompatActivity {
     }
 
 
-    @OnClick(R.id.btn_Continue)
-    void SaveData() {
+
+    public void BtnContinue() {
 
         if (formValidation()) {
             try {
@@ -468,10 +468,10 @@ public class SectionFActivity extends AppCompatActivity {
                 finish();
 
                 if (MainApp.totalImsCount > 0) {
-                    Intent secNext = new Intent(this, SectionIActivity.class);
+                    Intent secNext = new Intent(this, SectionGActivity.class);
                     startActivity(secNext);
                 } else {
-                    startActivity(new Intent(this, SectionKActivity.class));
+                    startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
                 }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -480,8 +480,8 @@ public class SectionFActivity extends AppCompatActivity {
     }
 
 
-    @OnClick(R.id.btn_End)
-    void onBtnEndClick() {
+
+    public void BtnEnd() {
 
         Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
 
@@ -621,7 +621,7 @@ public class SectionFActivity extends AppCompatActivity {
             } else {
                 bi.thb05.setError(null);
             }*/
-            if (bi.thb05.getSelectedItem() == "....") {
+           /* if (bi.thb05.getSelectedItem() == "....") {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.thb05), Toast.LENGTH_SHORT).show();
                 ((TextView) bi.thb05.getSelectedView()).setText("This Data is Required");
                 ((TextView) bi.thb05.getSelectedView()).setTextColor(Color.RED);
@@ -630,7 +630,7 @@ public class SectionFActivity extends AppCompatActivity {
                 return false;
             } else {
                 ((TextView) bi.thb05.getSelectedView()).setError(null);
-            }
+            }*/
 
 
             //        06
@@ -993,7 +993,7 @@ public class SectionFActivity extends AppCompatActivity {
         sHB.put("thb03", bi.thb03a.isChecked() ? "1" : bi.thb03b.isChecked() ? "2" : bi.thb03888.isChecked() ? "888" : "0");
         sHB.put("thb04", bi.thb04.getText().toString());
         if (bi.thb03a.isChecked()) {
-            sHB.put("thb05", bi.thb05.getSelectedItem().toString());
+//            sHB.put("thb05", bi.thb05.getSelectedItem().toString());
 //            sHB.put("thb05Serial", childsMap.get(bi.thb05.getSelectedItem().toString()));
         }
         sHB.put("thb06", bi.thb06.getText().toString());

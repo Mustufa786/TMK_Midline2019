@@ -57,11 +57,11 @@ public class MWRAContract {
         this._UUID = _UUID;
     }
 
-    public String getDeviceId() {
+    public String getd05viceId() {
         return deviceId;
     }
 
-    public void setDeviceId(String deviceId) {
+    public void setd05viceId(String deviceId) {
         this.deviceId = deviceId;
     }
 
@@ -73,12 +73,12 @@ public class MWRAContract {
         this.sD = sD;
     }
 
-    public String getDevicetagID() {
+    public String getd05vicetagID() {
 
         return devicetagID;
     }
 
-    public void setDevicetagID(String devicetagID) {
+    public void setd05vicetagID(String devicetagID) {
         this.devicetagID = devicetagID;
     }
 

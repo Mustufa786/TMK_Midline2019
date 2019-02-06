@@ -1,5 +1,6 @@
 package edu.aku.ramshasaeed.tmk_midline.activities;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.ramshasaeed.tmk_midline.R;
+import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionEBinding;
 import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
 
@@ -33,23 +35,39 @@ public class SectionEActivity extends AppCompatActivity {
     }
 
     public void BtnContinue() {
+
         if (formValidation()) {
             try {
                 SaveDraft();
-                if (UpdateDB()) {
-//                    startActivity(new Intent(getApplicationContext(), Form02HHPart_2_HI_SE.class));
-                } else {
-                    Toast.makeText(this, "Error in updating db!!", Toast.LENGTH_SHORT).show();
-                }
             } catch (JSONException e) {
                 e.printStackTrace();
+            }
+
+            if (UpdateDB()) {
+                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
+
+                finish();
+
+                Intent secNext = new Intent(this, SectionFActivity.class);
+                startActivity(secNext);
+            } else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
         }
     }
 
     private boolean UpdateDB() {
+        DatabaseHelper db = new DatabaseHelper(this);
 
-        return true;
+        int updcount = db.updateSHA();
+
+        if (updcount == 1) {
+            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
+            return true;
+        } else {
+            Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
     private void SaveDraft() throws JSONException {
@@ -61,7 +79,7 @@ public class SectionEActivity extends AppCompatActivity {
                 : bi.te0198.isChecked() ? "98" : "0");
 
         sE.put("te02", bi.te02.getText().toString());
-        sE.put("te03", bi.te03.getSelectedItem().toString());
+//        sE.put("te03", bi.te03.getSelectedItem().toString());
         sE.put("te04", bi.te04.getText().toString());
 
         sE.put("te05", bi.te05a.isChecked() ? "1"

@@ -110,7 +110,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:layout_weight="1"
-                android:onClick="endInterview"
+                android:onClick="@{() -> callback.endInterview()}"
+
                 android:text="@string/end_interview"
                 android:textColor="#ff1e1e" />
 

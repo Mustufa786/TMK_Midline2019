@@ -124,10 +124,10 @@ public class MainApp extends Application {
     protected static LocationManager locationManager;
 
 
-    public static int monthsBetweenDates(Date startDate, Date endDate) {
+    public static int monthsBetweenDates(Date startd01te, Date endDate) {
 
         Calendar start = Calendar.getInstance();
-        start.setTime(startDate);
+        start.setTime(startd01te);
 
         Calendar end = Calendar.getInstance();
         end.setTime(endDate);
@@ -267,7 +267,7 @@ public class MainApp extends Application {
         alert.show();
     }
 
-    public static String convertDateFormat(String dateStr) {
+    public static String convertd01teFormat(String dateStr) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         try {
             Date d = sdf.parse(dateStr);

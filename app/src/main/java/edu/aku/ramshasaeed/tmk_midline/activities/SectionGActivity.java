@@ -736,11 +736,11 @@ public class SectionGActivity extends AppCompatActivity {
                 if (bi.ti03a.isChecked()) {
                     for (DatePickerInputEditText de : dates) {
                         de.setVisibility(View.VISIBLE);
-                        if (MainApp.ageRdo == 1 && (!bi.tiname.getSelectedItem().equals("...."))) {
-                            de.setMinDate(MainApp.convertDateFormat(MainApp.childsMap.get(bi.tiname.getSelectedItem()).getDob()));
+                       /* if (MainApp.ageRdo == 1 && (!bi.tiname.getSelectedItem().equals("...."))) {
+                            de.setMinDate(MainApp.convertd01teFormat(MainApp.childsMap.get(bi.tiname.getSelectedItem()).getDob()));
                         } else if (MainApp.ageRdo == 2 && (!bi.tiname.getSelectedItem().equals("...."))) {
                             de.setMinDate(maxDate2Years);
-                        }
+                        }*/
                     }
                     for (LinearLayout le : fldGrpCard) {
                         le.setVisibility(View.VISIBLE);
@@ -1279,7 +1279,7 @@ public class SectionGActivity extends AppCompatActivity {
                         MainApp.lstChild.remove(MainApp.positionIm);
                         MainApp.childsMap.remove(MainApp.positionIm);
                         MainApp.flag = false;
-                        Intent secNext = new Intent(this, SectionIActivity.class);
+                        Intent secNext = new Intent(this, SectionGActivity.class);
                         //tiname.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MainApp.lstChild));
                         startActivity(secNext);
 
@@ -1287,7 +1287,7 @@ public class SectionGActivity extends AppCompatActivity {
                     } else {
                         MainApp.imsCount = 0;
 
-                        Intent secNext = new Intent(this, SectionJActivity.class);
+                        Intent secNext = new Intent(this, SectionHActivity.class);
                         startActivity(secNext);
                     }
 
@@ -1295,6 +1295,7 @@ public class SectionGActivity extends AppCompatActivity {
                     Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
                 }
             }
+
 
         }
 
@@ -1309,7 +1310,7 @@ public class SectionGActivity extends AppCompatActivity {
                 Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
                 MainApp.ims.setUID(
-                        (MainApp.fc.getDeviceID() + MainApp.ims.get_ID()));
+                        (MainApp.fc.getd05viceID() + MainApp.ims.get_ID()));
                 db.updateChildID();
 
                 return true;
@@ -1329,9 +1330,9 @@ public class SectionGActivity extends AppCompatActivity {
 
             MainApp.ims.set_UUID(MainApp.fc.getUID());
             MainApp.ims.setFormDate(MainApp.fc.getFormDate());
-            MainApp.ims.setDeviceId(MainApp.fc.getDeviceID());
+            MainApp.ims.setd05viceId(MainApp.fc.getd05viceID());
             MainApp.ims.setUser(MainApp.fc.getUser());
-            MainApp.ims.setDevicetagID(sharedPref.getString("tagName", null));
+            MainApp.ims.setd05vicetagID(sharedPref.getString("tagName", null));
 
             JSONObject sI = new JSONObject();
 
@@ -1339,9 +1340,9 @@ public class SectionGActivity extends AppCompatActivity {
             sI.put("ta05h", MainApp.hhno);
             sI.put("ta05u", MainApp.billno);
 
-            sI.put("tiImsSerial", MainApp.childsMap.get(bi.tiname.getSelectedItem().toString()).getSerialNo());
+         /*   sI.put("tiImsSerial", MainApp.childsMap.get(bi.tiname.getSelectedItem().toString()).getSerialNo());
 
-            sI.put("tiname", bi.tiname.getSelectedItem().toString());
+            sI.put("tiname", bi.tiname.getSelectedItem().toString());*/
 
             sI.put("ti01", bi.ti01a.isChecked() ? "1" : bi.ti01b.isChecked() ? "2" : bi.ti0198.isChecked() ? "98" : "0");
             sI.put("ti02a", bi.ti02a.isChecked() ? "1" : "0");
@@ -1530,7 +1531,7 @@ public class SectionGActivity extends AppCompatActivity {
         public boolean ValidateForm() {
 
 
-            if (bi.tiname.getSelectedItem() == "....") {
+         /*   if (bi.tiname.getSelectedItem() == "....") {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.name), Toast.LENGTH_SHORT).show();
                 ((TextView) bi.tiname.getSelectedView()).setText("This Data is Required");
                 ((TextView) bi.tiname.getSelectedView()).setTextColor(Color.RED);
@@ -1539,7 +1540,7 @@ public class SectionGActivity extends AppCompatActivity {
                 return false;
             } else {
                 ((TextView) bi.tiname.getSelectedView()).setError(null);
-            }
+            }*/
 
 /*
             if (bi.ti00.getCheckedRadioButtonId() == -1) {

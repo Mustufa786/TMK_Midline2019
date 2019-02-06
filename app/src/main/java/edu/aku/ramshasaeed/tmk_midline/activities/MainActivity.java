@@ -448,10 +448,10 @@ public class MainActivity extends Activity {
         }
 
         @Override
-        protected void onReceiveResult(int resultCode, Bundle resultData) {
-            super.onReceiveResult(resultCode, resultData);
+        protected void onReceiveResult(int resultCode, Bundle resultd01ta) {
+            super.onReceiveResult(resultCode, resultd01ta);
          /*   if (resultCode == DownloadFileService.UPDATE_PROGRESS) {
-                int progress = resultData.getInt("progress");
+                int progress = resultd01ta.getInt("progress");
                 mProgressDialog.setMax(100);
                 if (progress == 100) {
                     mProgressDialog.dismiss();
@@ -459,7 +459,7 @@ public class MainActivity extends Activity {
                     File file = new File(Environment.getExternalStorageDirectory() + "/" + "tmk_bl_sep_25.apk");
                     if (file.exists()) {
                         Intent intent = new Intent(Intent.ACTION_VIEW);
-                        intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
+                        intent.setd01taAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                     }

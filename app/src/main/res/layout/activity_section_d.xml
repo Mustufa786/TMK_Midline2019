@@ -31,7 +31,7 @@
                 android:layout_gravity="center_horizontal"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
-                android:text="@string/tdheading"
+                android:text="@string/td08eading"
                 android:textSize="40sp"
                 android:visibility="gone" />
 
@@ -60,7 +60,7 @@
                         android:layout_weight="1"
                         android:background="@color/colorPrimaryAlpha"
                         android:gravity="center"
-                        android:text="@string/tda"
+                        android:text="@string/td01"
                         android:textSize="14sp" />
 
                     <TextView
@@ -72,7 +72,7 @@
                         android:layout_weight="1"
                         android:background="@color/colorPrimaryAlpha"
                         android:gravity="center"
-                        android:text="@string/tdb"
+                        android:text="@string/td02"
                         android:textSize="14sp" />
 
                     <TextView
@@ -82,7 +82,7 @@
                         android:layout_weight="1"
                         android:background="@color/colorPrimaryAlpha"
                         android:gravity="center"
-                        android:text="@string/tdc"
+                        android:text="@string/td03"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -92,32 +92,32 @@
                     android:orientation="horizontal">
 
                     <EditText
-                        android:id="@+id/tda"
+                        android:id="@+id/td01"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:digits="0123456789"
-                        android:hint="@string/tda"
+                        android:hint="@string/td01"
                         android:inputType="number"
                         android:maxLength="99" />
 
                     <EditText
-                        android:id="@+id/tdb"
+                        android:id="@+id/td02"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:digits="0123456789"
-                        android:hint="@string/tdb"
+                        android:hint="@string/td02"
                         android:inputType="number"
                         android:maxLength="99" />
 
                     <EditText
-                        android:id="@+id/tdc"
+                        android:id="@+id/td03"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:digits="0123456789"
-                        android:hint="@string/tdc"
+                        android:hint="@string/td03"
                         android:inputType="number"
 
                         android:maxLength="99" />
@@ -135,7 +135,7 @@
                         android:layout_weight="1"
                         android:background="@color/colorPrimaryAlpha"
                         android:gravity="center"
-                        android:text="@string/tdd"
+                        android:text="@string/td04"
                         android:textSize="14sp" />
 
                     <TextView
@@ -147,7 +147,7 @@
                         android:layout_weight="1"
                         android:background="@color/colorPrimaryAlpha"
                         android:gravity="center"
-                        android:text="@string/tde"
+                        android:text="@string/td05"
                         android:textSize="14sp" />
 
                     <TextView
@@ -157,7 +157,7 @@
                         android:layout_weight="1"
                         android:background="@color/colorPrimaryAlpha"
                         android:gravity="center"
-                        android:text="@string/tdf"
+                        android:text="@string/td06"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -167,32 +167,32 @@
                     android:orientation="horizontal">
 
                     <EditText
-                        android:id="@+id/tdd"
+                        android:id="@+id/td04"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:digits="0123456789"
-                        android:hint="@string/tdd"
+                        android:hint="@string/td04"
                         android:inputType="number"
                         android:maxLength="99" />
 
                     <EditText
-                        android:id="@+id/tde"
+                        android:id="@+id/td05"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:digits="0123456789"
-                        android:hint="@string/tde"
+                        android:hint="@string/td05"
                         android:inputType="number"
                         android:maxLength="99" />
 
                     <EditText
-                        android:id="@+id/tdf"
+                        android:id="@+id/td06"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:digits="0123456789"
-                        android:hint="@string/tdf"
+                        android:hint="@string/td06"
                         android:inputType="number"
                         android:maxLength="99" />
                 </LinearLayout>
@@ -210,7 +210,7 @@
                         android:layout_weight="1"
                         android:background="@color/colorPrimaryAlpha"
                         android:gravity="center"
-                        android:text="@string/tdg"
+                        android:text="@string/td07"
                         android:textSize="14sp" />
 
                     <TextView
@@ -220,7 +220,7 @@
                         android:layout_weight="1"
                         android:background="@color/colorPrimaryAlpha"
                         android:gravity="center"
-                        android:text="@string/tdh"
+                        android:text="@string/td08"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -230,22 +230,22 @@
                     android:orientation="horizontal">
 
                     <EditText
-                        android:id="@+id/tdg"
+                        android:id="@+id/td07"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:digits="0123456789"
-                        android:hint="@string/tdg"
+                        android:hint="@string/td07"
                         android:inputType="number"
                         android:maxLength="99" />
 
                     <EditText
-                        android:id="@+id/tdh"
+                        android:id="@+id/td08"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:digits="0123456789"
-                        android:hint="@string/tdh"
+                        android:hint="@string/td08"
                         android:inputType="number"
                         android:maxLength="99" />
                 </LinearLayout>
@@ -261,16 +261,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-                android:text="@string/td01"
+                android:text="@string/td09"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
             <EditText
-                android:id="@+id/td01"
+                android:id="@+id/td09"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:hint="@string/td01"
+                android:hint="@string/td09"
                 android:inputType="textCapWords" />
 
             <TextView
@@ -278,169 +278,379 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-                android:text="@string/td02"
+                android:text="@string/td10"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
             <EditText
-                android:id="@+id/td02"
+                android:id="@+id/td10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                android:hint="@string/td02"
-                android:inputType="textCapWords" />
-
+                android:layout_marginBottom="1dp"
+                android:digits="0123456789"
+                android:hint="@string/td10"
+                android:maxLength="2"
+                android:inputType="number" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-                android:text="@string/td03"
+                android:text="@string/td11"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/td11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:digits="0123456789"
+                    android:hint="@string/td11"
+                    android:maxLength="2"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/txtRsn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="#d6d6d6"
+                    android:gravity="center"
+                    android:textColor="@color/red"
+                    android:visibility="gone"
+                    tools:visibility="visible"/>
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fldGrpOcc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/td12"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
             <RadioGroup
-                android:id="@+id/td03"
+                android:id="@+id/td12"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <RadioButton
-                    android:id="@+id/td03a"
+                    android:id="@+id/td12a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/male" />
+                    android:text="@string/td12a" />
 
                 <RadioButton
-                    android:id="@+id/td03b"
+                    android:id="@+id/td12b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/female" />
+                    android:text="@string/td12b" />
+
+                <RadioButton
+                    android:id="@+id/td12c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/td12c" />
+
+                <RadioButton
+                    android:id="@+id/td12d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/td12d" />
+
+                <RadioButton
+                    android:id="@+id/td12e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/td12e" />
+
+                <RadioButton
+                    android:id="@+id/td12f"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/td12f" />
+
+                <RadioButton
+                    android:id="@+id/td12g"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/td12g" />
+
+                <RadioButton
+                    android:id="@+id/td12h"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/td12h" />
+
+                <RadioButton
+                    android:id="@+id/td12i"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/td12i" />
+
+                <RadioButton
+                    android:id="@+id/td12j"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/td12j" />
+
+                <RadioButton
+                    android:id="@+id/td12k"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/td12k" />
+
+                <RadioButton
+                    android:id="@+id/td12l"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/td12l" />
+
+                <RadioButton
+                    android:id="@+id/td1297"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text="@string/td1297" />
             </RadioGroup>
-
+        </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/colorPrimary"
-                android:text="@string/tbAge"
+                android:text="@string/td13"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
             <RadioGroup
-                android:id="@+id/tddob"
-                style="@style/radiogroup"
-                android:layout_marginTop="32dp"
-                android:background="@color/colorPrimary">
+                android:id="@+id/td13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/tddob01"
+                    android:id="@+id/td13a"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/tbdob01" />
+                    android:text="@string/yes" />
 
                 <RadioButton
-                    android:id="@+id/tdAge02"
+                    android:id="@+id/td13b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:layout_marginBottom="1dp"
-                    android:text="@string/tbAge02" />
+                    android:text="@string/no" />
 
             </RadioGroup>
 
             <LinearLayout
-                android:id="@+id/fldGrptd04"
+                android:id="@+id/fldGrpChild"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:visibility="gone"
-                tools:visibility="visible">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
-                    android:text="@string/td04"
+                    android:text="@string/td14"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
-                <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                    android:id="@+id/td04"
+                <EditText
+                    android:id="@+id/td14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:focusable="true"
-                    android:hint="@string/tbdob01"
-                    android:textColor="@android:color/black"
-                    app:dateFormat="dd-MM-yyyy"
-                    app:minDate="01/01/1917" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/fldGrptd05"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layoutDirection="rtl"
-                android:orientation="vertical"
-                android:visibility="gone"
-                tools:visibility="visible">
+                    android:layout_marginBottom="1dp"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                    android:hint="@string/td14"
+                    android:inputType="text" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
                     android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
-                    android:text="@string/td05"
+                    android:text="@string/td15"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
+                <RadioGroup
+                    android:id="@+id/td15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/td15a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/male" />
+
+                    <RadioButton
+                        android:id="@+id/td15b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/female" />
+                </RadioGroup>
+
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="16dp"
                     android:background="@color/colorPrimary"
-                    android:text="@string/year"
-                    android:textColor="@color/colorPrimaryDark" />
+                    android:text="@string/tbAge"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white" />
 
-                <EditText
-                    android:id="@+id/td05y"
+                <RadioGroup
+                    android:id="@+id/tbdob"
+                    style="@style/radiogroup"
+                    android:layout_marginTop="32dp"
+                    android:background="@color/colorPrimary">
+
+                    <RadioButton
+                        android:id="@+id/tbdob01"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/tbdob01" />
+
+                    <RadioButton
+                        android:id="@+id/tbdob02"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:text="@string/tbAge02" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/fldGrptd16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:digits="0123456789 "
-                    android:hint="@string/year"
-                    android:inputType="number"
-                    android:maxLength="2" />
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
 
-                <TextView
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/td16"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
+                        android:id="@+id/td16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:focusable="true"
+                        android:hint="@string/tbdob01"
+                        android:textColor="@android:color/black"
+                        app:dateFormat="dd-MM-yyyy"
+                        app:minDate="01/01/1917" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fldGrptd17"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/month"
-                    android:textColor="@color/colorPrimaryDark" />
+                    android:layoutDirection="rtl"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
 
-                <EditText
-                    android:id="@+id/td05m"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:digits="0123456789 "
-                    android:hint="@string/month"
-                    android:inputType="number"
-                    android:maxLength="2" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/td17"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/year"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <EditText
+                        android:id="@+id/td17y"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:digits="0123456789 "
+                        android:hint="@string/year"
+                        android:inputType="number"
+                        android:maxLength="2" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/month"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <EditText
+                        android:id="@+id/td17m"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:digits="0123456789 "
+                        android:hint="@string/month"
+                        android:inputType="number"
+                        android:maxLength="2" />
+
+                </LinearLayout>
 
             </LinearLayout>
-
 
             <!--    <LinearLayout
                     android:id="@+id/fldGrptb11"

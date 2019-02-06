@@ -414,19 +414,19 @@ public class HandwashingContract {
         this.gpsAcc = gpsAcc;
     }
 
-    public String getDeviceID() {
+    public String getd05viceID() {
         return deviceID;
     }
 
-    public void setDeviceID(String deviceID) {
+    public void setd05viceID(String deviceID) {
         this.deviceID = deviceID;
     }
 
-    public String getDevicetagID() {
+    public String getd05vicetagID() {
         return devicetagID;
     }
 
-    public void setDevicetagID(String devicetagID) {
+    public void setd05vicetagID(String devicetagID) {
         this.devicetagID = devicetagID;
     }
 
