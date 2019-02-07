@@ -96,6 +96,11 @@ public class MainApp extends Application {
     public static ArrayList<String> lstChild = new ArrayList<>();
 
     public static int ageRdo = 0;
+    public static List<FamilyMembersContract> members_f_m;
+    public static List<FamilyMembersContract> mwra;
+    public static List<FamilyMembersContract> childUnder2;
+    public static List<FamilyMembersContract> childUnder5;
+    public static int serial_no;
 
 
     //    Ali

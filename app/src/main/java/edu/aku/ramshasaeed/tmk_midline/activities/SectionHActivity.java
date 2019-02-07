@@ -355,10 +355,10 @@ public class SectionHActivity extends AppCompatActivity {
 
         MainApp.ims = new SectionJIMContract();
 
-        MainApp.ims.setd05vicetagID(sharedPref.getString("tagName", null));
+        MainApp.ims.setDevicetagID(sharedPref.getString("tagName", null));
         MainApp.ims.setFormDate(MainApp.dtToday);
         MainApp.ims.setUser(MainApp.userName);
-        MainApp.ims.setd05viceId(Settings.Secure.getString(getApplicationContext().getContentResolver(),
+        MainApp.ims.setDeviceId(Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID));*/
 
         JSONObject sJ = new JSONObject();

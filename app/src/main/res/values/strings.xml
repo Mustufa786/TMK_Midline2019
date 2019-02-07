@@ -27,6 +27,7 @@
     <string name="other"> ٻيو ڪو وضاحت ڪريو. </string>
     <string name="name">ٻار جو نالو</string>
     <string name="Respondent">respondent</string>
+    <string name="tbmid"> ماں کا نام</string>
 
     <string name="taheading">SECTION A: HH Identification</string>
     <string name="tcheading">SECTION C: Introduction And Consent</string>

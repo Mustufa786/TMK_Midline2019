@@ -1310,7 +1310,7 @@ public class SectionGActivity extends AppCompatActivity {
                 Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
                 MainApp.ims.setUID(
-                        (MainApp.fc.getd05viceID() + MainApp.ims.get_ID()));
+                        (MainApp.fc.getDeviceId() + MainApp.ims.get_ID()));
                 db.updateChildID();
 
                 return true;
@@ -1330,9 +1330,9 @@ public class SectionGActivity extends AppCompatActivity {
 
             MainApp.ims.set_UUID(MainApp.fc.getUID());
             MainApp.ims.setFormDate(MainApp.fc.getFormDate());
-            MainApp.ims.setd05viceId(MainApp.fc.getd05viceID());
+            MainApp.ims.setDeviceId(MainApp.fc.getDeviceId());
             MainApp.ims.setUser(MainApp.fc.getUser());
-            MainApp.ims.setd05vicetagID(sharedPref.getString("tagName", null));
+            MainApp.ims.setDevicetagID(sharedPref.getString("tagName", null));
 
             JSONObject sI = new JSONObject();
 

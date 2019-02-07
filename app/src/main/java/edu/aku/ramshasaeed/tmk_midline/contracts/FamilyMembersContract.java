@@ -57,8 +57,10 @@ public class FamilyMembersContract {
     private String remarks = "";
     private String istatus = "";
     private String serialNo = "";
-
     private String devicetagID = "";
+    private String motherId = "";
+
+
 
 
     public FamilyMembersContract() {
@@ -78,18 +80,6 @@ public class FamilyMembersContract {
         this.ageLess2 = fm.ageLess2;
         this.serialNo = fm.serialNo;
         this.dob = fm.dob;
-    }
-
-    public String getDeviceId() {
-        return deviceId;
-    }
-
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    public String getDevicetagID() {
-        return devicetagID;
     }
 
     public void setDevicetagID(String devicetagID) {
@@ -114,6 +104,14 @@ public class FamilyMembersContract {
 
     public void setREF_ID(String REF_ID) {
         this.REF_ID = REF_ID;
+    }
+
+    public String getMotherId() {
+        return motherId;
+    }
+
+    public void setMotherId(String motherId) {
+        this.motherId = motherId;
     }
 
     public String get_UID() {
@@ -148,11 +146,11 @@ public class FamilyMembersContract {
         this.formDate = formDate;
     }
 
-    public String getd05viceId() {
+    public String getDeviceId() {
         return deviceId;
     }
 
-    public void setd05viceId(String deviceId) {
+    public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
     }
 
@@ -195,206 +193,6 @@ public class FamilyMembersContract {
     public void setDob(String dob) {
         this.dob = dob;
     }
-/*
-    public String getDss_id_hh() {
-        return dss_id_hh;
-    }
-
-    public void setDss_id_hh(String dss_id_hh) {
-        this.dss_id_hh = dss_id_hh;
-    }
-
-    public String getDss_id_f() {
-        return dss_id_f;
-    }
-
-    public void setDss_id_f(String dss_id_f) {
-        this.dss_id_f = dss_id_f;
-    }
-
-    public String getDss_id_m() {
-        return dss_id_m;
-    }
-
-    public void setDss_id_m(String dss_id_m) {
-        this.dss_id_m = dss_id_m;
-    }
-
-    public String getDss_id_h() {
-        return dss_id_h;
-    }
-
-    public void setDss_id_h(String dss_id_h) {
-        this.dss_id_h = dss_id_h;
-    }
-
-    public String getDss_id_member() {
-        return dss_id_member;
-    }
-
-    public void setDss_id_member(String dss_id_member) {
-        this.dss_id_member = dss_id_member;
-    }
-
-    public String getPrevs_dss_id_member() {
-        return prevs_dss_id_member;
-    }
-
-    public void setPrevs_dss_id_member(String prevs_dss_id_member) {
-        this.prevs_dss_id_member = prevs_dss_id_member;
-    }
-
-    public String getSite_code() {
-        return site_code;
-    }
-
-    public void setSite_code(String site_code) {
-        this.site_code = site_code;
-    }
-
-    public String getAgeY() {
-        return ageY;
-    }
-
-    public void setAgeY(String ageY) {
-        this.ageY = ageY;
-    }
-
-    public String getAgeM() {
-        return ageM;
-    }
-
-    public void setAgeM(String ageM) {
-        this.ageM = ageM;
-    }
-
-    public String getAgeD() {
-        return ageD;
-    }
-
-    public void setAgeD(String ageD) {
-        this.ageD = ageD;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getIs_head() {
-        return is_head;
-    }
-
-    public void setIs_head(String is_head) {
-        this.is_head = is_head;
-    }
-
-    public String getRelation_hh() {
-        return relation_hh;
-    }
-
-    public void setRelation_hh(String relation_hh) {
-        this.relation_hh = relation_hh;
-    }
-
-    public String getCurrent_status() {
-        return current_status;
-    }
-
-    public void setCurrent_status(String current_status) {
-        this.current_status = current_status;
-    }
-
-    public String getCurrent_date() {
-        return current_date;
-    }
-
-    public void setCurrent_date(String current_date) {
-        this.current_date = current_date;
-    }
-
-    public String getDod() {
-        return dod;
-    }
-
-    public void setDod(String dod) {
-        this.dod = dod;
-    }
-
-    public String getM_status() {
-        return m_status;
-    }
-
-    public void setM_status(String m_status) {
-        this.m_status = m_status;
-    }
-
-    public String getEducation() {
-        return education;
-    }
-
-    public void setEducation(String education) {
-        this.education = education;
-    }
-
-    public String getOccupation() {
-        return occupation;
-    }
-
-    public void setOccupation(String occupation) {
-        this.occupation = occupation;
-    }
-
-    public String getMember_type() {
-        return member_type;
-    }
-
-    public void setMember_type(String member_type) {
-        this.member_type = member_type;
-    }
-
-    public String getUpdate_flag() {
-        return update_flag;
-    }
-
-    public void setUpdate_flag(String update_flag) {
-        this.update_flag = update_flag;
-    }
-
-    public String getCurrent_statusX() {
-        return current_statusX;
-    }
-
-    public void setCurrent_statusX(String current_statusX) {
-        this.current_statusX = current_statusX;
-    }
-
-    public String getEducationX() {
-        return educationX;
-    }
-
-    public void setEducationX(String educationX) {
-        this.educationX = educationX;
-    }
-
-    public String getOccupationX() {
-        return occupationX;
-    }
-
-    public void setOccupationX(String occupationX) {
-        this.occupationX = occupationX;
-    }
-
-    public String getRsvp() {
-        return rsvp;
-    }
-
-    public void setRsvp(String rsvp) {
-        this.rsvp = rsvp;
-    }*/
 
     public String getsB() {
         return sB;
@@ -444,13 +242,11 @@ public class FamilyMembersContract {
         this.istatus = istatus;
     }
 
-    public String getd05vicetagID() {
+    public String getDevicetagID() {
         return devicetagID;
     }
 
-    public void setd05vicetagID(String devicetagID) {
-        this.devicetagID = devicetagID;
-    }
+
 
     public FamilyMembersContract Sync(JSONObject jsonObject) throws JSONException {
 
@@ -495,6 +291,7 @@ public class FamilyMembersContract {
         this.syncedDate = jsonObject.getString(familyMembers.COLUMN_SYNCED_DATE);
 //        this.remarks = jsonObject.getString(familyMembers.COLUMN_REMARKS);
         this.istatus = jsonObject.getString(familyMembers.COLUMN_ISTATUS);
+        this.devicetagID = jsonObject.getString(familyMembers.COLUMN_DEVICETAGID);
         this.devicetagID = jsonObject.getString(familyMembers.COLUMN_DEVICETAGID);
 
         return this;
@@ -542,6 +339,7 @@ public class FamilyMembersContract {
 //        this.serialNo = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_SERIAL_NO));
 //        this.remarks = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_REMARKS));
         this.istatus = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_ISTATUS));
+        this.devicetagID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DEVICETAGID));
         this.devicetagID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DEVICETAGID));
 
         return this;

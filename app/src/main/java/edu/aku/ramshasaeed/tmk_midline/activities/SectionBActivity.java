@@ -10,9 +10,11 @@ import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -27,14 +29,19 @@ import org.json.JSONObject;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.contracts.FamilyMembersContract;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionBBinding;
+import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
 public class SectionBActivity extends AppCompatActivity {
@@ -178,6 +185,10 @@ public class SectionBActivity extends AppCompatActivity {
     TextView txtRsn;
 */
 
+
+    List<String> mothersList, childu2List, childu5List;
+    List<String> mothersSerials, childu2Serials, childu5Serials;
+    Map<String, String> mothersMap, childu2Map, childu5Map;
     DatabaseHelper db;
     long ageInyears = 0;
 
@@ -196,6 +207,67 @@ public class SectionBActivity extends AppCompatActivity {
 
         return ageInYears;
 
+    }
+
+    TextWatcher countWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+            if (!TextUtils.isEmpty(bi.td01.getText().toString()) && !TextUtils.isEmpty(bi.td02.getText().toString()) && !TextUtils.isEmpty(bi.td03.getText().toString()) && !TextUtils.isEmpty(bi.td04.getText().toString()) && !TextUtils.isEmpty(bi.td05.getText().toString()) && !TextUtils.isEmpty(bi.td06.getText().toString()) && !TextUtils.isEmpty(bi.td07.getText().toString()) && !TextUtils.isEmpty(bi.td08.getText().toString())) {
+                int sum01 = Integer.parseInt(bi.td02.getText().toString()) + Integer.parseInt(bi.td03.getText().toString());
+                int sum02 = Integer.parseInt(bi.td04.getText().toString()) + Integer.parseInt(bi.td05.getText().toString()) + Integer.parseInt(bi.td06.getText().toString()) + Integer.parseInt(bi.td07.getText().toString()) + Integer.parseInt(bi.td08.getText().toString());
+                if (Integer.parseInt(bi.td01.getText().toString()) < sum01) {
+                    bi.td01.setError("Total member must be equal or greater than number of male and female");
+                    bi.td02.setError("Total member must be equal or greater than number of male and female");
+                    bi.td03.setError("Total member must be equal or greater than number of male and female");
+                    Toast.makeText(SectionBActivity.this, "Total member must be equal or greater than number of male and female", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    bi.td01.setError(null);
+                    bi.td02.setError(null);
+                    bi.td03.setError(null);
+                }
+
+                if (Integer.parseInt(bi.td01.getText().toString()) < sum02) {
+                    bi.td01.setError("Total member must be equal or greater than no of children");
+                    bi.td04.setError("Total member must be equal or greater than no of children");
+                    bi.td05.setError("Total member must be equal or greater than no of children");
+                    bi.td06.setError("Total member must be equal or greater than no of children");
+                    bi.td07.setError("Total member must be equal or greater than no of children");
+                    bi.td08.setError("Total member must be equal or greater than no of children");
+                    Toast.makeText(SectionBActivity.this, "Total member must be equal or greater than no of children", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    bi.td01.setError(null);
+                    bi.td04.setError(null);
+                    bi.td05.setError(null);
+                    bi.td06.setError(null);
+                    bi.td07.setError(null);
+                    bi.td08.setError(null);
+                }
+            }
+
+        }
+    };
+
+    public void applyCountListners() {
+        bi.td01.addTextChangedListener(countWatcher);
+        bi.td02.addTextChangedListener(countWatcher);
+        bi.td03.addTextChangedListener(countWatcher);
+        bi.td04.addTextChangedListener(countWatcher);
+        bi.td05.addTextChangedListener(countWatcher);
+        bi.td06.addTextChangedListener(countWatcher);
+        bi.td07.addTextChangedListener(countWatcher);
+        bi.td08.addTextChangedListener(countWatcher);
     }
 
     public static Calendar getCalendarDate(String value) {
@@ -218,7 +290,7 @@ public class SectionBActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_b);
         bi.setCallback(this);
         this.setTitle(getResources().getString(R.string.td08eading));
-
+        applyCountListners();
 //        ButterKnife.bind(this);
 
 //        Counter for serial no
@@ -236,9 +308,40 @@ public class SectionBActivity extends AppCompatActivity {
 
         if (MainApp.TotalMembersCount == 0) {
             bi.btnContNextSec.setVisibility(View.GONE);
+            bi.fldGrpMemCount.setVisibility(View.VISIBLE);
+
         } else {
             bi.btnContNextSec.setVisibility(View.VISIBLE);
+            bi.fldGrpMemCount.setVisibility(View.GONE);
         }
+        mothersList = new ArrayList<>();
+        mothersSerials = new ArrayList<>();
+        mothersMap = new HashMap<>();
+
+        mothersList.add("....");
+        mothersList.add("N/A");
+        mothersSerials.add("0");
+        mothersMap.put("N/A_0", "00");
+
+
+        bi.tbmname.setAdapter(new ArrayAdapter<>(this, R.layout.item_style, mothersList));
+//        Setting Dropdowns
+        mothersList = new ArrayList<>();
+        mothersSerials = new ArrayList<>();
+        mothersMap = new HashMap<>();
+
+        mothersList.add("....");
+        mothersList.add("N/A");
+        mothersSerials.add("0");
+        mothersMap.put("N/A_0", "00");
+
+
+        for (FamilyMembersContract mem : MainApp.familyMembersList) {
+            mothersList.add(mem.getName());
+            mothersSerials.add(mem.getSerialNo());
+            mothersMap.put(mem.getName() + "_" + mem.getSerialNo(), mem.getSerialNo());
+        }
+
 
 //        set head values
       /*  bi.totalMem.setText(String.valueOf(MainApp.TotalMembersCount));
@@ -313,15 +416,19 @@ public class SectionBActivity extends AppCompatActivity {
                 ageInyears = ageInYears(bi.tb07.getText().toString());
                 bi.txtRsn.setVisibility(View.VISIBLE);
                 if (ageInyears > 0 && ageInyears < 2) {
-                    bi.fldGrptd13.setVisibility(View.GONE);
+//                    bi.fldGrptd13.setVisibility(View.GONE);
                     bi.fldGrpGender.setVisibility(View.VISIBLE);
+                    bi.fldGrpEdu.setVisibility(View.GONE);
+                    bi.fldGrpMName.setVisibility(View.VISIBLE);
                     bi.txtRsn.setText(ageInyears + " year");
                 } else {
                     bi.txtRsn.setText(ageInyears + " years");
                 }
                 if (ageInyears < 5) {
-                    bi.fldGrptd13.setVisibility(View.GONE);
+//                    bi.fldGrptd13.setVisibility(View.GONE);
                     bi.fldGrpGender.setVisibility(View.VISIBLE);
+                    bi.fldGrpMName.setVisibility(View.VISIBLE);
+                    bi.fldGrpEdu.setVisibility(View.GONE);
                     bi.tb09.setText("NA");
                     bi.tb09.setEnabled(false);
                     bi.fldGrpOcc.setVisibility(View.GONE);
@@ -329,15 +436,21 @@ public class SectionBActivity extends AppCompatActivity {
                     bi.tb10.clearCheck();
 //                    bi.tb11.clearCheck();
                 } else if (ageInyears > 5 && ageInyears < 14) {
-                    bi.fldGrptd13.setVisibility(View.VISIBLE);
+                    bi.fldGrpMName.setVisibility(View.GONE);
+
+//                    bi.fldGrptd13.setVisibility(View.VISIBLE);
                     bi.fldGrpGender.setVisibility(View.GONE);
                     bi.fldGrpOcc.setVisibility(View.VISIBLE);
+                    bi.fldGrpEdu.setVisibility(View.VISIBLE);
                    /* bi.fldGrpMarital.setVisibility(View.GONE);
                     bi.tb11.clearCheck();*/
 
                 } else if (ageInyears > 14) {
-                    bi.fldGrptd13.setVisibility(View.VISIBLE);
+//                    bi.fldGrptd13.setVisibility(View.VISIBLE);
                     bi.fldGrpGender.setVisibility(View.GONE);
+                    bi.fldGrpEdu.setVisibility(View.VISIBLE);
+                    bi.fldGrpMName.setVisibility(View.GONE);
+
 
 //                    fldGrpMarital.setVisibility(View.VISIBLE);
                     bi.fldGrpOcc.setVisibility(View.VISIBLE);
@@ -398,7 +511,10 @@ public class SectionBActivity extends AppCompatActivity {
                     bi.txtRsn.setVisibility(View.VISIBLE);
                     //if (checkChildLessThenFive(2)) {
                     if (ageInyears > 0 && ageInyears < 2) {
-                        bi.fldGrptd13.setVisibility(View.GONE);
+//                        bi.fldGrptd13.setVisibility(View.GONE);
+                        bi.fldGrpEdu.setVisibility(View.GONE);
+                        bi.fldGrpMName.setVisibility(View.VISIBLE);
+
                         bi.txtRsn.setText(ageInyears + " year");
                         bi.fldGrpGender.setVisibility(View.VISIBLE);
                     } else {
@@ -406,7 +522,9 @@ public class SectionBActivity extends AppCompatActivity {
 
                     }
                     if (ageInyears < 5) {
-                        bi.fldGrptd13.setVisibility(View.GONE);
+//                        bi.fldGrptd13.setVisibility(View.GONE);
+                        bi.fldGrpEdu.setVisibility(View.GONE);
+                        bi.fldGrpMName.setVisibility(View.VISIBLE);
 
                         bi.tb09.setText("NA");
                         bi.tb09.setEnabled(false);
@@ -418,7 +536,9 @@ public class SectionBActivity extends AppCompatActivity {
 //                        bi.tb11.clearCheck();
 
                     } else if (ageInyears > 5 && ageInyears < 14) {
-                        bi.fldGrptd13.setVisibility(View.VISIBLE);
+//                        bi.fldGrptd13.setVisibility(View.VISIBLE);
+                        bi.fldGrpEdu.setVisibility(View.VISIBLE);
+                        bi.fldGrpMName.setVisibility(View.GONE);
 
                         bi.fldGrpGender.setVisibility(View.GONE);
                         bi.fldGrpOcc.setVisibility(View.VISIBLE);
@@ -427,8 +547,10 @@ public class SectionBActivity extends AppCompatActivity {
                         bi.tb09.setEnabled(true);
 //                        bi.tb11.clearCheck();
                     } else if (ageInyears > 14) {
-                        bi.fldGrptd13.setVisibility(View.VISIBLE);
+//                        bi.fldGrptd13.setVisibility(View.VISIBLE);
                         bi.fldGrpGender.setVisibility(View.GONE);
+                        bi.fldGrpEdu.setVisibility(View.VISIBLE);
+                        bi.fldGrpMName.setVisibility(View.GONE);
 
                         bi.fldGrpOcc.setVisibility(View.VISIBLE);
 //                        fldGrpMarital.setVisibility(View.VISIBLE);
@@ -530,8 +652,8 @@ public class SectionBActivity extends AppCompatActivity {
 
     }
 
-//    @OnClick(R.id.btn_End)
-   public void onBtnEnd() {
+    //    @OnClick(R.id.btn_End)
+    public void onBtnEnd() {
         //TODO implement
         MainApp.endActivity(this, this);
     }
@@ -554,7 +676,7 @@ public class SectionBActivity extends AppCompatActivity {
 
     }
 
-//    @OnClick(R.id.btn_ContNextSec)
+    //    @OnClick(R.id.btn_ContNextSec)
     public void onBtnContinueClick() {
         //TODO implement
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
@@ -599,7 +721,7 @@ public class SectionBActivity extends AppCompatActivity {
 
     public void onBtnAddMore() {
         //TODO implement
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -610,11 +732,12 @@ public class SectionBActivity extends AppCompatActivity {
                 Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
+                startActivity(new Intent(this, SectionBActivity.class));
+
+            }else {
+                Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
 
             }
-            startActivity(new Intent(this, SectionBActivity.class));
-        } else {
-            Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -623,6 +746,7 @@ public class SectionBActivity extends AppCompatActivity {
 
         // children
         if (ageInyears < 5) {
+
             // u2
             if (ageInyears < 2) {
                 MainApp.totalImsCount++;
@@ -641,6 +765,7 @@ public class SectionBActivity extends AppCompatActivity {
         }
         // TOTAL MEMBERS
         MainApp.TotalMembersCount++;
+        MainApp.serial_no++;
 
         JSONObject count = new JSONObject();
         count.put("tb13", MainApp.TotalMembersCount);
@@ -653,13 +778,12 @@ public class SectionBActivity extends AppCompatActivity {
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
         MainApp.fmc = new FamilyMembersContract();
-
-
         MainApp.fmc.setFormDate(MainApp.fc.getFormDate());
         MainApp.fmc.setDeviceId(MainApp.fc.getDeviceID());
         MainApp.fmc.setUser(MainApp.fc.getUser());
         MainApp.fmc.set_UUID(MainApp.fc.getUID());
         MainApp.fmc.setDevicetagID(sharedPref.getString("tagName", null));
+        MainApp.fmc.setSerialNo(String.valueOf(MainApp.serial_no));
 
         JSONObject sB = new JSONObject();
 
@@ -667,8 +791,21 @@ public class SectionBActivity extends AppCompatActivity {
         sB.put("ta05h", MainApp.hhno);
         sB.put("ta05u", MainApp.billno);
 
+        sB.put("td01", bi.td01.getText().toString());
+        sB.put("td02", bi.td02.getText().toString());
+        sB.put("td03", bi.td03.getText().toString());
+        sB.put("td04", bi.td04.getText().toString());
+        sB.put("td05", bi.td05.getText().toString());
+        sB.put("td06", bi.td06.getText().toString());
+        sB.put("td07", bi.td07.getText().toString());
+        sB.put("td08", bi.td08.getText().toString());
+
+
         sB.put("tb01", MainApp.counter);
         sB.put("tb02", bi.tb02.getText().toString());
+        if (ageInyears < 6) {
+            MainApp.fmc.setMotherId(mothersMap.get(bi.tbmname.getSelectedItem().toString() + "_" + mothersSerials.get(mothersList.indexOf(bi.tbmname.getSelectedItem().toString()) - 1)));
+        }
      /*   sB.put("tb03", bi.tb03a.isChecked() ? "1" : bi.tb03b.isChecked() ? "2" : bi.tb03c.isChecked() ? "3"
                 : bi.tb03d.isChecked() ? "4" : bi.tb03e.isChecked() ? "5" : bi.tb03f.isChecked() ? "6"
                 : bi.tb03g.isChecked() ? "7" : bi.tb03h.isChecked() ? "8" : bi.tb03i.isChecked() ? "9" : bi.tb03j.isChecked() ? "10"
@@ -697,7 +834,7 @@ public class SectionBActivity extends AppCompatActivity {
         sB.put("tb09", bi.tb09.getText().toString().equals("NA") ? "999" : bi.tb09.getText().toString());
         sB.put("tb10", bi.tb10a.isChecked() ? "1" : bi.tb10b.isChecked() ? "2" : bi.tb10c.isChecked() ? "3"
                 : bi.tb10d.isChecked() ? "4" : bi.tb10e.isChecked() ? "5" : bi.tb10f.isChecked() ? "6"
-                : bi.tb10g.isChecked() ? "7" : bi.tb10h.isChecked() ? "8" : bi.tb10ia.isChecked() ? "9a"  : bi.tb10j.isChecked() ? "10"
+                : bi.tb10g.isChecked() ? "7" : bi.tb10h.isChecked() ? "8" : bi.tb10ia.isChecked() ? "9a" : bi.tb10j.isChecked() ? "10"
                 : bi.tb10k.isChecked() ? "11" : bi.tb10l.isChecked() ? "12" : bi.tb10999.isChecked() ? "999"
                 : "0");
      /*   sB.put("tb11", bi.tb11a.isChecked() ? "1" : bi.tb11b.isChecked() ? "2"
@@ -712,6 +849,17 @@ public class SectionBActivity extends AppCompatActivity {
 */
         MainApp.ageRdo = bi.tbdob.indexOfChild(findViewById(bi.tbdob.getCheckedRadioButtonId())) + 1;
         MainApp.fmc.setsB(String.valueOf(sB));
+        if (ageInyears < 5) {
+            // u2
+            if (ageInyears < 2) {
+                MainApp.childUnder2.add(MainApp.fmc);
+            }
+            // u5
+            MainApp.childUnder5.add(MainApp.fmc);
+        }
+        if(ageInyears > 5){
+            MainApp.members_f_m.add(MainApp.fmc);
+        }
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
@@ -744,7 +892,57 @@ public class SectionBActivity extends AppCompatActivity {
     }
 
     public boolean formValidation() {
-        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
+        if (MainApp.TotalMembersCount == 0) {
+
+            if (!validatorClass.EmptyTextBox(this, bi.td01, getString(R.string.td01))) {
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, bi.td02, getString(R.string.td02))) {
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, bi.td03, getString(R.string.td03))) {
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, bi.td04, getString(R.string.td04))) {
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, bi.td05, getString(R.string.td05))) {
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, bi.td06, getString(R.string.td06))) {
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, bi.td07, getString(R.string.td07))) {
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, bi.td08, getString(R.string.td08))) {
+                return false;
+            }
+            if (!TextUtils.isEmpty(bi.td01.getText().toString()) && !TextUtils.isEmpty(bi.td02.getText().toString()) && !TextUtils.isEmpty(bi.td03.getText().toString()) && !TextUtils.isEmpty(bi.td04.getText().toString()) && !TextUtils.isEmpty(bi.td05.getText().toString()) && !TextUtils.isEmpty(bi.td06.getText().toString()) && !TextUtils.isEmpty(bi.td07.getText().toString()) && !TextUtils.isEmpty(bi.td08.getText().toString())) {
+                int sum01 = Integer.parseInt(bi.td02.getText().toString()) + Integer.parseInt(bi.td03.getText().toString());
+                int sum02 = Integer.parseInt(bi.td04.getText().toString()) + Integer.parseInt(bi.td05.getText().toString()) + Integer.parseInt(bi.td06.getText().toString()) + Integer.parseInt(bi.td07.getText().toString()) + Integer.parseInt(bi.td08.getText().toString());
+                if (Integer.parseInt(bi.td01.getText().toString()) < sum01) {
+                    bi.td01.setError("Total member must be equal or greater than number of male and female");
+                    bi.td02.setError("Total member must be equal or greater than number of male and female");
+                    bi.td03.setError("Total member must be equal or greater than number of male and female");
+                    Toast.makeText(SectionBActivity.this, "Total member must be equal or greater than number of male and female", Toast.LENGTH_SHORT).show();
+
+                } else {
+
+                }
+
+                if (Integer.parseInt(bi.td01.getText().toString()) < sum02) {
+                    bi.td01.setError("Total member must be equal or greater than no of children");
+                    bi.td02.setError("Total member must be equal or greater than no of children");
+                    bi.td03.setError("Total member must be equal or greater than no of children");
+                    Toast.makeText(SectionBActivity.this, "Total member must be equal or greater than no of children", Toast.LENGTH_SHORT).show();
+
+                } else {
+
+                }
+            }
+        }
 
 //        01
         if (bi.tb02.getText().toString().isEmpty()) {
@@ -924,8 +1122,6 @@ public class SectionBActivity extends AppCompatActivity {
 
         if (ageInyears > 5) {
 
-
-
 //        10
             if (bi.tb10.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tb10), Toast.LENGTH_SHORT).show();
@@ -940,21 +1136,7 @@ public class SectionBActivity extends AppCompatActivity {
             }
         }
 
-        if (ageInyears > 14) {
-//        11
-          /*  if (bi.tb11.getCheckedRadioButtonId() == -1) {
-                Toast.makeText(this, "ERROR(empty): " + getString(R.string..tb11), Toast.LENGTH_SHORT).show();
-                bi.tb11e.setError("This data is Required!");    // Set Error on last radio button
-                bi.tb11a.setFocusableInTouchMode(true);
-                bi.tb11a.setFocusable(true);
-                bi.tb11a.requestFocus();
-                Log.i(TAG, "bi.tb11: This data is Required!");
-                return false;
-            } else {
-                bi.tb11e.setError(null);
-            }*/
-        }
-        if(ageInyears <= 5){
+        if (ageInyears <= 5) {
             if (bi.tb04.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tb04), Toast.LENGTH_SHORT).show();
                 bi.tb04b.setError("This data is Required!");    // Set Error on last radio button
@@ -965,6 +1147,10 @@ public class SectionBActivity extends AppCompatActivity {
                 return false;
             } else {
                 bi.tb04b.setError(null);
+            }
+
+            if (!validatorClass.EmptySpinner(this, bi.tbmname, getString(R.string.tb09))) {
+                return false;
             }
         }
 
@@ -983,7 +1169,12 @@ public class SectionBActivity extends AppCompatActivity {
             }
         }*/
 
-
+        if (MainApp.TotalMembersCount == 0) {
+            if(ageInyears < 5){
+                Toast.makeText(this, "Please Enter a married women first!!!",Toast.LENGTH_LONG);
+                return false;
+            }
+        }
         return true;
     }
 

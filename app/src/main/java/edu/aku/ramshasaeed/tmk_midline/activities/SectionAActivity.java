@@ -98,8 +98,11 @@ public class SectionAActivity extends Activity {
         bi.setCallback(this);
         validatorClass.setScrollViewFocus(bi.svseca);
         db = new DatabaseHelper(this);
+        MainApp.members_f_m = new ArrayList<>();
 
         MainApp.familyMembersList = new ArrayList<>();
+        MainApp.childUnder2 = new ArrayList<>();
+        MainApp.childUnder5 = new ArrayList<>();
 
         lablesSubVillages = new ArrayList<>();
         SubVillagesMap = new HashMap<>();
@@ -274,10 +277,10 @@ public class SectionAActivity extends Activity {
 
         MainApp.fc = new FormsContract();
 
-        MainApp.fc.setd05vicetagID(sharedPref.getString("tagName", null));
+        MainApp.fc.setDevicetagID(sharedPref.getString("tagName", null));
         MainApp.fc.setFormDate(dtToday);
         MainApp.fc.setUser(MainApp.userName);
-        MainApp.fc.setd05viceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
+        MainApp.fc.setDeviceId(Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID));
 
         JSONObject sa = new JSONObject();
@@ -325,7 +328,7 @@ public class SectionAActivity extends Activity {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
             MainApp.fc.setUID(
-                    (MainApp.fc.getd05viceID() + MainApp.fc.get_ID()));
+                    (MainApp.fc.getDeviceId() + MainApp.fc.get_ID()));
             db.updateFormID();
 
             return true;

@@ -287,18 +287,6 @@ public class FormsContract {
         return deviceID;
     }
 
-    public void setDeviceID(String deviceID) {
-        this.deviceID = deviceID;
-    }
-
-    public String getDevicetagID() {
-        return devicetagID;
-    }
-
-    public void setDevicetagID(String devicetagID) {
-        this.devicetagID = devicetagID;
-    }
-
     public String getsA() {
         return sA;
     }
@@ -429,19 +417,19 @@ public class FormsContract {
         this.gpsAcc = gpsAcc;
     }
 
-    public String getd05viceID() {
+    public String getDeviceId() {
         return deviceID;
     }
 
-    public void setd05viceID(String deviceID) {
+    public void setDeviceId(String deviceID) {
         this.deviceID = deviceID;
     }
 
-    public String getd05vicetagID() {
+    public String getDevicetagID() {
         return devicetagID;
     }
 
-    public void setd05vicetagID(String devicetagID) {
+    public void setDevicetagID(String devicetagID) {
         this.devicetagID = devicetagID;
     }
 

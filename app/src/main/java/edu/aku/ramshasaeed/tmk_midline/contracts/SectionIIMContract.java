@@ -65,11 +65,11 @@ public class SectionIIMContract
         this._UUID = _UUID;
     }
 
-    public String getd05viceId() {
+    public String getDeviceId() {
         return deviceID;
     }
 
-    public void setd05viceId(String deviceId) {
+    public void setDeviceId(String deviceId) {
         this.deviceID = deviceId;
     }
 
@@ -137,11 +137,11 @@ public class SectionIIMContract
         this.istatus = istatus;
     }
 
-    public String getd05vicetagID() {
+    public String getDevicetagID() {
         return devicetagID;
     }
 
-    public void setd05vicetagID(String devicetagID) {
+    public void setDevicetagID(String devicetagID) {
         this.devicetagID = devicetagID;
     }
 
