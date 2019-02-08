@@ -12,7 +12,7 @@ import org.json.JSONObject;
 
 public class DeceasedChildContract {
 
-    private final String projectName = "UEN TMK";
+    private final String projectName = "UEN-TMK-MIDLINE";
     private String _ID = "";
     private String _UID = "";
     private String _UUID = "";

@@ -46,7 +46,6 @@
                 android:layout_marginTop="70dp"
                 android:layoutDirection="rtl"
                 android:orientation="vertical">
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

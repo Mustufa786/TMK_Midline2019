@@ -695,17 +695,17 @@ public class SectionGActivity extends AppCompatActivity {
             MainApp.childsMap.put("....", null);
             MainApp.lstChild.add("....");
 
-           /* for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
-                if (MainApp.familyMembersList.get(i).getAgeLess5().equals("3")) {
-                    MainApp.childsMap.put(MainApp.familyMembersList.get(i).getName(), new FamilyMembersContract(MainApp.familyMembersList.get(i)));
-                    MainApp.lstChild.add(MainApp.familyMembersList.get(i).getName());
+            for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
+                if (Integer.parseInt(MainApp.familyMembersList.get(i).getage()) < 3) {
+                    MainApp.childsMap.put(MainApp.familyMembersList.get(i).getname(), new FamilyMembersContract(MainApp.familyMembersList.get(i)));
+                    MainApp.lstChild.add(MainApp.familyMembersList.get(i).getname());
 
                 }
-            }*/
+            }
 
 
         }
-//        bi.tiname.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MainApp.lstChild));
+        bi.tiname.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, MainApp.lstChild));
 
         bi.tiname.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -1340,9 +1340,9 @@ public class SectionGActivity extends AppCompatActivity {
             sI.put("ta05h", MainApp.hhno);
             sI.put("ta05u", MainApp.billno);
 
-         /*   sI.put("tiImsSerial", MainApp.childsMap.get(bi.tiname.getSelectedItem().toString()).getSerialNo());
+            sI.put("tiImsSerial", MainApp.childsMap.get(bi.tiname.getSelectedItem().toString()).getserialNo());
 
-            sI.put("tiname", bi.tiname.getSelectedItem().toString());*/
+            sI.put("tiname", bi.tiname.getSelectedItem().toString());
 
             sI.put("ti01", bi.ti01a.isChecked() ? "1" : bi.ti01b.isChecked() ? "2" : bi.ti0198.isChecked() ? "98" : "0");
             sI.put("ti02a", bi.ti02a.isChecked() ? "1" : "0");

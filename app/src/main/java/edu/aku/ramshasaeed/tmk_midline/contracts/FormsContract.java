@@ -6,13 +6,9 @@ import android.provider.BaseColumns;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Created by hassan.naqvi on 11/30/2016.
- */
-
 public class FormsContract {
 
-    private final String projectName = "UEN TMK";
+    private final String projectName = "UEN-TMK-MIDLINE";
     //private final String surveyType = "SN";
     private String _ID = "";
     private String _UID = "";

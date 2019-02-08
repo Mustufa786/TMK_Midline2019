@@ -51,6 +51,7 @@ public class SectionAActivity extends Activity {
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
     Collection<BLRandomContract> selected;
 
+
     DatabaseHelper db;
     String[] ucs = new String[]{"....",
             "Allah Yar Turk",
@@ -103,6 +104,7 @@ public class SectionAActivity extends Activity {
         MainApp.familyMembersList = new ArrayList<>();
         MainApp.childUnder2 = new ArrayList<>();
         MainApp.childUnder5 = new ArrayList<>();
+        MainApp.serial_no = 0;
 
         lablesSubVillages = new ArrayList<>();
         SubVillagesMap = new HashMap<>();
@@ -284,10 +286,9 @@ public class SectionAActivity extends Activity {
                 Settings.Secure.ANDROID_ID));
 
         JSONObject sa = new JSONObject();
-/*
-        MainApp.cluster = ta01.getText().toString();
-        MainApp.hhno = ta05h.getText().toString();
-        MainApp.billno = ta05u.getText().toString();
+        MainApp.cluster = bi.ta01.getText().toString();
+        MainApp.hhno = bi.ta05h.getText().toString();
+        MainApp.billno = bi.ta05u.getText().toString();
 
         sa.put("rndid", MainApp.selectedHead.get_ID());
         sa.put("luid", MainApp.selectedHead.getLUID());
@@ -295,23 +296,22 @@ public class SectionAActivity extends Activity {
         sa.put("hh03", MainApp.selectedHead.getStructure());
         sa.put("hh07", MainApp.selectedHead.getExtension());
         sa.put("hhhead", MainApp.selectedHead.getHhhead());
-        sa.put("hhheadpresent", checkHHHeadpresent.isChecked() ? "1" : "2");
-        sa.put("hhheadpresentnew", newHHheadname.getText().toString());
+        sa.put("hhheadpresent", bi.checkHHHeadpresent.isChecked() ? "1" : "2");
+        sa.put("hhheadpresentnew", bi.newHHheadname.getText().toString());
 
-        sa.put("ta01", ta01.getText().toString());
-        sa.put("ta02", ta02a.isChecked() ? "1" : ta02b.isChecked() ? "2" : ta02c.isChecked() ? "3" : "0");
+        sa.put("ta01", bi.ta01.getText().toString());
+        sa.put("ta02", bi.ta02a.isChecked() ? "1" : bi.ta02b.isChecked() ? "2" : bi.ta02c.isChecked() ? "3" : "0");
         sa.put("ta03", MainApp.talukaCode);
         sa.put("ta04", MainApp.ucCode);
         sa.put("ta04A", MainApp.areaCode);
-        sa.put("ta05h", ta05h.getText().toString());
-        sa.put("ta05u", ta05u.getText().toString());
-        sa.put("ta06", ta06.getText().toString());
-        sa.put("ta07", ta07.getText().toString());
-        sa.put("ta08", ta08.getText().toString());
-        sa.put("ta09", ta09a.isChecked() ? "1" : ta09b.isChecked() ? "2" : ta09c.isChecked() ? "3" : "0");
+        sa.put("ta05h", bi.ta05h.getText().toString());
+        sa.put("ta05u", bi.ta05u.getText().toString());
+        sa.put("ta06", bi.ta06.getText().toString());
+        sa.put("ta07", bi.ta07.getText().toString());
+        sa.put("ta08", bi.ta08.getText().toString());
+        sa.put("ta09", bi.ta09a.isChecked() ? "1" : bi.ta09b.isChecked() ? "2" : bi.ta09c.isChecked() ? "3" : "0");
         sa.put("app_version", MainApp.versionName + "." + MainApp.versionCode);
 
-*/
         MainApp.fc.setsA(String.valueOf(sa));
 
         setGPS();

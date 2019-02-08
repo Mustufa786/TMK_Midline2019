@@ -314,6 +314,8 @@ public class SectionBActivity extends AppCompatActivity {
             bi.btnContNextSec.setVisibility(View.VISIBLE);
             bi.fldGrpMemCount.setVisibility(View.GONE);
         }
+        //        Setting Dropdowns
+
         mothersList = new ArrayList<>();
         mothersSerials = new ArrayList<>();
         mothersMap = new HashMap<>();
@@ -322,26 +324,16 @@ public class SectionBActivity extends AppCompatActivity {
         mothersList.add("N/A");
         mothersSerials.add("0");
         mothersMap.put("N/A_0", "00");
-
-
-        bi.tbmname.setAdapter(new ArrayAdapter<>(this, R.layout.item_style, mothersList));
-//        Setting Dropdowns
-        mothersList = new ArrayList<>();
-        mothersSerials = new ArrayList<>();
-        mothersMap = new HashMap<>();
-
-        mothersList.add("....");
-        mothersList.add("N/A");
-        mothersSerials.add("0");
-        mothersMap.put("N/A_0", "00");
-
-
         for (FamilyMembersContract mem : MainApp.familyMembersList) {
-            mothersList.add(mem.getName());
-            mothersSerials.add(mem.getSerialNo());
-            mothersMap.put(mem.getName() + "_" + mem.getSerialNo(), mem.getSerialNo());
+            int ageInYears = Integer.parseInt(mem.getage());
+            if ( ageInYears >= 15  && ageInYears <= 49) {
+                mothersList.add(mem.getname());
+                mothersSerials.add(mem.getserialNo());
+                mothersMap.put(mem.getname() + "_" + mem.getserialNo(), mem.getserialNo());
+            }
         }
 
+        bi.tbmname.setAdapter(new ArrayAdapter<>(this, R.layout.item_style, mothersList));
 
 //        set head values
       /*  bi.totalMem.setText(String.valueOf(MainApp.TotalMembersCount));
@@ -652,7 +644,6 @@ public class SectionBActivity extends AppCompatActivity {
 
     }
 
-    //    @OnClick(R.id.btn_End)
     public void onBtnEnd() {
         //TODO implement
         MainApp.endActivity(this, this);
@@ -734,7 +725,7 @@ public class SectionBActivity extends AppCompatActivity {
                 finish();
                 startActivity(new Intent(this, SectionBActivity.class));
 
-            }else {
+            } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
 
             }
@@ -759,8 +750,7 @@ public class SectionBActivity extends AppCompatActivity {
                 && ageInyears >= 14 && ageInyears < 50) {
             MainApp.TotalMWRACount++;
         }*/
-        if (bi.tb04b.isChecked()
-                && ageInyears >= 14 && ageInyears < 50) {
+        if (ageInyears >= 14 && ageInyears < 50) {
             MainApp.TotalMWRACount++;
         }
         // TOTAL MEMBERS
@@ -778,18 +768,32 @@ public class SectionBActivity extends AppCompatActivity {
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
         MainApp.fmc = new FamilyMembersContract();
-        MainApp.fmc.setFormDate(MainApp.fc.getFormDate());
-        MainApp.fmc.setDeviceId(MainApp.fc.getDeviceID());
-        MainApp.fmc.setUser(MainApp.fc.getUser());
+        MainApp.fmc.setformDate(MainApp.fc.getFormDate());
+        MainApp.fmc.setdeviceId(MainApp.fc.getDeviceID());
+        MainApp.fmc.setuser(MainApp.fc.getUser());
         MainApp.fmc.set_UUID(MainApp.fc.getUID());
-        MainApp.fmc.setDevicetagID(sharedPref.getString("tagName", null));
-        MainApp.fmc.setSerialNo(String.valueOf(MainApp.serial_no));
-
+        MainApp.fmc.setclusterNo(MainApp.cluster);
+        MainApp.fmc.sethhNo(MainApp.hhno);
+        MainApp.fmc.setdevicetagID(sharedPref.getString("tagName", null));
+        MainApp.fmc.setserialNo(String.valueOf(MainApp.serial_no));
+        MainApp.fmc.setage(String.valueOf(ageInyears));
+        MainApp.fmc.setname(bi.tb02.getText().toString());
+        String type = "";
+        if (ageInyears >= 15 || ageInyears >= 49) {
+            type = "2"; //MWRA
+        } else if (ageInyears < 6) {
+            type = "1"; // Under 5
+            if (ageInyears < 3) {
+                type = "3"; // Under 2
+            }
+        }
+        MainApp.fmc.settype(type);
+        MainApp.fmc.sethhNo(MainApp.hhno);
         JSONObject sB = new JSONObject();
 
         sB.put("ta01", MainApp.cluster);
         sB.put("ta05h", MainApp.hhno);
-        sB.put("ta05u", MainApp.billno);
+//        sB.put("ta05u", MainApp.billno);
 
         sB.put("td01", bi.td01.getText().toString());
         sB.put("td02", bi.td02.getText().toString());
@@ -801,10 +805,10 @@ public class SectionBActivity extends AppCompatActivity {
         sB.put("td08", bi.td08.getText().toString());
 
 
-        sB.put("tb01", MainApp.counter);
+        sB.put("tb01", MainApp.serial_no);
         sB.put("tb02", bi.tb02.getText().toString());
         if (ageInyears < 6) {
-            MainApp.fmc.setMotherId(mothersMap.get(bi.tbmname.getSelectedItem().toString() + "_" + mothersSerials.get(mothersList.indexOf(bi.tbmname.getSelectedItem().toString()) - 1)));
+            MainApp.fmc.setmotherId(mothersMap.get(bi.tbmname.getSelectedItem().toString() + "_" + mothersSerials.get(mothersList.indexOf(bi.tbmname.getSelectedItem().toString()) - 1)));
         }
      /*   sB.put("tb03", bi.tb03a.isChecked() ? "1" : bi.tb03b.isChecked() ? "2" : bi.tb03c.isChecked() ? "3"
                 : bi.tb03d.isChecked() ? "4" : bi.tb03e.isChecked() ? "5" : bi.tb03f.isChecked() ? "6"
@@ -857,11 +861,11 @@ public class SectionBActivity extends AppCompatActivity {
             // u5
             MainApp.childUnder5.add(MainApp.fmc);
         }
-        if(ageInyears > 5){
+        if (ageInyears > 5) {
             MainApp.members_f_m.add(MainApp.fmc);
         }
 
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
+        MainApp.familyMembersList.add(MainApp.fmc);
     }
 
     private boolean UpdateDB() {
@@ -875,15 +879,13 @@ public class SectionBActivity extends AppCompatActivity {
             MainApp.fmc.set_UID(
                     (MainApp.fc.getDeviceID() + MainApp.fmc.get_ID()));
             db.updateFamilyMemberID();
-
+/*
             MainApp.familyMembersList.add(new FamilyMembersContract(bi.tb02.getText().toString(),
-                    ageInyears < 2 ? "3" : ageInyears < 5 ? "1" :
-                            (bi.tb04b.isChecked()
-                                    && (ageInyears > 15 && ageInyears < 49) ? "2" : "0")
+                    String.valueOf(ageInyears)
                     , String.valueOf(MainApp.counter),
                     bi.tb07.getText().toString().isEmpty() ?
                             bi.tb08m.getText().toString() + "-" + bi.tb08y.getText().toString() :
-                            bi.tb07.getText().toString()));
+                            bi.tb07.getText().toString()));*/
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -1170,8 +1172,8 @@ public class SectionBActivity extends AppCompatActivity {
         }*/
 
         if (MainApp.TotalMembersCount == 0) {
-            if(ageInyears < 5){
-                Toast.makeText(this, "Please Enter a married women first!!!",Toast.LENGTH_LONG);
+            if (ageInyears < 5) {
+                Toast.makeText(this, "Please Enter a married women first!!!", Toast.LENGTH_LONG);
                 return false;
             }
         }

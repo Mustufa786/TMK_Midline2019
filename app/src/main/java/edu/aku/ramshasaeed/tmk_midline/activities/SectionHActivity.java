@@ -443,9 +443,9 @@ public class SectionHActivity extends AppCompatActivity {
         MainApp.fc.setsJ(String.valueOf(sJ));
     }
     public boolean formValidation() {
-        if (!validatorClass.EmptySpinner(this, bi.tj01, getString(R.string.tj01))) {
+     /*   if (!validatorClass.EmptySpinner(this, bi.tj01, getString(R.string.tj01))) {
             return false;
-        }
+        }*/
         if (!validatorClass.EmptyRadioButton(this, bi.tj02,bi.tj0296,bi.tj0296x, getString(R.string.tj02))) {
             return false;
         }
@@ -499,6 +499,11 @@ public class SectionHActivity extends AppCompatActivity {
 
         return true;
 
+    }
+
+    public void BtnEnd() {
+        //TODO implement
+        MainApp.endActivity(this, this);
     }
 
 }

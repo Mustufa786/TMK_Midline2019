@@ -311,11 +311,11 @@ ActivitySectionDBinding bi;
         MainApp.fmc = new FamilyMembersContract();
 
 
-        MainApp.fmc.setFormDate(MainApp.fc.getFormDate());
-        MainApp.fmc.setDeviceId(MainApp.fc.getDeviceId());
-        MainApp.fmc.setUser(MainApp.fc.getUser());
+        MainApp.fmc.setformDate(MainApp.fc.getFormDate());
+        MainApp.fmc.setdeviceId(MainApp.fc.getDeviceId());
+        MainApp.fmc.setuser(MainApp.fc.getUser());
         MainApp.fmc.set_UUID(MainApp.fc.getUID());
-        MainApp.fmc.setDevicetagID(sharedPref.getString("tagName", null));
+        MainApp.fmc.setdevicetagID(sharedPref.getString("tagName", null));
 
         JSONObject sB = new JSONObject();
 

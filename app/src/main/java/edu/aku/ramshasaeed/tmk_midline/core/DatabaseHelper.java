@@ -50,26 +50,9 @@ import edu.aku.ramshasaeed.tmk_midline.contracts.VillagesContract.singleVillages
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String SQL_CREATE_BL_RANDOM = "CREATE TABLE " + BLRandomContract.singleChild.TABLE_NAME + "("
-            + singleChild.COLUMN_ID + " TEXT,"
-            + singleChild.COLUMN_SUB_VILLAGE_CODE + " TEXT,"
-            + singleChild.COLUMN_LUID + " TEXT,"
-            + singleChild.COLUMN_HH + " TEXT,"
-            + singleChild.COLUMN_STRUCTURE_NO + " TEXT,"
-            + singleChild.COLUMN_FAMILY_EXT_CODE + " TEXT,"
-            + singleChild.COLUMN_HH_HEAD + " TEXT,"
-            + singleChild.COLUMN_RANDOMDT + " TEXT );";
-
-    public static final String SQL_CREATE_USERS = "CREATE TABLE " + UsersContract.singleUser.TABLE_NAME + "("
-            + singleUser._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + singleUser.ROW_USERNAME + " TEXT,"
-            + singleUser.ROW_PASSWORD + " TEXT,"
-            + singleUser.FULL_NAME + " TEXT"
-//            + singleUser.REGION_DSS + " TEXT"
-            + " );";
-    public static final String DATABASE_NAME = "uentmk.db";
-    public static final String DB_NAME = "uentmk_copy.db";
-    public static final String PROJECT_NAME = "DMU-UENTMK";
+    public static final String DATABASE_NAME = "uentmkmidline.db";
+    public static final String DB_NAME = "uentmkmidline_copy.db";
+    public static final String PROJECT_NAME = "DMU-UENTMKMIDLINE";
     private static final int DATABASE_VERSION = 1;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsContract.FormsTable.TABLE_NAME + "("
@@ -101,21 +84,49 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_SYNCED + " TEXT," +
             FormsTable.COLUMN_SYNCED_DATE + " TEXT"
             + " );";
+
+    public static final String SQL_CREATE_BL_RANDOM = "CREATE TABLE " + BLRandomContract.singleChild.TABLE_NAME + "("
+            + singleChild.COLUMN_ID + " TEXT,"
+            + singleChild.COLUMN_SUB_VILLAGE_CODE + " TEXT,"
+            + singleChild.COLUMN_LUID + " TEXT,"
+            + singleChild.COLUMN_HH + " TEXT,"
+            + singleChild.COLUMN_STRUCTURE_NO + " TEXT,"
+            + singleChild.COLUMN_FAMILY_EXT_CODE + " TEXT,"
+            + singleChild.COLUMN_HH_HEAD + " TEXT,"
+            + singleChild.COLUMN_RANDOMDT + " TEXT );";
+
+    public static final String SQL_CREATE_USERS = "CREATE TABLE " + UsersContract.singleUser.TABLE_NAME + "("
+            + singleUser._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + singleUser.ROW_USERNAME + " TEXT,"
+            + singleUser.ROW_PASSWORD + " TEXT,"
+            + singleUser.FULL_NAME + " TEXT"
+//            + singleUser.REGION_DSS + " TEXT"
+            + " );";
     private static final String SQL_CREATE_FAMILY_MEMBERS = "CREATE TABLE "
             + familyMembers.TABLE_NAME + "("
             + familyMembers.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + FamilyMembersContract.familyMembers.COLUMN_PROJECT_NAME + " TEXT," +
-            familyMembers.COLUMN_DEVICETAGID + " TEXT," +
-            familyMembers.COLUMN_UID + " TEXT," +
-            familyMembers.COLUMN_UUID + " TEXT," +
-            familyMembers.COLUMN_FORMDATE + " TEXT," +
-            familyMembers.COLUMN_DEVICEID + " TEXT," +
-            familyMembers.COLUMN_USER + " TEXT," +
-            familyMembers.COLUMN_SB + " TEXT," +
-            familyMembers.COLUMN_ISTATUS + " TEXT," +
-            familyMembers.COLUMN_SYNCED + " TEXT," +
-            familyMembers.COLUMN_SYNCED_DATE + " TEXT"
+            familyMembers.COLUMN_UID + " TEXT,"+
+            familyMembers.COLUMN_UUID + " TEXT,"+
+            familyMembers.COLUMN_FORMDATE + " TEXT,"+
+            familyMembers.COLUMN_DEVICEID + " TEXT,"+
+            familyMembers.COLUMN_USER + " TEXT,"+
+            familyMembers.COLUMN_DEVICETAGID + " TEXT,"+
+            familyMembers.COLUMN_NAME + " TEXT,"+
+            familyMembers.COLUMN_DOB + " TEXT,"+
+            familyMembers.COLUMN_AGE + " TEXT,"+
+            familyMembers.COLUMN_SB + " TEXT,"+
+            familyMembers.COLUMN_SYNCED + " TEXT,"+
+            familyMembers.COLUMN_SYNCED_DATE + " TEXT,"+
+            familyMembers.COLUMN_ISTATUS + " TEXT,"+
+            familyMembers.COLUMN_SERIALNO + " TEXT,"+
+            familyMembers.COLUMN_MOTHERID + " TEXT,"+
+            familyMembers.COLUMN_TYPE + " TEXT,"+
+            familyMembers.COLUMN_APP_VER + " TEXT,"+
+            familyMembers.COLUMN_CLUSTERNO + " TEXT,"+
+            familyMembers.COLUMN_HHNO + " TEXT"
             + " );";
+
     private static final String SQL_CREATE_DECEASED_MOTHER = "CREATE TABLE "
             + DeceasedMotherContract.DeceasedMother.TABLE_NAME + "("
             + DeceasedMotherContract.DeceasedMother.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -818,15 +829,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(familyMembers.COLUMN_PROJECT_NAME, fmc.getProjectName());
+
+        values.put(familyMembers.COLUMN_PROJECT_NAME, fmc.getprojectName());
         values.put(familyMembers.COLUMN_UID, fmc.get_UID());
         values.put(familyMembers.COLUMN_UUID, fmc.get_UUID());
-        values.put(familyMembers.COLUMN_FORMDATE, fmc.getFormDate());
-        values.put(familyMembers.COLUMN_USER, fmc.getUser());
-        values.put(familyMembers.COLUMN_ISTATUS, fmc.getIstatus());
+        values.put(familyMembers.COLUMN_FORMDATE, fmc.getformDate());
+        values.put(familyMembers.COLUMN_DEVICEID, fmc.getdeviceId());
+        values.put(familyMembers.COLUMN_USER, fmc.getuser());
+        values.put(familyMembers.COLUMN_DEVICETAGID, fmc.getdevicetagID());
+        values.put(familyMembers.COLUMN_NAME, fmc.getname());
+        values.put(familyMembers.COLUMN_DOB, fmc.getdob());
+        values.put(familyMembers.COLUMN_AGE, fmc.getage());
         values.put(familyMembers.COLUMN_SB, fmc.getsB());
-        values.put(familyMembers.COLUMN_DEVICETAGID, fmc.getDevicetagID());
-        values.put(familyMembers.COLUMN_DEVICEID, fmc.getDeviceId());
+        values.put(familyMembers.COLUMN_SYNCED, fmc.getsynced());
+        values.put(familyMembers.COLUMN_SYNCED_DATE, fmc.getsyncedDate());
+        values.put(familyMembers.COLUMN_ISTATUS, fmc.getistatus());
+        values.put(familyMembers.COLUMN_SERIALNO, fmc.getserialNo());
+        values.put(familyMembers.COLUMN_MOTHERID, fmc.getmotherId());
+        values.put(familyMembers.COLUMN_TYPE, fmc.gettype());
+        values.put(familyMembers.COLUMN_APP_VER, fmc.getapp_ver());
+        values.put(familyMembers.COLUMN_CLUSTERNO, fmc.getclusterNo());
+        values.put(familyMembers.COLUMN_HHNO, fmc.gethhNo());
+
 
         // Insert the new row, returning the primary key value of the new row
         long newRowId;
@@ -1342,16 +1366,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor c = null;
         String[] columns = {
                 familyMembers.COLUMN_ID,
-                familyMembers.COLUMN_ISTATUS,
                 familyMembers.COLUMN_UID,
                 familyMembers.COLUMN_UUID,
                 familyMembers.COLUMN_FORMDATE,
                 familyMembers.COLUMN_DEVICEID,
                 familyMembers.COLUMN_USER,
+                familyMembers.COLUMN_DEVICETAGID,
+                familyMembers.COLUMN_NAME,
+                familyMembers.COLUMN_DOB,
+                familyMembers.COLUMN_AGE,
                 familyMembers.COLUMN_SB,
-                familyMembers.COLUMN_DEVICETAGID
+                familyMembers.COLUMN_SYNCED,
+                familyMembers.COLUMN_SYNCED_DATE,
+                familyMembers.COLUMN_ISTATUS,
+                familyMembers.COLUMN_SERIALNO,
+                familyMembers.COLUMN_MOTHERID,
+                familyMembers.COLUMN_TYPE,
+                familyMembers.COLUMN_APP_VER,
+                familyMembers.COLUMN_CLUSTERNO,
+                familyMembers.COLUMN_HHNO,
+
         };
-        String whereClause = familyMembers.COLUMN_SYNCED + " is null";
+        String whereClause =familyMembers.COLUMN_SYNCED + " is null OR " + familyMembers.COLUMN_SYNCED + " = '' ";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
