@@ -311,10 +311,10 @@ ActivitySectionDBinding bi;
         MainApp.fmc = new FamilyMembersContract();
 
 
-        MainApp.fmc.setformDate(MainApp.fc.getFormDate());
-        MainApp.fmc.setdeviceId(MainApp.fc.getDeviceId());
-        MainApp.fmc.setuser(MainApp.fc.getUser());
-        MainApp.fmc.set_UUID(MainApp.fc.getUID());
+        MainApp.fmc.setformDate(MainApp.fc.getformDate());
+        MainApp.fmc.setdeviceId(MainApp.fc.getdeviceid());
+        MainApp.fmc.setuser(MainApp.fc.getuser());
+        MainApp.fmc.set_UUID(MainApp.fc.get_UID());
         MainApp.fmc.setdevicetagID(sharedPref.getString("tagName", null));
 
         JSONObject sB = new JSONObject();
@@ -333,7 +333,7 @@ ActivitySectionDBinding bi;
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
             MainApp.fmc.set_UID(
-                    (MainApp.fc.getDeviceId() + MainApp.fmc.get_ID()));
+                    (MainApp.fc.getdeviceid() + MainApp.fmc.get_ID()));
             db.updateFamilyMemberID();
 
            /* MainApp.familyMembersList.add(new FamilyMembersContract(tb02.getText().toString(),

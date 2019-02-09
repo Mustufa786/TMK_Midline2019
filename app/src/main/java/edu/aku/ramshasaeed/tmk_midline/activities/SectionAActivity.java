@@ -279,10 +279,10 @@ public class SectionAActivity extends Activity {
 
         MainApp.fc = new FormsContract();
 
-        MainApp.fc.setDevicetagID(sharedPref.getString("tagName", null));
-        MainApp.fc.setFormDate(dtToday);
-        MainApp.fc.setUser(MainApp.userName);
-        MainApp.fc.setDeviceId(Settings.Secure.getString(getApplicationContext().getContentResolver(),
+        MainApp.fc.setdevicetagID(sharedPref.getString("tagName", null));
+        MainApp.fc.setformDate(dtToday);
+        MainApp.fc.setuser(MainApp.userName);
+        MainApp.fc.setdeviceid(Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID));
 
         JSONObject sa = new JSONObject();
@@ -327,8 +327,8 @@ public class SectionAActivity extends Activity {
         if (updcount != 0) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
-            MainApp.fc.setUID(
-                    (MainApp.fc.getDeviceId() + MainApp.fc.get_ID()));
+            MainApp.fc.set_UID(
+                    (MainApp.fc.getdeviceid() + MainApp.fc.get_ID()));
             db.updateFormID();
 
             return true;
@@ -355,11 +355,11 @@ public class SectionAActivity extends Activity {
 
             String date = DateFormat.format("dd-MM-yyyy HH:mm", Long.parseLong(GPSPref.getString("Time", "0"))).toString();
 
-            MainApp.fc.setGpsLat(GPSPref.getString("Latitude", "0"));
-            MainApp.fc.setGpsLng(GPSPref.getString("Longitude", "0"));
-            MainApp.fc.setGpsAcc(GPSPref.getString("Accuracy", "0"));
+            MainApp.fc.setgpsLat(GPSPref.getString("Latitude", "0"));
+            MainApp.fc.setgpsLng(GPSPref.getString("Longitude", "0"));
+            MainApp.fc.setgpsAcc(GPSPref.getString("Accuracy", "0"));
 //            AppMain.fc.setGpsTime(GPSPref.getString(date, "0")); // Timestamp is converted to date above
-            MainApp.fc.setGpsDT(date); // Timestamp is converted to date above
+            MainApp.fc.setgpsDT(date); // Timestamp is converted to date above
 
             Toast.makeText(this, "GPS set", Toast.LENGTH_SHORT).show();
 

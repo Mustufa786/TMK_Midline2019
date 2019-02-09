@@ -150,8 +150,8 @@ public class SectionBActivity extends AppCompatActivity {
     RadioButton tb10k;
     @BindView(R.id.tb10l)
     RadioButton tb10l;
-    @BindView(R.id.tb10999)
-    RadioButton tb10999;
+    @BindView(R.id.tb1097)
+    RadioButton tb1097;
     @BindView(R.id.tb11)
     RadioGroup tb11;
     @BindView(R.id.tb11a)
@@ -321,7 +321,7 @@ public class SectionBActivity extends AppCompatActivity {
         mothersMap = new HashMap<>();
 
         mothersList.add("....");
-        mothersList.add("N/A");
+//        mothersList.add("N/A");
         mothersSerials.add("0");
         mothersMap.put("N/A_0", "00");
         for (FamilyMembersContract mem : MainApp.familyMembersList) {
@@ -336,42 +336,14 @@ public class SectionBActivity extends AppCompatActivity {
         bi.tbmname.setAdapter(new ArrayAdapter<>(this, R.layout.item_style, mothersList));
 
 //        set head values
-      /*  bi.totalMem.setText(String.valueOf(MainApp.TotalMembersCount));
-        bi.totalmwra.setText(String.valueOf(MainApp.TotalMWRACount));
-        bi.totalChild.setText(String.valueOf(MainApp.TotalChildCount));
-*/
+        bi.TotalMem.setText(String.valueOf(MainApp.TotalMembersCount));
+        bi.Totalmwra.setText(String.valueOf(MainApp.TotalMWRACount));
+        bi.TotalChild.setText(String.valueOf(MainApp.TotalChildCount));
 //        Check HH
 
      /*   if (MainApp.isHead) {
             bi.tb03a.setEnabled(false);
         }*/
-
-//        Skip Patterns
-
-        bi.tb04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (bi.tb04b.isChecked()) {
-
-                    bi.tb10a.setEnabled(true);
-
-                  /*  if (bi.tb11b.isChecked()) {
-                        bi.fldGrptb11.setVisibility(View.VISIBLE);
-                    } else {
-                        bi.tb12.clearCheck();
-                        bi.fldGrptb11.setVisibility(View.GONE);
-                    }*/
-
-                } else {
-
-//                    bi.tb12.clearCheck();
-//                    bi.fldGrptb11.setVisibility(View.GONE);
-
-                    bi.tb10a.setEnabled(false);
-                    bi.tb10a.setChecked(false);
-                }
-            }
-        });
 
 //        DOB skip checker
         bi.tbdob.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -449,12 +421,13 @@ public class SectionBActivity extends AppCompatActivity {
                     bi.tb09.setText(null);
                     bi.tb09.setEnabled(true);
 
-                    if (bi.tb04b.isChecked()) {
+                   /* if (bi.tb04b.isChecked()) {
                         bi.tb10a.setEnabled(true);
                     } else {
                         bi.tb10a.setEnabled(false);
                         bi.tb10a.setChecked(false);
-                    }
+                    }*/
+                    bi.tb10a.setEnabled(true);
                     bi.tb10b.setEnabled(true);
                     bi.tb10c.setEnabled(true);
                     bi.tb10d.setEnabled(true);
@@ -549,12 +522,8 @@ public class SectionBActivity extends AppCompatActivity {
                         bi.tb09.setText(null);
                         bi.tb09.setEnabled(true);
 
-                        if (bi.tb04b.isChecked()) {
-                            bi.tb10a.setEnabled(true);
-                        } else {
-                            bi.tb10a.setEnabled(false);
-                            bi.tb10a.setChecked(false);
-                        }
+
+                        bi.tb10a.setEnabled(true);
                         bi.tb10b.setEnabled(true);
                         bi.tb10c.setEnabled(true);
                         bi.tb10d.setEnabled(true);
@@ -762,16 +731,23 @@ public class SectionBActivity extends AppCompatActivity {
         count.put("tb14", MainApp.TotalMWRACount);
         count.put("tb15", MainApp.TotalChildCount);
         count.put("tb16", MainApp.totalImsCount);
-
+        count.put("td01", bi.td01.getText().toString());
+        count.put("td02", bi.td02.getText().toString());
+        count.put("td03", bi.td03.getText().toString());
+        count.put("td04", bi.td04.getText().toString());
+        count.put("td05", bi.td05.getText().toString());
+        count.put("td06", bi.td06.getText().toString());
+        count.put("td07", bi.td07.getText().toString());
+        count.put("td08", bi.td08.getText().toString());
         MainApp.fc.setsB(String.valueOf(count));
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
         MainApp.fmc = new FamilyMembersContract();
-        MainApp.fmc.setformDate(MainApp.fc.getFormDate());
-        MainApp.fmc.setdeviceId(MainApp.fc.getDeviceID());
-        MainApp.fmc.setuser(MainApp.fc.getUser());
-        MainApp.fmc.set_UUID(MainApp.fc.getUID());
+        MainApp.fmc.setformDate(MainApp.fc.getformDate());
+        MainApp.fmc.setdeviceId(MainApp.fc.getdeviceid());
+        MainApp.fmc.setuser(MainApp.fc.getuser());
+        MainApp.fmc.set_UUID(MainApp.fc.get_UID());
         MainApp.fmc.setclusterNo(MainApp.cluster);
         MainApp.fmc.sethhNo(MainApp.hhno);
         MainApp.fmc.setdevicetagID(sharedPref.getString("tagName", null));
@@ -789,20 +765,14 @@ public class SectionBActivity extends AppCompatActivity {
         }
         MainApp.fmc.settype(type);
         MainApp.fmc.sethhNo(MainApp.hhno);
+        MainApp.fmc.setapp_ver(MainApp.versionName + "." + MainApp.versionCode);
         JSONObject sB = new JSONObject();
 
         sB.put("ta01", MainApp.cluster);
         sB.put("ta05h", MainApp.hhno);
 //        sB.put("ta05u", MainApp.billno);
 
-        sB.put("td01", bi.td01.getText().toString());
-        sB.put("td02", bi.td02.getText().toString());
-        sB.put("td03", bi.td03.getText().toString());
-        sB.put("td04", bi.td04.getText().toString());
-        sB.put("td05", bi.td05.getText().toString());
-        sB.put("td06", bi.td06.getText().toString());
-        sB.put("td07", bi.td07.getText().toString());
-        sB.put("td08", bi.td08.getText().toString());
+
 
 
         sB.put("tb01", MainApp.serial_no);
@@ -838,14 +808,14 @@ public class SectionBActivity extends AppCompatActivity {
         sB.put("tb09", bi.tb09.getText().toString().equals("NA") ? "999" : bi.tb09.getText().toString());
         sB.put("tb10", bi.tb10a.isChecked() ? "1" : bi.tb10b.isChecked() ? "2" : bi.tb10c.isChecked() ? "3"
                 : bi.tb10d.isChecked() ? "4" : bi.tb10e.isChecked() ? "5" : bi.tb10f.isChecked() ? "6"
-                : bi.tb10g.isChecked() ? "7" : bi.tb10h.isChecked() ? "8" : bi.tb10ia.isChecked() ? "9a" : bi.tb10j.isChecked() ? "10"
-                : bi.tb10k.isChecked() ? "11" : bi.tb10l.isChecked() ? "12" : bi.tb10999.isChecked() ? "999"
+                : bi.tb10g.isChecked() ? "7" : bi.tb10h.isChecked() ? "8" : bi.tb10ia.isChecked() ? "9" : bi.tb10j.isChecked() ? "10"
+                : bi.tb10k.isChecked() ? "11" : bi.tb10l.isChecked() ? "12" : bi.tb1097.isChecked() ? "97"
                 : "0");
      /*   sB.put("tb11", bi.tb11a.isChecked() ? "1" : bi.tb11b.isChecked() ? "2"
                 : bi.tb11d.isChecked() ? "3" : bi.tb11e.isChecked() ? "4" : "0");
 
         sB.put("tb12", bi.tb12a.isChecked() ? "1" : bi.tb12b.isChecked() ? "2" : "0");*/
-        sB.put("appver", MainApp.versionName + "." + MainApp.versionCode);
+//        sB.put("appver", MainApp.versionName + "." + MainApp.versionCode);
 
        /* if (bi.tb12a.isChecked()) {
             MainApp.isRsvp = true;
@@ -877,7 +847,7 @@ public class SectionBActivity extends AppCompatActivity {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
             MainApp.fmc.set_UID(
-                    (MainApp.fc.getDeviceID() + MainApp.fmc.get_ID()));
+                    (MainApp.fc.getdeviceid() + MainApp.fmc.get_ID()));
             db.updateFamilyMemberID();
 /*
             MainApp.familyMembersList.add(new FamilyMembersContract(bi.tb02.getText().toString(),
@@ -1127,14 +1097,14 @@ public class SectionBActivity extends AppCompatActivity {
 //        10
             if (bi.tb10.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tb10), Toast.LENGTH_SHORT).show();
-                bi.tb10999.setError("This data is Required!");    // Set Error on last radio button
+                bi.tb1097.setError("This data is Required!");    // Set Error on last radio button
                 bi.tb10a.setFocusable(true);
                 bi.tb10a.setFocusableInTouchMode(true);
                 bi.tb10a.requestFocus();
                 Log.i(TAG, "bi.tb10: This data is Required!");
                 return false;
             } else {
-                bi.tb10999.setError(null);
+                bi.tb1097.setError(null);
             }
         }
 

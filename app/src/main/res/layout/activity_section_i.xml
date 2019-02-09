@@ -722,6 +722,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:text="@string/tk10e" />
+            <RadioButton
+                android:id="@+id/tk10f"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/tk10f" />
 
             <RadioButton
                 android:id="@+id/tk1096"

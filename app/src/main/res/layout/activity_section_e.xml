@@ -119,6 +119,7 @@
                                 android:layout_margin="10dp"
                                 android:layout_marginBottom="1dp"
                                 android:hint="@string/te02num"
+                                android:maxLength="2"
                                 android:inputType="number" />
 
 
@@ -154,6 +155,7 @@
                                android:layout_height="wrap_content"></Spinner>
 
 
+
                         </LinearLayout>
 
                     </android.support.v7.widget.CardView>
@@ -186,7 +188,8 @@
                                 android:layout_margin="10dp"
                                 android:layout_marginBottom="1dp"
                                 android:hint="@string/te04num"
-                                android:inputType="number" />
+                                android:inputType="number"
+                                android:maxLength="2"/>
 
 
                         </LinearLayout>
@@ -1023,7 +1026,9 @@
                                     android:layout_height="wrap_content"
                                     android:layout_margin="10dp"
                                     android:hint="@string/te17a"
+                                    android:digits="0123456789"
                                     android:inputType="number"
+                                    android:maxLength="2"
                                     android:text='@{te17a.checked? te17hr.getText.toString : ""}'
                                     android:visibility='@{te17a.checked? View.VISIBLE : View.GONE}' />
 
@@ -1041,8 +1046,9 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="10dp"
-                                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                                    android:digits="0123456789"
                                     android:hint="@string/te17b"
+                                    android:maxLength="2"
                                     android:inputType="number"
                                     android:text='@{te17b.checked? te17day.getText.toString : ""}'
                                     android:visibility='@{te17b.checked? View.VISIBLE : View.GONE}' />

@@ -20,6 +20,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
+
+import javax.xml.validation.Validator;
 
 import butterknife.OnClick;
 import edu.aku.ramshasaeed.tmk_midline.R;
@@ -27,11 +30,13 @@ import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionABinding;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionFBinding;
+import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
 
 public class SectionFActivity extends AppCompatActivity {
     private static final String TAG = SectionFActivity.class.getName();
     ActivitySectionFBinding bi;
-
+    Map<String, String> childsMap;
+    ArrayList<String> lstChild;
     public void clearFldgrpthb15a() {
         bi.thb15.clearCheck();
         bi.thb16.clearCheck();
@@ -77,7 +82,6 @@ public class SectionFActivity extends AppCompatActivity {
         bi.setCallback(this);
 
         this.setTitle(getResources().getString(R.string.tfheading));
-/*
         childsMap = new HashMap<>();
         lstChild = new ArrayList<>();
 
@@ -85,13 +89,14 @@ public class SectionFActivity extends AppCompatActivity {
         lstChild.add("....");
 
         for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
-            if (MainApp.familyMembersList.get(i).getAgeLess5().equals("1") || MainApp.familyMembersList.get(i).getAgeLess5().equals("3")) {
-                childsMap.put(MainApp.familyMembersList.get(i).getName(), MainApp.familyMembersList.get(i).getSerialNo());
-                lstChild.add(MainApp.familyMembersList.get(i).getName());
+            int Age = Integer.parseInt(MainApp.familyMembersList.get(i).getage());
+            if (Age < 5) {
+                childsMap.put(MainApp.familyMembersList.get(i).getname(), MainApp.familyMembersList.get(i).getserialNo());
+                lstChild.add(MainApp.familyMembersList.get(i).getname());
             }
-        }*/
+        }
 
-//        bi.thb05.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstChild));
+        bi.thb05.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstChild));
 
 
         bi.thb01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -130,10 +135,10 @@ public class SectionFActivity extends AppCompatActivity {
                     bi.thb08f.setChecked(false);
                     bi.thb08g.setChecked(false);
                     bi.thb08h.setChecked(false);
-                    bi.thb0888.setChecked(false);
+                    bi.thb0896.setChecked(false);
 
 
-                    bi.thb0888x.setText(null);
+                    bi.thb0896x.setText(null);
 
                     bi.thb09.setText(null);
                     bi.thb10.clearCheck();
@@ -197,9 +202,9 @@ public class SectionFActivity extends AppCompatActivity {
                     bi.thb08f.setChecked(false);
                     bi.thb08g.setChecked(false);
                     bi.thb08h.setChecked(false);
-                    bi.thb0888.setChecked(false);
+                    bi.thb0896.setChecked(false);
 
-                    bi.thb0888x.setText(null);
+                    bi.thb0896x.setText(null);
 
                     bi.fldGrpth08.setVisibility(View.GONE);
                     bi.fldGrpth08a.setVisibility(View.VISIBLE);
@@ -257,15 +262,15 @@ public class SectionFActivity extends AppCompatActivity {
         });
 
 
-        bi.thb0888.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        bi.thb0896.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (bi.thb0888.isChecked()) {
-                    bi.thb0888x.setVisibility(View.VISIBLE);
-                    bi.thb0888x.requestFocus();
+                if (bi.thb0896.isChecked()) {
+                    bi.thb0896x.setVisibility(View.VISIBLE);
+                    bi.thb0896x.requestFocus();
                 } else {
-                    bi.thb0888x.setText(null);
-                    bi.thb0888x.setVisibility(View.GONE);
+                    bi.thb0896x.setText(null);
+                    bi.thb0896x.setVisibility(View.GONE);
                 }
             }
         });
@@ -482,9 +487,6 @@ public class SectionFActivity extends AppCompatActivity {
 
 
     public void BtnEnd() {
-
-        Toast.makeText(this, "Not Processing This Section", Toast.LENGTH_SHORT).show();
-
         Toast.makeText(this, "Starting Form Ending Section", Toast.LENGTH_SHORT).show();
 
         MainApp.endActivity(this, this);
@@ -495,7 +497,7 @@ public class SectionFActivity extends AppCompatActivity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSHB();
+        int updcount = db.updateSF();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -510,7 +512,6 @@ public class SectionFActivity extends AppCompatActivity {
 
     private boolean formValidation() {
 
-        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
       /*  //        00
         if (bi.thb00.getCheckedRadioButtonId() == -1) {
@@ -613,7 +614,7 @@ public class SectionFActivity extends AppCompatActivity {
 
 
             //        05
-            /*if (bi.thb05.getText().toString().isEmpty()) {
+          /*  if (bi.thb05.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb05), Toast.LENGTH_SHORT).show();
                 bi.thb05.setError("This data is Required!");    // Set Error on last radio button
                 Log.i(TAG, "thb05: This data is Required!");
@@ -621,7 +622,10 @@ public class SectionFActivity extends AppCompatActivity {
             } else {
                 bi.thb05.setError(null);
             }*/
-           /* if (bi.thb05.getSelectedItem() == "....") {
+          if(!validatorClass.EmptySpinner(this,bi.thb05,getString(R.string.thb05))){
+              return false;
+          }
+          /*  if (bi.thb05.getSelectedItem() == "....") {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.thb05), Toast.LENGTH_SHORT).show();
                 ((TextView) bi.thb05.getSelectedView()).setText("This Data is Required");
                 ((TextView) bi.thb05.getSelectedView()).setTextColor(Color.RED);
@@ -673,7 +677,7 @@ public class SectionFActivity extends AppCompatActivity {
                 bi.thb07a.setError(null);
             }
 
-            if (bi.thb07b.isChecked() || bi.thb07888.isChecked()) {
+            if (bi.thb07b.isChecked() || bi.thb0798.isChecked()) {
 
                 //        08
                 if (!bi.thb08a.isChecked()
@@ -684,7 +688,7 @@ public class SectionFActivity extends AppCompatActivity {
                         && !bi.thb08f.isChecked()
                         && !bi.thb08g.isChecked()
                         && !bi.thb08h.isChecked()
-                        && !bi.thb0888.isChecked()) {
+                        && !bi.thb0896.isChecked()) {
                     Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb08), Toast.LENGTH_LONG).show();
                     bi.thb08a.setError("This data is Required!");
                     Log.i(TAG, "thb08a: This data is Required!");
@@ -697,16 +701,16 @@ public class SectionFActivity extends AppCompatActivity {
                 }
 
 
-                if (bi.thb0888.isChecked()) {
+                if (bi.thb0896.isChecked()) {
                     //        0888
-                    if (bi.thb0888x.getText().toString().isEmpty()) {
+                    if (bi.thb0896x.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
-                        bi.thb0888x.setError("This data is Required!");    // Set Error on last radio button
-                        Log.i(TAG, "thb0888x: This data is Required!");
-                        bi.thb0888x.requestFocus();
+                        bi.thb0896x.setError("This data is Required!");    // Set Error on last radio button
+                        Log.i(TAG, "thb0896x: This data is Required!");
+                        bi.thb0896x.requestFocus();
                         return false;
                     } else {
-                        bi.thb0888x.setError(null);
+                        bi.thb0896x.setError(null);
                     }
                 }
 
@@ -987,17 +991,17 @@ public class SectionFActivity extends AppCompatActivity {
         JSONObject sHB = new JSONObject();
 
 //        sHB.put("thb00", bi.thb00a.isChecked() ? "1" : bi.thb00b.isChecked() ? "2" : "0");
-        sHB.put("thb01", bi.thb01a.isChecked() ? "1" : bi.thb01b.isChecked() ? "2" : bi.thb01888.isChecked() ? "888" : "0");
+        sHB.put("thb01", bi.thb01a.isChecked() ? "1" : bi.thb01b.isChecked() ? "2" : bi.thb0198.isChecked() ? "98" : "0");
         sHB.put("thb02", bi.thb02.getText().toString());
 
-        sHB.put("thb03", bi.thb03a.isChecked() ? "1" : bi.thb03b.isChecked() ? "2" : bi.thb03888.isChecked() ? "888" : "0");
+        sHB.put("thb03", bi.thb03a.isChecked() ? "1" : bi.thb03b.isChecked() ? "2" : bi.thb0398.isChecked() ? "98" : "0");
         sHB.put("thb04", bi.thb04.getText().toString());
         if (bi.thb03a.isChecked()) {
-//            sHB.put("thb05", bi.thb05.getSelectedItem().toString());
-//            sHB.put("thb05Serial", childsMap.get(bi.thb05.getSelectedItem().toString()));
+            sHB.put("thb05", bi.thb05.getSelectedItem().toString());
+            sHB.put("thb05Serial", childsMap.get(bi.thb05.getSelectedItem().toString()));
         }
         sHB.put("thb06", bi.thb06.getText().toString());
-        sHB.put("thb07", bi.thb07a.isChecked() ? "1" : bi.thb07b.isChecked() ? "2" : bi.thb07888.isChecked() ? "888" : "0");
+        sHB.put("thb07", bi.thb07a.isChecked() ? "1" : bi.thb07b.isChecked() ? "2" : bi.thb0798.isChecked() ? "98" : "0");
 
 
         sHB.put("thb08a", bi.thb08a.isChecked() ? "1" : "0");
@@ -1008,9 +1012,9 @@ public class SectionFActivity extends AppCompatActivity {
         sHB.put("thb08f", bi.thb08f.isChecked() ? "6" : "0");
         sHB.put("thb08g", bi.thb08g.isChecked() ? "7" : "0");
         sHB.put("thb08h", bi.thb08h.isChecked() ? "8" : "0");
-        sHB.put("thb088", bi.thb0888.isChecked() ? "9" : "0");
+        sHB.put("thb0896", bi.thb0896.isChecked() ? "96" : "0");
 
-        sHB.put("thb0888x", bi.thb0888x.getText().toString());
+        sHB.put("thb0896x", bi.thb0896x.getText().toString());
 
         sHB.put("thb09", bi.thb09.getText().toString());
 
@@ -1083,9 +1087,9 @@ public class SectionFActivity extends AppCompatActivity {
 
 
 
-        sHB.put("appver", MainApp.versionName + "." + MainApp.versionCode);
+//        sHB.put("appver", MainApp.versionName + "." + MainApp.versionCode);
 
-        MainApp.fc.setsHB(String.valueOf(sHB));
+        MainApp.fc.setsF(String.valueOf(sHB));
     }
 
     @Override

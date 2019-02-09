@@ -41,14 +41,14 @@
     <string name="tkheading">SECTION K: WASH (Spot Check)</string>
 
 
-    <string name="td01"> اي. گهرڀاتين جو ڪل تعداد </string>
-    <string name="td02"> ب. مرد </string>
-    <string name="td03"> ت. عورتون </string>
-    <string name="td04"> د. ٻار0 ڏينهن کان 5سالن تائين(ڇوڪرا) </string>
-    <string name="td05"> اي. ٻار0 ڏينهن کان 5سالن تائين (ڇوڪريون) </string>
-    <string name="td06"> ف. ٻار 5 کان 14 سالن تائين جي عمر جا (ڇوڪرا) </string>
-    <string name="td07"> ف. ٻار 5 کان 14 سالن تائين جي عمر جا (ڇوڪريون) </string>
-    <string name="td08"> هه. شادي شده عورتون 15کان 49 سالن تائين </string>
+    <string name="td01"> گهرڀاتين جو ڪل تعداد </string>
+    <string name="td02">  مرد </string>
+    <string name="td03">  عورتون </string>
+    <string name="td04">  ٻار0 ڏينهن کان 5سالن تائين(ڇوڪرا) </string>
+    <string name="td05">  ٻار0 ڏينهن کان 5سالن تائين (ڇوڪريون) </string>
+    <string name="td06">  ٻار 5 کان 14 سالن تائين جي عمر جا (ڇوڪرا) </string>
+    <string name="td07">  ٻار 5 کان 14 سالن تائين جي عمر جا (ڇوڪريون) </string>
+    <string name="td08">  شادي شده عورتون 15کان 49 سالن تائين </string>
     <string name="tdsub"> گهر۾موجود 5 سالن کان گھٽ عمروارن ٻارن جا نالا۽ پيدائش جي تاريخ (ڪارڊ/سرٽيفيڪٽ/ياداشت ذريعي پيدائش جي تاريخ) لکو پاڻمرادوطريقي ڪارسان01 کان شروع ڪيو ويندو. </string>
     <string name="td00"> ٻارجوسريل نمبر </string>
 <!--    <string name="td01"> ٻار جو نالو </string>
@@ -386,6 +386,7 @@
     <string name="tk10c"> بوتلون </string>
     <string name="tk10d"> جيريڪين </string>
     <string name="tk10e"> بالٽي </string>
+    <string name="tk10f"> مٽڪو </string>
     <string name="tk11"> گھر ۾ ڪهڙي قسم جو ٽوائلٽ/ڪاڪوس استعمال ڪندا آهيو؟ </string>
     <string name="tk11a"> گٽر نالي وارو </string>
     <string name="tk11b"> فليش ٽينڪ </string>

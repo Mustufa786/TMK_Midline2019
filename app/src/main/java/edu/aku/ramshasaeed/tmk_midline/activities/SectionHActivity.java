@@ -207,7 +207,7 @@ public class SectionHActivity extends AppCompatActivity {
                     bi.tj07g.setChecked(false);
                     bi.tj07h.setChecked(false);
                     bi.tj0796.setChecked(false);
-                    bi.tj0796.setText(null);
+                    bi.tj0796x.setText(null);
                 }
             }
         });
@@ -336,7 +336,7 @@ public class SectionHActivity extends AppCompatActivity {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSJ();
+        int updcount = db.updateSH();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -440,7 +440,7 @@ public class SectionHActivity extends AppCompatActivity {
                 : bi.tj14k.isChecked() ? "11" : bi.tj14l.isChecked() ? "12" : bi.tj1496.isChecked() ? "96" : "0");
         sJ.put("tj1496x", bi.tj1496x.getText().toString());
 
-        MainApp.fc.setsJ(String.valueOf(sJ));
+        MainApp.fc.setsH(String.valueOf(sJ));
     }
     public boolean formValidation() {
      /*   if (!validatorClass.EmptySpinner(this, bi.tj01, getString(R.string.tj01))) {
@@ -505,5 +505,9 @@ public class SectionHActivity extends AppCompatActivity {
         //TODO implement
         MainApp.endActivity(this, this);
     }
+    @Override
+    public void onBackPressed() {
 
+        Toast.makeText(this, "You can't go back", Toast.LENGTH_SHORT).show();
+    }
 }

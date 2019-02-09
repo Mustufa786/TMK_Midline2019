@@ -86,14 +86,14 @@ public class SectionKActivity extends AppCompatActivity {
         sM.put("tm14", tm14a.isChecked() ? "1" : tm14b.isChecked() ? "2" : "0");
         sM.put("tm15", tm15a.isChecked() ? "1" : tm15b.isChecked() ? "2" : "0");*/
 
-        MainApp.fc.setsM(String.valueOf(sM));
+        MainApp.fc.setsK(String.valueOf(sM));
     }
 
     private boolean UpdateDB() {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSM();
+        int updcount = db.updateSK();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -146,5 +146,10 @@ public class SectionKActivity extends AppCompatActivity {
             return false;
         }
         return true;
+    }
+    @Override
+    public void onBackPressed() {
+
+        Toast.makeText(this, "You can't go back", Toast.LENGTH_SHORT).show();
     }
 }

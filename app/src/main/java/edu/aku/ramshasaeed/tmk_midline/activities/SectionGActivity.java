@@ -1310,7 +1310,7 @@ public class SectionGActivity extends AppCompatActivity {
                 Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
                 MainApp.ims.setUID(
-                        (MainApp.fc.getDeviceId() + MainApp.ims.get_ID()));
+                        (MainApp.fc.getdeviceid() + MainApp.ims.get_ID()));
                 db.updateChildID();
 
                 return true;
@@ -1328,10 +1328,10 @@ public class SectionGActivity extends AppCompatActivity {
 
             MainApp.ims = new SectionIIMContract();
 
-            MainApp.ims.set_UUID(MainApp.fc.getUID());
-            MainApp.ims.setFormDate(MainApp.fc.getFormDate());
-            MainApp.ims.setDeviceId(MainApp.fc.getDeviceId());
-            MainApp.ims.setUser(MainApp.fc.getUser());
+            MainApp.ims.set_UUID(MainApp.fc.get_UID());
+            MainApp.ims.setFormDate(MainApp.fc.getformDate());
+            MainApp.ims.setDeviceId(MainApp.fc.getdeviceid());
+            MainApp.ims.setUser(MainApp.fc.getuser());
             MainApp.ims.setDevicetagID(sharedPref.getString("tagName", null));
 
             JSONObject sI = new JSONObject();
@@ -1519,7 +1519,7 @@ public class SectionGActivity extends AppCompatActivity {
             sI.put("measles2Pov", bi.measles2Pova.isChecked() ? "1" : bi.measles2Povb.isChecked() ? "2" : bi.measles2Povc.isChecked() ? "3"
                     : bi.measles2Povd.isChecked() ? "4" : bi.measles2Pove.isChecked() ? "5" : bi.measles2Povf.isChecked() ? "6"
                     : bi.measles2Povg.isChecked() ? "7" : bi.measles2Povh.isChecked() ? "8" : "0");
-            sI.put("appver", MainApp.versionName + "." + MainApp.versionCode);
+//            sI.put("appver", MainApp.versionName + "." + MainApp.versionCode);
 
 
             MainApp.ims.setsI(String.valueOf(sI));

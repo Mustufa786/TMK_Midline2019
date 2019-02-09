@@ -192,14 +192,14 @@ public class SectionJActivity extends AppCompatActivity {
                 : bi.tl1196.isChecked() ? "96" : "0");
         sL.put("tl1196x", bi.tl1196x.getText().toString());
 
-        MainApp.fc.setsL(String.valueOf(sL));
+        MainApp.fc.setsJ(String.valueOf(sL));
     }
 
     private boolean UpdateDB() {
 
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSL();
+        int updcount = db.updateSJ();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -257,6 +257,10 @@ public class SectionJActivity extends AppCompatActivity {
 */
         return true;
     }
+    @Override
+    public void onBackPressed() {
 
+        Toast.makeText(this, "You can't go back", Toast.LENGTH_SHORT).show();
+    }
 
 }

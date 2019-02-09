@@ -105,7 +105,7 @@
                     android:text="@string/no" />
 
                 <RadioButton
-                    android:id="@+id/thb01888"
+                    android:id="@+id/thb0198"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
@@ -136,7 +136,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:digits="0123456789"
-                    android:hint="@string/thb02"
+                    android:maxLength="2"
+                    android:hint="@string/thb02num"
                     android:inputType="number" />
 
             </LinearLayout>
@@ -171,7 +172,7 @@
                     android:text="@string/no" />
 
                 <RadioButton
-                    android:id="@+id/thb03888"
+                    android:id="@+id/thb0398"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
@@ -202,7 +203,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:digits="0123456789 "
-                    android:hint="@string/thb04"
+                    android:hint="@string/thb04num"
+                    android:maxLength="2"
                     android:inputType="number" />
 
 
@@ -246,7 +248,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
                     android:digits="0123456789 "
-                    android:hint="@string/thb06"
+                    android:hint="@string/thb06a"
+                    android:maxLength="2"
                     android:inputType="number" />
 
 
@@ -279,7 +282,7 @@
                         android:text="@string/no" />
 
                     <RadioButton
-                        android:id="@+id/thb07888"
+                        android:id="@+id/thb0798"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -361,7 +364,7 @@
                         android:text="@string/thb08h" />
 
                     <CheckBox
-                        android:id="@+id/thb0888"
+                        android:id="@+id/thb0896"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/other" />
@@ -376,7 +379,7 @@
                                         android:textColor="@android:color/white" />-->
 
                     <EditText
-                        android:id="@+id/thb0888x"
+                        android:id="@+id/thb0896x"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
@@ -410,7 +413,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="1dp"
                         android:digits="0123456789 "
-                        android:hint="@string/thb09"
+                        android:hint="@string/thb09a"
+                        android:maxLength="2"
                         android:inputType="number" />
 
 
@@ -881,6 +885,7 @@
                                 android:layout_marginBottom="1dp"
                                 android:digits="0123456789 "
                                 android:hint="@string/thb18a"
+                                android:maxLength="2"
                                 android:inputType="number"
                                 android:visibility="gone" />
 
@@ -891,6 +896,7 @@
                                 android:layout_marginBottom="1dp"
                                 android:digits="0123456789 "
                                 android:hint="@string/thb18b"
+                                android:maxLength="2"
                                 android:inputType="number"
                                 android:visibility="gone" />
                             <TextView
@@ -1117,9 +1123,45 @@
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:text="@string/thb23g" />
+                                        <CheckBox
+                                            android:id="@+id/thb23h"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/thb23h" />
+                                        <CheckBox
+                                            android:id="@+id/thb23i"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/thb23i" />
+                                        <CheckBox
+                                            android:id="@+id/thb23j"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/thb23j" />
+                                        <CheckBox
+                                            android:id="@+id/thb23k"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/thb23k" />
+                                        <CheckBox
+                                            android:id="@+id/thb2396"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/other" />
 
                                     </LinearLayout>
 
+                                    <EditText
+                                        android:id="@+id/thb2396x"
+                                        style="@style/textInput"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="10dp"
+                                        android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                                        android:hint="@string/other"
+                                        android:inputType="text"
+                                        android:text='@{thb2396.checked? thb2396x.getText.toString : ""}'
+                                        android:visibility='@{thb2396.checked? View.VISIBLE : View.GONE}' />
                                 </LinearLayout>
 
                             </LinearLayout>

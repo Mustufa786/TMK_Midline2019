@@ -6,20 +6,32 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
+import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionEBinding;
 import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
 
 public class SectionEActivity extends AppCompatActivity {
 
     ActivitySectionEBinding bi;
+
+    Map<String, String> childsMap;
+    ArrayList<String> lstChild;
+    String MotherName;
+
+    int count_child_5y = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +42,33 @@ public class SectionEActivity extends AppCompatActivity {
         this.setTitle(getResources().getString(R.string.teheading));
         validatorClass.setScrollViewFocus(bi.svsece);
 
+        settingAdapter();
+
+
+    }
+
+    private void settingAdapter() {
+        //        get data from sec B
+
+        childsMap = new HashMap<>();
+        lstChild = new ArrayList<>();
+
+        childsMap.put("....", "");
+        lstChild.add("....");
+
+
+        for (byte i = 0; i < MainApp.familyMembersList.size(); i++) {
+            int Age = Integer.parseInt(MainApp.familyMembersList.get(i).getage());
+            if (Age < 5) {
+                childsMap.put(MainApp.familyMembersList.get(i).getname(), MainApp.familyMembersList.get(i).getserialNo());
+                lstChild.add(MainApp.familyMembersList.get(i).getname());
+//                MotherName =  MainApp.familyMembersList.get(i).getmotherId();
+                count_child_5y++;
+            }
+        }
+
+        bi.te03.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstChild));
+//        MotherName = MainApp.familyMembersList.get(bi.te03.getSelectedItemPosition()- 2).getmotherId() ;
 
 
     }
@@ -59,7 +98,7 @@ public class SectionEActivity extends AppCompatActivity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSHA();
+        int updcount = db.updateSE();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -191,18 +230,17 @@ public class SectionEActivity extends AppCompatActivity {
                 : bi.te21k.isChecked() ? "11"
                 : "0");
 
-
+        MainApp.fc.setsE(String.valueOf(sE));
     }
 
     private boolean formValidation() {
-
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
         return true;
     }
 
     public void BtnEnd() {
-//        MainApp.endActivity(this, this, EndingActivity.class, false, Form01Enrolment.fc_4_5);
+        MainApp.endActivity(this, this);
     }
 
     @Override

@@ -107,8 +107,8 @@ public class MainActivity extends Activity {
             rSumText += "--------------------------------------------------\r\n";
 
             for (FormsContract fc : todaysForms) {
-                if (fc.getIstatus() != null) {
-                    switch (fc.getIstatus()) {
+                if (fc.getistatus() != null) {
+                    switch (fc.getistatus()) {
                         case "1":
                             iStatus = "\tComplete";
                             break;
@@ -128,11 +128,11 @@ public class MainActivity extends Activity {
                     iStatus = "\tN/A";
                 }
 
-                rSumText += fc.getDSSID();
+                rSumText += fc.get_ID();
 
                 rSumText += " " + iStatus + " ";
 
-                rSumText += (fc.getSynced() == null ? "\t\tNot Synced" : "\t\tSynced");
+                rSumText += (fc.getsynced() == null ? "\t\tNot Synced" : "\t\tSynced");
                 rSumText += "\r\n";
                 rSumText += "--------------------------------------------------\r\n";
             }
@@ -259,7 +259,7 @@ public class MainActivity extends Activity {
                                                 int id) {
                                 // this is how you fire the downloader
                                 mProgressDialog = new ProgressDialog(MainActivity.this);
-                                mProgressDialog.setMessage("Downloading TMK APK..");
+                                mProgressDialog.setMessage("Downloading TMK MIDLINE APK..");
                                 mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
                                 mProgressDialog.setIndeterminate(false);
                                 mProgressDialog.setProgress(0);

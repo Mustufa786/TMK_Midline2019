@@ -164,7 +164,7 @@ public class SectionIActivity extends AppCompatActivity {
         sK.put("tk0996x", bi.tk0996x.getText().toString());
 
         sK.put("tk10", bi.tk10a.isChecked() ? "1" : bi.tk10b.isChecked() ? "2" : bi.tk10c.isChecked() ? "3" : bi.tk10d.isChecked() ? "4"
-                : bi.tk10e.isChecked() ? "5" : bi.tk1096.isChecked() ? "96" : "0");
+                : bi.tk10e.isChecked() ? "5" : bi.tk10f.isChecked() ? "6" : bi.tk1096.isChecked() ? "96" : "0");
         sK.put("tk1096x", bi.tk1096x.getText().toString());
 
         sK.put("tk11", bi.tk11a.isChecked() ? "1" : bi.tk11b.isChecked() ? "2" : bi.tk11c.isChecked() ? "3" : bi.tk11d.isChecked() ? "4"
@@ -175,7 +175,7 @@ public class SectionIActivity extends AppCompatActivity {
         sK.put("tk13", bi.tk13a.isChecked() ? "1" : bi.tk13b.isChecked() ? "2" : "0");
         sK.put("tk14", bi.tk14a.isChecked() ? "1" : bi.tk14b.isChecked() ? "2" : bi.tk1498.isChecked() ? "98" : "0");
 
-        MainApp.fc.setsK(String.valueOf(sK));
+        MainApp.fc.setsI(String.valueOf(sK));
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
@@ -248,7 +248,7 @@ public class SectionIActivity extends AppCompatActivity {
     private boolean UpdateDB() {
         DatabaseHelper db = new DatabaseHelper(this);
 
-        int updcount = db.updateSK();
+        int updcount = db.updateSI();
 
         if (updcount == 1) {
             Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
@@ -285,5 +285,10 @@ public class SectionIActivity extends AppCompatActivity {
         MainApp.endActivity(this, this);
     }
 
+    @Override
+    public void onBackPressed() {
+
+        Toast.makeText(this, "You can't go back", Toast.LENGTH_SHORT).show();
+    }
 
 }
