@@ -53,11 +53,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:background="@color/colorPrimary" />
+
             <Spinner
                 android:id="@+id/tiname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"></Spinner>
+
 
             <TextView
                 android:layout_width="match_parent"
@@ -316,7 +318,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                            <!--    <LinearLayout
                                                     android:id="@+id/fldGrpBcgMCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -377,7 +379,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
 
                                             </LinearLayout>
@@ -430,7 +432,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                              <!--  <LinearLayout
                                                     android:id="@+id/fldGrpBcgCCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -476,7 +478,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
 
                                             </LinearLayout>
@@ -537,34 +539,6 @@
                                                     android:layout_height="wrap_content"
                                                     android:layout_marginBottom="1dp"
                                                     android:text="@string/place04" />
-
-                                                <RadioButton
-                                                    android:id="@+id/bcgPove"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place05" />
-
-                                                <RadioButton
-                                                    android:id="@+id/bcgPovf"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place06" />
-
-                                                <RadioButton
-                                                    android:id="@+id/bcgPovg"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place07" />
-
-                                                <RadioButton
-                                                    android:id="@+id/bcgPovh"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place08" />
 
 
                                             </RadioGroup>
@@ -662,7 +636,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                           <!--     <LinearLayout
                                                     android:id="@+id/fldGrpOpv0MCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -722,7 +696,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -775,7 +749,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                           <!--     <LinearLayout
                                                     android:id="@+id/fldGrpOpv0CCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -819,7 +793,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
 
                                             </LinearLayout>
@@ -876,33 +850,6 @@
                                                     android:layout_marginBottom="1dp"
                                                     android:text="@string/place04" />
 
-                                                <RadioButton
-                                                    android:id="@+id/opv0Pove"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place05" />
-
-                                                <RadioButton
-                                                    android:id="@+id/opv0Povf"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place06" />
-
-                                                <RadioButton
-                                                    android:id="@+id/opv0Povg"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place07" />
-
-                                                <RadioButton
-                                                    android:id="@+id/opv0Povh"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place08" />
 
 
                                             </RadioGroup>
@@ -1041,7 +988,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                           <!--     <LinearLayout
                                                     android:id="@+id/fldGrpOpv1MCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -1100,7 +1047,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -1153,7 +1100,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                            <!--    <LinearLayout
                                                     android:id="@+id/fldGrpOpv1CCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -1198,7 +1145,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -1255,34 +1202,6 @@
                                                     android:layout_height="wrap_content"
                                                     android:layout_marginBottom="1dp"
                                                     android:text="@string/place04" />
-
-                                                <RadioButton
-                                                    android:id="@+id/opv1Pove"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place05" />
-
-                                                <RadioButton
-                                                    android:id="@+id/opv1Povf"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place06" />
-
-                                                <RadioButton
-                                                    android:id="@+id/opv1Povg"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place07" />
-
-                                                <RadioButton
-                                                    android:id="@+id/opv1Povh"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place08" />
 
 
                                             </RadioGroup>
@@ -1370,7 +1289,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                      <!--          <LinearLayout
                                                     android:id="@+id/fldGrprota1MCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -1429,7 +1348,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -1482,7 +1401,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                            <!--    <LinearLayout
                                                     android:id="@+id/fldGrprota1CCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -1527,7 +1446,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -1585,33 +1504,6 @@
                                                     android:layout_marginBottom="1dp"
                                                     android:text="@string/place04" />
 
-                                                <RadioButton
-                                                    android:id="@+id/rota1Pove"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place05" />
-
-                                                <RadioButton
-                                                    android:id="@+id/rota1Povf"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place06" />
-
-                                                <RadioButton
-                                                    android:id="@+id/rota1Povg"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place07" />
-
-                                                <RadioButton
-                                                    android:id="@+id/rota1Povh"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place08" />
 
 
                                             </RadioGroup>
@@ -1701,7 +1593,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                           <!--     <LinearLayout
                                                     android:id="@+id/fldGrpPenta1MCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -1759,7 +1651,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -1812,7 +1704,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                               <!-- <LinearLayout
                                                     android:id="@+id/fldGrppenta1CCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -1856,7 +1748,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
 
                                             </LinearLayout>
@@ -1916,35 +1808,6 @@
                                                     android:layout_height="wrap_content"
                                                     android:layout_marginBottom="1dp"
                                                     android:text="@string/place04" />
-
-                                                <RadioButton
-                                                    android:id="@+id/penta1Pove"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place05" />
-
-                                                <RadioButton
-                                                    android:id="@+id/penta1Povf"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place06" />
-
-                                                <RadioButton
-                                                    android:id="@+id/penta1Povg"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place07" />
-
-                                                <RadioButton
-                                                    android:id="@+id/penta1Povh"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place08" />
-
 
                                             </RadioGroup>
 
@@ -2031,7 +1894,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                          <!--      <LinearLayout
                                                     android:id="@+id/fldGrpPcv1MCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -2090,7 +1953,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -2143,7 +2006,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                       <!--         <LinearLayout
                                                     android:id="@+id/fldGrpPcv1CCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -2185,7 +2048,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -2241,33 +2104,7 @@
                                                     android:layout_marginBottom="1dp"
                                                     android:text="@string/place04" />
 
-                                                <RadioButton
-                                                    android:id="@+id/pcv1Pove"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place05" />
 
-                                                <RadioButton
-                                                    android:id="@+id/pcv1Povf"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place06" />
-
-                                                <RadioButton
-                                                    android:id="@+id/pcv1Povg"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place07" />
-
-                                                <RadioButton
-                                                    android:id="@+id/pcv1Povh"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place08" />
 
 
                                             </RadioGroup>
@@ -2396,7 +2233,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                <!--                <LinearLayout
                                                     android:id="@+id/fldGrpOpv2MCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -2453,7 +2290,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
 
                                             </LinearLayout>
@@ -2507,7 +2344,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                             <!--   <LinearLayout
                                                     android:id="@+id/fldGrpOpv2CCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -2550,7 +2387,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
 
                                             </LinearLayout>
@@ -2609,33 +2446,6 @@
                                                     android:layout_marginBottom="1dp"
                                                     android:text="@string/place04" />
 
-                                                <RadioButton
-                                                    android:id="@+id/opv2Pove"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place05" />
-
-                                                <RadioButton
-                                                    android:id="@+id/opv2Povf"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place06" />
-
-                                                <RadioButton
-                                                    android:id="@+id/opv2Povg"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place07" />
-
-                                                <RadioButton
-                                                    android:id="@+id/opv2Povh"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place08" />
 
 
                                             </RadioGroup>
@@ -2722,7 +2532,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                       <!--         <LinearLayout
                                                     android:id="@+id/fldGrprota2MCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -2781,7 +2591,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -2834,7 +2644,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                             <!--   <LinearLayout
                                                     android:id="@+id/fldGrprota2CCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -2880,7 +2690,7 @@
                                                     </LinearLayout>
 
                                                 </LinearLayout>
-
+-->
                                             </LinearLayout>
 
 
@@ -2937,33 +2747,6 @@
                                                     android:layout_marginBottom="1dp"
                                                     android:text="@string/place04" />
 
-                                                <RadioButton
-                                                    android:id="@+id/rota2Pove"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place05" />
-
-                                                <RadioButton
-                                                    android:id="@+id/rota2Povf"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place06" />
-
-                                                <RadioButton
-                                                    android:id="@+id/rota2Povg"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place07" />
-
-                                                <RadioButton
-                                                    android:id="@+id/rota2Povh"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place08" />
 
 
                                             </RadioGroup>
@@ -3051,7 +2834,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                <!--                <LinearLayout
                                                     android:id="@+id/fldGrppenta2MCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -3108,7 +2891,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -3161,7 +2944,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                             <!--   <LinearLayout
                                                     android:id="@+id/fldGrpPenta2CCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -3205,7 +2988,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
 
                                             </LinearLayout>
@@ -3261,35 +3044,6 @@
                                                     android:layout_height="wrap_content"
                                                     android:layout_marginBottom="1dp"
                                                     android:text="@string/place04" />
-
-                                                <RadioButton
-                                                    android:id="@+id/penta2Pove"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place05" />
-
-                                                <RadioButton
-                                                    android:id="@+id/penta2Povf"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place06" />
-
-                                                <RadioButton
-                                                    android:id="@+id/penta2Povg"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place07" />
-
-                                                <RadioButton
-                                                    android:id="@+id/penta2Povh"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place08" />
-
 
                                             </RadioGroup>
 
@@ -3378,7 +3132,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                            <!--    <LinearLayout
                                                     android:id="@+id/fldGrpPcv2MCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -3435,7 +3189,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -3488,7 +3242,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                              <!--  <LinearLayout
                                                     android:id="@+id/fldGrpPcv2CCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -3530,7 +3284,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
 
                                             </LinearLayout>
@@ -3588,33 +3342,6 @@
                                                     android:layout_marginBottom="1dp"
                                                     android:text="@string/place04" />
 
-                                                <RadioButton
-                                                    android:id="@+id/pcv2Pove"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place05" />
-
-                                                <RadioButton
-                                                    android:id="@+id/pcv2Povf"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place06" />
-
-                                                <RadioButton
-                                                    android:id="@+id/pcv2Povg"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place07" />
-
-                                                <RadioButton
-                                                    android:id="@+id/pcv2Povh"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place08" />
 
 
                                             </RadioGroup>
@@ -3749,7 +3476,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                              <!--  <LinearLayout
                                                     android:id="@+id/fldGrpOpv3MCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -3806,7 +3533,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
 
                                             </LinearLayout>
@@ -3860,7 +3587,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                               <!-- <LinearLayout
                                                     android:id="@+id/fldGrpOpv3CCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -3903,7 +3630,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -3960,33 +3687,6 @@
                                                     android:layout_marginBottom="1dp"
                                                     android:text="@string/place04" />
 
-                                                <RadioButton
-                                                    android:id="@+id/opv3Pove"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place05" />
-
-                                                <RadioButton
-                                                    android:id="@+id/opv3Povf"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place06" />
-
-                                                <RadioButton
-                                                    android:id="@+id/opv3Povg"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place07" />
-
-                                                <RadioButton
-                                                    android:id="@+id/opv3Povh"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place08" />
 
 
                                             </RadioGroup>
@@ -4076,7 +3776,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                             <!--   <LinearLayout
                                                     android:id="@+id/fldGrpPenta3MCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -4135,7 +3835,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -4188,7 +3888,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                             <!--   <LinearLayout
                                                     android:id="@+id/fldGrppenta3CCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -4233,7 +3933,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
 
                                             </LinearLayout>
@@ -4292,33 +3992,7 @@
                                                     android:layout_marginBottom="1dp"
                                                     android:text="@string/place04" />
 
-                                                <RadioButton
-                                                    android:id="@+id/penta3Pove"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place05" />
 
-                                                <RadioButton
-                                                    android:id="@+id/penta3Povf"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place06" />
-
-                                                <RadioButton
-                                                    android:id="@+id/penta3Povg"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place07" />
-
-                                                <RadioButton
-                                                    android:id="@+id/penta3Povh"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place08" />
 
 
                                             </RadioGroup>
@@ -4406,7 +4080,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                          <!--      <LinearLayout
                                                     android:id="@+id/fldGrpPcv3MCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -4465,7 +4139,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -4518,7 +4192,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                              <!--  <LinearLayout
                                                     android:id="@+id/fldGrpPcv3CCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -4560,7 +4234,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
 
                                             </LinearLayout>
@@ -4618,33 +4292,6 @@
                                                     android:layout_marginBottom="1dp"
                                                     android:text="@string/place04" />
 
-                                                <RadioButton
-                                                    android:id="@+id/pcv3Pove"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place05" />
-
-                                                <RadioButton
-                                                    android:id="@+id/pcv3Povf"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place06" />
-
-                                                <RadioButton
-                                                    android:id="@+id/pcv3Povg"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place07" />
-
-                                                <RadioButton
-                                                    android:id="@+id/pcv3Povh"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place08" />
 
 
                                             </RadioGroup>
@@ -4733,7 +4380,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                           <!--     <LinearLayout
                                                     android:id="@+id/fldGrpIpvMCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -4791,7 +4438,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -4844,7 +4491,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                          <!--      <LinearLayout
                                                     android:id="@+id/fldGrpIpvCCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -4888,7 +4535,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -4945,33 +4592,6 @@
                                                     android:layout_marginBottom="1dp"
                                                     android:text="@string/place04" />
 
-                                                <RadioButton
-                                                    android:id="@+id/ipvPove"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place05" />
-
-                                                <RadioButton
-                                                    android:id="@+id/ipvPovf"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place06" />
-
-                                                <RadioButton
-                                                    android:id="@+id/ipvPovg"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place07" />
-
-                                                <RadioButton
-                                                    android:id="@+id/ipvPovh"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place08" />
 
 
                                             </RadioGroup>
@@ -5104,7 +4724,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                             <!--   <LinearLayout
                                                     android:id="@+id/fldGrpmeasles1MCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -5160,7 +4780,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -5213,7 +4833,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                               <!-- <LinearLayout
                                                     android:id="@+id/fldGrpMeasles1CCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -5257,7 +4877,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
 
                                             </LinearLayout>
@@ -5313,34 +4933,6 @@
                                                     android:layout_height="wrap_content"
                                                     android:layout_marginBottom="1dp"
                                                     android:text="@string/place04" />
-
-                                                <RadioButton
-                                                    android:id="@+id/measles1Pove"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place05" />
-
-                                                <RadioButton
-                                                    android:id="@+id/measles1Povf"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place06" />
-
-                                                <RadioButton
-                                                    android:id="@+id/measles1Povg"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place07" />
-
-                                                <RadioButton
-                                                    android:id="@+id/measles1Povh"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place08" />
 
 
                                             </RadioGroup>
@@ -5462,7 +5054,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                          <!--      <LinearLayout
                                                     android:id="@+id/fldGrpmeasles2MCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -5523,7 +5115,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -5576,7 +5168,7 @@
 
                                                 </RadioGroup>
 
-                                                <LinearLayout
+                                             <!--   <LinearLayout
                                                     android:id="@+id/fldGrpMeasles2CCheck"
                                                     android:layout_width="match_parent"
                                                     android:layout_height="wrap_content"
@@ -5621,7 +5213,7 @@
 
                                                     </LinearLayout>
 
-                                                </LinearLayout>
+                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -5679,33 +5271,6 @@
                                                     android:layout_marginBottom="1dp"
                                                     android:text="@string/place04" />
 
-                                                <RadioButton
-                                                    android:id="@+id/measles2Pove"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place05" />
-
-                                                <RadioButton
-                                                    android:id="@+id/measles2Povf"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place06" />
-
-                                                <RadioButton
-                                                    android:id="@+id/measles2Povg"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place07" />
-
-                                                <RadioButton
-                                                    android:id="@+id/measles2Povh"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:layout_marginBottom="1dp"
-                                                    android:text="@string/place08" />
 
 
                                             </RadioGroup>

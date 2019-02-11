@@ -38,12 +38,12 @@ public class SectionGActivity extends AppCompatActivity {
     ActivitySectionGBinding bi;
     private static final String TAG = SectionIActivity.class.getSimpleName();
 
-    @BindViews({R.id.bcgDate, R.id.opv0Date, R.id.opv1Date, R.id.penta1Date, R.id.pcv1Date, R.id.opv2Date, R.id.penta2Date
+   /* @BindViews({R.id.bcgDate, R.id.opv0Date, R.id.opv1Date, R.id.penta1Date, R.id.pcv1Date, R.id.opv2Date, R.id.penta2Date
             , R.id.pcv2Date, R.id.opv3Date, R.id.penta3Date, R.id.pcv3Date, R.id.ipvDate, R.id.measles1Date, R.id.measles2Date})
     List<DatePickerInputEditText> dates;
     @BindViews({R.id.text1, R.id.text2, R.id.text3, R.id.text4, R.id.text5, R.id.text6, R.id.text7
             , R.id.text8, R.id.text9, R.id.text10, R.id.text11, R.id.text12, R.id.text13, R.id.text14})
-    List<TextView> datesText;
+    List<TextView> datesText;*/
     @BindViews({R.id.fldGrpBcgC, R.id.fldGrpopv0C, R.id.fldGrpPenta1C, R.id.fldGrppcv1C, R.id.fldGrpopv1C, R.id.fldGrppenta2C,
             R.id.fldGrppcv2C, R.id.fldGrpopv2C, R.id.fldGrpenta3C, R.id.fldGrppcv3C, R.id.fldGrpopv3C, R.id.fldGrpipvC,
             R.id.fldGrpmeasles1C, R.id.fldGrpmeasles2C})
@@ -100,7 +100,7 @@ public class SectionGActivity extends AppCompatActivity {
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
 
-            if (radioGroup == bi.ipvC) {
+          /*  if (radioGroup == bi.ipvC) {
                 if (bi.ipvC01.isChecked()) {
                     bi.fldGrpIpvCCheck.setVisibility(View.VISIBLE);
                 } else {
@@ -121,7 +121,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.ipvdatenr.setChecked(false);
                 }
             }
-
+*/
 
             if (bi.ipvM01.isChecked() || bi.ipvC01.isChecked()) {
                 bi.fldGrpov12.setVisibility(View.VISIBLE);
@@ -142,7 +142,7 @@ public class SectionGActivity extends AppCompatActivity {
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
 
-            if (radioGroup ==  bi.measles1C) {
+         /*   if (radioGroup ==  bi.measles1C) {
                 if ( bi.measles1C01.isChecked()) {
                     bi.fldGrpMeasles1CCheck.setVisibility(View.VISIBLE);
                 } else {
@@ -162,7 +162,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.measles1DateMMon.setText(null);
                     bi.measles1datenr.setChecked(false);
                 }
-            }
+            }*/
 
             if ( bi.measles1M01.isChecked() ||  bi.measles1C01.isChecked()) {
                 bi.fldGrpov13.setVisibility(View.VISIBLE);
@@ -186,7 +186,7 @@ public class SectionGActivity extends AppCompatActivity {
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-
+/*
             if (radioGroup == bi.measles2C) {
                 if (bi.measles2C01.isChecked()) {
                     bi.fldGrpMeasles2CCheck.setVisibility(View.VISIBLE);
@@ -207,7 +207,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.measles2DateMMon.setText(null);
                     bi.measles2datenr.setChecked(false);
                 }
-            }
+            }*/
 
             if (bi.measles2M01.isChecked() || bi.measles2C01.isChecked()) {
                 bi.fldGrpov14.setVisibility(View.VISIBLE);
@@ -230,7 +230,7 @@ public class SectionGActivity extends AppCompatActivity {
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-
+/*
             if (radioGroup == bi.pcv3C) {
                 if (bi.pcv3C01.isChecked()) {
                     bi.fldGrpPcv3CCheck.setVisibility(View.VISIBLE);
@@ -251,7 +251,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.pcv3DateMMon.setText(null);
                     bi.pcv3datenr.setChecked(false);
                 }
-            }
+            }*/
 
 
             if (bi.pcv3M01.isChecked() || bi.pcv3C01.isChecked()) {
@@ -272,6 +272,7 @@ public class SectionGActivity extends AppCompatActivity {
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
+/*
 
             if (radioGroup == bi.bcgC) {
                 if (bi.bcgC01.isChecked()) {
@@ -294,6 +295,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.bcgdatenr.setChecked(false);
                 }
             }
+*/
 
 
             if (bi.bcgM01.isChecked() || bi.bcgC01.isChecked()) {
@@ -318,7 +320,7 @@ public class SectionGActivity extends AppCompatActivity {
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
 
-            if (radioGroup == bi.opv0C) {
+          /*  if (radioGroup == bi.opv0C) {
                 if (bi.opv0C01.isChecked()) {
                     bi.fldGrpOpv0CCheck.setVisibility(View.VISIBLE);
                 } else {
@@ -337,7 +339,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.opv0DateMMon.setText(null);
                     bi.opv0datenr.setChecked(false);
                 }
-            }
+            }*/
             if (bi.opv0M01.isChecked() || bi.opv0C01.isChecked()) {
                 bi.fldGrpov2.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
@@ -356,7 +358,7 @@ public class SectionGActivity extends AppCompatActivity {
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-
+/*
             if (radioGroup == bi.opv1C) {
                 if (bi.opv1C01.isChecked()) {
                     bi.fldGrpOpv1CCheck.setVisibility(View.VISIBLE);
@@ -377,7 +379,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.opv1DateMMon.setText(null);
                     bi.opv1datenr.setChecked(false);
                 }
-            }
+            }*/
 
             if (bi.opv1M01.isChecked() || bi.opv1C01.isChecked()) {
                 bi.fldGrpov3.setVisibility(View.VISIBLE);
@@ -396,6 +398,7 @@ public class SectionGActivity extends AppCompatActivity {
     {
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+/*
 
             if (radioGroup == bi.penta1C) {
                 if (bi.penta1C01.isChecked()) {
@@ -418,6 +421,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.penta1datenr.setChecked(false);
                 }
             }
+*/
 
             if (bi.penta1M01.isChecked() || bi.penta1C01.isChecked()) {
                 bi.fldGrpov4.setVisibility(View.VISIBLE);
@@ -437,6 +441,7 @@ public class SectionGActivity extends AppCompatActivity {
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
+/*
 
             if (radioGroup == bi.pcv1C) {
                 if (bi.pcv1C01.isChecked()) {
@@ -458,6 +463,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.pcv1datenr.setChecked(false);
                 }
             }
+*/
 
 
             if (bi.pcv1M01.isChecked() || bi.pcv1C01.isChecked()) {
@@ -479,7 +485,7 @@ public class SectionGActivity extends AppCompatActivity {
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-            if (radioGroup == bi.opv2C) {
+         /*   if (radioGroup == bi.opv2C) {
                 if (bi.opv2C01.isChecked()) {
                     bi.fldGrpOpv2CCheck.setVisibility(View.VISIBLE);
                 } else {
@@ -498,7 +504,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.opv2DateMMon.setText(null);
                     bi.opv2datenr.setChecked(false);
                 }
-            }
+            }*/
 
             if (bi.opv2M01.isChecked() || bi.opv2C01.isChecked()) {
                 bi.fldGrpov6.setVisibility(View.VISIBLE);
@@ -518,7 +524,7 @@ public class SectionGActivity extends AppCompatActivity {
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-
+/*
             if (radioGroup == bi.penta2C) {
                 if (bi.penta2C01.isChecked()) {
                     bi.fldGrpPenta2CCheck.setVisibility(View.VISIBLE);
@@ -539,7 +545,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.penta2DateMMon.setText(null);
                     bi.penta2datenr.setChecked(false);
                 }
-            }
+            }*/
             if (bi.penta2M01.isChecked() || bi.penta2C01.isChecked()) {
                 bi.fldGrpov7.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
@@ -559,7 +565,7 @@ public class SectionGActivity extends AppCompatActivity {
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
 
-            if (radioGroup == bi.pcv2C) {
+          /*  if (radioGroup == bi.pcv2C) {
                 if (bi.pcv2C01.isChecked()) {
                     bi.fldGrpPcv2CCheck.setVisibility(View.VISIBLE);
                 } else {
@@ -579,7 +585,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.pcv2DateMMon.setText(null);
                     bi.pcv2datenr.setChecked(false);
                 }
-            }
+            }*/
 
             if (bi.pcv2M01.isChecked() || bi.pcv2C01.isChecked()) {
                 bi.fldGrpov8.setVisibility(View.VISIBLE);
@@ -601,7 +607,7 @@ public class SectionGActivity extends AppCompatActivity {
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-            if (radioGroup == bi.opv3C) {
+          /*  if (radioGroup == bi.opv3C) {
                 if (bi.opv3C01.isChecked()) {
                     bi.fldGrpOpv3CCheck.setVisibility(View.VISIBLE);
                 } else {
@@ -621,7 +627,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.opv3DateMMon.setText(null);
                     bi.opv3datenr.setChecked(false);
                 }
-            }
+            }*/
             if (bi.opv3M01.isChecked() || bi.opv3C01.isChecked()) {
                 bi.fldGrpov9.setVisibility(View.VISIBLE);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
@@ -642,7 +648,7 @@ public class SectionGActivity extends AppCompatActivity {
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
 
-
+/*
             if (radioGroup == bi.penta3C) {
                 if (bi.penta3C01.isChecked()) {
                     bi.fldGrppenta3CCheck.setVisibility(View.VISIBLE);
@@ -663,7 +669,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.penta3DateMMon.setText(null);
                     bi.penta3datenr.setChecked(false);
                 }
-            }
+            }*/
 
             if (bi.penta3M01.isChecked() || bi.penta3C01.isChecked()) {
                 bi.fldGrpov10.setVisibility(View.VISIBLE);
@@ -734,20 +740,20 @@ public class SectionGActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (bi.ti03a.isChecked()) {
-                    for (DatePickerInputEditText de : dates) {
+                 /*   for (DatePickerInputEditText de : dates) {
                         de.setVisibility(View.VISIBLE);
-                       /* if (MainApp.ageRdo == 1 && (!bi.tiname.getSelectedItem().equals("...."))) {
+                       *//* if (MainApp.ageRdo == 1 && (!bi.tiname.getSelectedItem().equals("...."))) {
                             de.setMinDate(MainApp.convertd01teFormat(MainApp.childsMap.get(bi.tiname.getSelectedItem()).getDob()));
                         } else if (MainApp.ageRdo == 2 && (!bi.tiname.getSelectedItem().equals("...."))) {
                             de.setMinDate(maxDate2Years);
-                        }*/
-                    }
+                        }*//*
+                    }*/
                     for (LinearLayout le : fldGrpCard) {
                         le.setVisibility(View.VISIBLE);
                     }
-                    for (TextView te : datesText) {
+                  /*  for (TextView te : datesText) {
                         te.setVisibility(View.VISIBLE);
-                    }
+                    }*/
                     for (LinearLayout le : fldGrpMother) {
                         le.setVisibility(View.VISIBLE);
                     }
@@ -759,13 +765,13 @@ public class SectionGActivity extends AppCompatActivity {
                             re.clearCheck();
                         }
 
-                        for (DatePickerInputEditText de : dates) {
+                     /*   for (DatePickerInputEditText de : dates) {
                             de.setVisibility(View.GONE);
                             de.setText(null);
                         }
                         for (TextView te : datesText) {
                             te.setVisibility(View.GONE);
-                        }
+                        }*/
                     }
                     for (LinearLayout le : fldGrpMother) {
                         le.setVisibility(View.VISIBLE);
@@ -794,9 +800,9 @@ public class SectionGActivity extends AppCompatActivity {
                     for (RadioGroup re : rdoAll) {
                         re.clearCheck();
                     }
-                    for (DatePickerInputEditText de : dates) {
+                  /*  for (DatePickerInputEditText de : dates) {
                         de.setText(null);
-                    }
+                    }*/
 
                     for (RadioGroup re : placeofVacc) {
                         re.clearCheck();
@@ -901,7 +907,7 @@ public class SectionGActivity extends AppCompatActivity {
             rd.setOnCheckedChangeListener(measles2);
         }
 
-        bi.bcgdatenr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+     /*   bi.bcgdatenr.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked) {
@@ -1254,7 +1260,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.fldGrpMeasles2CDate.setVisibility(View.VISIBLE);
                 }
             }
-        });
+        });*/
     }
 
 
@@ -1354,171 +1360,157 @@ public class SectionGActivity extends AppCompatActivity {
             sI.put("ti03", bi.ti03a.isChecked() ? "1" : bi.ti03b.isChecked() ? "2" : bi.ti03c.isChecked() ? "3" : "0");
 
             sI.put("bcgM", bi.bcgM01.isChecked() ? "1" : bi.bcgM02.isChecked() ? "2" : "0");
-            sI.put("bcgdatenr", bi.bcgdatenr.isChecked() ? "1" : "0");
+           /* sI.put("bcgdatenr", bi.bcgdatenr.isChecked() ? "1" : "0");
             sI.put("bcgdateM_mon", bi.bcgDateMMon.getText().toString());
-            sI.put("bcgdateM_year", bi.bcgDateMYear.getText().toString());
+            sI.put("bcgdateM_year", bi.bcgDateMYear.getText().toString());*/
             sI.put("bcgC", bi.bcgC01.isChecked() ? "1" : bi.bcgC02.isChecked() ? "2" : "0");
-            sI.put("bcgdatenp", bi.bcgdatenp.isChecked() ? "1" : "0");
-            sI.put("bcgDate", bi.bcgDate.getText().toString());
+         /*   sI.put("bcgdatenp", bi.bcgdatenp.isChecked() ? "1" : "0");
+            sI.put("bcgDate", bi.bcgDate.getText().toString());*/
             sI.put("bcgPov", bi.bcgPova.isChecked() ? "1" : bi.bcgPovb.isChecked() ? "2" : bi.bcgPovc.isChecked() ? "3"
-                    : bi.bcgPovd.isChecked() ? "4" : bi.bcgPove.isChecked() ? "5" : bi.bcgPovf.isChecked() ? "6" : bi.bcgPovg.isChecked() ? "7"
-                    : bi.bcgPovh.isChecked() ? "8" : "0");
+                    : bi.bcgPovd.isChecked() ? "98" : "0");
             // BCG At Birth
             sI.put("opv0M", bi.opv0M01.isChecked() ? "1" : bi.opv0M02.isChecked() ? "2" : "0");
-            sI.put("opv0datenr", bi.opv0datenr.isChecked() ? "1" : "0");
+          /*  sI.put("opv0datenr", bi.opv0datenr.isChecked() ? "1" : "0");
             sI.put("opv0dateM_mon", bi.opv0DateMMon.getText().toString());
-            sI.put("opv0dateM_year", bi.opv0DateMYear.getText().toString());
+            sI.put("opv0dateM_year", bi.opv0DateMYear.getText().toString());*/
             sI.put("opv0C", bi.opv0C01.isChecked() ? "1" : bi.opv0C02.isChecked() ? "2" : "0");
-            sI.put("opv0datenp", bi.opv0datenp.isChecked() ? "1" : "0");
-            sI.put("opv0Date", bi.opv0Date.getText().toString());
+           /* sI.put("opv0datenp", bi.opv0datenp.isChecked() ? "1" : "0");
+            sI.put("opv0Date", bi.opv0Date.getText().toString());*/
             sI.put("opv0Pov", bi.opv0Pova.isChecked() ? "1" : bi.opv0Povb.isChecked() ? "2" : bi.opv0Povc.isChecked() ? "3"
-                    : bi.opv0Povd.isChecked() ? "4" : bi.opv0Pove.isChecked() ? "5" : bi.opv0Povf.isChecked() ? "6" : bi.opv0Povg.isChecked() ? "7"
-                    : bi.opv0Povh.isChecked() ? "8" : "0");
+                    : bi.opv0Povd.isChecked() ? "98" : "0");
             //Polio At Birth
             sI.put("penta1M", bi.penta1M01.isChecked() ? "1" : bi.Penta1M02.isChecked() ? "2" : "0");
-            sI.put("penta1datenr", bi.penta1datenr.isChecked() ? "1" : "0");
+           /* sI.put("penta1datenr", bi.penta1datenr.isChecked() ? "1" : "0");
             sI.put("penta1dateM_mon", bi.penta1DateMMon.getText().toString());
-            sI.put("penta1dateM_year", bi.penta1DateMYear.getText().toString());
+            sI.put("penta1dateM_year", bi.penta1DateMYear.getText().toString());*/
             sI.put("penta1C", bi.penta1C01.isChecked() ? "1" : bi.penta1C02.isChecked() ? "2" : "0");
-            sI.put("penta1datenp", bi.penta1datenp.isChecked() ? "1" : "0");
-            sI.put("penta1Date", bi.penta1Date.getText().toString());
+           /* sI.put("penta1datenp", bi.penta1datenp.isChecked() ? "1" : "0");
+            sI.put("penta1Date", bi.penta1Date.getText().toString());*/
             sI.put("penta1Pov", bi.penta1Pova.isChecked() ? "1" : bi.penta1Povb.isChecked() ? "2" : bi.penta1Povc.isChecked() ? "3"
-                    : bi.penta1Povd.isChecked() ? "4" : bi.penta1Pove.isChecked() ? "5" : bi.penta1Povf.isChecked() ? "6" : bi.penta1Povg.isChecked() ? "7"
-                    : bi.penta1Povh.isChecked() ? "8" : "0");
+                    : bi.penta1Povd.isChecked() ? "98": "0");
             // Penta 1 at 6 weeks
             sI.put("pcv1M", bi.pcv1M01.isChecked() ? "1" : bi.pcv1M02.isChecked() ? "2" : "0");
-            sI.put("pcv1datenr", bi.pcv1datenr.isChecked() ? "1" : "0");
+          /*  sI.put("pcv1datenr", bi.pcv1datenr.isChecked() ? "1" : "0");
             sI.put("pcv1dateM_mon", bi.pcv1DateMMon.getText().toString());
-            sI.put("pcv1dateM_year", bi.pcv1DateMYear.getText().toString());
+            sI.put("pcv1dateM_year", bi.pcv1DateMYear.getText().toString());*/
 
             sI.put("pcv1C", bi.pcv1C01.isChecked() ? "1" : bi.pcv1C02.isChecked() ? "2" : "0");
-            sI.put("pcv1datenp", bi.pcv1datenp.isChecked() ? "1" : "0");
-            sI.put("pcv1Date", bi.pcv1Date.getText().toString());
+          /*  sI.put("pcv1datenp", bi.pcv1datenp.isChecked() ? "1" : "0");
+            sI.put("pcv1Date", bi.pcv1Date.getText().toString());*/
             sI.put("pcv1Pov", bi.pcv1Pova.isChecked() ? "1" : bi.pcv1Povb.isChecked() ? "2" : bi.pcv1Povc.isChecked() ? "3"
-                    : bi.pcv1Povd.isChecked() ? "4" : bi.pcv1Pove.isChecked() ? "5" : bi.pcv1Povf.isChecked() ? "6" : bi.pcv1Povg.isChecked() ? "7"
-                    : bi.pcv1Povh.isChecked() ? "8" : "0");
+                    : bi.pcv1Povd.isChecked() ? "98" : "0");
             //PCV 1 at 6 weeks
             sI.put("opv1M", bi.opv1M01.isChecked() ? "1" : bi.opv1M02.isChecked() ? "2" : "0");
-            sI.put("opv1datenr", bi.opv1datenr.isChecked() ? "1" : "0");
+           /* sI.put("opv1datenr", bi.opv1datenr.isChecked() ? "1" : "0");
             sI.put("opv1dateM_mon", bi.opv1DateMMon.getText().toString());
-            sI.put("opv1dateM_year", bi.opv1DateMYear.getText().toString());
+            sI.put("opv1dateM_year", bi.opv1DateMYear.getText().toString());*/
             sI.put("opv1C", bi.opv1C01.isChecked() ? "1" : bi.opv1C02.isChecked() ? "2" : "0");
-            sI.put("opv1datenp", bi.opv1datenp.isChecked() ? "1" : "0");
-            sI.put("opv1Date", bi.opv1Date.getText().toString());
+        /*    sI.put("opv1datenp", bi.opv1datenp.isChecked() ? "1" : "0");
+            sI.put("opv1Date", bi.opv1Date.getText().toString());*/
             sI.put("opv1Pov", bi.opv1Pova.isChecked() ? "1" : bi.opv1Povb.isChecked() ? "2" : bi.opv1Povc.isChecked() ? "3"
-                    : bi.opv1Povd.isChecked() ? "4" : bi.opv1Pove.isChecked() ? "5" : bi.opv1Povf.isChecked() ? "6" : bi.opv1Povg.isChecked() ? "7"
-                    : bi.opv1Povh.isChecked() ? "8" : "0");
+                    : bi.opv1Povd.isChecked() ? "98" : "0");
             // OPV 1 at 6 weeks
             sI.put("penta2M", bi.penta2M01.isChecked() ? "1" : bi.penta2M02.isChecked() ? "2" : "0");
-            sI.put("penta2datenr", bi.penta2datenr.isChecked() ? "1" : "0");
+          /*  sI.put("penta2datenr", bi.penta2datenr.isChecked() ? "1" : "0");
             sI.put("penta2dateM_mon", bi.penta2DateMMon.getText().toString());
-            sI.put("penta2dateM_year", bi.penta2DateMYear.getText().toString());
+            sI.put("penta2dateM_year", bi.penta2DateMYear.getText().toString());*/
             sI.put("penta2C", bi.penta2C01.isChecked() ? "1" : bi.penta2C02.isChecked() ? "2" : "0");
-            sI.put("penta2datenp", bi.penta2datenp.isChecked() ? "1" : "0");
+          /*  sI.put("penta2datenp", bi.penta2datenp.isChecked() ? "1" : "0");
 
-            sI.put("penta2Date", bi.penta2Date.getText().toString());
+            sI.put("penta2Date", bi.penta2Date.getText().toString());*/
             sI.put("penta2Pov", bi.penta2Pova.isChecked() ? "1" : bi.penta2Povb.isChecked() ? "2" : bi.penta2Povc.isChecked() ? "3"
-                    : bi.penta2Povd.isChecked() ? "4" : bi.penta2Pove.isChecked() ? "5" : bi.penta2Povf.isChecked() ? "6" : bi.penta2Povg.isChecked() ? "7"
-                    : bi.penta2Povh.isChecked() ? "8" : "0");
+                    : bi.penta2Povd.isChecked() ? "98": "0");
             // Penta 2 at 10 weeks
             sI.put("pcv2M", bi.pcv2M01.isChecked() ? "1" : bi.pcv2M02.isChecked() ? "2" : "0");
-            sI.put("pcv2datenr", bi.pcv2datenr.isChecked() ? "1" : "0");
+         /*   sI.put("pcv2datenr", bi.pcv2datenr.isChecked() ? "1" : "0");
             sI.put("pcv2dateM_mon", bi.pcv2DateMMon.getText().toString());
-            sI.put("pcv2dateM_year", bi.pcv2DateMYear.getText().toString());
+            sI.put("pcv2dateM_year", bi.pcv2DateMYear.getText().toString());*/
             sI.put("pcv2C", bi.pcv2C01.isChecked() ? "1" : bi.pcv2C02.isChecked() ? "2" : "0");
-            sI.put("pcv2datenp", bi.pcv2datenp.isChecked() ? "1" : "0");
-            sI.put("pcv2Date", bi.pcv2Date.getText().toString());
+         /*   sI.put("pcv2datenp", bi.pcv2datenp.isChecked() ? "1" : "0");
+            sI.put("pcv2Date", bi.pcv2Date.getText().toString());*/
             sI.put("pcv2Pov", bi.pcv2Pova.isChecked() ? "1" : bi.pcv2Povb.isChecked() ? "2" : bi.pcv2Povc.isChecked() ? "3"
-                    : bi.pcv2Povd.isChecked() ? "4" : bi.pcv2Pove.isChecked() ? "5" : bi.pcv2Povf.isChecked() ? "6" : bi.pcv2Povg.isChecked() ? "7"
-                    : bi.pcv2Povh.isChecked() ? "8" : "0");
+                    : bi.pcv2Povd.isChecked() ? "98" : "0");
 
             sI.put("opv2M", bi.opv2M01.isChecked() ? "1" : bi.opv2M02.isChecked() ? "2" : "0");
-            sI.put("opv2datenr", bi.opv2datenr.isChecked() ? "1" : "0");
+           /* sI.put("opv2datenr", bi.opv2datenr.isChecked() ? "1" : "0");
             sI.put("opv2dateM_mon", bi.opv2DateMMon.getText().toString());
-            sI.put("opv2dateM_year", bi.opv2DateMYear.getText().toString());
+            sI.put("opv2dateM_year", bi.opv2DateMYear.getText().toString());*/
             sI.put("opv2C", bi.opv2C01.isChecked() ? "1" : bi.opv2C02.isChecked() ? "2" : "0");
-            sI.put("opv2datenp", bi.opv2datenp.isChecked() ? "1" : "0");
+           /* sI.put("opv2datenp", bi.opv2datenp.isChecked() ? "1" : "0");
 
-            sI.put("opv2Date", bi.opv2Date.getText().toString());
+            sI.put("opv2Date", bi.opv2Date.getText().toString());*/
             sI.put("opv2Pov", bi.opv2Pova.isChecked() ? "1" : bi.opv2Povb.isChecked() ? "2" : bi.opv2Povc.isChecked() ? "3"
-                    : bi.opv2Povd.isChecked() ? "4" : bi.opv2Pove.isChecked() ? "5" : bi.opv2Povf.isChecked() ? "6" : bi.opv2Povg.isChecked() ? "7"
-                    : bi.opv2Povh.isChecked() ? "8" : "0");
+                    : bi.opv2Povd.isChecked() ? "98" : "0");
 
             // PCV 2 at 6 weeks
             sI.put("penta3M", bi.penta3M01.isChecked() ? "1" : bi.penta3M02.isChecked() ? "2" : "0");
-            sI.put("penta3datenr", bi.penta3datenr.isChecked() ? "1" : "0");
+          /*  sI.put("penta3datenr", bi.penta3datenr.isChecked() ? "1" : "0");
             sI.put("penta3dateM_mon", bi.penta3DateMMon.getText().toString());
-            sI.put("penta3dateM_year", bi.penta3DateMYear.getText().toString());
+            sI.put("penta3dateM_year", bi.penta3DateMYear.getText().toString());*/
             sI.put("penta3C", bi.penta3C01.isChecked() ? "1" : bi.penta3C02.isChecked() ? "2" : "0");
-            sI.put("penta3datenp", bi.penta3datenp.isChecked() ? "1" : "0");
+          /*  sI.put("penta3datenp", bi.penta3datenp.isChecked() ? "1" : "0");
 
-            sI.put("penta3Date", bi.penta3Date.getText().toString());
+            sI.put("penta3Date", bi.penta3Date.getText().toString());*/
             sI.put("penta3Pov", bi.penta3Pova.isChecked() ? "1" : bi.penta3Povb.isChecked() ? "2" : bi.penta3Povc.isChecked() ? "3"
-                    : bi.penta3Povd.isChecked() ? "4" : bi.penta3Pove.isChecked() ? "5" : bi.penta3Povf.isChecked() ? "6" : bi.penta3Povg.isChecked() ? "7"
-                    : bi.penta3Povh.isChecked() ? "8" : "0");
+                    : bi.penta3Povd.isChecked() ? "98" : "0");
             // OPV 2 at 6 weeks
             sI.put("pcv3M", bi.pcv3M01.isChecked() ? "1" : bi.pcv3M02.isChecked() ? "2" : "0");
-            sI.put("pcv3datenr", bi.pcv3datenr.isChecked() ? "1" : "0");
+         /*   sI.put("pcv3datenr", bi.pcv3datenr.isChecked() ? "1" : "0");
             sI.put("pcv3dateM_mon", bi.pcv3DateMMon.getText().toString());
             sI.put("pcv3dateM_year", bi.pcv3DateMYear.getText().toString());
-
+*/
             sI.put("pcv3C", bi.pcv3C01.isChecked() ? "1" : bi.pcv3C02.isChecked() ? "2" : "0");
-            sI.put("pcv3datenp", bi.pcv3datenp.isChecked() ? "1" : "0");
+         /*   sI.put("pcv3datenp", bi.pcv3datenp.isChecked() ? "1" : "0");
 
-            sI.put("pcv3Date", bi.pcv3Date.getText().toString());
+            sI.put("pcv3Date", bi.pcv3Date.getText().toString());*/
             sI.put("pcv3Pov", bi.pcv3Pova.isChecked() ? "1" : bi.pcv3Povb.isChecked() ? "2" : bi.pcv3Povc.isChecked() ? "3"
-                    : bi.pcv3Povd.isChecked() ? "4" : bi.pcv3Pove.isChecked() ? "5" : bi.pcv3Povf.isChecked() ? "6" : bi.pcv3Povg.isChecked() ? "7"
-                    : bi.pcv3Povh.isChecked() ? "8" : "0");
+                    : bi.pcv3Povd.isChecked() ? "98" : "0");
 
             // Penta 3 at 14 weeks
             sI.put("opv3M", bi.opv3M01.isChecked() ? "1" : bi.opv3M02.isChecked() ? "2" : "0");
-            sI.put("opv3datenr", bi.opv3datenr.isChecked() ? "1" : "0");
+          /*  sI.put("opv3datenr", bi.opv3datenr.isChecked() ? "1" : "0");
             sI.put("opv3dateM_mon", bi.opv3DateMMon.getText().toString());
-            sI.put("opv3dateM_year", bi.opv3DateMYear.getText().toString());
+            sI.put("opv3dateM_year", bi.opv3DateMYear.getText().toString());*/
             sI.put("opv3C", bi.opv3C01.isChecked() ? "1" : bi.opv3C02.isChecked() ? "2" : "0");
-            sI.put("opv3datenp", bi.opv3datenp.isChecked() ? "1" : "0");
+         /*   sI.put("opv3datenp", bi.opv3datenp.isChecked() ? "1" : "0");
 
-            sI.put("opv3Date", bi.opv3Date.getText().toString());
+            sI.put("opv3Date", bi.opv3Date.getText().toString());*/
             sI.put("opv3Pov", bi.opv3Pova.isChecked() ? "1" : bi.opv3Povb.isChecked() ? "2" : bi.opv3Povc.isChecked() ? "3"
-                    : bi.opv3Povd.isChecked() ? "4" : bi.opv3Pove.isChecked() ? "5" : bi.opv3Povf.isChecked() ? "6" : bi.opv3Povg.isChecked() ? "7"
-                    : bi.opv3Povh.isChecked() ? "8" : "0");
+                    : bi.opv3Povd.isChecked() ? "98" : "0");
 
             // PCV 3 at 14 weeks
             sI.put("ipvM", bi.ipvM01.isChecked() ? "1" : bi.ipvM02.isChecked() ? "2" : "0");
-            sI.put("ipvdatenr", bi.ipvdatenr.isChecked() ? "1" : "0");
+           /* sI.put("ipvdatenr", bi.ipvdatenr.isChecked() ? "1" : "0");
             sI.put("ipvdateM_mon", bi.ipvDateMMon.getText().toString());
-            sI.put("ipvdateM_year", bi.ipvDateMYear.getText().toString());
+            sI.put("ipvdateM_year", bi.ipvDateMYear.getText().toString());*/
             sI.put("ipvC", bi.ipvC01.isChecked() ? "1" : bi.ipvC02.isChecked() ? "2" : "0");
-            sI.put("ipvdatenp", bi.ipvdatenp.isChecked() ? "1" : "0");
+           /* sI.put("ipvdatenp", bi.ipvdatenp.isChecked() ? "1" : "0");
 
-            sI.put("ipvDate", bi.ipvDate.getText().toString());
+            sI.put("ipvDate", bi.ipvDate.getText().toString());*/
             sI.put("ipvPov", bi.ipvPova.isChecked() ? "1" : bi.ipvPovb.isChecked() ? "2" : bi.ipvPovc.isChecked() ? "3"
-                    : bi.ipvPovd.isChecked() ? "4" : bi.ipvPove.isChecked() ? "5" : bi.ipvPovf.isChecked() ? "6" : bi.ipvPovg.isChecked() ? "7"
-                    : bi.ipvPovh.isChecked() ? "8" : "0");
+                    : bi.ipvPovd.isChecked() ? "98" : "0");
             // OPV 3 at 14 weeks
             sI.put("measles1M", bi.measles1M01.isChecked() ? "1" : bi.measles1M02.isChecked() ? "2" : "0");
-            sI.put("measles1datenr", bi.measles1datenr.isChecked() ? "1" : "0");
+           /* sI.put("measles1datenr", bi.measles1datenr.isChecked() ? "1" : "0");
             sI.put("measles1dateM_mon",bi.measles1DateMMon.getText().toString());
-            sI.put("measles1dateM_year", bi.measles1DateMYear.getText().toString());
+            sI.put("measles1dateM_year", bi.measles1DateMYear.getText().toString());*/
             sI.put("measles1C", bi.measles1C01.isChecked() ? "1" : bi.measles1C02.isChecked() ? "2" : "0");
-            sI.put("measles1datenp", bi.measles1datenp.isChecked() ? "1" : "0");
+          /*  sI.put("measles1datenp", bi.measles1datenp.isChecked() ? "1" : "0");
 
-            sI.put("measles1Date", bi.measles1Date.getText().toString());
+            sI.put("measles1Date", bi.measles1Date.getText().toString());*/
             sI.put("measles1Pov", bi.measles1Pova.isChecked() ? "1" : bi.measles1Povb.isChecked() ? "2" : bi.measles1Povc.isChecked() ? "3"
-                    : bi.measles1Povd.isChecked() ? "4" : bi.measles1Pove.isChecked() ? "5" : bi.measles1Povf.isChecked() ? "6" : bi.measles1Povg.isChecked() ? "7"
-                    : bi.measles1Povh.isChecked() ? "8" : "0");
+                    : bi.measles1Povd.isChecked() ? "98" : "0");
             // IPV at 14 weeks
             sI.put("measles2M", bi.measles2M01.isChecked() ? "1" : bi.measles2M02.isChecked() ? "2" : "0");
-            sI.put("measles2datenr", bi.measles2datenr.isChecked() ? "1" : "0");
+          /*  sI.put("measles2datenr", bi.measles2datenr.isChecked() ? "1" : "0");
             sI.put("measles2dateM_mon", bi.measles2DateMMon.getText().toString());
-            sI.put("measles2dateM_year", bi.measles2DateMYear.getText().toString());
+            sI.put("measles2dateM_year", bi.measles2DateMYear.getText().toString());*/
             sI.put("measles2C", bi.measles2C01.isChecked() ? "1" : bi.measles2C02.isChecked() ? "2" : "0");
-            sI.put("measles2datenp", bi.measles2datenp.isChecked() ? "1" : "0");
+          /*  sI.put("measles2datenp", bi.measles2datenp.isChecked() ? "1" : "0");
 
-            sI.put("measles2Date", bi.measles2Date.getText().toString());
+            sI.put("measles2Date", bi.measles2Date.getText().toString());*/
             sI.put("measles2Pov", bi.measles2Pova.isChecked() ? "1" : bi.measles2Povb.isChecked() ? "2" : bi.measles2Povc.isChecked() ? "3"
-                    : bi.measles2Povd.isChecked() ? "4" : bi.measles2Pove.isChecked() ? "5" : bi.measles2Povf.isChecked() ? "6"
-                    : bi.measles2Povg.isChecked() ? "7" : bi.measles2Povh.isChecked() ? "8" : "0");
+                    : bi.measles2Povd.isChecked() ? "98" : "0");
 //            sI.put("appver", MainApp.versionName + "." + MainApp.versionCode);
 
 
@@ -1595,7 +1587,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.bcgM02.setError(null);
                 }
 
-                if (bi.bcgM01.isChecked() && !bi.bcgdatenr.isChecked()) {
+            /*    if (bi.bcgM01.isChecked() && !bi.bcgdatenr.isChecked()) {
                     if (bi.bcgDateMYear.getText().toString().isEmpty() && bi.bcgDateMMon.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.bcg) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         bi.bcgDateMYear.setError("This data is Required!");
@@ -1608,7 +1600,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.bcgDateMMon.setError(null);
                     }
                 }
-
+*/
                 if (bi.ti03a.isChecked()) {
                     //============ BCG / Card Present ==========
                     if (bi.bcgC.getCheckedRadioButtonId() == -1) {
@@ -1625,7 +1617,7 @@ public class SectionGActivity extends AppCompatActivity {
                     }
 
 
-                    if (bi.bcgC01.isChecked() && !bi.bcgdatenp.isChecked()) {
+                  /*  if (bi.bcgC01.isChecked() && !bi.bcgdatenp.isChecked()) {
                         if (bi.bcgDate.getText().toString().isEmpty()) {
                             Toast.makeText(this, "ERROR(empty): " + getString(R.string.bcg) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                             bi.bcgDate.setError("This data is Required!");
@@ -1635,7 +1627,7 @@ public class SectionGActivity extends AppCompatActivity {
                         } else {
                             bi.bcgDate.setError(null);
                         }
-                    }
+                    }*/
                 }
                 if (bi.bcgC01.isChecked() || bi.bcgM01.isChecked()) {
 
@@ -1666,7 +1658,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.opv0M02.setError(null);
                 }
 
-                if (bi.opv0M01.isChecked() && !bi.opv0datenr.isChecked()) {
+             /*   if (bi.opv0M01.isChecked() && !bi.opv0datenr.isChecked()) {
                     if (bi.opv0DateMYear.getText().toString().isEmpty() && bi.opv0DateMMon.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv0) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         bi.opv0DateMYear.setError("This data is Required!");
@@ -1678,7 +1670,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.opv0DateMYear.setError(null);
                         bi.opv0DateMMon.setError(null);
                     }
-                }
+                }*/
 
 
                 if (bi.ti03a.isChecked()) {
@@ -1694,7 +1686,7 @@ public class SectionGActivity extends AppCompatActivity {
                     } else {
                         bi.opv0C02.setError(null);
                     }
-
+/*
                     if (bi.opv0C01.isChecked() && !bi.opv0datenp.isChecked()) {
                         if (bi.opv0Date.getText().toString().isEmpty()) {
                             Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv0) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
@@ -1705,7 +1697,7 @@ public class SectionGActivity extends AppCompatActivity {
                         } else {
                             bi.opv0Date.setError(null);
                         }
-                    }
+                    }*/
                 }
 
                 if (bi.opv0C01.isChecked() || bi.opv0M01.isChecked()) {
@@ -1736,7 +1728,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.opv1M02.setError(null);
                 }
 
-                if (bi.opv1M01.isChecked() && !bi.opv1datenr.isChecked()) {
+           /*     if (bi.opv1M01.isChecked() && !bi.opv1datenr.isChecked()) {
                     if (bi.opv1DateMYear.getText().toString().isEmpty() && bi.opv1DateMMon.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv1) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         bi.opv1DateMYear.setError("This data is Required!");
@@ -1749,7 +1741,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.opv1DateMMon.setError(null);
                     }
                 }
-
+*/
                 if (bi.ti03a.isChecked()) {
                     //============ OPV 1 / Card Present ==========
                     if (bi.opv1C.getCheckedRadioButtonId() == -1) {
@@ -1764,7 +1756,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.opv1C02.setError(null);
                     }
 
-                    if (bi.opv1C01.isChecked() && !bi.opv1datenp.isChecked()) {
+             /*       if (bi.opv1C01.isChecked() && !bi.opv1datenp.isChecked()) {
                         if (bi.opv1Date.getText().toString().isEmpty()) {
                             Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv1) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                             bi.opv1Date.setError("This data is Required!");
@@ -1774,7 +1766,7 @@ public class SectionGActivity extends AppCompatActivity {
                         } else {
                             bi.opv1Date.setError(null);
                         }
-                    }
+                    }*/
                 }
 
 
@@ -1806,7 +1798,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.Penta1M02.setError(null);
                 }
 
-                if (bi.penta1M01.isChecked() && !bi.penta1datenr.isChecked()) {
+             /*   if (bi.penta1M01.isChecked() && !bi.penta1datenr.isChecked()) {
                     if (bi.penta1DateMYear.getText().toString().isEmpty() && bi.penta1DateMMon.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta1) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         bi.penta1DateMYear.setError("This data is Required!");
@@ -1818,7 +1810,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.penta1DateMYear.setError(null);
                         bi.penta1DateMMon.setError(null);
                     }
-                }
+                }*/
 
 
                 if (bi.ti03a.isChecked()) {
@@ -1835,7 +1827,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.penta1C02.setError(null);
                     }
 
-                    if (bi.penta1C01.isChecked() && !bi.penta1datenp.isChecked()) {
+                  /*  if (bi.penta1C01.isChecked() && !bi.penta1datenp.isChecked()) {
                         if (bi.penta1Date.getText().toString().isEmpty()) {
                             Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta1) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                             bi.penta1Date.setError("This data is Required!");
@@ -1845,7 +1837,7 @@ public class SectionGActivity extends AppCompatActivity {
                         } else {
                             bi.penta1Date.setError(null);
                         }
-                    }
+                    }*/
                 }
 
                 if (bi.penta1C01.isChecked() || bi.penta1M01.isChecked()) {
@@ -1876,7 +1868,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.pcv1M02.setError(null);
                 }
 
-                if (bi.pcv1M01.isChecked() && !bi.pcv1datenr.isChecked()) {
+               /* if (bi.pcv1M01.isChecked() && !bi.pcv1datenr.isChecked()) {
                     if (bi.pcv1DateMYear.getText().toString().isEmpty() && bi.pcv1DateMMon.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv1) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         bi.pcv1DateMYear.setError("This data is Required!");
@@ -1888,7 +1880,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.pcv1DateMYear.setError(null);
                         bi.pcv1DateMMon.setError(null);
                     }
-                }
+                }*/
 
                 if (bi.ti03a.isChecked()) {
 
@@ -1905,7 +1897,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.pcv1C02.setError(null);
                     }
 
-                    if (bi.pcv1C01.isChecked() && !bi.pcv1datenp.isChecked()) {
+                   /* if (bi.pcv1C01.isChecked() && !bi.pcv1datenp.isChecked()) {
                         if (bi.pcv1Date.getText().toString().isEmpty()) {
                             Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv1) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                             bi.pcv1Date.setError("This data is Required!");
@@ -1915,7 +1907,7 @@ public class SectionGActivity extends AppCompatActivity {
                         } else {
                             bi.pcv1Date.setError(null);
                         }
-                    }
+                    }*/
                 }
 
                 if (bi.pcv1C01.isChecked() || bi.pcv1M01.isChecked()) {
@@ -1945,7 +1937,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.opv2M02.setError(null);
                 }
 
-                if (bi.opv2M01.isChecked() && !bi.opv2datenr.isChecked()) {
+                /*if (bi.opv2M01.isChecked() && !bi.opv2datenr.isChecked()) {
                     if (bi.opv2DateMYear.getText().toString().isEmpty() && bi.opv2DateMMon.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv2) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         bi.opv2DateMYear.setError("This data is Required!");
@@ -1957,7 +1949,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.opv2DateMYear.setError(null);
                         bi.opv2DateMMon.setError(null);
                     }
-                }
+                }*/
 
                 if (bi.ti03a.isChecked()) {
                     //============ OPV 2 / Card Present ==========
@@ -1973,7 +1965,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.opv2C02.setError(null);
                     }
 
-                    if (bi.opv2C01.isChecked() && !bi.opv2datenp.isChecked()) {
+                   /* if (bi.opv2C01.isChecked() && !bi.opv2datenp.isChecked()) {
                         if (bi.opv2Date.getText().toString().isEmpty()) {
                             Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv2) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                             bi.opv2Date.setError("This data is Required!");
@@ -1983,7 +1975,7 @@ public class SectionGActivity extends AppCompatActivity {
                         } else {
                             bi.opv2Date.setError(null);
                         }
-                    }
+                    }*/
                 }
 
 
@@ -2014,7 +2006,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.penta2M02.setError(null);
                 }
 
-                if (bi.penta2M01.isChecked() && !bi.penta2datenr.isChecked()) {
+            /*    if (bi.penta2M01.isChecked() && !bi.penta2datenr.isChecked()) {
                     if (bi.penta2DateMYear.getText().toString().isEmpty() && bi.penta2DateMMon.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta2) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         bi.penta2DateMYear.setError("This data is Required!");
@@ -2027,7 +2019,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.penta2DateMMon.setError(null);
                     }
                 }
-
+*/
                 if (bi.ti03a.isChecked()) {
                     //============ Penta 2 / Card Present ==========
                     if (bi.penta2C.getCheckedRadioButtonId() == -1) {
@@ -2043,7 +2035,7 @@ public class SectionGActivity extends AppCompatActivity {
                     }
 
 
-                    if (bi.penta2C01.isChecked() && !bi.penta2datenp.isChecked()) {
+                  /*  if (bi.penta2C01.isChecked() && !bi.penta2datenp.isChecked()) {
                         if (bi.penta2Date.getText().toString().isEmpty()) {
                             Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta2) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                             bi.penta2Date.setError("This data is Required!");
@@ -2053,7 +2045,7 @@ public class SectionGActivity extends AppCompatActivity {
                         } else {
                             bi.penta2Date.setError(null);
                         }
-                    }
+                    }*/
                 }
 
 
@@ -2084,7 +2076,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.pcv2M02.setError(null);
                 }
 
-                if (bi.pcv2M01.isChecked() && !bi.pcv2datenr.isChecked()) {
+             /*   if (bi.pcv2M01.isChecked() && !bi.pcv2datenr.isChecked()) {
                     if (bi.pcv2DateMYear.getText().toString().isEmpty() && bi.pcv2DateMMon.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv2) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         bi.pcv2DateMYear.setError("This data is Required!");
@@ -2096,7 +2088,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.pcv2DateMYear.setError(null);
                         bi.pcv2DateMMon.setError(null);
                     }
-                }
+                }*/
 
                 if (bi.ti03a.isChecked()) {
                     //============ PCV 2 / Card Present ==========
@@ -2112,7 +2104,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.pcv2C02.setError(null);
                     }
 
-                    if (bi.pcv2C01.isChecked() && !bi.pcv2datenp.isChecked()) {
+                   /* if (bi.pcv2C01.isChecked() && !bi.pcv2datenp.isChecked()) {
                         if (bi.pcv2Date.getText().toString().isEmpty()) {
                             Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv2) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                             bi.pcv2Date.setError("This data is Required!");
@@ -2122,7 +2114,7 @@ public class SectionGActivity extends AppCompatActivity {
                         } else {
                             bi.pcv2Date.setError(null);
                         }
-                    }
+                    }*/
                 }
 
                 if (bi.pcv2C01.isChecked() || bi.pcv2M01.isChecked()) {
@@ -2152,7 +2144,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.opv3M02.setError(null);
                 }
 
-                if (bi.opv3M01.isChecked() && !bi.opv3datenr.isChecked()) {
+            /*    if (bi.opv3M01.isChecked() && !bi.opv3datenr.isChecked()) {
                     if (bi.opv3DateMYear.getText().toString().isEmpty() && bi.opv3DateMMon.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv3) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         bi.opv3DateMYear.setError("This data is Required!");
@@ -2164,7 +2156,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.opv3DateMYear.setError(null);
                         bi.opv3DateMMon.setError(null);
                     }
-                }
+                }*/
 
                 if (bi.ti03a.isChecked()) {
                     //============ OPV 3 / Card Present ==========
@@ -2180,7 +2172,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.opv3C02.setError(null);
                     }
 
-                    if (bi.opv3C01.isChecked() && !bi.opv3datenp.isChecked()) {
+                /*    if (bi.opv3C01.isChecked() && !bi.opv3datenp.isChecked()) {
                         if (bi.opv3Date.getText().toString().isEmpty()) {
                             Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv3) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                             bi.opv3Date.setError("This data is Required!");
@@ -2190,7 +2182,7 @@ public class SectionGActivity extends AppCompatActivity {
                         } else {
                             bi.opv3Date.setError(null);
                         }
-                    }
+                    }*/
                 }
 
 
@@ -2221,7 +2213,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.penta3M02.setError(null);
                 }
 
-                if (bi.penta3M01.isChecked() && !bi.penta3datenr.isChecked()) {
+           /*     if (bi.penta3M01.isChecked() && !bi.penta3datenr.isChecked()) {
                     if (bi.penta3DateMYear.getText().toString().isEmpty() && bi.penta3DateMMon.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta3) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         bi.penta3DateMYear.setError("This data is Required!");
@@ -2233,7 +2225,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.penta3DateMYear.setError(null);
                         bi.penta3DateMMon.setError(null);
                     }
-                }
+                }*/
 
                 if (bi.ti03a.isChecked()) {
                     //============ Penta 3 / Card Present ==========
@@ -2249,7 +2241,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.penta3C02.setError(null);
                     }
 
-                    if (bi.penta3C01.isChecked() && !bi.penta3datenp.isChecked()) {
+                 /*   if (bi.penta3C01.isChecked() && !bi.penta3datenp.isChecked()) {
                         if (bi.penta3Date.getText().toString().isEmpty()) {
                             Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta3) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                             bi.penta3Date.setError("This data is Required!");
@@ -2259,7 +2251,7 @@ public class SectionGActivity extends AppCompatActivity {
                         } else {
                             bi.penta3Date.setError(null);
                         }
-                    }
+                    }*/
                 }
 
                 if (bi.penta3C01.isChecked() || bi.penta3M01.isChecked()) {
@@ -2289,7 +2281,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.pcv3M02.setError(null);
                 }
 
-                if (bi.pcv3M01.isChecked() && !bi.pcv3datenr.isChecked()) {
+             /*   if (bi.pcv3M01.isChecked() && !bi.pcv3datenr.isChecked()) {
                     if (bi.pcv3DateMYear.getText().toString().isEmpty() && bi.pcv3DateMMon.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv3) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         bi.pcv3DateMYear.setError("This data is Required!");
@@ -2301,7 +2293,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.pcv3DateMYear.setError(null);
                         bi.pcv3DateMMon.setError(null);
                     }
-                }
+                }*/
 
                 if (bi.ti03a.isChecked()) {
                     //============ PCV 3 / Card Present ==========
@@ -2317,7 +2309,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.pcv3C02.setError(null);
                     }
 
-                    if (bi.pcv3C01.isChecked() && !bi.pcv3datenp.isChecked()) {
+                   /* if (bi.pcv3C01.isChecked() && !bi.pcv3datenp.isChecked()) {
                         if (bi.pcv3Date.getText().toString().isEmpty()) {
                             Toast.makeText(this, "ERROR(empty): " + getString(R.string.pcv3) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                             bi.pcv3Date.setError("This data is Required!");
@@ -2327,7 +2319,7 @@ public class SectionGActivity extends AppCompatActivity {
                         } else {
                             bi.pcv3Date.setError(null);
                         }
-                    }
+                    }*/
                 }
 
                 if (bi.pcv3C01.isChecked() || bi.pcv3M01.isChecked()) {
@@ -2358,7 +2350,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.ipvM02.setError(null);
                 }
 
-                if (bi.ipvM01.isChecked() && !bi.ipvdatenr.isChecked()) {
+             /*   if (bi.ipvM01.isChecked() && !bi.ipvdatenr.isChecked()) {
                     if (bi.ipvDateMYear.getText().toString().isEmpty() && bi.ipvDateMMon.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.ipv) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         bi.ipvDateMYear.setError("This data is Required!");
@@ -2370,7 +2362,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.ipvDateMYear.setError(null);
                         bi.ipvDateMMon.setError(null);
                     }
-                }
+                }*/
 
 
                 if (bi.ti03a.isChecked()) {
@@ -2388,7 +2380,7 @@ public class SectionGActivity extends AppCompatActivity {
                     }
 
 
-                    if (bi.ipvC01.isChecked() && !bi.ipvdatenp.isChecked()) {
+                   /* if (bi.ipvC01.isChecked() && !bi.ipvdatenp.isChecked()) {
                         if (bi.ipvDate.getText().toString().isEmpty()) {
                             Toast.makeText(this, "ERROR(empty): " + getString(R.string.ipv) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                             bi.ipvDate.setError("This data is Required!");
@@ -2398,7 +2390,7 @@ public class SectionGActivity extends AppCompatActivity {
                         } else {
                             bi.ipvDate.setError(null);
                         }
-                    }
+                    }*/
                 }
 
 
@@ -2429,7 +2421,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.measles1M02.setError(null);
                 }
 
-                if (bi.measles1M01.isChecked() && !bi.measles1datenr.isChecked()) {
+               /* if (bi.measles1M01.isChecked() && !bi.measles1datenr.isChecked()) {
                     if (bi.measles1DateMYear.getText().toString().isEmpty() && bi.measles1DateMMon.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles1) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         bi.measles1DateMYear.setError("This data is Required!");
@@ -2441,7 +2433,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.measles1DateMYear.setError(null);
                         bi.measles1DateMMon.setError(null);
                     }
-                }
+                }*/
 
                 if (bi.ti03a.isChecked()) {
                     //============ measles1 / Card Present ==========
@@ -2457,7 +2449,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.measles1C02.setError(null);
                     }
 
-                    if (bi.measles1C01.isChecked() && !bi.measles1datenp.isChecked()) {
+                /*    if (bi.measles1C01.isChecked() && !bi.measles1datenp.isChecked()) {
                         if (bi.measles1Date.getText().toString().isEmpty()) {
                             Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles1) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                             bi.measles1Date.setError("This data is Required!");
@@ -2467,7 +2459,7 @@ public class SectionGActivity extends AppCompatActivity {
                         } else {
                             bi.measles1Date.setError(null);
                         }
-                    }
+                    }*/
                 }
 
                 if (bi.measles1C01.isChecked() || bi.measles1M01.isChecked()) {
@@ -2497,7 +2489,7 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.measles2M02.setError(null);
                 }
 
-                if (bi.measles2M01.isChecked() && !bi.measles2datenr.isChecked()) {
+               /* if (bi.measles2M01.isChecked() && !bi.measles2datenr.isChecked()) {
                     if (bi.measles2DateMYear.getText().toString().isEmpty() && bi.measles1DateMMon.getText().toString().isEmpty()) {
                         Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles2) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
                         bi.measles2DateMYear.setError("This data is Required!");
@@ -2509,7 +2501,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.measles2DateMYear.setError(null);
                         bi.measles2DateMMon.setError(null);
                     }
-                }
+                }*/
 
                 if (bi.ti03a.isChecked()) {
 
@@ -2526,7 +2518,7 @@ public class SectionGActivity extends AppCompatActivity {
                         bi.measles2C02.setError(null);
                     }
 
-                    if (bi.measles2C01.isChecked() && !bi.measles2datenp.isChecked()) {
+                   /* if (bi.measles2C01.isChecked() && !bi.measles2datenp.isChecked()) {
 
                         if (bi.measles2Date.getText().toString().isEmpty()) {
                             Toast.makeText(this, "ERROR(empty): " + getString(R.string.measles2) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
@@ -2537,7 +2529,7 @@ public class SectionGActivity extends AppCompatActivity {
                         } else {
                             bi.measles2Date.setError(null);
                         }
-                    }
+                    }*/
                 }
 
                 if (bi.measles2C01.isChecked() || bi.measles2M01.isChecked()) {
