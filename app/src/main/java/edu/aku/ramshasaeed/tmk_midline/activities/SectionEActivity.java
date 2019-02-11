@@ -6,6 +6,8 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,7 +31,7 @@ public class SectionEActivity extends AppCompatActivity {
 
     Map<String, String> childsMap;
     ArrayList<String> lstChild;
-    String MotherName;
+    String MotherName, MotherID;
 
     int count_child_5y = 0;
 
@@ -68,7 +70,29 @@ public class SectionEActivity extends AppCompatActivity {
         }
 
         bi.te03.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstChild));
-//        MotherName = MainApp.familyMembersList.get(bi.te03.getSelectedItemPosition()- 2).getmotherId() ;
+/*        bi.te03.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                              @Override
+                                              public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                                                  if(i != 0){
+                                                      MotherID = MainApp.familyMembersList.get(Integer.valueOf(childsMap.get(lstChild.get(i)))).getmotherId();
+                                                      for (int j = 0; j <MainApp.familyMembersList.size();j++){
+                                                          if(MainApp.familyMembersList.get(j).getserialNo().equals(MotherID)){
+                                                              MotherName =    MainApp.familyMembersList.get(j).getname();
+                                                          }
+                                                      }
+                                                      bi.motherName.setText(MotherName);
+                                                  }else{
+                                                      bi.motherName.setText(null);
+
+                                                  }
+
+                                              }
+
+                                              @Override
+                                              public void onNothingSelected(AdapterView<?> adapterView) {
+
+                                              }
+                                          });*/
 
 
     }
@@ -118,7 +142,8 @@ public class SectionEActivity extends AppCompatActivity {
                 : bi.te0198.isChecked() ? "98" : "0");
 
         sE.put("te02", bi.te02.getText().toString());
-//        sE.put("te03", bi.te03.getSelectedItem().toString());
+        sE.put("te03", bi.te03.getSelectedItem().toString());
+        sE.put("te03mname", bi.motherName.getText().toString());
         sE.put("te04", bi.te04.getText().toString());
 
         sE.put("te05", bi.te05a.isChecked() ? "1"
@@ -235,7 +260,95 @@ public class SectionEActivity extends AppCompatActivity {
 
     private boolean formValidation() {
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
+        if (!validatorClass.EmptyRadioButton(this, bi.te01, bi.te01a, getString(R.string.te01))) {
+            return false;
+        }
 
+        if (bi.te01a.isChecked()) {
+            if (!validatorClass.EmptyTextBox(this, bi.te02, getString(R.string.te02))) {
+                return false;
+            }
+            if (!validatorClass.EmptySpinner(this, bi.te03, getString(R.string.te03))) {
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, bi.te04, getString(R.string.te04))) {
+                return false;
+            }
+            if (!validatorClass.EmptyRadioButton(this, bi.te05, bi.te05a, getString(R.string.te05))) {
+                return false;
+            }
+            if (!validatorClass.EmptyRadioButton(this, bi.te06, bi.te06a, getString(R.string.te06))) {
+                return false;
+            }
+            if (!bi.te06a.isChecked()) {
+                if (!validatorClass.EmptyCheckBox(this, bi.te07, bi.te0796, bi.te0796x, getString(R.string.te07))) {
+                    return false;
+                }
+
+            } else {
+                if (!validatorClass.EmptyTextBox(this, bi.te08, getString(R.string.te08))) {
+                    return false;
+                }
+                if (!validatorClass.EmptyRadioButton(this, bi.te09, bi.te09a, getString(R.string.te09))) {
+                    return false;
+                }
+                if (!validatorClass.EmptyRadioButton(this, bi.te10, bi.te10a, getString(R.string.te10))) {
+                    return false;
+                }
+                if (!validatorClass.EmptyCheckBox(this, bi.te11, bi.te11a, getString(R.string.te11))) {
+                    return false;
+                }
+                if (!validatorClass.EmptyRadioButton(this, bi.te12, bi.te12a, getString(R.string.te12))) {
+                    return false;
+                }
+                if (!validatorClass.EmptyRadioButton(this, bi.te13, bi.te13a, getString(R.string.te13))) {
+                    return false;
+                }
+                if (bi.te13a.isChecked()) {
+                    if (!validatorClass.EmptyRadioButton(this, bi.te14, bi.te14a, getString(R.string.te14))) {
+                        return false;
+                    }
+                    if (!validatorClass.EmptyRadioButton(this, bi.te15, bi.te15a, getString(R.string.te15))) {
+                        return false;
+                    }
+                    if (!validatorClass.EmptyCheckBox(this, bi.te16, bi.te16a, getString(R.string.te16))) {
+                        return false;
+                    }
+                    if (!validatorClass.EmptyRadioButton(this, bi.te17, bi.te17a, bi.te17hr, getString(R.string.te17))) {
+                        return false;
+                    }
+                    if (bi.te17a.isChecked()) {
+                        if (!validatorClass.EmptyRadioButton(this, bi.te17, bi.te17a, bi.te17hr, getString(R.string.te17))) {
+                            return false;
+                        }
+                    } else if (bi.te17b.isChecked()) {
+                        if (!validatorClass.EmptyRadioButton(this, bi.te17, bi.te17b, bi.te17day, getString(R.string.te17))) {
+                            return false;
+                        }
+                    }
+                    if (!bi.te17c.isChecked()) {
+
+                        if (!validatorClass.EmptyRadioButton(this, bi.te18, bi.te18a, getString(R.string.te18))) {
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+        if (!validatorClass.EmptyRadioButton(this, bi.te19, bi.te19a, getString(R.string.te19))) {
+            return false;
+        }
+        if (bi.te19a.isChecked()) {
+
+            if (!validatorClass.EmptyRadioButton(this, bi.te20, bi.te20a, getString(R.string.te20))) {
+                return false;
+            }
+            if (bi.te20a.isChecked()) {
+                if (!validatorClass.EmptyRadioButton(this, bi.te21, bi.te21a, getString(R.string.te21))) {
+                    return false;
+                }
+            }
+        }
         return true;
     }
 
@@ -245,7 +358,6 @@ public class SectionEActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
         Toast.makeText(this, "You can't go back", Toast.LENGTH_SHORT).show();
     }
 

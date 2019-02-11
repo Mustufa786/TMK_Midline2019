@@ -25,11 +25,8 @@ import java.util.Map;
 
 import edu.aku.ramshasaeed.tmk_midline.activities.EndingActivity;
 import edu.aku.ramshasaeed.tmk_midline.contracts.BLRandomContract;
-import edu.aku.ramshasaeed.tmk_midline.contracts.DeceasedChildContract;
-import edu.aku.ramshasaeed.tmk_midline.contracts.DeceasedMotherContract;
 import edu.aku.ramshasaeed.tmk_midline.contracts.FamilyMembersContract;
 import edu.aku.ramshasaeed.tmk_midline.contracts.FormsContract;
-import edu.aku.ramshasaeed.tmk_midline.contracts.MWRAContract;
 import edu.aku.ramshasaeed.tmk_midline.contracts.SectionIIMContract;
 
 /**
@@ -40,8 +37,8 @@ public class MainApp extends Application {
 
     public static final String _IP = "43.245.131.159"; // Test PHP server
     public static final Integer _PORT = 8080; // Port - with colon (:)
-    public static final String _HOST_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk/api/";
-    public static final String _UPDATE_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk/app/app-debug.apk";
+    public static final String _HOST_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk_midline/api/";
+    public static final String _UPDATE_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk_midline/app/app-debug.apk";
 
     /*
         public static final String _IP = "43.245.131.159"; // Test server
@@ -107,9 +104,6 @@ public class MainApp extends Application {
     public static String regionDss = "";
     public static List<FamilyMembersContract> familyMembersList;
     public static FamilyMembersContract fmc;
-    public static DeceasedMotherContract dcM;
-    public static DeceasedChildContract dcC;
-    public static MWRAContract mw;
     public static SectionIIMContract ims;
 
     public static int memFlag = 0;

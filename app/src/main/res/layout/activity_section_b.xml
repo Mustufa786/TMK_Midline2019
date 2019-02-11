@@ -684,6 +684,14 @@
                 android:orientation="horizontal"
                 android:visibility="gone"
                 tools:visibility="visible">
+                <Spinner
+                    android:id="@+id/tbmname"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -696,14 +704,7 @@
                     android:textColor="@color/gray"
                     android:textStyle="bold" />
 
-                <Spinner
-                    android:id="@+id/tbmname"
-                    style="@style/Widget.AppCompat.Spinner.Underlined"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="1"
-                    android:gravity="center" />
+
 
             </LinearLayout>
 
@@ -731,13 +732,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
-                    <RadioButton
-                        android:id="@+id/tb04b"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/female" />
                     <RadioButton
                         android:id="@+id/tb04a"
                         android:layout_width="match_parent"
@@ -745,6 +739,14 @@
                         android:layout_weight="1"
                         android:text="@string/male"
                         android:layout_marginLeft="1dp"/>
+
+
+                    <RadioButton
+                        android:id="@+id/tb04b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/female" />
 
                 </RadioGroup>
             </LinearLayout>

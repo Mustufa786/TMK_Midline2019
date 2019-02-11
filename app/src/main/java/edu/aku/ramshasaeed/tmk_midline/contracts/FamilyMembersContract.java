@@ -288,8 +288,6 @@ public class FamilyMembersContract {
 
             json.put(familyMembers.COLUMN_SB, this.sB.equals("") ? JSONObject.NULL : new JSONObject(this.sB));
         }
-        json.put(familyMembers.COLUMN_SYNCED, this.synced == null ? JSONObject.NULL : this.synced);
-        json.put(familyMembers.COLUMN_SYNCED_DATE, this.syncedDate == null ? JSONObject.NULL : this.syncedDate);
         json.put(familyMembers.COLUMN_ISTATUS, this.istatus == null ? JSONObject.NULL : this.istatus);
         json.put(familyMembers.COLUMN_SERIALNO, this.serialNo == null ? JSONObject.NULL : this.serialNo);
         json.put(familyMembers.COLUMN_MOTHERID, this.motherId == null ? JSONObject.NULL : this.motherId);

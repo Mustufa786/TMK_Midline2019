@@ -778,7 +778,8 @@ public class SectionBActivity extends AppCompatActivity {
         sB.put("tb01", MainApp.serial_no);
         sB.put("tb02", bi.tb02.getText().toString());
         if (ageInyears < 6) {
-            MainApp.fmc.setmotherId(mothersMap.get(bi.tbmname.getSelectedItem().toString() + "_" + mothersSerials.get(mothersList.indexOf(bi.tbmname.getSelectedItem().toString()) - 1)));
+            MainApp.fmc.setmotherId(mothersMap.get(bi.tbmname.getSelectedItem().toString() + "_" + mothersSerials.get(mothersList.indexOf(bi.tbmname.getSelectedItem().toString()))));
+
         }
      /*   sB.put("tb03", bi.tb03a.isChecked() ? "1" : bi.tb03b.isChecked() ? "2" : bi.tb03c.isChecked() ? "3"
                 : bi.tb03d.isChecked() ? "4" : bi.tb03e.isChecked() ? "5" : bi.tb03f.isChecked() ? "6"
@@ -805,7 +806,7 @@ public class SectionBActivity extends AppCompatActivity {
             sB.put("tb08m", bi.tb08m.getText().toString());
         }
 
-        sB.put("tb09", bi.tb09.getText().toString().equals("NA") ? "999" : bi.tb09.getText().toString());
+        sB.put("tb09", bi.tb09.getText().toString().equals("NA") ? "97" : bi.tb09.getText().toString());
         sB.put("tb10", bi.tb10a.isChecked() ? "1" : bi.tb10b.isChecked() ? "2" : bi.tb10c.isChecked() ? "3"
                 : bi.tb10d.isChecked() ? "4" : bi.tb10e.isChecked() ? "5" : bi.tb10f.isChecked() ? "6"
                 : bi.tb10g.isChecked() ? "7" : bi.tb10h.isChecked() ? "8" : bi.tb10ia.isChecked() ? "9" : bi.tb10j.isChecked() ? "10"

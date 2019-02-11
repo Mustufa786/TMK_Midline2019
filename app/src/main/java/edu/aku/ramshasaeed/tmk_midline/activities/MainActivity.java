@@ -47,6 +47,9 @@ import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivityMainBinding;
 import edu.aku.ramshasaeed.tmk_midline.get.GetBLRandom;
+import edu.aku.ramshasaeed.tmk_midline.sync.SyncFamilyMembers;
+import edu.aku.ramshasaeed.tmk_midline.sync.SyncForms;
+import edu.aku.ramshasaeed.tmk_midline.sync.SyncIM;
 
 
 public class MainActivity extends Activity {
@@ -370,23 +373,14 @@ public class MainActivity extends Activity {
 
 
             Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
-//            new SyncForms(this, true).execute();
-/*
+            new SyncForms(this).execute();
+
             Toast.makeText(getApplicationContext(), "Syncing Family Members", Toast.LENGTH_SHORT).show();
             new SyncFamilyMembers(this).execute();
 
-            Toast.makeText(getApplicationContext(), "Syncing MWRAs", Toast.LENGTH_SHORT).show();
-            new SyncMwras(this).execute();
-
-            Toast.makeText(getApplicationContext(), "Syncing Deceased Mother", Toast.LENGTH_SHORT).show();
-            new SyncDeceasedMother(this).execute();
-
-            Toast.makeText(getApplicationContext(), "Syncing Deceased Child", Toast.LENGTH_SHORT).show();
-            new SyncDeceasedChild(this).execute();
-
             Toast.makeText(getApplicationContext(), "Syncing IM", Toast.LENGTH_SHORT).show();
             new SyncIM(this).execute();
-*/
+
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();
 
