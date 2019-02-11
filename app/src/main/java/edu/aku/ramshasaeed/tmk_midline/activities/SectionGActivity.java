@@ -1530,7 +1530,9 @@ public class SectionGActivity extends AppCompatActivity {
 
         public boolean ValidateForm() {
 
-
+            if (!validatorClass.EmptySpinner(this, bi.tiname, getString(R.string.name))) {
+                return false;
+            }
          /*   if (bi.tiname.getSelectedItem() == "....") {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.name), Toast.LENGTH_SHORT).show();
                 ((TextView) bi.tiname.getSelectedView()).setText("This Data is Required");
