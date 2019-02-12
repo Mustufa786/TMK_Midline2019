@@ -1344,7 +1344,7 @@ public class SectionGActivity extends AppCompatActivity {
 
             sI.put("ta01", MainApp.cluster);
             sI.put("ta05h", MainApp.hhno);
-            sI.put("ta05u", MainApp.billno);
+//            sI.put("ta05u", MainApp.billno);
 
             sI.put("tiImsSerial", MainApp.childsMap.get(bi.tiname.getSelectedItem().toString()).getserialNo());
 
@@ -1511,7 +1511,16 @@ public class SectionGActivity extends AppCompatActivity {
             sI.put("measles2Date", bi.measles2Date.getText().toString());*/
             sI.put("measles2Pov", bi.measles2Pova.isChecked() ? "1" : bi.measles2Povb.isChecked() ? "2" : bi.measles2Povc.isChecked() ? "3"
                     : bi.measles2Povd.isChecked() ? "98" : "0");
-//            sI.put("appver", MainApp.versionName + "." + MainApp.versionCode);
+//            rOTA 1
+            sI.put("rota1M", bi.rota1M01.isChecked() ? "1" : bi.rota1M02.isChecked() ? "2" : "0");
+            sI.put("rota1C", bi.rota1C01.isChecked() ? "1" : bi.rota1C02.isChecked() ? "2" : "0");
+            sI.put("rota1Pov", bi.rota1Pova.isChecked() ? "1" : bi.rota1Povb.isChecked() ? "2" : bi.rota1Povc.isChecked() ? "3"
+                    : bi.rota1Povd.isChecked() ? "98" : "0");
+//            rOTA 2
+            sI.put("rota2M", bi.rota2M01.isChecked() ? "1" : bi.rota2M02.isChecked() ? "2" : "0");
+            sI.put("rota2C", bi.rota2C01.isChecked() ? "1" : bi.rota2C02.isChecked() ? "2" : "0");
+            sI.put("rota2Pov", bi.rota2Pova.isChecked() ? "1" : bi.rota2Povb.isChecked() ? "2" : bi.rota2Povc.isChecked() ? "3"
+                    : bi.rota2Povd.isChecked() ? "98" : "0");
 
 
             MainApp.ims.setsI(String.valueOf(sI));

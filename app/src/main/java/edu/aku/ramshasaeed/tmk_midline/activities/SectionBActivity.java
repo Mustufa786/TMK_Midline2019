@@ -1109,7 +1109,7 @@ public class SectionBActivity extends AppCompatActivity {
             }
         }
 
-        if (ageInyears <= 5) {
+        if (ageInyears < 5) {
             if (bi.tb04.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.tb04), Toast.LENGTH_SHORT).show();
                 bi.tb04b.setError("This data is Required!");    // Set Error on last radio button
