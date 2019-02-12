@@ -125,12 +125,12 @@ public class SectionAActivity extends Activity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                if ( bi.spSubVillages.getSelectedItemPosition() != 0) {
-                    MainApp.cluster = SubVillagesMap.get( bi.spSubVillages.getSelectedItem().toString());
+                if (bi.spSubVillages.getSelectedItemPosition() != 0) {
+                    MainApp.cluster = SubVillagesMap.get(bi.spSubVillages.getSelectedItem().toString());
 
                     bi.ta01.setText(MainApp.cluster);
 
-                    bi.ta06.setText( bi.spSubVillages.getSelectedItem().toString());
+                    bi.ta06.setText(bi.spSubVillages.getSelectedItem().toString());
                 } else {
 
                     bi.ta01.setText(null);
@@ -155,26 +155,27 @@ public class SectionAActivity extends Activity {
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
                 if (i == R.id.ta09a) {
                     bi.btnContinue.setVisibility(View.VISIBLE);
+                    bi.fldGrpRespInfo.setVisibility(View.VISIBLE);
                     bi.btnEnd.setVisibility(View.GONE);
                 } else {
                     bi.btnContinue.setVisibility(View.GONE);
+                    bi.fldGrpRespInfo.setVisibility(View.GONE);
+                    bi.tc03.setText(null);
+                    bi.tc04.clearCheck();
+                    bi.tc05.setText(null);
                     bi.btnEnd.setVisibility(View.VISIBLE);
                 }
             }
         });
-/*
-        ta05h.addTextChangedListener(new TextWatcher() {
+        bi.ta05h.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                fldGrpt03.setVisibility(View.GONE);
-
-                hhName.setText(null);
+                bi.fldGrpt03.setVisibility(View.GONE);
+                bi.hhName.setText(null);
             }
 
             @Override
@@ -182,22 +183,19 @@ public class SectionAActivity extends Activity {
 
             }
         });
-*/
 //        Checkbox validate
-/*
-        checkHHHeadpresent.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        bi.checkHHHeadpresent.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
-                    fldGrpt03a.setVisibility(View.GONE);
-                    newHHheadname.setText(null);
+                    bi.fldGrpt03a.setVisibility(View.GONE);
+                    bi.newHHheadname.setText(null);
                 } else {
-                    fldGrpt03a.setVisibility(View.VISIBLE);
+                    bi.fldGrpt03a.setVisibility(View.VISIBLE);
                 }
             }
         });
 
-*/
     }
 
     public void onCheckHHClick() {
@@ -230,7 +228,7 @@ public class SectionAActivity extends Activity {
 
     }
 
-    void onBtnEndClick() {
+    public void onBtnEndClick() {
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
@@ -284,11 +282,12 @@ public class SectionAActivity extends Activity {
         MainApp.fc.setuser(MainApp.userName);
         MainApp.fc.setdeviceid(Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID));
+        MainApp.fc.setappVer(MainApp.versionName + "." + MainApp.versionCode);
 
         JSONObject sa = new JSONObject();
         MainApp.cluster = bi.ta01.getText().toString();
         MainApp.hhno = bi.ta05h.getText().toString();
-        MainApp.billno = bi.ta05u.getText().toString();
+//        MainApp.billno = bi.ta05u.getText().toString();
 
         sa.put("rndid", MainApp.selectedHead.get_ID());
         sa.put("luid", MainApp.selectedHead.getLUID());
@@ -305,12 +304,15 @@ public class SectionAActivity extends Activity {
         sa.put("ta04", MainApp.ucCode);
         sa.put("ta04A", MainApp.areaCode);
         sa.put("ta05h", bi.ta05h.getText().toString());
-        sa.put("ta05u", bi.ta05u.getText().toString());
+        sa.put("tc03", bi.tc03.getText().toString());
+        sa.put("tc04", bi.tc04a.isChecked() ? "1" : bi.tc04b.isChecked() ? "2" : "0");
+        sa.put("tc05", bi.tc05.getText().toString());
+//        sa.put("ta05u", bi.ta05u.getText().toString());
         sa.put("ta06", bi.ta06.getText().toString());
         sa.put("ta07", bi.ta07.getText().toString());
         sa.put("ta08", bi.ta08.getText().toString());
         sa.put("ta09", bi.ta09a.isChecked() ? "1" : bi.ta09b.isChecked() ? "2" : bi.ta09c.isChecked() ? "3" : "0");
-        sa.put("app_version", MainApp.versionName + "." + MainApp.versionCode);
+//        sa.put("app_version", MainApp.versionName + "." + MainApp.versionCode);
 
         MainApp.fc.setsA(String.valueOf(sa));
 
@@ -369,7 +371,55 @@ public class SectionAActivity extends Activity {
     }
 
     public boolean formValidation() {
-        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
+        if (!validatorClass.EmptyTextBox(this, bi.ta01, getString(R.string.ta01))) {
+            return false;
+        }
+        if (!validatorClass.EmptyTextBox(this, bi.ta05h, getString(R.string.ta05h))) {
+            return false;
+        }
+        if (!bi.checkHHHeadpresent.isChecked()) {
+            if (!validatorClass.EmptyTextBox(this, bi.newHHheadname, "New Head Name")) {
+                return false;
+            }
+        }
+        if (!validatorClass.EmptyRadioButton(this, bi.ta02, bi.ta02a, getString(R.string.ta02))) {
+            return false;
+        }
+        if (!validatorClass.EmptyTextBox(this, bi.ta06, getString(R.string.ta06))) {
+            return false;
+        }
+        if (!validatorClass.EmptyTextBox(this, bi.ta07, getString(R.string.ta07))) {
+            return false;
+        }
+        if (!validatorClass.EmptyTextBox(this, bi.ta08, getString(R.string.ta08))) {
+            return false;
+        }
+        if (!validatorClass.EmptyRadioButton(this, bi.ta09, bi.ta09a, getString(R.string.ta09))) {
+            return false;
+        }
+        if (bi.ta09a.isChecked()) {
+            if (!validatorClass.EmptyTextBox(this, bi.tc03, getString(R.string.tc03))) {
+                return false;
+            }
+            if (!validatorClass.EmptyRadioButton(this, bi.tc04, bi.tc04a, getString(R.string.tc04))) {
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, bi.tc05, getString(R.string.tc05))) {
+                return false;
+            }
+            if (!validatorClass.RangeTextBox(this, bi.tc05, 14, 99, getString(R.string.tc05), " years")) {
+                return false;
+            }
+            int ageofResp = Integer.parseInt(bi.tc05.getText().toString());
+            if (ageofResp < 14) {
+                Toast.makeText(this, "Respondant age must be geater then 14 years", Toast.LENGTH_LONG);
+                bi.tc05.setError("Respondant age must be geater then 14 years");
+                return false;
+            } else {
+                bi.tc05.setError(null);
+            }
+        }
 
         return true;
     }

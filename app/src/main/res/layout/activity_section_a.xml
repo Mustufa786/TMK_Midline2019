@@ -260,7 +260,7 @@
                             android:id="@+id/ta04"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"></Spinner>-->
-
+<!--
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -276,7 +276,7 @@
                     android:layout_height="wrap_content"
                     android:digits="1234567890"
                     android:hint="@string/ta05u"
-                    android:inputType="number" />
+                    android:inputType="number" />-->
 
                 <!--06-->
 
@@ -380,6 +380,87 @@
                 </RadioGroup>
 
                 <LinearLayout
+                    android:id="@+id/fldGrpRespInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--tc03-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/tc03"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <EditText
+                        android:id="@+id/tc03"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
+                        android:hint="@string/tc03"
+                        android:inputType="text"
+                        android:maxLength="20" />
+
+
+                    <!--tc04-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/tc04"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <RadioGroup
+                        android:id="@+id/tc04"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/tc04a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/male" />
+
+                        <RadioButton
+                            android:id="@+id/tc04b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:text="@string/female" />
+
+                    </RadioGroup>
+                    <!--tc05-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/tc05"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <EditText
+                        android:id="@+id/tc05"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="1234567890 "
+                        android:hint="@string/tc05"
+                        android:inputType="number"
+                        android:maxLength="2" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
@@ -391,8 +472,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:backgroundTint="@color/red"
+                        android:onClick="@{() -> callback.onBtnEndClick()}"
                         android:text="@string/end_interview"
-                        android:textColor="#ff1e1e"
+                        android:textColor="@color/white"
                         android:visibility="gone" />
 
                     <Button
@@ -400,8 +482,8 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:onClick="@{() -> callback.onBtnContinueClick()}"
                         android:backgroundTint="@color/green"
+                        android:onClick="@{() -> callback.onBtnContinueClick()}"
                         android:text="@string/start_interview"
                         android:textColor="#1ed61e" />
 

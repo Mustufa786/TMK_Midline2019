@@ -117,6 +117,9 @@
     <string name="ta08"> Street </string>
     <string name="ta09"> Have you got tie permission to start interview? </string>
     <string name="ta09c"> گھرو آف / اجازت دستياب ناهي. </string>
+    <string name="tc03"> جواب ڏيڻ واري جو نالو. </string>
+    <string name="tc04"> جواب ڏيڻ واري جي جنس. </string>
+    <string name="tc05"> جواب ڏيندڙ جي عمر. </string>
 
     <string name="tbAge"> تاريخ پيدائش / عمر </string>
     <string name="tbAge02"> عمر </string>
