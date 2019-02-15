@@ -503,8 +503,8 @@
 
 
     <string name="tl01"> مهرباني ڪري اسان کي هٿ ڌوئڻ جي جڳهه ڏيکاريو جتي توهان ۽ توهان جي گهر جا ٻيا فرد اڪثر هٿ ڌوئيندا آهن. </string>
-    <string name="tl0101"> مشاهدو ڪيو ويو </string>
-    <string name="tl01a"> مشاهدو نه ڪيو ويو </string>
+    <string name="tl01a"> مشاهدو ڪيو ويو </string>
+    <string name="tl0101"> مشاهدو نه ڪيو ويو </string>
     <string name="tl01b"> رهائش واري جڳهه تي نه هو </string>
     <string name="tl01c"> ڏسڻ جي اجازت نه ڏني وئي </string>
     <string name="tl01d"> ٻي ڪا وجھه هئي </string>
@@ -561,7 +561,7 @@
 
 
     <string name="tmsub1"> پيئڻ جو پاڻي </string>
-    <string name="tm01"> آھي ڍڪيل برتن جو ڪرڻ جمع پاڻي </string>
+    <string name="tm01"> جمع پاڻي ڪرڻ جو برتن ڍڪيل آھي </string>
     <string name="tm02"> پاڻي جمع ڪرڻ جو برتن ٻاهران صاف آهي </string>
     <string name="tm03"> پاڻي جمع ڪرڻ جي برتن۾پاڻي موجود آهي </string>
     <string name="tmsub2"> کاڌو پيتو </string>

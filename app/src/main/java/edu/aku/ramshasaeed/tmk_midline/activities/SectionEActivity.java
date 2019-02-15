@@ -2,14 +2,11 @@ package edu.aku.ramshasaeed.tmk_midline.activities;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.TextView;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -23,6 +20,7 @@ import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionEBinding;
+import edu.aku.ramshasaeed.tmk_midline.validation.ClearClass;
 import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
 
 public class SectionEActivity extends AppCompatActivity {
@@ -94,6 +92,63 @@ public class SectionEActivity extends AppCompatActivity {
                                               }
                                           });*/
 
+        bi.te01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i != bi.te01a.getId())
+                    ClearClass.ClearAllFields(bi.fldGrpll02, null);
+
+            }
+        });
+
+        bi.te06.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+
+                if (i == bi.te06a.getId()) {
+                    bi.fldgrpte07.setVisibility(View.GONE);
+                    ClearClass.ClearAllFields(bi.te07, null);
+                } else {
+                    bi.fldgrpte07.setVisibility(View.VISIBLE);
+
+                    bi.fldGrpll08.setVisibility(View.GONE);
+                    ClearClass.ClearAllFields(bi.fldGrpll08, null);
+                }
+
+            }
+        });
+
+        bi.te13.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i != bi.te13a.getId())
+                    ClearClass.ClearAllFields(bi.fldGrpll14, null);
+            }
+        });
+
+        bi.te17.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.te17c.getId())
+                    ClearClass.ClearAllFields(bi.fldgrpte18, null);
+            }
+        });
+
+        bi.te19.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.te19b.getId())
+                    ClearClass.ClearAllFields(bi.fldGrpll20, null);
+            }
+        });
+
+        bi.te20.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.te20b.getId())
+                    ClearClass.ClearAllFields(bi.fldgrpte21, null);
+            }
+        });
 
     }
 
@@ -344,9 +399,7 @@ public class SectionEActivity extends AppCompatActivity {
                 return false;
             }
             if (bi.te20a.isChecked()) {
-                if (!validatorClass.EmptyRadioButton(this, bi.te21, bi.te21a, getString(R.string.te21))) {
-                    return false;
-                }
+                return validatorClass.EmptyRadioButton(this, bi.te21, bi.te21a, getString(R.string.te21));
             }
         }
         return true;

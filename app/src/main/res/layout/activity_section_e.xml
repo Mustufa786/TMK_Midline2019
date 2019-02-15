@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -13,11 +12,8 @@
     </data>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+        style="@style/linerlayout_view"
         tools:context=".activities.SectionEActivity">
-
 
         <ScrollView
             android:id="@+id/svsece"
@@ -26,21 +22,14 @@
 
             <LinearLayout
                 android:id="@+id/fldGrpSecE"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:animateLayoutChanges="true"
-                android:layoutDirection="rtl"
-                android:orientation="vertical">
+                style="@style/linerlayout_view_wt_bound">
 
                 <!--te01-->
                 <android.support.v7.widget.CardView
                     android:id="@+id/fldgrpte01"
                     style="@style/cardView">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    <LinearLayout style="@style/linerlayout_view_wt_bound">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -85,20 +74,16 @@
                 </android.support.v7.widget.CardView>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility='@{!te01a.checked? View.GONE : View.VISIBLE}'>
+                    android:id="@+id/fldGrpll02"
+                    style="@style/linerlayout_view_wt_bound"
+                    android:visibility='@{te01a.checked? View.VISIBLE : View.GONE}'>
 
                     <!--te02-->
                     <android.support.v7.widget.CardView
                         android:id="@+id/fldgrpte02"
                         style="@style/cardView">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                        <LinearLayout style="@style/linerlayout_view_wt_bound">
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -131,10 +116,7 @@
                         android:id="@+id/fldgrpte03"
                         style="@style/cardView">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                        <LinearLayout style="@style/linerlayout_view_wt_bound">
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -152,12 +134,12 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="5dp"
                                 android:padding="15dp"></Spinner>
+
                             <TextView
                                 android:id="@+id/motherName"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:visibility="gone"
-                                />
+                                android:visibility="gone" />
 
 
                         </LinearLayout>
@@ -169,10 +151,7 @@
                         android:id="@+id/fldgrpte04"
                         style="@style/cardView">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                        <LinearLayout style="@style/linerlayout_view_wt_bound">
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -205,10 +184,7 @@
                         android:id="@+id/fldgrpte05"
                         style="@style/cardView">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                        <LinearLayout style="@style/linerlayout_view_wt_bound">
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -257,10 +233,7 @@
                         android:id="@+id/fldgrpte06"
                         style="@style/cardView">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                        <LinearLayout style="@style/linerlayout_view_wt_bound">
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -309,10 +282,7 @@
                         android:id="@+id/fldgrpte07"
                         style="@style/cardView">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                        <LinearLayout style="@style/linerlayout_view_wt_bound">
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -326,9 +296,7 @@
 
                             <LinearLayout
                                 android:id="@+id/te07"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                style="@style/linerlayout_view_wt_bound">
 
                                 <CheckBox
                                     android:id="@+id/te07a"
@@ -412,738 +380,742 @@
 
                     </android.support.v7.widget.CardView>
 
-                    <!--te08-->
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/fldgrpte08"
-                        style="@style/cardView">
+                    <LinearLayout
+                        android:id="@+id/fldGrpll08"
+                        style="@style/linerlayout_view_wt_bound">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                        <!--te08-->
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/fldgrpte08"
+                            style="@style/cardView">
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:background="@color/colorPrimary"
-                                android:text="@string/te08"
-                                android:textAppearance="?android:attr/textAppearanceLarge"
-                                android:textColor="@android:color/white"
-                                android:textSize="20sp" />
+                            <LinearLayout style="@style/linerlayout_view_wt_bound">
 
-                            <EditText
-                                android:id="@+id/te08"
-                                style="@style/textInput"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:layout_marginBottom="1dp"
-                                android:hint="@string/te08a"
-                                android:inputType="number" />
-
-
-                        </LinearLayout>
-
-                    </android.support.v7.widget.CardView>
-
-                    <!--te09-->
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/fldgrpte09"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:background="@color/colorPrimary"
-                                android:text="@string/te09"
-                                android:textAppearance="?android:attr/textAppearanceLarge"
-                                android:textColor="@android:color/white"
-                                android:textSize="20sp" />
-
-                            <RadioGroup
-                                android:id="@+id/te09"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <RadioButton
-                                    android:id="@+id/te09a"
+                                <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te09a" />
-
-                                <RadioButton
-                                    android:id="@+id/te09b"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te09b" />
-
-                                <RadioButton
-                                    android:id="@+id/te09c"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te09c" />
-
-                                <RadioButton
-                                    android:id="@+id/te09d"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te09d" />
-
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                    </android.support.v7.widget.CardView>
-
-                    <!--te10-->
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/fldgrpte10"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:background="@color/colorPrimary"
-                                android:text="@string/te10"
-                                android:textAppearance="?android:attr/textAppearanceLarge"
-                                android:textColor="@android:color/white"
-                                android:textSize="20sp" />
-
-                            <RadioGroup
-                                android:id="@+id/te10"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <RadioButton
-                                    android:id="@+id/te10a"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te10a" />
-
-                                <RadioButton
-                                    android:id="@+id/te10b"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te10b" />
-
-                                <RadioButton
-                                    android:id="@+id/te10c"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te10c" />
-
-
-                                <RadioButton
-                                    android:id="@+id/te10d"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te10d" />
-
-                                <RadioButton
-                                    android:id="@+id/te10e"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te10e" />
-
-                                <RadioButton
-                                    android:id="@+id/te10f"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te10f" />
-
-                                <RadioButton
-                                    android:id="@+id/te10g"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te10g" />
-
-                                <RadioButton
-                                    android:id="@+id/te10h"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te10h" />
-
-                                <RadioButton
-                                    android:id="@+id/te10i"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te10i" />
-
-                                <RadioButton
-                                    android:id="@+id/te10j"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te10j" />
-
-                                <RadioButton
-                                    android:id="@+id/te10k"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te10k" />
-
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                    </android.support.v7.widget.CardView>
-
-                    <!--te11-->
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/fldgrpte11"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:background="@color/colorPrimary"
-                                android:text="@string/te11"
-                                android:textAppearance="?android:attr/textAppearanceLarge"
-                                android:textColor="@android:color/white"
-                                android:textSize="20sp" />
-
-                            <LinearLayout
-                                android:id="@+id/te11"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <CheckBox
-                                    android:id="@+id/te11a"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te11a" />
-
-                                <CheckBox
-                                    android:id="@+id/te11b"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te11b" />
-
-                                <CheckBox
-                                    android:id="@+id/te11c"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te11c" />
-
-                                <CheckBox
-                                    android:id="@+id/te11d"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te11d" />
-
-                                <CheckBox
-                                    android:id="@+id/te11e"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te11e" />
-
-                                <CheckBox
-                                    android:id="@+id/te11f"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te11f" />
-
-                                <CheckBox
-                                    android:id="@+id/te11g"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te11g" />
-
-                                <CheckBox
-                                    android:id="@+id/te11h"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te11h" />
-
-
-                                <CheckBox
-                                    android:id="@+id/te11i"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te11i" />
-
-                                <CheckBox
-                                    android:id="@+id/te11j"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te11j" />
-
-                            </LinearLayout>
-                        </LinearLayout>
-
-                    </android.support.v7.widget.CardView>
-
-                    <!--te12-->
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/fldgrpte12"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:background="@color/colorPrimary"
-                                android:text="@string/te12"
-                                android:textAppearance="?android:attr/textAppearanceLarge"
-                                android:textColor="@android:color/white"
-                                android:textSize="20sp" />
-
-                            <RadioGroup
-                                android:id="@+id/te12"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <RadioButton
-                                    android:id="@+id/te12a"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/yes" />
-
-                                <RadioButton
-                                    android:id="@+id/te12b"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/no" />
-
-
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                    </android.support.v7.widget.CardView>
-
-                    <!--te13-->
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/fldgrpte13"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:background="@color/colorPrimary"
-                                android:text="@string/te13"
-                                android:textAppearance="?android:attr/textAppearanceLarge"
-                                android:textColor="@android:color/white"
-                                android:textSize="20sp" />
-
-                            <RadioGroup
-                                android:id="@+id/te13"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <RadioButton
-                                    android:id="@+id/te13a"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/yes" />
-
-                                <RadioButton
-                                    android:id="@+id/te13b"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/no" />
-
-
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                    </android.support.v7.widget.CardView>
-
-                    <!--te14-->
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/fldgrpte14"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:background="@color/colorPrimary"
-                                android:text="@string/te14"
-                                android:textAppearance="?android:attr/textAppearanceLarge"
-                                android:textColor="@android:color/white"
-                                android:textSize="20sp" />
-
-                            <RadioGroup
-                                android:id="@+id/te14"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <RadioButton
-                                    android:id="@+id/te14a"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/yes" />
-
-                                <RadioButton
-                                    android:id="@+id/te14b"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/no" />
-
-
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                    </android.support.v7.widget.CardView>
-
-                    <!--te15-->
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/fldgrpte15"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:background="@color/colorPrimary"
-                                android:text="@string/te15"
-                                android:textAppearance="?android:attr/textAppearanceLarge"
-                                android:textColor="@android:color/white"
-                                android:textSize="20sp" />
-
-                            <RadioGroup
-                                android:id="@+id/te15"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <RadioButton
-                                    android:id="@+id/te15a"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te15a" />
-
-                                <RadioButton
-                                    android:id="@+id/te15b"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te15b" />
-
-                                <RadioButton
-                                    android:id="@+id/te15c"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te15c" />
-
-                                <RadioButton
-                                    android:id="@+id/te15d"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te15d" />
-
-                                <RadioButton
-                                    android:id="@+id/te15e"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te15e" />
-
-
-                            </RadioGroup>
-
-                        </LinearLayout>
-
-                    </android.support.v7.widget.CardView>
-
-
-                    <!--te16-->
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/fldgrpte16"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:background="@color/colorPrimary"
-                                android:text="@string/te16"
-                                android:textAppearance="?android:attr/textAppearanceLarge"
-                                android:textColor="@android:color/white"
-                                android:textSize="20sp" />
-
-                            <LinearLayout
-                                android:id="@+id/te16"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <CheckBox
-                                    android:id="@+id/te16a"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te16a" />
-
-                                <CheckBox
-                                    android:id="@+id/te16b"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te16b" />
-
-                                <CheckBox
-                                    android:id="@+id/te16c"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te16c" />
-
-                                <CheckBox
-                                    android:id="@+id/te16d"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te16d" />
-
-                                <CheckBox
-                                    android:id="@+id/te16e"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te16e" />
-
-                                <CheckBox
-                                    android:id="@+id/te16f"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te16f" />
-
-                                <CheckBox
-                                    android:id="@+id/te16g"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te16g" />
-
-                                <CheckBox
-                                    android:id="@+id/te16h"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te16h" />
-                            </LinearLayout>
-
-
-                        </LinearLayout>
-
-                    </android.support.v7.widget.CardView>
-
-                    <!--te17-->
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/fldgrpte17"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:background="@color/colorPrimary"
-                                android:text="@string/te17"
-                                android:textAppearance="?android:attr/textAppearanceLarge"
-                                android:textColor="@android:color/white"
-                                android:textSize="20sp" />
-
-                            <RadioGroup
-                                android:id="@+id/te17"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <RadioButton
-                                    android:id="@+id/te17a"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te17a" />
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@color/colorPrimary"
+                                    android:text="@string/te08"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="20sp" />
 
                                 <EditText
-                                    android:id="@+id/te17hr"
+                                    android:id="@+id/te08"
                                     style="@style/textInput"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="10dp"
-                                    android:digits="0123456789"
-                                    android:hint="@string/te17a"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text='@{te17a.checked? te17hr.getText.toString : ""}'
-                                    android:visibility='@{te17a.checked? View.VISIBLE : View.GONE}' />
-
-
-                                <RadioButton
-                                    android:id="@+id/te17b"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
                                     android:layout_marginBottom="1dp"
-                                    android:text="@string/te17b" />
+                                    android:hint="@string/te08a"
+                                    android:inputType="number" />
 
-                                <EditText
-                                    android:id="@+id/te17day"
-                                    style="@style/textInput"
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                        <!--te09-->
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/fldgrpte09"
+                            style="@style/cardView">
+
+                            <LinearLayout style="@style/linerlayout_view_wt_bound">
+
+                                <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_margin="10dp"
-                                    android:digits="0123456789"
-                                    android:hint="@string/te17b"
-                                    android:inputType="number"
-                                    android:maxLength="2"
-                                    android:text='@{te17b.checked? te17day.getText.toString : ""}'
-                                    android:visibility='@{te17b.checked? View.VISIBLE : View.GONE}' />
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@color/colorPrimary"
+                                    android:text="@string/te09"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="20sp" />
 
-                                <RadioButton
-                                    android:id="@+id/te17c"
+                                <RadioGroup
+                                    android:id="@+id/te09"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te17c" />
+                                    android:layout_height="wrap_content">
 
+                                    <RadioButton
+                                        android:id="@+id/te09a"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te09a" />
 
-                            </RadioGroup>
+                                    <RadioButton
+                                        android:id="@+id/te09b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te09b" />
 
-                        </LinearLayout>
+                                    <RadioButton
+                                        android:id="@+id/te09c"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te09c" />
 
-                    </android.support.v7.widget.CardView>
+                                    <RadioButton
+                                        android:id="@+id/te09d"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te09d" />
 
-                    <!--te18-->
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/fldgrpte18"
-                        style="@style/cardView"
-                        android:visibility='@{te17c.checked? View.GONE : View.VISIBLE}'>
+                                </RadioGroup>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                            </LinearLayout>
 
-                            <TextView
+                        </android.support.v7.widget.CardView>
+
+                        <!--te10-->
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/fldgrpte10"
+                            style="@style/cardView">
+
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:background="@color/colorPrimary"
-                                android:text="@string/te18"
-                                android:textAppearance="?android:attr/textAppearanceLarge"
-                                android:textColor="@android:color/white"
-                                android:textSize="20sp" />
+                                android:orientation="vertical">
 
-                            <RadioGroup
-                                android:id="@+id/te18"
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@color/colorPrimary"
+                                    android:text="@string/te10"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="20sp" />
+
+                                <RadioGroup
+                                    android:id="@+id/te10"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:id="@+id/te10a"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te10a" />
+
+                                    <RadioButton
+                                        android:id="@+id/te10b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te10b" />
+
+                                    <RadioButton
+                                        android:id="@+id/te10c"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te10c" />
+
+
+                                    <RadioButton
+                                        android:id="@+id/te10d"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te10d" />
+
+                                    <RadioButton
+                                        android:id="@+id/te10e"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te10e" />
+
+                                    <RadioButton
+                                        android:id="@+id/te10f"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te10f" />
+
+                                    <RadioButton
+                                        android:id="@+id/te10g"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te10g" />
+
+                                    <RadioButton
+                                        android:id="@+id/te10h"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te10h" />
+
+                                    <RadioButton
+                                        android:id="@+id/te10i"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te10i" />
+
+                                    <RadioButton
+                                        android:id="@+id/te10j"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te10j" />
+
+                                    <RadioButton
+                                        android:id="@+id/te10k"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te10k" />
+
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                        <!--te11-->
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/fldgrpte11"
+                            style="@style/cardView">
+
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
 
-                                <RadioButton
-                                    android:id="@+id/te18a"
+                                <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te18a" />
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@color/colorPrimary"
+                                    android:text="@string/te11"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="20sp" />
 
-                                <RadioButton
-                                    android:id="@+id/te18b"
+                                <LinearLayout
+                                    android:id="@+id/te11"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te18b" />
+                                    android:orientation="vertical">
 
-                                <RadioButton
-                                    android:id="@+id/te18c"
+                                    <CheckBox
+                                        android:id="@+id/te11a"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te11a" />
+
+                                    <CheckBox
+                                        android:id="@+id/te11b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te11b" />
+
+                                    <CheckBox
+                                        android:id="@+id/te11c"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te11c" />
+
+                                    <CheckBox
+                                        android:id="@+id/te11d"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te11d" />
+
+                                    <CheckBox
+                                        android:id="@+id/te11e"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te11e" />
+
+                                    <CheckBox
+                                        android:id="@+id/te11f"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te11f" />
+
+                                    <CheckBox
+                                        android:id="@+id/te11g"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te11g" />
+
+                                    <CheckBox
+                                        android:id="@+id/te11h"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te11h" />
+
+
+                                    <CheckBox
+                                        android:id="@+id/te11i"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te11i" />
+
+                                    <CheckBox
+                                        android:id="@+id/te11j"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te11j" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                        <!--te12-->
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/fldgrpte12"
+                            style="@style/cardView">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/te18c" />
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@color/colorPrimary"
+                                    android:text="@string/te12"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="20sp" />
+
+                                <RadioGroup
+                                    android:id="@+id/te12"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:id="@+id/te12a"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/yes" />
+
+                                    <RadioButton
+                                        android:id="@+id/te12b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/no" />
 
 
-                            </RadioGroup>
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                        <!--te13-->
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/fldgrpte13"
+                            style="@style/cardView">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@color/colorPrimary"
+                                    android:text="@string/te13"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="20sp" />
+
+                                <RadioGroup
+                                    android:id="@+id/te13"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:id="@+id/te13a"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/yes" />
+
+                                    <RadioButton
+                                        android:id="@+id/te13b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/no" />
+
+
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                        <LinearLayout
+                            android:id="@+id/fldGrpll14"
+                            style="@style/linerlayout_view_wt_bound"
+                            android:visibility="@{te13a.checked ? View.VISIBLE : View.GONE}">
+
+                            <!--te14-->
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/fldgrpte14"
+                                style="@style/cardView">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:background="@color/colorPrimary"
+                                        android:text="@string/te14"
+                                        android:textAppearance="?android:attr/textAppearanceLarge"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="20sp" />
+
+                                    <RadioGroup
+                                        android:id="@+id/te14"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <RadioButton
+                                            android:id="@+id/te14a"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="1dp"
+                                            android:text="@string/yes" />
+
+                                        <RadioButton
+                                            android:id="@+id/te14b"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="1dp"
+                                            android:text="@string/no" />
+
+
+                                    </RadioGroup>
+
+                                </LinearLayout>
+
+                            </android.support.v7.widget.CardView>
+
+                            <!--te15-->
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/fldgrpte15"
+                                style="@style/cardView">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:background="@color/colorPrimary"
+                                        android:text="@string/te15"
+                                        android:textAppearance="?android:attr/textAppearanceLarge"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="20sp" />
+
+                                    <RadioGroup
+                                        android:id="@+id/te15"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <RadioButton
+                                            android:id="@+id/te15a"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="1dp"
+                                            android:text="@string/te15a" />
+
+                                        <RadioButton
+                                            android:id="@+id/te15b"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="1dp"
+                                            android:text="@string/te15b" />
+
+                                        <RadioButton
+                                            android:id="@+id/te15c"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="1dp"
+                                            android:text="@string/te15c" />
+
+                                        <RadioButton
+                                            android:id="@+id/te15d"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="1dp"
+                                            android:text="@string/te15d" />
+
+                                        <RadioButton
+                                            android:id="@+id/te15e"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="1dp"
+                                            android:text="@string/te15e" />
+
+
+                                    </RadioGroup>
+
+                                </LinearLayout>
+
+                            </android.support.v7.widget.CardView>
+
+                            <!--te16-->
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/fldgrpte16"
+                                style="@style/cardView">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:background="@color/colorPrimary"
+                                        android:text="@string/te16"
+                                        android:textAppearance="?android:attr/textAppearanceLarge"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="20sp" />
+
+                                    <LinearLayout
+                                        android:id="@+id/te16"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <CheckBox
+                                            android:id="@+id/te16a"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="1dp"
+                                            android:text="@string/te16a" />
+
+                                        <CheckBox
+                                            android:id="@+id/te16b"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="1dp"
+                                            android:text="@string/te16b" />
+
+                                        <CheckBox
+                                            android:id="@+id/te16c"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="1dp"
+                                            android:text="@string/te16c" />
+
+                                        <CheckBox
+                                            android:id="@+id/te16d"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="1dp"
+                                            android:text="@string/te16d" />
+
+                                        <CheckBox
+                                            android:id="@+id/te16e"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="1dp"
+                                            android:text="@string/te16e" />
+
+                                        <CheckBox
+                                            android:id="@+id/te16f"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="1dp"
+                                            android:text="@string/te16f" />
+
+                                        <CheckBox
+                                            android:id="@+id/te16g"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="1dp"
+                                            android:text="@string/te16g" />
+
+                                        <CheckBox
+                                            android:id="@+id/te16h"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="1dp"
+                                            android:text="@string/te16h" />
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+                            </android.support.v7.widget.CardView>
+
+                            <!--te17-->
+                            <android.support.v7.widget.CardView
+                                android:id="@+id/fldgrpte17"
+                                style="@style/cardView">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:background="@color/colorPrimary"
+                                        android:text="@string/te17"
+                                        android:textAppearance="?android:attr/textAppearanceLarge"
+                                        android:textColor="@android:color/white"
+                                        android:textSize="20sp" />
+
+                                    <RadioGroup
+                                        android:id="@+id/te17"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <RadioButton
+                                            android:id="@+id/te17a"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="1dp"
+                                            android:text="@string/te17a" />
+
+                                        <EditText
+                                            android:id="@+id/te17hr"
+                                            style="@style/textInput"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="10dp"
+                                            android:digits="0123456789"
+                                            android:hint="@string/te17a"
+                                            android:inputType="number"
+                                            android:maxLength="2"
+                                            android:text='@{te17a.checked? te17hr.getText.toString : ""}'
+                                            android:visibility='@{te17a.checked? View.VISIBLE : View.GONE}' />
+
+                                        <RadioButton
+                                            android:id="@+id/te17b"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="1dp"
+                                            android:text="@string/te17b" />
+
+                                        <EditText
+                                            android:id="@+id/te17day"
+                                            style="@style/textInput"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_margin="10dp"
+                                            android:digits="0123456789"
+                                            android:hint="@string/te17b"
+                                            android:inputType="number"
+                                            android:maxLength="2"
+                                            android:text='@{te17b.checked? te17day.getText.toString : ""}'
+                                            android:visibility='@{te17b.checked? View.VISIBLE : View.GONE}' />
+
+                                        <RadioButton
+                                            android:id="@+id/te17c"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="1dp"
+                                            android:text="@string/te17c" />
+
+                                    </RadioGroup>
+
+                                </LinearLayout>
+
+                            </android.support.v7.widget.CardView>
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                        <!--te18-->
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/fldgrpte18"
+                            style="@style/cardView"
+                            android:visibility='@{te17c.checked? View.GONE : View.VISIBLE}'>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@color/colorPrimary"
+                                    android:text="@string/te18"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="20sp" />
+
+                                <RadioGroup
+                                    android:id="@+id/te18"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:id="@+id/te18a"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te18a" />
+
+                                    <RadioButton
+                                        android:id="@+id/te18b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te18b" />
+
+                                    <RadioButton
+                                        android:id="@+id/te18c"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/te18c" />
+
+
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
 
 
                 </LinearLayout>
@@ -1195,9 +1167,8 @@
                 </android.support.v7.widget.CardView>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:id="@+id/fldGrpll20"
+                    style="@style/linerlayout_view_wt_bound"
                     android:visibility='@{te19b.checked? View.GONE : View.VISIBLE}'>
 
                     <!--te20-->
@@ -1357,7 +1328,6 @@
                     </android.support.v7.widget.CardView>
 
                 </LinearLayout>
-
 
                 <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
                 <LinearLayout
