@@ -199,7 +199,7 @@ public class SectionAActivity extends Activity {
 
     public void onCheckHHClick() {
 
-        if (!bi.ta01.getText().toString().trim().isEmpty() && !bi.ta05h.getText().toString().trim().isEmpty()) {
+        if (formValidation(false)) {
 
             selected = db.getAllBLRandom(bi.ta01.getText().toString(), bi.ta05h.getText().toString().toUpperCase());
 
@@ -228,7 +228,7 @@ public class SectionAActivity extends Activity {
     }
 
     public void onBtnEndClick() {
-        if (formValidation()) {
+        if (formValidation(true)) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -245,7 +245,7 @@ public class SectionAActivity extends Activity {
     }
 
     public void onBtnContinueClick() {
-        if (formValidation()) {
+        if (formValidation(true)) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -360,64 +360,72 @@ public class SectionAActivity extends Activity {
         } catch (Exception e) {
             Log.e(TAG, "setGPS: " + e.getMessage());
         }
+
     }
 
-    public boolean formValidation() {
-//        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
+    public boolean formValidation(boolean flag) {
+
         if (!validatorClass.EmptyTextBox(this, bi.ta01, getString(R.string.ta01))) {
             return false;
         }
         if (!validatorClass.EmptyTextBox(this, bi.ta05h, getString(R.string.ta05h))) {
             return false;
         }
-        if (!bi.checkHHHeadpresent.isChecked()) {
-            if (!validatorClass.EmptyTextBox(this, bi.newHHheadname, "New Head Name")) {
-                return false;
-            }
-        }
-        if (!validatorClass.EmptyRadioButton(this, bi.ta02, bi.ta02a, getString(R.string.ta02))) {
+        if (!validatorClass.PatternTextBox(this, bi.ta05h, getString(R.string.ta05h), "[0-9]{3,3}-[^0-9]{1,1}", "XXX-X")) {
             return false;
         }
-        if (!validatorClass.EmptyTextBox(this, bi.ta06, getString(R.string.ta06))) {
-            return false;
-        }
-        if (!validatorClass.EmptyTextBox(this, bi.ta07, getString(R.string.ta07))) {
-            return false;
-        }
-        if (!validatorClass.EmptyTextBox(this, bi.ta08, getString(R.string.ta08))) {
-            return false;
-        }
-        if (!validatorClass.EmptyRadioButton(this, bi.ta09, bi.ta09a, getString(R.string.ta09))) {
-            return false;
-        }
-        if (bi.ta09a.isChecked()) {
-            if (!validatorClass.EmptyTextBox(this, bi.tc03, getString(R.string.tc03))) {
+
+        if (flag) {
+            if (!bi.checkHHHeadpresent.isChecked()) {
+                if (!validatorClass.EmptyTextBox(this, bi.newHHheadname, "New Head Name")) {
+                    return false;
+                }
+            }
+            if (!validatorClass.EmptyRadioButton(this, bi.ta02, bi.ta02a, getString(R.string.ta02))) {
                 return false;
             }
-            if (!validatorClass.EmptyRadioButton(this, bi.tc04, bi.tc04a, getString(R.string.tc04))) {
+            if (!validatorClass.EmptyTextBox(this, bi.ta06, getString(R.string.ta06))) {
                 return false;
             }
-            if (!validatorClass.EmptyTextBox(this, bi.tc05, getString(R.string.tc05))) {
+            if (!validatorClass.EmptyTextBox(this, bi.ta07, getString(R.string.ta07))) {
                 return false;
             }
-            if (!validatorClass.RangeTextBox(this, bi.tc05, 14, 99, getString(R.string.tc05), " years")) {
+            if (!validatorClass.EmptyTextBox(this, bi.ta08, getString(R.string.ta08))) {
                 return false;
             }
-            int ageofResp = Integer.parseInt(bi.tc05.getText().toString());
-            if (ageofResp < 14) {
-                Toast.makeText(this, "Respondant age must be geater then 14 years", Toast.LENGTH_LONG);
-                bi.tc05.setError("Respondant age must be geater then 14 years");
-                return false;
-            } else {
-                bi.tc05.setError(null);
-            }
-            if (!validatorClass.EmptyRadioButton(this, bi.ta10, bi.ta10a, getString(R.string.ta10))) {
+            if (!validatorClass.EmptyRadioButton(this, bi.ta09, bi.ta09a, getString(R.string.ta09))) {
                 return false;
             }
-            if (!validatorClass.EmptyTextBox(this, bi.ta11, getString(R.string.ta11))) {
-                return false;
+            if (bi.ta09a.isChecked()) {
+                if (!validatorClass.EmptyTextBox(this, bi.tc03, getString(R.string.tc03))) {
+                    return false;
+                }
+                if (!validatorClass.EmptyRadioButton(this, bi.tc04, bi.tc04a, getString(R.string.tc04))) {
+                    return false;
+                }
+                if (!validatorClass.EmptyTextBox(this, bi.tc05, getString(R.string.tc05))) {
+                    return false;
+                }
+                if (!validatorClass.RangeTextBox(this, bi.tc05, 14, 99, getString(R.string.tc05), " years")) {
+                    return false;
+                }
+                int ageofResp = Integer.parseInt(bi.tc05.getText().toString());
+                if (ageofResp < 14) {
+                    Toast.makeText(this, "Respondant age must be geater then 14 years", Toast.LENGTH_LONG);
+                    bi.tc05.setError("Respondant age must be geater then 14 years");
+                    return false;
+                } else {
+                    bi.tc05.setError(null);
+                }
+                if (!validatorClass.EmptyRadioButton(this, bi.ta10, bi.ta10a, getString(R.string.ta10))) {
+                    return false;
+                }
+                if (!validatorClass.EmptyTextBox(this, bi.ta11, getString(R.string.ta11))) {
+                    return false;
+                }
+                return validatorClass.RangeTextBox(this, bi.ta11, 1, 25, getString(R.string.ta11), " Under 5");
+
             }
-            return validatorClass.RangeTextBox(this, bi.ta11, 1, 25, getString(R.string.ta11), " Under 5");
 
         }
 

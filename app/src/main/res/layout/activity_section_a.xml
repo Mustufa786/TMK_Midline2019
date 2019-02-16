@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".activities.SectionAActivity">
 
@@ -100,13 +101,17 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
-            <EditText
+            <com.santalu.widget.MaskEditText
                 android:id="@+id/ta05h"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-"
-                android:hint="@string/ta05h"
-                android:inputType="text" />
+                android:layout_marginBottom="1dp"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+                android:hint="###-#"
+                android:inputType="textCapCharacters"
+                android:layoutDirection="ltr"
+                android:maxLength="5"
+                app:met_mask="###-#" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -118,7 +123,7 @@
                 <TextView
                     android:id="@+id/hh_name"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:enabled="false"
                     android:paddingLeft="10dp" />

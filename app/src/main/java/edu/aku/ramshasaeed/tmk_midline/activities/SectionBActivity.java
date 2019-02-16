@@ -1,6 +1,5 @@
 package edu.aku.ramshasaeed.tmk_midline.activities;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -15,13 +14,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.CompoundButton;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -42,7 +35,6 @@ import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionBBinding;
 import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
-import io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText;
 
 public class SectionBActivity extends AppCompatActivity {
 
@@ -890,6 +882,9 @@ public class SectionBActivity extends AppCompatActivity {
                 return false;
             }
             if (!validatorClass.EmptyTextBox(this, bi.td08, getString(R.string.td08))) {
+                return false;
+            }
+            if (!validatorClass.RangeTextBox(this, bi.td08, 1, 99, getString(R.string.ta11), " Married Womens")) {
                 return false;
             }
             if (!TextUtils.isEmpty(bi.td01.getText().toString()) && !TextUtils.isEmpty(bi.td02.getText().toString()) && !TextUtils.isEmpty(bi.td03.getText().toString()) && !TextUtils.isEmpty(bi.td04.getText().toString()) && !TextUtils.isEmpty(bi.td05.getText().toString()) && !TextUtils.isEmpty(bi.td06.getText().toString()) && !TextUtils.isEmpty(bi.td07.getText().toString()) && !TextUtils.isEmpty(bi.td08.getText().toString())) {

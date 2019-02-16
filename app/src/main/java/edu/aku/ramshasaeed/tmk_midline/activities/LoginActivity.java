@@ -121,7 +121,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     .getPackageManager()
                     .getPackageInfo("edu.aku.ramshasaeed.tmk_midline", 0)
                     .versionName;
-//            txtinstalldate.setText("Ver. " + MainApp.versionName + "." + String.valueOf(MainApp.versionCode) + " \r\n( Last Updated: " + new SimpleDateFormat("dd MMM. yyyy").format(new Date(installedOn)) + " )");
+            bi.txtinstalldate.setText("Ver. " + MainApp.versionName + "." + String.valueOf(MainApp.versionCode) + " \r\n( Last Updated: " + new SimpleDateFormat("dd MMM. yyyy").format(new Date(installedOn)) + " )");
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
@@ -240,10 +240,10 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         if (sharedPref.getBoolean("flag", false)) {
 
-            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()).toString());
+            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
 
-            if (dt != new SimpleDateFormat("dd-MM-yy").format(new Date()).toString()) {
-                editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()).toString());
+            if (dt != new SimpleDateFormat("dd-MM-yy").format(new Date())) {
+                editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
 
                 editor.commit();
             }

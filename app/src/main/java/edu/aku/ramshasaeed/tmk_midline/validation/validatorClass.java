@@ -55,6 +55,18 @@ public abstract class validatorClass {
         }
     }
 
+    public static boolean PatternTextBox(Context context, EditText txt, String msg, String pattern, String pat_type) {
+        if (!txt.getText().toString().matches(pattern)) {
+            Toast.makeText(context, "ERROR(Invalid): " + msg, Toast.LENGTH_SHORT).show();
+            txt.setError("Required: " + pat_type);    // Set Error on last radio button
+            txt.requestFocus();
+            Log.i(context.getClass().getName(), context.getResources().getResourceEntryName(txt.getId()) + ": Required: " + pat_type);
+            return false;
+        } else {
+            txt.setError(null);
+            return true;
+        }
+    }
 
     public static boolean RangeTextBox(Context context, EditText txt, double min, double max, String msg, String type) {
 
