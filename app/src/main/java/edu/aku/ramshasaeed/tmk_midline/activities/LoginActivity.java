@@ -23,6 +23,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.provider.ContactsContract;
+import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
@@ -161,7 +162,10 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         dbBackup();
     }
+    private void doPermissionGrantedStuffs() {
+        MainApp.IMEI = ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
 
+    }
     public void populateSpinner(Context context) {
 
         final Context mContext = context;
@@ -604,7 +608,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 public void run() {
 
                     if (flag) {
-                        Toast.makeText(LoginActivity.this, "Sync Talukas", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(LoginActivity.this, SyncActivity.class));
+                      /*  Toast.makeText(LoginActivity.this, "Sync Talukas", Toast.LENGTH_LONG).show();
                         new GetTalukas(mContext).execute();
                         Toast.makeText(LoginActivity.this, "Sync UC's", Toast.LENGTH_LONG).show();
                         new GetUCs(mContext).execute();
@@ -613,7 +618,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                         Toast.makeText(LoginActivity.this, "Sync Villages", Toast.LENGTH_LONG).show();
                         new GetVillages(mContext).execute();
                         Toast.makeText(LoginActivity.this, "Sync User", Toast.LENGTH_LONG).show();
-                        new GetUsers(mContext).execute();
+                        new GetUsers(mContext).execute();*/
+
 
                     } else {
                         Toast.makeText(LoginActivity.this, "Sync BL Random", Toast.LENGTH_LONG).show();

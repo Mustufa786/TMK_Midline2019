@@ -28,7 +28,6 @@ import butterknife.OnClick;
 import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
-import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionABinding;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionFBinding;
 import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
 

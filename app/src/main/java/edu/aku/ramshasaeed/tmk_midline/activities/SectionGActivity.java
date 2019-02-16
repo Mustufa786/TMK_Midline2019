@@ -697,7 +697,6 @@ public class SectionGActivity extends AppCompatActivity {
 
         if (MainApp.flag) {
 
-
             MainApp.childsMap.put("....", null);
             MainApp.lstChild.add("....");
 

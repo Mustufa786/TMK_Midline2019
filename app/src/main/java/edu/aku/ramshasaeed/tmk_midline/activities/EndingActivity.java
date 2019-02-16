@@ -38,6 +38,7 @@ public class EndingActivity extends Activity {
             bi.istatus5.setEnabled(false);
             bi.istatus6.setEnabled(false);
             bi.istatus7.setEnabled(false);
+            bi.istatus8.setEnabled(false);
             bi.istatus96.setEnabled(false);
             bi.istatus96x.setEnabled(false);
             bi.istatus96x.setText(null);
@@ -128,6 +129,7 @@ public class EndingActivity extends Activity {
                 : bi.istatus5.isChecked() ? "4"
                 : bi.istatus6.isChecked() ? "6"
                 : bi.istatus7.isChecked() ? "7"
+                : bi.istatus8.isChecked() ? "8"
                 : bi.istatus96.isChecked() ? "96"
                 : "0");
 

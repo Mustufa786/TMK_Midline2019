@@ -39,6 +39,9 @@ public class MainApp extends Application {
     public static final Integer _PORT = 8080; // Port - with colon (:)
     public static final String _HOST_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk_midline/api/";
     public static final String _UPDATE_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk_midline/app/app-debug.apk";
+    public static final String _UPDATE_URL_NEW = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk_midline/app/";
+    public static String IMEI;
+    public static String DeviceURL = "devices.php";
 
     /*
         public static final String _IP = "43.245.131.159"; // Test server

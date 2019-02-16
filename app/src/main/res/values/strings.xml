@@ -4,6 +4,8 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Login</string>
     <string name="dummy_button">Dummy Button</string>
+    <string name="btnSync">Sync</string>
+    <string name="btnUpload">Upload</string>
     <string name="dcstatus"> انٽرويو جو نتيجو</string>
     <string name="istatus1"> مڪمل ٿيو </string>
     <string name="istatus2"> انڪار ڪيو </string>
@@ -12,6 +14,7 @@
     <string name="istatus5"> رڪيل </string>
     <string name="istatus6"> گھر خالي ھو </string>
     <string name="istatus7"> مڪمل نه ٿيو </string>
+    <string name="istatus8">No married women and under five child found in this household </string>
     <string name="end_interview"> اختتام </string>
     <string name="start_interview"> انٽرويو شروع ڪريو </string>
     <string name="male"> مرد</string>

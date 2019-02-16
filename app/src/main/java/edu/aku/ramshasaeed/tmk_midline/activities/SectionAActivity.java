@@ -200,26 +200,30 @@ public class SectionAActivity extends Activity {
     public void onCheckHHClick() {
 
         if (formValidation(false)) {
+            if (db.checkFormAlreadyFilled(bi.ta01.getText().toString(), bi.ta05h.getText().toString().toUpperCase())) {
 
-            selected = db.getAllBLRandom(bi.ta01.getText().toString(), bi.ta05h.getText().toString().toUpperCase());
+                selected = db.getAllBLRandom(bi.ta01.getText().toString(), bi.ta05h.getText().toString().toUpperCase());
 
-            if (selected.size() != 0) {
+                if (selected.size() != 0) {
 
-                for (BLRandomContract rnd : selected) {
-                    MainApp.selectedHead = new BLRandomContract(rnd);
+                    for (BLRandomContract rnd : selected) {
+                        MainApp.selectedHead = new BLRandomContract(rnd);
+                    }
+
+                    bi.hhName.setText(MainApp.selectedHead.getHhhead().toUpperCase());
+
+                    bi.fldGrpt03.setVisibility(View.VISIBLE);
+                } else {
+                    bi.hhName.setText(null);
+
+                    bi.fldGrpt03.setVisibility(View.GONE);
+
+                    Toast.makeText(this, "No Head found in this HH.", Toast.LENGTH_SHORT).show();
                 }
 
-                bi.hhName.setText(MainApp.selectedHead.getHhhead().toUpperCase());
-
-                bi.fldGrpt03.setVisibility(View.VISIBLE);
             } else {
-                bi.hhName.setText(null);
-
-                bi.fldGrpt03.setVisibility(View.GONE);
-
-                Toast.makeText(this, "No Head found in this HH.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "This form is already filled!!", Toast.LENGTH_LONG).show();
             }
-
         } else {
             Toast.makeText(this, "Not found.", Toast.LENGTH_SHORT).show();
         }
@@ -276,10 +280,13 @@ public class SectionAActivity extends Activity {
         MainApp.fc.setdeviceid(Settings.Secure.getString(getApplicationContext().getContentResolver(),
                 Settings.Secure.ANDROID_ID));
         MainApp.fc.setappVer(MainApp.versionName + "." + MainApp.versionCode);
+        MainApp.fc.setcluster_no(bi.ta01.getText().toString());
+        MainApp.fc.sethhno(bi.ta05h.getText().toString());
 
         JSONObject sa = new JSONObject();
         MainApp.cluster = bi.ta01.getText().toString();
         MainApp.hhno = bi.ta05h.getText().toString();
+
 //        MainApp.billno = bi.ta05u.getText().toString();
 
         sa.put("rndid", MainApp.selectedHead.get_ID());
@@ -305,8 +312,8 @@ public class SectionAActivity extends Activity {
         sa.put("ta07", bi.ta07.getText().toString());
         sa.put("ta08", bi.ta08.getText().toString());
         sa.put("ta09", bi.ta09a.isChecked() ? "1" : bi.ta09b.isChecked() ? "2" : bi.ta09c.isChecked() ? "3" : "0");
-        sa.put("ta10", bi.ta10a.isChecked() ? "1" : bi.ta10b.isChecked() ? "2" : "0");
-        sa.put("ta11", bi.ta11.getText().toString());
+       /* sa.put("ta10", bi.ta10a.isChecked() ? "1" : bi.ta10b.isChecked() ? "2" : "0");
+        sa.put("ta11", bi.ta11.getText().toString());*/
 //        sa.put("app_version", MainApp.versionName + "." + MainApp.versionCode);
 
         MainApp.fc.setsA(String.valueOf(sa));
@@ -417,13 +424,14 @@ public class SectionAActivity extends Activity {
                 } else {
                     bi.tc05.setError(null);
                 }
+                /*
                 if (!validatorClass.EmptyRadioButton(this, bi.ta10, bi.ta10a, getString(R.string.ta10))) {
                     return false;
                 }
                 if (!validatorClass.EmptyTextBox(this, bi.ta11, getString(R.string.ta11))) {
                     return false;
                 }
-                return validatorClass.RangeTextBox(this, bi.ta11, 1, 25, getString(R.string.ta11), " Under 5");
+                return validatorClass.RangeTextBox(this, bi.ta11, 1, 25, getString(R.string.ta11), " Under 5");*/
 
             }
 

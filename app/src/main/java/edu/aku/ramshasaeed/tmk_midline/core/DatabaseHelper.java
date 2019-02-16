@@ -34,6 +34,8 @@ import edu.aku.ramshasaeed.tmk_midline.contracts.UCsContract;
 import edu.aku.ramshasaeed.tmk_midline.contracts.UCsContract.singleUCs;
 import edu.aku.ramshasaeed.tmk_midline.contracts.UsersContract;
 import edu.aku.ramshasaeed.tmk_midline.contracts.UsersContract.singleUser;
+import edu.aku.ramshasaeed.tmk_midline.contracts.VersionAppContract;
+import edu.aku.ramshasaeed.tmk_midline.contracts.VersionAppContract.VersionAppTable;
 import edu.aku.ramshasaeed.tmk_midline.contracts.VillagesContract;
 import edu.aku.ramshasaeed.tmk_midline.contracts.VillagesContract.singleVillages;
 
@@ -47,7 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "uentmkmidline.db";
     public static final String DB_NAME = "uentmkmidline_copy.db";
     public static final String PROJECT_NAME = "DMU-UENTMKMIDLINE";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String SQL_CREATE_FORMS = "CREATE TABLE "
             + FormsContract.FormsTable.TABLE_NAME + "("
             + FormsTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -74,6 +76,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_SYNCED + " TEXT,"+
             FormsTable.COLUMN_SYNCED_DATE + " TEXT,"+
             FormsTable.COLUMN_DEVICEID + " TEXT,"+
+            FormsTable.COLUMN_CLUSTER + " TEXT,"+
+            FormsTable.COLUMN_HHNO + " TEXT,"+
             FormsTable.COLUMN_DEVICETAGID + " TEXT"
             + " );";
 
@@ -86,6 +90,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleChild.COLUMN_FAMILY_EXT_CODE + " TEXT,"
             + singleChild.COLUMN_HH_HEAD + " TEXT,"
             + singleChild.COLUMN_RANDOMDT + " TEXT );";
+
+    final String SQL_CREATE_VERSIONAPP = "CREATE TABLE " + VersionAppContract.VersionAppTable.TABLE_NAME + " (" +
+            VersionAppTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            VersionAppTable.COLUMN_VERSION_CODE + " TEXT, " +
+            VersionAppTable.COLUMN_VERSION_NAME + " TEXT, " +
+            VersionAppTable.COLUMN_PATH_NAME + " TEXT " +
+            ");";
 
     public static final String SQL_CREATE_USERS = "CREATE TABLE " + UsersContract.singleUser.TABLE_NAME + "("
             + singleUser._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -172,6 +183,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + singleAreas.COLUMN_AREACODE + " TEXT,"
             + singleAreas.COLUMN_UC_CODE + " TEXT,"
             + singleAreas.COLUMN_AREA + " TEXT );";
+    private static final String SQL_ALTER_FORMS_ADD_CLUSTER = "ALTER TABLE " +
+            FormsTable.TABLE_NAME + " ADD COLUMN " +
+            FormsTable.COLUMN_CLUSTER + " TEXT ";
+    private static final String SQL_ALTER_FORMS_ADD_HHNO = "ALTER TABLE " +
+            FormsTable.TABLE_NAME + " ADD COLUMN " +
+            FormsTable.COLUMN_HHNO + " TEXT ";
+
+
     private final String TAG = "DatabaseHelper";
 
 
@@ -197,21 +216,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_UCS);
         db.execSQL(SQL_CREATE_AREAS);
         db.execSQL(SQL_CREATE_BL_RANDOM);
+        db.execSQL(SQL_CREATE_VERSIONAPP);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL(SQL_DELETE_USERS);
+//        db.execSQL(SQL_DELETE_USERS);
 //        db.execSQL(SQL_DELETE_FORMS);
 //        db.execSQL(SQL_DELETE_DECEASED_MOTHER);
 //        db.execSQL(SQL_DELETE_DECEASED_CHILD);
 //        db.execSQL(SQL_DELETE_MWRA);
 //        db.execSQL(SQL_DELETE_SEC_I_IM);
-        db.execSQL(SQL_DELETE_VILLAGES);
+      /*  db.execSQL(SQL_DELETE_VILLAGES);
         db.execSQL(SQL_DELETE_TALUKAS);
         db.execSQL(SQL_DELETE_UCS);
         db.execSQL(SQL_DELETE_AREAS);
-        db.execSQL(SQL_DELETE_BL_RANDOM);
+        db.execSQL(SQL_DELETE_BL_RANDOM);*/
+        switch (i) {
+            case 1:
+                db.execSQL(SQL_CREATE_VERSIONAPP);
+                db.execSQL(SQL_ALTER_FORMS_ADD_CLUSTER);
+                db.execSQL(SQL_ALTER_FORMS_ADD_HHNO);
+        }
     }
 
     public void syncVillages(JSONArray Villageslist) {
@@ -239,6 +265,70 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         } finally {
             db.close();
         }
+    }
+    public void syncVersionApp(JSONArray Versionlist) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(VersionAppTable.TABLE_NAME, null, null);
+        try {
+            JSONArray jsonArray = Versionlist;
+            JSONObject jsonObjectCC = jsonArray.getJSONObject(0);
+
+            VersionAppContract Vc = new VersionAppContract();
+            Vc.Sync(jsonObjectCC);
+
+            ContentValues values = new ContentValues();
+
+            values.put(VersionAppTable.COLUMN_PATH_NAME, Vc.getPathname());
+            values.put(VersionAppTable.COLUMN_VERSION_CODE, Vc.getVersioncode());
+            values.put(VersionAppTable.COLUMN_VERSION_NAME, Vc.getVersionname());
+
+            db.insert(VersionAppTable.TABLE_NAME, null, values);
+        } catch (Exception e) {
+        } finally {
+            db.close();
+        }
+    }
+    public VersionAppContract getVersionApp() {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                VersionAppTable._ID,
+                VersionAppTable.COLUMN_VERSION_CODE,
+                VersionAppTable.COLUMN_VERSION_NAME,
+                VersionAppTable.COLUMN_PATH_NAME
+        };
+
+        String whereClause = null;
+        String[] whereArgs = null;
+        String groupBy = null;
+        String having = null;
+
+        String orderBy = null;
+
+        VersionAppContract allVC = new VersionAppContract();
+        try {
+            c = db.query(
+                    VersionAppTable.TABLE_NAME,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allVC.hydrate(c);
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allVC;
     }
 
     public void syncTalukas(JSONArray Talukaslist) {
@@ -745,6 +835,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SYNCED_DATE, fc.getsynced_date());
         values.put(FormsTable.COLUMN_DEVICEID, fc.getdeviceid());
         values.put(FormsTable.COLUMN_DEVICETAGID, fc.getdevicetagID());
+        values.put(FormsTable.COLUMN_CLUSTER, fc.getcluster_no());
+        values.put(FormsTable.COLUMN_HHNO, fc.gethhno());
 
 
         // Insert the new row, returning the primary key value of the new row
@@ -971,6 +1063,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_SYNCED_DATE,
                 FormsTable.COLUMN_DEVICEID,
                 FormsTable.COLUMN_DEVICETAGID,
+                FormsTable.COLUMN_CLUSTER,
+                FormsTable.COLUMN_HHNO,
+
 
 
         };
@@ -1154,6 +1249,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_SYNCED_DATE,
                 FormsTable.COLUMN_DEVICEID,
                 FormsTable.COLUMN_DEVICETAGID,
+                FormsTable.COLUMN_CLUSTER,
+                FormsTable.COLUMN_HHNO,
 
         };
         String whereClause = FormsTable.COLUMN_SYNCED + " is null OR "+FormsTable.COLUMN_SYNCED+" = ''";
@@ -1588,6 +1685,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selection,
                 selectionArgs);
         return count;
+    }
+    public boolean checkFormAlreadyFilled(String cluster, String hhno) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT * FROM " + FormsTable.TABLE_NAME + " WHERE " + FormsTable.COLUMN_CLUSTER + "='" + cluster + "' AND " + FormsTable.COLUMN_HHNO + " = " + hhno+ "' AND " + FormsTable.COLUMN_ISTATUS + " = '1'" ;
+        Cursor mCursor = db.rawQuery(query, null);
+        if (mCursor != null) {
+            if (mCursor.getCount() > 0) {
+                return true;
+            }
+        }
+        db.close();
+        return false;
     }
 
 

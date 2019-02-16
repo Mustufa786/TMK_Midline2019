@@ -32,6 +32,8 @@ public class FormsContract {
     private String gpsAcc = "";
     private String deviceid = "";
     private String devicetagID = "";
+    private String cluster_no = "";
+    private String hhno = "";
     private String synced = "";
     private String synced_date = "";
 
@@ -69,6 +71,8 @@ public class FormsContract {
         this.synced_date= jsonObject.getString(FormsTable.COLUMN_SYNCED_DATE);
         this.deviceid= jsonObject.getString(FormsTable.COLUMN_DEVICEID);
         this.devicetagID= jsonObject.getString(FormsTable.COLUMN_DEVICETAGID);
+        this.cluster_no= jsonObject.getString(FormsTable.COLUMN_CLUSTER);
+        this.hhno= jsonObject.getString(FormsTable.COLUMN_HHNO);
 
         return this;
 
@@ -99,6 +103,8 @@ public class FormsContract {
         this.synced_date = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SYNCED_DATE));
         this.deviceid = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICEID));
         this.devicetagID = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_DEVICETAGID));
+        this.cluster_no = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_CLUSTER));
+        this.hhno = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_HHNO));
 
         // TODO:
 
@@ -302,6 +308,22 @@ public class FormsContract {
         this.synced_date = synced_date;
     }
 
+    public String getcluster_no() {
+        return cluster_no;
+    }
+
+    public void setcluster_no(String cluster_no) {
+        this.cluster_no = cluster_no;
+    }
+
+    public String gethhno() {
+        return hhno;
+    }
+
+    public void sethhno(String hhno) {
+        this.hhno = hhno;
+    }
+
     public JSONObject toJSONObject() throws JSONException {
 
         JSONObject json = new JSONObject();
@@ -371,6 +393,8 @@ public class FormsContract {
         public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UID = "_uid";
         public static final String COLUMN_FORMDATE = "formdate";
+        public static final String COLUMN_CLUSTER = "cluster_no";
+        public static final String COLUMN_HHNO = "hhno";
         public static final String COLUMN_USER = "user";
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_ISTATUS96X = "istatus96x";
