@@ -115,11 +115,13 @@
     <string name="ta06"> Village </string>
     <string name="ta07"> Block/mohalla </string>
     <string name="ta08"> Street </string>
-    <string name="ta09"> Have you got tie permission to start interview? </string>
+    <string name="ta09"> ڇا ھاڻي آءٌ انٽرويو شروع ڪري سگھان ٿي/ٿو؟ </string>
     <string name="ta09c"> گھرو آف / اجازت دستياب ناهي. </string>
     <string name="tc03"> جواب ڏيڻ واري جو نالو. </string>
     <string name="tc04"> جواب ڏيڻ واري جي جنس. </string>
     <string name="tc05"> جواب ڏيندڙ جي عمر. </string>
+    <string name="ta10"> Is there any under 5 child exist? </string>
+    <string name="ta11"> Total under 5 child? </string>
 
     <string name="tbAge"> تاريخ پيدائش / عمر </string>
     <string name="tbAge02"> عمر </string>

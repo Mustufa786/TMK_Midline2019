@@ -15,15 +15,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -43,6 +36,7 @@ import edu.aku.ramshasaeed.tmk_midline.contracts.VillagesContract;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionABinding;
+import edu.aku.ramshasaeed.tmk_midline.validation.ClearClass;
 import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
 
 public class SectionAActivity extends Activity {
@@ -153,7 +147,7 @@ public class SectionAActivity extends Activity {
         bi.ta09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (i == R.id.ta09a) {
+                /*if (i == R.id.ta09a) {
                     bi.btnContinue.setVisibility(View.VISIBLE);
                     bi.fldGrpRespInfo.setVisibility(View.VISIBLE);
                     bi.btnEnd.setVisibility(View.GONE);
@@ -164,9 +158,14 @@ public class SectionAActivity extends Activity {
                     bi.tc04.clearCheck();
                     bi.tc05.setText(null);
                     bi.btnEnd.setVisibility(View.VISIBLE);
-                }
+                }*/
+
+                if (i != bi.ta09a.getId())
+                    ClearClass.ClearAllFields(bi.fldGrpRespInfo, null);
+
             }
         });
+
         bi.ta05h.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -229,7 +228,6 @@ public class SectionAActivity extends Activity {
     }
 
     public void onBtnEndClick() {
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -237,11 +235,9 @@ public class SectionAActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Ending Section", Toast.LENGTH_SHORT).show();
 
                 finish();
-
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -249,7 +245,6 @@ public class SectionAActivity extends Activity {
     }
 
     public void onBtnContinueClick() {
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -257,7 +252,6 @@ public class SectionAActivity extends Activity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
@@ -271,7 +265,6 @@ public class SectionAActivity extends Activity {
 
 
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
@@ -312,13 +305,13 @@ public class SectionAActivity extends Activity {
         sa.put("ta07", bi.ta07.getText().toString());
         sa.put("ta08", bi.ta08.getText().toString());
         sa.put("ta09", bi.ta09a.isChecked() ? "1" : bi.ta09b.isChecked() ? "2" : bi.ta09c.isChecked() ? "3" : "0");
+        sa.put("ta10", bi.ta10a.isChecked() ? "1" : bi.ta10b.isChecked() ? "2" : "0");
+        sa.put("ta11", bi.ta11.getText().toString());
 //        sa.put("app_version", MainApp.versionName + "." + MainApp.versionCode);
 
         MainApp.fc.setsA(String.valueOf(sa));
-
         setGPS();
 
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
 
     private boolean UpdateDB() {
@@ -327,7 +320,6 @@ public class SectionAActivity extends Activity {
         MainApp.fc.set_ID(String.valueOf(updcount));
 
         if (updcount != 0) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
             MainApp.fc.set_UID(
                     (MainApp.fc.getdeviceid() + MainApp.fc.get_ID()));
@@ -419,6 +411,14 @@ public class SectionAActivity extends Activity {
             } else {
                 bi.tc05.setError(null);
             }
+            if (!validatorClass.EmptyRadioButton(this, bi.ta10, bi.ta10a, getString(R.string.ta10))) {
+                return false;
+            }
+            if (!validatorClass.EmptyTextBox(this, bi.ta11, getString(R.string.ta11))) {
+                return false;
+            }
+            return validatorClass.RangeTextBox(this, bi.ta11, 1, 25, getString(R.string.ta11), " Under 5");
+
         }
 
         return true;
