@@ -532,7 +532,7 @@
                         android:onClick="@{() -> callback.onBtnEndClick()}"
                         android:text="@string/end_interview"
                         android:textColor="@color/white"
-                        android:visibility="@{ta09a.checked &amp;&amp; tc04b.checked ? View.GONE : View.VISIBLE}" />
+                        android:visibility="@{ta09a.checked ? View.GONE : View.VISIBLE}" />
 
                     <Button
                         android:id="@+id/btn_Continue"
@@ -543,7 +543,7 @@
                         android:onClick="@{() -> callback.onBtnContinueClick()}"
                         android:text="@string/start_interview"
                         android:textColor="#1ed61e"
-                        android:visibility="@{ta09a.checked &amp;&amp; tc04b.checked ? View.VISIBLE : View.GONE}" />
+                        android:visibility="@{ta09a.checked ? View.VISIBLE : View.GONE}" />
 
                 </LinearLayout>
 

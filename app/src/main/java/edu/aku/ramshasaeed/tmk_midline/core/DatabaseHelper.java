@@ -1688,7 +1688,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     public boolean checkFormAlreadyFilled(String cluster, String hhno) {
         SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT * FROM " + FormsTable.TABLE_NAME + " WHERE " + FormsTable.COLUMN_CLUSTER + "='" + cluster + "' AND " + FormsTable.COLUMN_HHNO + " = " + hhno+ "' AND " + FormsTable.COLUMN_ISTATUS + " = '1'" ;
+        String query = "SELECT * FROM " + FormsTable.TABLE_NAME + " WHERE " + FormsTable.COLUMN_CLUSTER + "='" + cluster + "' AND " + FormsTable.COLUMN_HHNO + " = '" + hhno+ "' AND " + FormsTable.COLUMN_ISTATUS + " = '1'" ;
         Cursor mCursor = db.rawQuery(query, null);
         if (mCursor != null) {
             if (mCursor.getCount() > 0) {

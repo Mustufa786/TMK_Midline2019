@@ -106,7 +106,7 @@ public class MainActivity extends Activity {
             rSumText += "\tFORMS' LIST: \r\n";
             String iStatus;
             rSumText += "--------------------------------------------------\r\n";
-            rSumText += "[ DSS_ID ] \t[Form Status] \t[Sync Status]----------\r\n";
+            rSumText += "[ Form_ID ] \t[Form Status] \t[Sync Status]----------\r\n";
             rSumText += "--------------------------------------------------\r\n";
 
             for (FormsContract fc : todaysForms) {

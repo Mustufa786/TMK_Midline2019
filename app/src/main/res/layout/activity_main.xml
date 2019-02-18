@@ -89,7 +89,24 @@
                     android:gravity="center"
                     android:popupBackground="#ffffff" />
 
+
             </LinearLayout>
+            <Button
+                android:id="@+id/syncDevice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary"
+                android:drawableLeft="@android:drawable/ic_menu_upload"
+                android:drawableTint="@color/colorPrimaryBeta"
+                android:onClick="syncDevice"
+                android:paddingTop="8dp"
+                android:text="Download Villages"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -297,22 +314,7 @@
                     android:textColor="@color/white"
                     android:textSize="22sp" />
 
-                <Button
-                    android:id="@+id/syncDevice"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:drawableLeft="@android:drawable/stat_notify_sync"
-                    android:drawableTint="@color/colorPrimaryBeta"
-                    android:onClick="syncDevice"
-                    android:paddingTop="8dp"
-                    android:text="Download Data"
-                    android:textColor="@color/white"
-                    android:textSize="22sp" />
+
 
                 <LinearLayout
                     android:id="@+id/adminsec"

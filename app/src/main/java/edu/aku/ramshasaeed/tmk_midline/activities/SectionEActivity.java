@@ -197,7 +197,7 @@ public class SectionEActivity extends AppCompatActivity {
                 : bi.te0198.isChecked() ? "98" : "0");
 
         sE.put("te02", bi.te02.getText().toString());
-        sE.put("te03", bi.te03.getSelectedItem().toString());
+        sE.put("te03", bi.te03.getSelectedItem().toString().equals("....")? "97":bi.te03.getSelectedItem().toString());
         sE.put("te03mname", bi.motherName.getText().toString());
         sE.put("te04", bi.te04.getText().toString());
 

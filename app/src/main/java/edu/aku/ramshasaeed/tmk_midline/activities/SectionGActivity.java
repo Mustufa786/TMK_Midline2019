@@ -796,6 +796,7 @@ public class SectionGActivity extends AppCompatActivity {
                 } else {
 
                     bi.fldGrpti03.setVisibility(View.GONE);
+                    bi.ti03.clearCheck();
                     for (RadioGroup re : rdoAll) {
                         re.clearCheck();
                     }
@@ -1277,6 +1278,7 @@ public class SectionGActivity extends AppCompatActivity {
                     //finish();
 
                     if (MainApp.imsCount < MainApp.totalImsCount) {
+
                         finish();
 
                         MainApp.imsCount++;

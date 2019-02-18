@@ -130,7 +130,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         // Set up the login form.
 //        mEmailView = findViewById(R.id.email);
         populateAutoComplete();
-
+        settingIMEI();
         Target viewTarget = new ViewTarget(R.id.syncData, this);
 
         new ShowcaseView.Builder(this)
@@ -162,7 +162,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         dbBackup();
     }
-    private void doPermissionGrantedStuffs() {
+    private void settingIMEI() {
         MainApp.IMEI = ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
 
     }

@@ -200,7 +200,7 @@ public class SectionAActivity extends Activity {
     public void onCheckHHClick() {
 
         if (formValidation(false)) {
-            if (db.checkFormAlreadyFilled(bi.ta01.getText().toString(), bi.ta05h.getText().toString().toUpperCase())) {
+            if (!db.checkFormAlreadyFilled(bi.ta01.getText().toString(), bi.ta05h.getText().toString().toUpperCase())) {
 
                 selected = db.getAllBLRandom(bi.ta01.getText().toString(), bi.ta05h.getText().toString().toUpperCase());
 

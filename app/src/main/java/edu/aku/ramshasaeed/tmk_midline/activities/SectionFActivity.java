@@ -118,6 +118,7 @@ public class SectionFActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
                 if (bi.thb03a.isChecked()) {
                     bi.fldGrpthb04.setVisibility(View.VISIBLE);
+
                 } else {
 
                     bi.thb04.setText(null);
@@ -181,7 +182,11 @@ public class SectionFActivity extends AppCompatActivity {
                     bi.thb23e.setChecked(false);
                     bi.thb23f.setChecked(false);
                     bi.thb23g.setChecked(false);
-
+                    bi.thb23h.setChecked(false);
+                    bi.thb23i.setChecked(false);
+                    bi.thb23j.setChecked(false);
+                    bi.thb23k.setChecked(false);
+                    bi.thb2396.setChecked(false);
                     bi.fldGrpthb04.setVisibility(View.GONE);
                 }
             }
@@ -252,7 +257,11 @@ public class SectionFActivity extends AppCompatActivity {
                     bi.thb23e.setChecked(false);
                     bi.thb23f.setChecked(false);
                     bi.thb23g.setChecked(false);
-
+                    bi.thb23h.setChecked(false);
+                    bi.thb23i.setChecked(false);
+                    bi.thb23j.setChecked(false);
+                    bi.thb23k.setChecked(false);
+                    bi.thb2396.setChecked(false);
 
                     bi.fldGrpth08.setVisibility(View.VISIBLE);
                     bi.fldGrpth08a.setVisibility(View.GONE);
@@ -389,7 +398,11 @@ public class SectionFActivity extends AppCompatActivity {
                     bi.thb23e.setChecked(false);
                     bi.thb23f.setChecked(false);
                     bi.thb23g.setChecked(false);
-
+                    bi.thb23h.setChecked(false);
+                    bi.thb23i.setChecked(false);
+                    bi.thb23j.setChecked(false);
+                    bi.thb23k.setChecked(false);
+                    bi.thb2396.setChecked(false);
 //                    bi.thb26.clearCheck();
 
 
@@ -420,6 +433,11 @@ public class SectionFActivity extends AppCompatActivity {
                     bi.thb23e.setChecked(false);
                     bi.thb23f.setChecked(false);
                     bi.thb23g.setChecked(false);
+                    bi.thb23h.setChecked(false);
+                    bi.thb23i.setChecked(false);
+                    bi.thb23j.setChecked(false);
+                    bi.thb23k.setChecked(false);
+                    bi.thb2396.setChecked(false);
 
                     bi.fldGrpth23.setVisibility(View.GONE);
                     bi.fldGrptbh23.setVisibility(View.GONE);
@@ -443,6 +461,11 @@ public class SectionFActivity extends AppCompatActivity {
                     bi.thb23e.setChecked(false);
                     bi.thb23f.setChecked(false);
                     bi.thb23g.setChecked(false);
+                    bi.thb23h.setChecked(false);
+                    bi.thb23i.setChecked(false);
+                    bi.thb23j.setChecked(false);
+                    bi.thb23k.setChecked(false);
+                    bi.thb2396.setChecked(false);
 
                     bi.fldGrptbh23.setVisibility(View.GONE);
 
@@ -1082,6 +1105,11 @@ public class SectionFActivity extends AppCompatActivity {
         sHB.put("thb23e", bi.thb23e.isChecked() ? "5" : "0");
         sHB.put("thb23f", bi.thb23f.isChecked() ? "6" : "0");
         sHB.put("thb23g", bi.thb23g.isChecked() ? "7" : "0");
+        sHB.put("thb23h", bi.thb23h.isChecked() ? "8" : "0");
+        sHB.put("thb23i", bi.thb23i.isChecked() ? "9" : "0");
+        sHB.put("thb23j", bi.thb23j.isChecked() ? "10" : "0");
+        sHB.put("thb23k", bi.thb23k.isChecked() ? "11" : "0");
+        sHB.put("thb2396", bi.thb2396.isChecked() ? "96" : "0");
 
 
 
