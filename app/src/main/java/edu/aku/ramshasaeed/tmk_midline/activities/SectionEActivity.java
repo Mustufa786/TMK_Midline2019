@@ -108,6 +108,8 @@ public class SectionEActivity extends AppCompatActivity {
                 if (i == bi.te06a.getId()) {
                     bi.fldgrpte07.setVisibility(View.GONE);
                     ClearClass.ClearAllFields(bi.te07, null);
+
+                    bi.fldGrpll08.setVisibility(View.VISIBLE);
                 } else {
                     bi.fldgrpte07.setVisibility(View.VISIBLE);
 

@@ -249,13 +249,13 @@ public class SectionBActivity extends AppCompatActivity {
                     bi.td07.setError(null);
                     bi.td08.setError(null);
                 }
-                if(!TextUtils.isEmpty(bi.td08.getText().toString()) && !TextUtils.isEmpty(bi.td04.getText().toString())&& !TextUtils.isEmpty(bi.td05.getText().toString())){
-                    int sum03 = Integer.parseInt(bi.td04.getText().toString())+Integer.parseInt(bi.td05.getText().toString());
-                    if(Integer.parseInt(bi.td08.getText().toString()) == 0 || sum03 == 0){
+                if (!TextUtils.isEmpty(bi.td08.getText().toString()) && !TextUtils.isEmpty(bi.td04.getText().toString()) && !TextUtils.isEmpty(bi.td05.getText().toString())) {
+                    int sum03 = Integer.parseInt(bi.td04.getText().toString()) + Integer.parseInt(bi.td05.getText().toString());
+                    if (Integer.parseInt(bi.td08.getText().toString()) == 0 || sum03 == 0) {
                         bi.fldGrpNotEligible.setVisibility(GONE);
                         bi.btnContNextSec.setVisibility(GONE);
                         bi.btnAddMore.setVisibility(GONE);
-                    }else {
+                    } else {
 
                         bi.fldGrpNotEligible.setVisibility(VISIBLE);
                         bi.btnContNextSec.setVisibility(VISIBLE);
@@ -335,7 +335,7 @@ public class SectionBActivity extends AppCompatActivity {
         mothersMap.put("N/A_0", "00");
         for (FamilyMembersContract mem : MainApp.familyMembersList) {
             int ageInYears = Integer.parseInt(mem.getage());
-            if ( ageInYears >= 15  && ageInYears <= 49) {
+            if (ageInYears >= 15 && ageInYears <= 49) {
                 mothersList.add(mem.getname());
                 mothersSerials.add(mem.getserialNo());
                 mothersMap.put(mem.getname() + "_" + mem.getserialNo(), mem.getserialNo());
@@ -713,12 +713,30 @@ public class SectionBActivity extends AppCompatActivity {
     private void SaveDraft() throws JSONException {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
+        // TOTAL MEMBERS
+        MainApp.TotalMembersCount++;
+        MainApp.serial_no++;
+
+        Long ageMonths;
+        if (bi.tbdob01.isChecked())
+            ageMonths = MainApp.ageInMonthsByDOB(bi.tb07.getText().toString());
+        else
+            ageMonths = MainApp.ageInMonths(bi.tb08y.getText().toString(), bi.tb08m.getText().toString());
+
+        ageInyears = ageMonths / 12;
+
         // children
         if (ageInyears < 5) {
 
             // u2
             if (ageInyears < 2) {
                 MainApp.totalImsCount++;
+
+                if (MainApp.serial_no == 1)
+                    MainApp.young_child = new MainApp.YoungestChild(MainApp.serial_no, ageMonths / 12);
+                else
+                    MainApp.young_child = MainApp.young_child.getAge() < (ageMonths / 12) ? MainApp.young_child : new MainApp.YoungestChild(MainApp.serial_no, ageMonths / 12);
+
             }
             // u5
             MainApp.TotalChildCount++;
@@ -731,9 +749,6 @@ public class SectionBActivity extends AppCompatActivity {
         if (ageInyears >= 14 && ageInyears < 50) {
             MainApp.TotalMWRACount++;
         }
-        // TOTAL MEMBERS
-        MainApp.TotalMembersCount++;
-        MainApp.serial_no++;
 
         JSONObject count = new JSONObject();
         count.put("tb13", MainApp.TotalMembersCount);
@@ -766,9 +781,9 @@ public class SectionBActivity extends AppCompatActivity {
         String type = "";
         if (ageInyears >= 15 || ageInyears >= 49) {
             type = "2"; //MWRA
-        } else if (ageInyears < 6) {
+        } else if (ageInyears < 5) {
             type = "1"; // Under 5
-            if (ageInyears < 3) {
+            if (ageInyears < 2) {
                 type = "3"; // Under 2
             }
         }
@@ -782,11 +797,9 @@ public class SectionBActivity extends AppCompatActivity {
 //        sB.put("ta05u", MainApp.billno);
 
 
-
-
         sB.put("tb01", MainApp.serial_no);
         sB.put("tb02", bi.tb02.getText().toString());
-        if (ageInyears < 6) {
+        if (ageInyears < 5) {
             MainApp.fmc.setmotherId(mothersMap.get(bi.tbmname.getSelectedItem().toString() + "_" + mothersSerials.get(mothersList.indexOf(bi.tbmname.getSelectedItem().toString()))));
 
         }
@@ -927,13 +940,13 @@ public class SectionBActivity extends AppCompatActivity {
 
                 }
             }
-            if(!TextUtils.isEmpty(bi.td08.getText().toString()) && !TextUtils.isEmpty(bi.td04.getText().toString())&& !TextUtils.isEmpty(bi.td05.getText().toString())){
-                int sum03 = Integer.parseInt(bi.td04.getText().toString())+Integer.parseInt(bi.td05.getText().toString());
-                if(Integer.parseInt(bi.td08.getText().toString()) == 0 || sum03 == 0){
+            if (!TextUtils.isEmpty(bi.td08.getText().toString()) && !TextUtils.isEmpty(bi.td04.getText().toString()) && !TextUtils.isEmpty(bi.td05.getText().toString())) {
+                int sum03 = Integer.parseInt(bi.td04.getText().toString()) + Integer.parseInt(bi.td05.getText().toString());
+                if (Integer.parseInt(bi.td08.getText().toString()) == 0 || sum03 == 0) {
                 /*    bi.fldGrpNotEligible.setVisibility(GONE);
                     bi.btnContNextSec.setVisibility(GONE);
                     bi.fldGrpMemCount.setVisibility(GONE);*/
-                }else {
+                } else {
                    /* bi.fldGrpNotEligible.setVisibility(VISIBLE);
                     bi.btnContNextSec.setVisibility(VISIBLE);
                     bi.fldGrpMemCount.setVisibility(VISIBLE);*/
@@ -1050,7 +1063,7 @@ public class SectionBActivity extends AppCompatActivity {
                             bi.tb08y.setError(null);
                         }
 
-                        if (Integer.parseInt(bi.tb08m.getText().toString()) < 0 || Integer.parseInt(bi.tb08m.getText().toString()) > 11) {
+                        if (Integer.parseInt(bi.tb08m.getText().toString()) < 0 && Integer.parseInt(bi.tb08m.getText().toString()) > 11) {
                             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.month), Toast.LENGTH_SHORT).show();
                             bi.tb08m.setError("Range from 0 - 11! ");    // Set Error on last radio button
                             bi.tb08m.requestFocus();

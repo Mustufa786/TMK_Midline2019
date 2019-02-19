@@ -30,6 +30,8 @@ public class FamilyMembersContract {
     private String clusterNo = "";
     private String hhNo = "";
 
+    private double ageDouble;
+
 
 
     public FamilyMembersContract() {
@@ -49,6 +51,14 @@ public class FamilyMembersContract {
         this.age = fm.age;
         this.serialNo = fm.serialNo;
         this.dob = fm.dob;
+    }
+
+    public double getAgeDouble() {
+        return ageDouble;
+    }
+
+    public void setAgeDouble(double ageDouble) {
+        this.ageDouble = ageDouble;
     }
 
     public String getprojectName() {

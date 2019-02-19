@@ -10,8 +10,6 @@ import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import org.json.JSONException;
-
 import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
@@ -67,11 +65,7 @@ public class EndingActivity extends Activity {
 
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            SaveDraft();
             if (UpdateDB()) {
 
                 MainApp.familyMembersList.clear();
@@ -81,7 +75,7 @@ public class EndingActivity extends Activity {
                 MainApp.TotalMWRACount = 0;
                 MainApp.mwraCount = 1;
                 MainApp.TotalChildCount = 0;
-                MainApp.imsCount = 1;
+                MainApp.imsCount = 0;
                 MainApp.totalImsCount = 0;
                 MainApp.serial_no = 0;
 
@@ -119,7 +113,7 @@ public class EndingActivity extends Activity {
         }
     }
 
-    private void SaveDraft() throws JSONException {
+    private void SaveDraft() {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         MainApp.fc.setistatus(bi.istatus1.isChecked() ? "1"

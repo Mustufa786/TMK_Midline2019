@@ -85,7 +85,7 @@ public class MainApp extends Application {
     public static int CounterDeceasedChild = 0;
     public static int counter = 0;
     public static int mm = 1;
-    public static int imsCount = 1;
+    public static int imsCount = 0;
     public static int totalImsCount = 0;
     public static int positionIm = 0;
     public static boolean flag = true;
@@ -101,6 +101,7 @@ public class MainApp extends Application {
     public static List<FamilyMembersContract> childUnder2;
     public static List<FamilyMembersContract> childUnder5;
     public static int serial_no;
+    public static YoungestChild young_child;
 
 
     //    Ali
@@ -151,6 +152,43 @@ public class MainApp extends Application {
         monthsBetween += (end.get(Calendar.YEAR) - start.get(Calendar.YEAR)) * 12;
         return monthsBetween;
     }
+
+    public static Calendar getCalendarDate(String dd, String mm, String yy) {
+
+        String dob = String.format("%02d", Integer.valueOf(dd)) + "-"
+                + String.format("%02d", Integer.valueOf(mm))
+                + "-" + yy;
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        Calendar calendar = Calendar.getInstance();
+        try {
+            Date date = sdf.parse(dob);
+            calendar.setTime(date);
+            return calendar;
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return calendar;
+    }
+
+    public static long ageInMonthsByDOB(Calendar cal) {
+        Date dob = cal.getTime();
+        Date today = new Date();
+        Long diff = today.getTime() - dob.getTime();
+        double ageInMonths = (diff / (24 * 60 * 60 * 1000)) / 30.4375;
+        long age = (long) Math.floor(ageInMonths);
+        return age;
+    }
+    public static long ageInMonthsByDOB(String dateStr) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        Calendar cal = getCalendarDate(dateStr);
+        Date dob = cal.getTime();
+        Date today = new Date();
+        Long diff = today.getTime() - dob.getTime();
+        long ageInMonths = (diff / (24 * 60 * 60 * 1000)) / 30;
+        return ageInMonths;
+    }
+
     public static Calendar getCalendarDate(String value) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         Calendar calendar = Calendar.getInstance();
@@ -164,16 +202,6 @@ public class MainApp extends Application {
         }
         return calendar;
     }
-    public static long ageInMonthsByDOB(String dateStr) {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        Calendar cal = getCalendarDate(dateStr);
-        Date dob = cal.getTime();
-        Date today = new Date();
-        Long diff = today.getTime() - dob.getTime();
-        long ageInMonths = (diff / (24 * 60 * 60 * 1000)) / 30;
-        return ageInMonths;
-    }
-
     public static long ageInMonths(String year, String month) {
         long ageInMonths = (Integer.valueOf(year) * 12) + Integer.valueOf(month);
         return ageInMonths;
@@ -359,10 +387,7 @@ public class MainApp extends Application {
             return true;
         } else if (isNewer && !isLessAccurate) {
             return true;
-        } else if (isNewer && !isSignificantlyLessAccurate && isFromSameProvider) {
-            return true;
-        }
-        return false;
+        } else return isNewer && !isSignificantlyLessAccurate && isFromSameProvider;
     }
 
     /**
@@ -441,6 +466,24 @@ public class MainApp extends Application {
 
         public void onProviderEnabled(String s) {
 
+        }
+    }
+
+    public static class YoungestChild {
+        int serial;
+        double age;
+
+        public YoungestChild(int serial, double age) {
+            this.serial = serial;
+            this.age = age;
+        }
+
+        public int getSerial() {
+            return serial;
+        }
+
+        public double getAge() {
+            return age;
         }
     }
 
