@@ -30,9 +30,9 @@
                 android:layout_gravity="center_horizontal"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
-                android:visibility="gone"
                 android:text="@string/tjheading"
-                android:textSize="40sp" />
+                android:textSize="40sp"
+                android:visibility="gone" />
 
             <View
                 android:layout_width="match_parent"
@@ -47,14 +47,26 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="@android:color/white" />
 
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black_overlay"
+                android:text="Name"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:background="@color/colorPrimary" />
+
             <Spinner
                 android:id="@+id/tj01"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></Spinner>
+                android:layout_height="wrap_content"
+                android:visibility="gone"></Spinner>
 
             <TextView
                 android:layout_width="match_parent"
@@ -545,9 +557,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/tj09"
                 android:background="@color/colorPrimary"
-                />
+                android:text="@string/tj09" />
 
             <RadioGroup
                 android:id="@+id/tj09"
@@ -574,9 +585,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/tj10"
                 android:background="@color/colorPrimary"
-                />
+                android:text="@string/tj10" />
 
             <RadioGroup
                 android:id="@+id/tj10"
@@ -609,9 +619,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="@string/tj11"
                     android:background="@color/colorPrimary"
-                    />
+                    android:text="@string/tj11" />
 
                 <RadioGroup
                     android:id="@+id/tj11"
@@ -672,9 +681,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/tj12"
                 android:background="@color/colorPrimary"
-                />
+                android:text="@string/tj12" />
 
             <RadioGroup
                 android:id="@+id/tj12"
@@ -733,9 +741,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/tj13"
                 android:background="@color/colorPrimary"
-                />
+                android:text="@string/tj13" />
 
             <RadioGroup
                 android:id="@+id/tj13"
@@ -791,9 +798,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/tj14"
                 android:background="@color/colorPrimary"
-                />
+                android:text="@string/tj14" />
 
             <RadioGroup
                 android:id="@+id/tj14"
@@ -931,8 +937,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/nextSection"
                     android:onClick="@{() -> callback.onBtnContinueClick()}"
+                    android:text="@string/nextSection"
                     android:textColor="#1ed61e" />
 
                 <Button

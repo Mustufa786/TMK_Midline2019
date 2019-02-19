@@ -2,12 +2,11 @@ package edu.aku.ramshasaeed.tmk_midline.activities;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -34,6 +33,8 @@ public class SectionHActivity extends AppCompatActivity {
     Long months;
 
     ActivitySectionHBinding bi;
+
+    FamilyMembersContract fm_child;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -309,6 +310,11 @@ public class SectionHActivity extends AppCompatActivity {
 
             }
         });
+
+        // Get Youngest Child
+        fm_child = MainApp.childUnder2.get(MainApp.young_child.getSerial() - 1);
+        bi.name.setText(fm_child.getname().toUpperCase());
+
     }
 
     public void onBtnContinueClick() {
@@ -365,8 +371,9 @@ public class SectionHActivity extends AppCompatActivity {
 
         JSONObject sJ = new JSONObject();
 
-//        sJ.put("tjchildSerial", childsMap.get(bi.tj01.getSelectedItem().toString()).getSerialNo());
-//        sJ.put("tjchildName", tj01.getSelectedItem().toString());
+        sJ.put("tjchildSerial", fm_child.getserialNo());
+        sJ.put("tjchildName", fm_child.getname());
+        sJ.put("tjmotherSerial", fm_child.getmotherId());
 
 //        sJ.put("tj01", bi.tj01.getSelectedItem().toString());
 
@@ -508,9 +515,7 @@ public class SectionHActivity extends AppCompatActivity {
         }
         if (!bi.tj13c.isChecked()) {
 
-            if (!validatorClass.EmptyRadioButton(this, bi.tj14, bi.tj1496, bi.tj1496x, getString(R.string.tj14))) {
-                return false;
-            }
+            return validatorClass.EmptyRadioButton(this, bi.tj14, bi.tj1496, bi.tj1496x, getString(R.string.tj14));
         }
 
 
