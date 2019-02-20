@@ -823,7 +823,7 @@
     <string name="card"> Vaccine Card </string>
     <string name="recall">Reported by care taker</string>
     <string name="place"> Place of Vaccine </string>
-    <string name="place01"> Govt Hospital </string>
+    <string name="place01"> Govt Hospital </string>rot
     <string name="place02"> Private Hospital </string>
     <string name="place03">  Home </string>
     <string name="place04"> Dont Know </string>

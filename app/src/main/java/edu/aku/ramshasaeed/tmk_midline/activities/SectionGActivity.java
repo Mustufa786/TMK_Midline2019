@@ -656,7 +656,7 @@ public class SectionGActivity extends AppCompatActivity {
      @BindViews({R.id.text1, R.id.text2, R.id.text3, R.id.text4, R.id.text5, R.id.text6, R.id.text7
              , R.id.text8, R.id.text9, R.id.text10, R.id.text11, R.id.text12, R.id.text13, R.id.text14})
      List<TextView> datesText;*/
-    @BindViews({R.id.fldGrpBcgC, R.id.fldGrpopv0C, R.id.fldGrpPenta1C, R.id.fldGrppcv1C, R.id.fldGrpopv1C, R.id.fldGrprota1C, R.id.fldGrppenta2C,
+    @BindViews({R.id.fldGrpBcgC, R.id.fldGrpopv0C, R.id.fldGrpPenta1C, R.id.fldGrppcv1C, R.id.fldGrpopv1C, R.id.fldGrprota1C, R.id.fldGrprota2C, R.id.fldGrppenta2C,
             R.id.fldGrppcv2C, R.id.fldGrpopv2C, R.id.fldGrpenta3C, R.id.fldGrppcv3C, R.id.fldGrpopv3C, R.id.fldGrpipvC,
             R.id.fldGrpmeasles1C, R.id.fldGrpmeasles2C})
     List<LinearLayout> fldGrpCard;

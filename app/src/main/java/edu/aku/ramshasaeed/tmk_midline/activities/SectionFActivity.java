@@ -23,6 +23,7 @@ import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionFBinding;
+import edu.aku.ramshasaeed.tmk_midline.validation.ClearClass;
 import edu.aku.ramshasaeed.tmk_midline.validation.ValidatorClass;
 
 public class SectionFActivity extends AppCompatActivity {
@@ -30,6 +31,7 @@ public class SectionFActivity extends AppCompatActivity {
     ActivitySectionFBinding bi;
     Map<String, String> childsMap;
     ArrayList<String> lstChild;
+
     public void clearFldgrpthb15a() {
         bi.thb15.clearCheck();
         bi.thb16.clearCheck();
@@ -67,11 +69,10 @@ public class SectionFActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(this,R.layout.activity_section_f);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_section_f);
         bi.setCallback(this);
 
         this.setTitle(getResources().getString(R.string.tfheading));
@@ -115,8 +116,8 @@ public class SectionFActivity extends AppCompatActivity {
 
                 } else {
 
-                    bi.thb04.setText(null);
-                    /*bi.thb05.getChildAt(0).toString();*/
+                    /*bi.thb04.setText(null);
+                     *//*bi.thb05.getChildAt(0).toString();*//*
                     bi.thb06.setText(null);
 
                     bi.thb07.clearCheck();
@@ -180,8 +181,9 @@ public class SectionFActivity extends AppCompatActivity {
                     bi.thb23i.setChecked(false);
                     bi.thb23j.setChecked(false);
                     bi.thb23k.setChecked(false);
-                    bi.thb2396.setChecked(false);
+                    bi.thb2396.setChecked(false);*/
                     bi.fldGrpthb04.setVisibility(View.GONE);
+                    ClearClass.ClearAllFields(bi.fldGrpthb04, null);
                 }
             }
         });
@@ -284,7 +286,6 @@ public class SectionFActivity extends AppCompatActivity {
                 if (i == R.id.thb10a && bi.thb14b.isChecked()) {
 
 
-
                     bi.fldGrpth15.setVisibility(View.GONE);
 
                 } else if (bi.thb14b.isChecked()) {
@@ -304,7 +305,6 @@ public class SectionFActivity extends AppCompatActivity {
                 if (i == R.id.thb14b && bi.thb10a.isChecked()) {
 
 
-
                     bi.fldGrpth15.setVisibility(View.GONE);
 //                    fldGrpth26.setVisibility(View.VISIBLE);
 
@@ -318,9 +318,6 @@ public class SectionFActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-
 
 
         bi.thb18.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -473,7 +470,6 @@ public class SectionFActivity extends AppCompatActivity {
     }
 
 
-
     public void BtnContinue() {
 
         if (formValidation()) {
@@ -499,7 +495,6 @@ public class SectionFActivity extends AppCompatActivity {
             }
         }
     }
-
 
 
     public void BtnEnd() {
@@ -639,8 +634,8 @@ public class SectionFActivity extends AppCompatActivity {
                 bi.thb05.setError(null);
             }*/
             if (!ValidatorClass.EmptySpinner(this, bi.thb05, getString(R.string.thb05))) {
-              return false;
-          }
+                return false;
+            }
           /*  if (bi.thb05.getSelectedItem() == "....") {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.thb05), Toast.LENGTH_SHORT).show();
                 ((TextView) bi.thb05.getSelectedView()).setText("This Data is Required");
@@ -948,7 +943,6 @@ public class SectionFActivity extends AppCompatActivity {
                         if (bi.thb21a.isChecked()) {
 
 
-
                             //        24
                             if (bi.thb22.getCheckedRadioButtonId() == -1) {
                                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.thb22), Toast.LENGTH_SHORT).show();
@@ -995,7 +989,7 @@ public class SectionFActivity extends AppCompatActivity {
             }
         }
 
-    return true;
+        return true;
 
     }
 
@@ -1104,8 +1098,6 @@ public class SectionFActivity extends AppCompatActivity {
         sHB.put("thb23j", bi.thb23j.isChecked() ? "10" : "0");
         sHB.put("thb23k", bi.thb23k.isChecked() ? "11" : "0");
         sHB.put("thb2396", bi.thb2396.isChecked() ? "96" : "0");
-
-
 
 
 //        sHB.put("appver", MainApp.versionName + "." + MainApp.versionCode);
