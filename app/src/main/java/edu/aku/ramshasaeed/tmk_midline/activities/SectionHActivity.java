@@ -280,7 +280,7 @@ public class SectionHActivity extends AppCompatActivity {
         bi.tj13.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (i == R.id.tj13c) {
+                if (i != R.id.tj13c) {
                     ClearClass.ClearAllFields(bi.fldGrpll14, null);
                 }
             }

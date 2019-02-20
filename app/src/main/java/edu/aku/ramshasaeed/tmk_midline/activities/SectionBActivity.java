@@ -309,7 +309,9 @@ public class SectionBActivity extends AppCompatActivity {
 
         String dateToday = new SimpleDateFormat("dd/MM/yyyy").format(System.currentTimeMillis());
 
+        String maxDate50Years = new SimpleDateFormat("dd/MM/yyyy").format(Calendar.getInstance().getTimeInMillis() - ((MainApp.MILLISECONDS_IN_50Years) + MainApp.MILLISECONDS_IN_DAY));
         bi.tb07.setMaxDate(dateToday);
+        bi.tb07.setMinDate(maxDate50Years);
 
         db = new DatabaseHelper(this);
 
@@ -1017,6 +1019,10 @@ public class SectionBActivity extends AppCompatActivity {
                 return false;
             } else {
                 bi.tb08y.setError(null);
+            }
+
+            if (!ValidatorClass.RangeTextBox(this, bi.tb08y, 0, 48, getString(R.string.year), "")) {
+                return false;
             }
 
             if (!ValidatorClass.RangeTextBox(this, bi.tb08m, 0, 11, getString(R.string.month), "")) {

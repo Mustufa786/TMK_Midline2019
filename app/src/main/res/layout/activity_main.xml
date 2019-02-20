@@ -16,8 +16,7 @@
     <ScrollView
         android:id="@+id/activity_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="72dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,7 +27,6 @@
                 android:id="@+id/testing"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:background="@color/red"
                 android:elevation="2dp"
                 android:gravity="center_horizontal"
@@ -44,6 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"
+                style="@style/textView2"
                 android:text="Main Menu"
                 android:textAlignment="center"
                 android:textAllCaps="true"
@@ -66,7 +65,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -91,28 +91,12 @@
 
 
             </LinearLayout>
-            <Button
-                android:id="@+id/syncDevice"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/colorPrimary"
-                android:drawableLeft="@android:drawable/ic_menu_upload"
-                android:drawableTint="@color/colorPrimaryBeta"
-                android:onClick="syncDevice"
-                android:paddingTop="8dp"
-                android:text="Download Villages"
-                android:textColor="@color/white"
-                android:textSize="22sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="40dp">
+                android:padding="30dp">
 
                 <Button
                     android:id="@+id/OpenForm"
@@ -128,6 +112,23 @@
                     android:onClick="openForm"
                     android:paddingTop="8dp"
                     android:text="Open Form"
+                    android:textColor="@color/white"
+                    android:textSize="22sp" />
+
+                <Button
+                    android:id="@+id/syncDevice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/colorPrimary"
+                    android:drawableLeft="@android:drawable/ic_menu_upload"
+                    android:drawableTint="@color/colorPrimaryBeta"
+                    android:onClick="syncDevice"
+                    android:paddingTop="8dp"
+                    android:text="Download Villages"
                     android:textColor="@color/white"
                     android:textSize="22sp" />
 

@@ -797,7 +797,7 @@
             <LinearLayout
                 android:id="@+id/fldGrpll14"
                 style="@style/linerlayout_view_wt_bound"
-                android:visibility='@{tj13c.checked? View.VISIBLE : View.GONE}'>
+                android:visibility='@{tj13c.checked? View.GONE : View.VISIBLE}'>
 
                 <TextView
                     android:layout_width="match_parent"

@@ -549,8 +549,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String groupBy = null;
         String having = null;
 
-        String orderBy =
-                singleAreas.COLUMN_AREA + " ASC";
+        String orderBy = singleAreas.COLUMN_AREA + " ASC";
 
         Collection<AreasContract> allAC = new ArrayList<>();
         try {
@@ -691,13 +690,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         Cursor mCursor = db.rawQuery("SELECT * FROM " + singleUser.TABLE_NAME + " WHERE " + singleUser.ROW_USERNAME + "=? AND " + singleUser.ROW_PASSWORD + "=?", new String[]{username, password});
         if (mCursor != null) {
-            if (mCursor.getCount() > 0) {
-
-//                if (mCursor.moveToFirst()) {
-//                    MainApp.regionDss = mCursor.getString(mCursor.getColumnIndex("region_dss"));
-//                }
-                return true;
-            }
+            //                if (mCursor.moveToFirst()) {
+            //                    MainApp.regionDss = mCursor.getString(mCursor.getColumnIndex("region_dss"));
+            //                }
+            return mCursor.getCount() > 0;
         }
         return false;
     }
