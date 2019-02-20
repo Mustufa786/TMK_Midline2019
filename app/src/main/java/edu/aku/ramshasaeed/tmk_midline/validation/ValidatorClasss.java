@@ -28,7 +28,7 @@ import edu.aku.ramshasaeed.tmk_midline.R;
  * modified by ramsha.seed on 7/8/2018
  */
 
-public abstract class ValidatorClass {
+public abstract class ValidatorClasss {
 
     public static boolean EmptyTextBox(Context context, EditText txt, String msg) {
         if (TextUtils.isEmpty(txt.getText().toString())) {

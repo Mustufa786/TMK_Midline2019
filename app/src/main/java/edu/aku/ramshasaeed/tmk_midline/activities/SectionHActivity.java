@@ -24,7 +24,7 @@ import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionHBinding;
 import edu.aku.ramshasaeed.tmk_midline.validation.ClearClass;
-import edu.aku.ramshasaeed.tmk_midline.validation.ValidatorClass;
+import edu.aku.ramshasaeed.tmk_midline.validation.ValidatorClasss;
 
 public class SectionHActivity extends AppCompatActivity {
     Map<String, FamilyMembersContract> childsMap;
@@ -43,7 +43,7 @@ public class SectionHActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_h);
         bi.setCallback(this);
         this.setTitle(getResources().getString(R.string.thheading));
-        ValidatorClass.setScrollViewFocus(bi.svsech);
+        ValidatorClasss.setScrollViewFocus(bi.svsech);
 
         childsMap = new HashMap<>();
         lstChild = new ArrayList<>();
@@ -440,70 +440,70 @@ public class SectionHActivity extends AppCompatActivity {
     }
 
     public boolean formValidation() {
-     /*   if (!ValidatorClass.EmptySpinner(this, bi.tj01, getString(R.string.tj01))) {
+     /*   if (!ValidatorClasss.EmptySpinner(this, bi.tj01, getString(R.string.tj01))) {
             return false;
         }*/
-        if (!ValidatorClass.EmptyRadioButton(this, bi.tj02, bi.tj0296, bi.tj0296x, getString(R.string.tj02))) {
+        if (!ValidatorClasss.EmptyRadioButton(this, bi.tj02, bi.tj0296, bi.tj0296x, getString(R.string.tj02))) {
             return false;
         }
-        if (!ValidatorClass.EmptyRadioButton(this, bi.tj03, bi.tj0398, getString(R.string.tj03))) {
+        if (!ValidatorClasss.EmptyRadioButton(this, bi.tj03, bi.tj0398, getString(R.string.tj03))) {
             return false;
         }
-        if (!ValidatorClass.EmptyRadioButton(this, bi.tj04, bi.tj04a, getString(R.string.tj04))) {
+        if (!ValidatorClasss.EmptyRadioButton(this, bi.tj04, bi.tj04a, getString(R.string.tj04))) {
             return false;
         }
         if (bi.tj04a.isChecked()) {
 
-            if (!ValidatorClass.EmptyCheckBox(this, bi.fldGrpti05, bi.tj05a, getString(R.string.tj05))) {
+            if (!ValidatorClasss.EmptyCheckBox(this, bi.fldGrpti05, bi.tj05a, getString(R.string.tj05))) {
                 return false;
             }
         }
 
-        if (!ValidatorClass.EmptyRadioButton(this, bi.tj06, bi.tj06a, getString(R.string.tj06))) {
+        if (!ValidatorClasss.EmptyRadioButton(this, bi.tj06, bi.tj06a, getString(R.string.tj06))) {
             return false;
         }
         if (bi.tj06a.isChecked()) {
 
-            if (!ValidatorClass.EmptyCheckBox(this, bi.fldGrpti07, bi.tj0796, bi.tj0796x, getString(R.string.tj07))) {
+            if (!ValidatorClasss.EmptyCheckBox(this, bi.fldGrpti07, bi.tj0796, bi.tj0796x, getString(R.string.tj07))) {
                 return false;
             }
         }
 
-        if (!ValidatorClass.EmptyCheckBox(this, bi.fldGrpti08, bi.tj0896, bi.tj0896x, getString(R.string.tj08))) {
+        if (!ValidatorClasss.EmptyCheckBox(this, bi.fldGrpti08, bi.tj0896, bi.tj0896x, getString(R.string.tj08))) {
             return false;
         }
-        if (!ValidatorClass.EmptyRadioButton(this, bi.tj09, bi.tj09a, getString(R.string.tj09))) {
+        if (!ValidatorClasss.EmptyRadioButton(this, bi.tj09, bi.tj09a, getString(R.string.tj09))) {
             return false;
         }
-        if (!ValidatorClass.EmptyRadioButton(this, bi.tj10, bi.tj10a, getString(R.string.tj10))) {
+        if (!ValidatorClasss.EmptyRadioButton(this, bi.tj10, bi.tj10a, getString(R.string.tj10))) {
             return false;
         }
         if (bi.tj10a.isChecked()) {
 
-            if (!ValidatorClass.EmptyRadioButton(this, bi.tj11, bi.tj11a, bi.tj11d, getString(R.string.tj11) + getString(R.string.day))) {
+            if (!ValidatorClasss.EmptyRadioButton(this, bi.tj11, bi.tj11a, bi.tj11d, getString(R.string.tj11) + getString(R.string.day))) {
                 return false;
             }
-            if (!ValidatorClass.EmptyRadioButton(this, bi.tj11, bi.tj11b, bi.tj11m, getString(R.string.tj11) + getString(R.string.month))) {
+            if (!ValidatorClasss.EmptyRadioButton(this, bi.tj11, bi.tj11b, bi.tj11m, getString(R.string.tj11) + getString(R.string.month))) {
                 return false;
             }
         }
 
-        if (!ValidatorClass.EmptyRadioButton(this, bi.tj12, bi.tj12a, bi.tj12d, getString(R.string.tj12) + getString(R.string.day))) {
+        if (!ValidatorClasss.EmptyRadioButton(this, bi.tj12, bi.tj12a, bi.tj12d, getString(R.string.tj12) + getString(R.string.day))) {
             return false;
         }
-        if (!ValidatorClass.EmptyRadioButton(this, bi.tj12, bi.tj12b, bi.tj12m, getString(R.string.tj12) + getString(R.string.month))) {
+        if (!ValidatorClasss.EmptyRadioButton(this, bi.tj12, bi.tj12b, bi.tj12m, getString(R.string.tj12) + getString(R.string.month))) {
             return false;
         }
 
-        if (!ValidatorClass.EmptyRadioButton(this, bi.tj13, bi.tj13a, bi.tj13d, getString(R.string.tj13) + getString(R.string.day))) {
+        if (!ValidatorClasss.EmptyRadioButton(this, bi.tj13, bi.tj13a, bi.tj13d, getString(R.string.tj13) + getString(R.string.day))) {
             return false;
         }
-        if (!ValidatorClass.EmptyRadioButton(this, bi.tj13, bi.tj13b, bi.tj13m, getString(R.string.tj13) + getString(R.string.month))) {
+        if (!ValidatorClasss.EmptyRadioButton(this, bi.tj13, bi.tj13b, bi.tj13m, getString(R.string.tj13) + getString(R.string.month))) {
             return false;
         }
         if (!bi.tj13c.isChecked()) {
 
-            return ValidatorClass.EmptyRadioButton(this, bi.tj14, bi.tj1496, bi.tj1496x, getString(R.string.tj14));
+            return ValidatorClasss.EmptyRadioButton(this, bi.tj14, bi.tj1496, bi.tj1496x, getString(R.string.tj14));
         }
 
 

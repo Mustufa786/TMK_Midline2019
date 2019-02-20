@@ -29,7 +29,7 @@ import edu.aku.ramshasaeed.tmk_midline.contracts.SectionIIMContract;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionGBinding;
-import edu.aku.ramshasaeed.tmk_midline.validation.ValidatorClass;
+import edu.aku.ramshasaeed.tmk_midline.validation.ValidatorClasss;
 
 public class SectionGActivity extends AppCompatActivity {
     ActivitySectionGBinding bi;
@@ -1508,7 +1508,7 @@ public class SectionGActivity extends AppCompatActivity {
 
     public boolean ValidateForm() {
 
-        if (!ValidatorClass.EmptySpinner(this, bi.tiname, getString(R.string.name))) {
+        if (!ValidatorClasss.EmptySpinner(this, bi.tiname, getString(R.string.name))) {
             return false;
         }
          /*   if (bi.tiname.getSelectedItem() == "....") {

@@ -24,7 +24,7 @@ import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionFBinding;
 import edu.aku.ramshasaeed.tmk_midline.validation.ClearClass;
-import edu.aku.ramshasaeed.tmk_midline.validation.ValidatorClass;
+import edu.aku.ramshasaeed.tmk_midline.validation.ValidatorClasss;
 
 public class SectionFActivity extends AppCompatActivity {
     private static final String TAG = SectionFActivity.class.getName();
@@ -633,7 +633,7 @@ public class SectionFActivity extends AppCompatActivity {
             } else {
                 bi.thb05.setError(null);
             }*/
-            if (!ValidatorClass.EmptySpinner(this, bi.thb05, getString(R.string.thb05))) {
+            if (!ValidatorClasss.EmptySpinner(this, bi.thb05, getString(R.string.thb05))) {
                 return false;
             }
           /*  if (bi.thb05.getSelectedItem() == "....") {

@@ -37,7 +37,7 @@ import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionABinding;
 import edu.aku.ramshasaeed.tmk_midline.validation.ClearClass;
-import edu.aku.ramshasaeed.tmk_midline.validation.ValidatorClass;
+import edu.aku.ramshasaeed.tmk_midline.validation.ValidatorClasss;
 
 public class SectionAActivity extends Activity {
     ActivitySectionABinding bi;
@@ -91,7 +91,7 @@ public class SectionAActivity extends Activity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_a);
         bi.setCallback(this);
-        ValidatorClass.setScrollViewFocus(bi.svseca);
+        ValidatorClasss.setScrollViewFocus(bi.svseca);
         db = new DatabaseHelper(this);
         MainApp.members_f_m = new ArrayList<>();
 
@@ -372,48 +372,48 @@ public class SectionAActivity extends Activity {
 
     public boolean formValidation(boolean flag) {
 
-        if (!ValidatorClass.EmptyTextBox(this, bi.ta01, getString(R.string.ta01))) {
+        if (!ValidatorClasss.EmptyTextBox(this, bi.ta01, getString(R.string.ta01))) {
             return false;
         }
-        if (!ValidatorClass.EmptyTextBox(this, bi.ta05h, getString(R.string.ta05h))) {
+        if (!ValidatorClasss.EmptyTextBox(this, bi.ta05h, getString(R.string.ta05h))) {
             return false;
         }
-        if (!ValidatorClass.PatternTextBox(this, bi.ta05h, getString(R.string.ta05h), "[0-9]{3,3}-[^0-9]{1,1}", "XXX-X")) {
+        if (!ValidatorClasss.PatternTextBox(this, bi.ta05h, getString(R.string.ta05h), "[0-9]{3,3}-[^0-9]{1,1}", "XXX-X")) {
             return false;
         }
 
         if (flag) {
             if (!bi.checkHHHeadpresent.isChecked()) {
-                if (!ValidatorClass.EmptyTextBox(this, bi.newHHheadname, "New Head Name")) {
+                if (!ValidatorClasss.EmptyTextBox(this, bi.newHHheadname, "New Head Name")) {
                     return false;
                 }
             }
-            if (!ValidatorClass.EmptyRadioButton(this, bi.ta02, bi.ta02a, getString(R.string.ta02))) {
+            if (!ValidatorClasss.EmptyRadioButton(this, bi.ta02, bi.ta02a, getString(R.string.ta02))) {
                 return false;
             }
-            if (!ValidatorClass.EmptyTextBox(this, bi.ta06, getString(R.string.ta06))) {
+            if (!ValidatorClasss.EmptyTextBox(this, bi.ta06, getString(R.string.ta06))) {
                 return false;
             }
-            if (!ValidatorClass.EmptyTextBox(this, bi.ta07, getString(R.string.ta07))) {
+            if (!ValidatorClasss.EmptyTextBox(this, bi.ta07, getString(R.string.ta07))) {
                 return false;
             }
-            if (!ValidatorClass.EmptyTextBox(this, bi.ta08, getString(R.string.ta08))) {
+            if (!ValidatorClasss.EmptyTextBox(this, bi.ta08, getString(R.string.ta08))) {
                 return false;
             }
-            if (!ValidatorClass.EmptyRadioButton(this, bi.ta09, bi.ta09a, getString(R.string.ta09))) {
+            if (!ValidatorClasss.EmptyRadioButton(this, bi.ta09, bi.ta09a, getString(R.string.ta09))) {
                 return false;
             }
             if (bi.ta09a.isChecked()) {
-                if (!ValidatorClass.EmptyTextBox(this, bi.tc03, getString(R.string.tc03))) {
+                if (!ValidatorClasss.EmptyTextBox(this, bi.tc03, getString(R.string.tc03))) {
                     return false;
                 }
-                if (!ValidatorClass.EmptyRadioButton(this, bi.tc04, bi.tc04a, getString(R.string.tc04))) {
+                if (!ValidatorClasss.EmptyRadioButton(this, bi.tc04, bi.tc04a, getString(R.string.tc04))) {
                     return false;
                 }
-                if (!ValidatorClass.EmptyTextBox(this, bi.tc05, getString(R.string.tc05))) {
+                if (!ValidatorClasss.EmptyTextBox(this, bi.tc05, getString(R.string.tc05))) {
                     return false;
                 }
-                if (!ValidatorClass.RangeTextBox(this, bi.tc05, 14, 99, getString(R.string.tc05), " years")) {
+                if (!ValidatorClasss.RangeTextBox(this, bi.tc05, 14, 99, getString(R.string.tc05), " years")) {
                     return false;
                 }
                 int ageofResp = Integer.parseInt(bi.tc05.getText().toString());
@@ -425,13 +425,13 @@ public class SectionAActivity extends Activity {
                     bi.tc05.setError(null);
                 }
                 /*
-                if (!ValidatorClass.EmptyRadioButton(this, bi.ta10, bi.ta10a, getString(R.string.ta10))) {
+                if (!ValidatorClasss.EmptyRadioButton(this, bi.ta10, bi.ta10a, getString(R.string.ta10))) {
                     return false;
                 }
-                if (!ValidatorClass.EmptyTextBox(this, bi.ta11, getString(R.string.ta11))) {
+                if (!ValidatorClasss.EmptyTextBox(this, bi.ta11, getString(R.string.ta11))) {
                     return false;
                 }
-                return ValidatorClass.RangeTextBox(this, bi.ta11, 1, 25, getString(R.string.ta11), " Under 5");*/
+                return ValidatorClasss.RangeTextBox(this, bi.ta11, 1, 25, getString(R.string.ta11), " Under 5");*/
 
             }
 

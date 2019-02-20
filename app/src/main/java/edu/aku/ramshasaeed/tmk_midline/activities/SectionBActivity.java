@@ -34,7 +34,7 @@ import edu.aku.ramshasaeed.tmk_midline.contracts.FamilyMembersContract;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionBBinding;
-import edu.aku.ramshasaeed.tmk_midline.validation.ValidatorClass;
+import edu.aku.ramshasaeed.tmk_midline.validation.ValidatorClasss;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
@@ -892,19 +892,19 @@ public class SectionBActivity extends AppCompatActivity {
 
         if (MainApp.familyMembersList.size() == 0) {
 
-            if (!ValidatorClass.EmptyTextBox(this, bi.td01, getString(R.string.td01))) {
+            if (!ValidatorClasss.EmptyTextBox(this, bi.td01, getString(R.string.td01))) {
                 return false;
             }
-            if (!ValidatorClass.EmptyTextBox(this, bi.td02, getString(R.string.td02))) {
+            if (!ValidatorClasss.EmptyTextBox(this, bi.td02, getString(R.string.td02))) {
                 return false;
             }
-            if (!ValidatorClass.EmptyTextBox(this, bi.td03, getString(R.string.td03))) {
+            if (!ValidatorClasss.EmptyTextBox(this, bi.td03, getString(R.string.td03))) {
                 return false;
             }
-            if (!ValidatorClass.EmptyTextBox(this, bi.td04, getString(R.string.td04))) {
+            if (!ValidatorClasss.EmptyTextBox(this, bi.td04, getString(R.string.td04))) {
                 return false;
             }
-            if (!ValidatorClass.EmptyTextBox(this, bi.td05, getString(R.string.td05))) {
+            if (!ValidatorClasss.EmptyTextBox(this, bi.td05, getString(R.string.td05))) {
                 return false;
             }
 
@@ -915,16 +915,16 @@ public class SectionBActivity extends AppCompatActivity {
             } else
                 bi.td04.setError(null);
 
-            if (!ValidatorClass.EmptyTextBox(this, bi.td06, getString(R.string.td06))) {
+            if (!ValidatorClasss.EmptyTextBox(this, bi.td06, getString(R.string.td06))) {
                 return false;
             }
-            if (!ValidatorClass.EmptyTextBox(this, bi.td07, getString(R.string.td07))) {
+            if (!ValidatorClasss.EmptyTextBox(this, bi.td07, getString(R.string.td07))) {
                 return false;
             }
-            if (!ValidatorClass.EmptyTextBox(this, bi.td08, getString(R.string.td08))) {
+            if (!ValidatorClasss.EmptyTextBox(this, bi.td08, getString(R.string.td08))) {
                 return false;
             }
-            if (!ValidatorClass.RangeTextBox(this, bi.td08, 1, 99, getString(R.string.ta11), " Married Womens")) {
+            if (!ValidatorClasss.RangeTextBox(this, bi.td08, 1, 99, getString(R.string.ta11), " Married Womens")) {
                 return false;
             }
             if (!TextUtils.isEmpty(bi.td01.getText().toString()) && !TextUtils.isEmpty(bi.td02.getText().toString()) && !TextUtils.isEmpty(bi.td03.getText().toString())
@@ -1021,11 +1021,11 @@ public class SectionBActivity extends AppCompatActivity {
                 bi.tb08y.setError(null);
             }
 
-            if (!ValidatorClass.RangeTextBox(this, bi.tb08y, 0, 48, getString(R.string.year), "")) {
+            if (!ValidatorClasss.RangeTextBox(this, bi.tb08y, 0, 48, getString(R.string.year), "")) {
                 return false;
             }
 
-            if (!ValidatorClass.RangeTextBox(this, bi.tb08m, 0, 11, getString(R.string.month), "")) {
+            if (!ValidatorClasss.RangeTextBox(this, bi.tb08m, 0, 11, getString(R.string.month), "")) {
                 return false;
             }
 
@@ -1112,7 +1112,7 @@ public class SectionBActivity extends AppCompatActivity {
                 bi.tb04b.setError(null);
             }
 
-            if (!ValidatorClass.EmptySpinner(this, bi.tbmname, getString(R.string.tb09))) {
+            if (!ValidatorClasss.EmptySpinner(this, bi.tbmname, getString(R.string.tb09))) {
                 return false;
             }
         }

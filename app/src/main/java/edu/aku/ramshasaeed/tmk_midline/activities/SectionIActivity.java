@@ -17,7 +17,7 @@ import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionIBinding;
-import edu.aku.ramshasaeed.tmk_midline.validation.ValidatorClass;
+import edu.aku.ramshasaeed.tmk_midline.validation.ValidatorClasss;
 
 
 public class SectionIActivity extends AppCompatActivity {
@@ -30,7 +30,7 @@ public class SectionIActivity extends AppCompatActivity {
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_i);
         bi.setCallback(this);
         this.setTitle(getResources().getString(R.string.tiheading));
-        ValidatorClass.setScrollViewFocus(bi.svseci);
+        ValidatorClasss.setScrollViewFocus(bi.svseci);
 
 
         bi.tk0196.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -185,58 +185,58 @@ public class SectionIActivity extends AppCompatActivity {
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
-        if (!ValidatorClass.EmptyRadioButton(this, bi.tk01, bi.tk0196, bi.tk0196x, getString(R.string.tk01))) {
+        if (!ValidatorClasss.EmptyRadioButton(this, bi.tk01, bi.tk0196, bi.tk0196x, getString(R.string.tk01))) {
             return false;
         }
-        if (!ValidatorClass.EmptyRadioButton(this, bi.tk02, bi.tk0296, bi.tk0296x, getString(R.string.tk02))) {
+        if (!ValidatorClasss.EmptyRadioButton(this, bi.tk02, bi.tk0296, bi.tk0296x, getString(R.string.tk02))) {
             return false;
         }
-        if (!ValidatorClass.EmptyRadioButton(this, bi.tk03, bi.tk03a, getString(R.string.tk03))) {
+        if (!ValidatorClasss.EmptyRadioButton(this, bi.tk03, bi.tk03a, getString(R.string.tk03))) {
             return false;
         }
         if (bi.tk03c.isChecked()) {
             if (!bi.tk0498.isChecked()) {
-                if (!ValidatorClass.EmptyTextBox(this, bi.tk04, getString(R.string.tk04))) {
+                if (!ValidatorClasss.EmptyTextBox(this, bi.tk04, getString(R.string.tk04))) {
                     return false;
                 }
             }
-            if (!ValidatorClass.EmptyRadioButton(this, bi.tk05, bi.tk05a, getString(R.string.tk05))) {
+            if (!ValidatorClasss.EmptyRadioButton(this, bi.tk05, bi.tk05a, getString(R.string.tk05))) {
                 return false;
             }
         }
 
-        if (!ValidatorClass.EmptyRadioButton(this, bi.tk06, bi.tk06a, getString(R.string.tk06))) {
+        if (!ValidatorClasss.EmptyRadioButton(this, bi.tk06, bi.tk06a, getString(R.string.tk06))) {
             return false;
         }
-        if (!ValidatorClass.EmptyRadioButton(this, bi.tk07, bi.tk07a, getString(R.string.tk07))) {
+        if (!ValidatorClasss.EmptyRadioButton(this, bi.tk07, bi.tk07a, getString(R.string.tk07))) {
             return false;
         }
-        if (!ValidatorClass.EmptyRadioButton(this, bi.tk08, bi.tk08a, getString(R.string.tk08))) {
+        if (!ValidatorClasss.EmptyRadioButton(this, bi.tk08, bi.tk08a, getString(R.string.tk08))) {
             return false;
         }
         if (bi.tk08a.isChecked()) {
 
-            if (!ValidatorClass.EmptyRadioButton(this, bi.tk09, bi.tk0996, bi.tk0996x, getString(R.string.tk09))) {
+            if (!ValidatorClasss.EmptyRadioButton(this, bi.tk09, bi.tk0996, bi.tk0996x, getString(R.string.tk09))) {
                 return false;
             }
         }
 
-        if (!ValidatorClass.EmptyRadioButton(this, bi.tk10, bi.tk1096, bi.tk1096x, getString(R.string.tk10))) {
+        if (!ValidatorClasss.EmptyRadioButton(this, bi.tk10, bi.tk1096, bi.tk1096x, getString(R.string.tk10))) {
             return false;
         }
 
-        if (!ValidatorClass.EmptyRadioButton(this, bi.tk11, bi.tk11a, getString(R.string.tk11))) {
+        if (!ValidatorClasss.EmptyRadioButton(this, bi.tk11, bi.tk11a, getString(R.string.tk11))) {
             return false;
         }
-        if (!ValidatorClass.EmptyRadioButton(this, bi.tk12, bi.tk12a, getString(R.string.tk12))) {
+        if (!ValidatorClasss.EmptyRadioButton(this, bi.tk12, bi.tk12a, getString(R.string.tk12))) {
             return false;
         }
         if (bi.tk12a.isChecked()) {
 
-            if (!ValidatorClass.EmptyRadioButton(this, bi.tk13, bi.tk13a, getString(R.string.tk13))) {
+            if (!ValidatorClasss.EmptyRadioButton(this, bi.tk13, bi.tk13a, getString(R.string.tk13))) {
                 return false;
             }
-            return ValidatorClass.EmptyRadioButton(this, bi.tk14, bi.tk14a, getString(R.string.tk14));
+            return ValidatorClasss.EmptyRadioButton(this, bi.tk14, bi.tk14a, getString(R.string.tk14));
         }
 
         return true;

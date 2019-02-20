@@ -23,7 +23,7 @@ import edu.aku.ramshasaeed.tmk_midline.contracts.FamilyMembersContract;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionDBinding;
-import edu.aku.ramshasaeed.tmk_midline.validation.ValidatorClass;
+import edu.aku.ramshasaeed.tmk_midline.validation.ValidatorClasss;
 
 public class SectionDActivity extends AppCompatActivity {
 ActivitySectionDBinding bi;
@@ -37,7 +37,7 @@ ActivitySectionDBinding bi;
         bi.setCallback(this);
         db = new DatabaseHelper(this);
         this.setTitle(getResources().getString(R.string.td08eading));
-        ValidatorClass.setScrollViewFocus(bi.svsecd);
+        ValidatorClasss.setScrollViewFocus(bi.svsecd);
 
 //        Counter for serial no
         MainApp.counter++;
