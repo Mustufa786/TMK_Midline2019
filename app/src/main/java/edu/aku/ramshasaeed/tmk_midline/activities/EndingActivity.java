@@ -75,7 +75,7 @@ public class EndingActivity extends Activity {
                 MainApp.TotalMWRACount = 0;
                 MainApp.mwraCount = 1;
                 MainApp.TotalChildCount = 0;
-                MainApp.imsCount = 0;
+                MainApp.imsCount = 1;
                 MainApp.totalImsCount = 0;
                 MainApp.serial_no = 0;
 

@@ -1,18 +1,15 @@
 package edu.aku.ramshasaeed.tmk_midline.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.graphics.Color;
+import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -22,14 +19,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.xml.validation.Validator;
-
-import butterknife.OnClick;
 import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionFBinding;
-import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
+import edu.aku.ramshasaeed.tmk_midline.validation.ValidatorClass;
 
 public class SectionFActivity extends AppCompatActivity {
     private static final String TAG = SectionFActivity.class.getName();
@@ -644,7 +638,7 @@ public class SectionFActivity extends AppCompatActivity {
             } else {
                 bi.thb05.setError(null);
             }*/
-          if(!validatorClass.EmptySpinner(this,bi.thb05,getString(R.string.thb05))){
+            if (!ValidatorClass.EmptySpinner(this, bi.thb05, getString(R.string.thb05))) {
               return false;
           }
           /*  if (bi.thb05.getSelectedItem() == "....") {

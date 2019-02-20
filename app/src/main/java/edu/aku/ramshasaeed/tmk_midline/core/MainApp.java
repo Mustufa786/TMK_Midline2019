@@ -85,7 +85,7 @@ public class MainApp extends Application {
     public static int CounterDeceasedChild = 0;
     public static int counter = 0;
     public static int mm = 1;
-    public static int imsCount = 0;
+    public static int imsCount = 1;
     public static int totalImsCount = 0;
     public static int positionIm = 0;
     public static boolean flag = true;

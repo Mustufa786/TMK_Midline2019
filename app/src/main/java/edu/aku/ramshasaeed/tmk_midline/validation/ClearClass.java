@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 
 /**
  * Created by ali.azaz on 03/19/18.
@@ -124,6 +125,13 @@ public class ClearClass {
             } else if (v instanceof EditText) {
                 ((EditText) v).setText(null);
                 ((EditText) v).setError(null);
+                v.clearFocus();
+
+                if (flag != null)
+                    v.setEnabled(flag);
+
+            } else if (v instanceof Spinner) {
+                ((Spinner) v).setSelection(0);
                 v.clearFocus();
 
                 if (flag != null)

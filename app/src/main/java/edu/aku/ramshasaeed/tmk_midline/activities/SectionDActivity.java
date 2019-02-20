@@ -2,9 +2,8 @@ package edu.aku.ramshasaeed.tmk_midline.activities;
 
 import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
-import android.provider.ContactsContract;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -24,8 +23,7 @@ import edu.aku.ramshasaeed.tmk_midline.contracts.FamilyMembersContract;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionDBinding;
-import edu.aku.ramshasaeed.tmk_midline.databinding.ActivitySectionJBinding;
-import edu.aku.ramshasaeed.tmk_midline.validation.validatorClass;
+import edu.aku.ramshasaeed.tmk_midline.validation.ValidatorClass;
 
 public class SectionDActivity extends AppCompatActivity {
 ActivitySectionDBinding bi;
@@ -39,7 +37,7 @@ ActivitySectionDBinding bi;
         bi.setCallback(this);
         db = new DatabaseHelper(this);
         this.setTitle(getResources().getString(R.string.td08eading));
-        validatorClass.setScrollViewFocus(bi.svsecd);
+        ValidatorClass.setScrollViewFocus(bi.svsecd);
 
 //        Counter for serial no
         MainApp.counter++;
