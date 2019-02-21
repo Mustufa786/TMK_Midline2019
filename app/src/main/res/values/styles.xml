@@ -6,10 +6,11 @@
     </style>
 
     <style name="AppTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:buttonStyle">@style/buttons</item>
         <item name="android:scrollViewStyle">@style/BackgroundStyle</item>
         <item name="android:textViewStyle">@style/labels</item>
         <item name="android:editTextStyle">@style/textInput</item>
-        <item name="android:buttonStyle">@style/buttons</item>
+
         <item name="android:checkboxStyle">@style/checkbox</item>
         <item name="android:radioButtonStyle">@style/radiobutton</item>
         <item name="android:spinnerStyle">@style/spinnerStyle</item>
@@ -33,7 +34,7 @@
         <item name="android:elevation">1dp</item>
     </style>
 
-    <style name="checkbox" parent="android:Widget.Material.Light.CompoundButton.CheckBox">
+    <style name="checkbox" parent="AppTheme1">
         <item name="android:layout_gravity">right</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -64,15 +65,17 @@
         <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
     </style>
 
-    <style name="buttons" parent="android:Widget.Material.Light.Button">
+    <style name="buttons" parent="AppTheme1">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingEnd">16dp</item>
         <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingTop">9dp</item>
+        <item name="android:paddingBottom">9dp</item>
         <item name="android:textSize">24sp</item>
         <item name="android:typeface">serif</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:radius">2dp</item>
-        <item name="android:elevation">5dp</item>
+        <item name="android:elevation">1dp</item>
     </style>
 
    <!-- <style name="AppTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -89,12 +92,12 @@
     </style>
     -->
 
-    <style name="BackgroundStyle" parent="android:Widget.Material.Light.ScrollView">
+    <style name="BackgroundStyle" parent="AppTheme1">
         <item name="android:background">#e4e4e4</item>
         <item name="android:padding">10dp</item>
     </style>
 
-    <style name="labels" parent="android:Widget.Material.Light.TextView">
+    <style name="labels" parent="AppTheme1">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <!--<item name="android:background">@drawable/background_grad</item>-->
@@ -110,21 +113,22 @@
 
     </style>
 
-    <style name="textInput" parent="android:Widget.Material.Light.EditText">
+    <style name="textInput" parent="AppTheme1">
         <item name="android:textSize">24sp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_margin">100000000dp</item>
         <item name="android:background">@drawable/et_style</item>
         <item name="android:textColorHint">@color/gray</item>
         <item name="android:paddingEnd">12dp</item>
         <item name="android:paddingStart">12dp</item>
         <item name="android:paddingTop">16dp</item>
         <item name="android:paddingBottom">16dp</item>
+        <item name="android:elevation">1dp</item>
 
     </style>
 
-    <style name="spinner" parent="Widget.AppCompat.Spinner">
+    <style name="spinner" parent="AppTheme1">
         <item name="android:background">@drawable/spinner_style</item>
         <item name="android:paddingRight">15dp</item>
     </style>
