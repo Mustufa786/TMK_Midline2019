@@ -1,12 +1,21 @@
 package edu.aku.ramshasaeed.tmk_midline.activities;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.DownloadManager;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
@@ -37,11 +46,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.contracts.AreasContract;
 import edu.aku.ramshasaeed.tmk_midline.contracts.FormsContract;
+import edu.aku.ramshasaeed.tmk_midline.contracts.VersionAppContract;
 import edu.aku.ramshasaeed.tmk_midline.core.AndroidDatabaseManager;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
@@ -70,12 +81,23 @@ public class MainActivity extends Activity {
     private Boolean exit = false;
     private String rSumText = "";
     ActivityMainBinding bi;
+    SharedPreferences sharedPrefDownload;
+    SharedPreferences.Editor editorDownload;
+    DownloadManager downloadManager;
+    String preVer = "", newVer = "";
+    VersionAppContract versionAppContract;
+    DatabaseHelper db;
+    static File file;
+    Long refID;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_main);
         bi.setCallback(this);
+        this.setTitle("\t\t\t\t\t\t\t\t\t\t"+getResources().getString(R.string.app_name));
+
 
 //        ButterKnife.bind(this);
         if (android.os.Build.VERSION.SDK_INT > 9) {
@@ -186,6 +208,51 @@ public class MainActivity extends Activity {
 
             }
         });
+//        Version Checking
+        versionAppContract = db.getVersionApp();
+        if (versionAppContract.getVersioncode() != null) {
+
+            preVer = MainApp.versionName + "." + MainApp.versionCode;
+            newVer = versionAppContract.getVersionname() + "." + versionAppContract.getVersioncode();
+
+            if (MainApp.versionCode < Integer.valueOf(versionAppContract.getVersioncode())) {
+                bi.lblAppVersion.setVisibility(View.VISIBLE);
+
+                String fileName = DatabaseHelper.DATABASE_NAME.replace(".db", "-New-Apps");
+                file = new File(Environment.getExternalStorageDirectory() + File.separator + fileName, versionAppContract.getPathname());
+
+                if (file.exists()) {
+                    bi.lblAppVersion.setText("TMK Midline APP New Version " + newVer + "  Downloaded.");
+//                    InstallNewApp(newVer, preVer);
+                    showDialog(newVer, preVer);
+                } else {
+                    NetworkInfo networkInfo = ((ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+                    if (networkInfo != null && networkInfo.isConnected()) {
+
+                        bi.lblAppVersion.setText("TMK Midline APP New Version " + newVer + " Downloading..");
+                        downloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+                        Uri uri = Uri.parse(MainApp._UPDATE_URL_NEW + versionAppContract.getPathname());
+                        DownloadManager.Request request = new DownloadManager.Request(uri);
+                        request.setDestinationInExternalPublicDir(fileName, versionAppContract.getPathname())
+                                .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+                                .setTitle("Downloading TMK Midline new App ver." + newVer);
+                        refID = downloadManager.enqueue(request);
+
+                        editorDownload.putLong("refID", refID);
+                        editorDownload.putBoolean("flag", false);
+                        editorDownload.commit();
+
+                    } else {
+                        bi.lblAppVersion.setText("TMK Midline APP New Version " + newVer + "  Available..\n(Can't download.. Internet connectivity issue!!)");
+                    }
+                }
+
+            } else {
+                bi.lblAppVersion.setVisibility(View.GONE);
+                bi.lblAppVersion.setText(null);
+            }
+        }
+        registerReceiver(broadcastReceiver, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
     }
 
@@ -203,6 +270,7 @@ public class MainActivity extends Activity {
             Toast.makeText(getApplicationContext(), "Please select data from combobox!!", Toast.LENGTH_LONG).show();
         }
     }
+
     public void openD() {
         Intent oF = new Intent(MainActivity.this, SectionDActivity.class);
         startActivity(oF);
@@ -294,6 +362,52 @@ public class MainActivity extends Activity {
         }
 
     }
+
+    void showDialog(String newVer, String preVer) {
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        Fragment prev = getFragmentManager().findFragmentByTag("dialog");
+        if (prev != null) {
+            ft.remove(prev);
+        }
+        ft.addToBackStack(null);
+
+        DialogFragment newFragment = MyDialogFragment.newInstance(newVer, preVer);
+        newFragment.show(ft, "dialog");
+
+    }
+
+    BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (DownloadManager.ACTION_DOWNLOAD_COMPLETE.equals(intent.getAction())) {
+
+                DownloadManager.Query query = new DownloadManager.Query();
+                query.setFilterById(sharedPrefDownload.getLong("refID", 0));
+
+                downloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+                Cursor cursor = downloadManager.query(query);
+                if (cursor.moveToFirst()) {
+                    int colIndex = cursor.getColumnIndex(DownloadManager.COLUMN_STATUS);
+                    if (DownloadManager.STATUS_SUCCESSFUL == cursor.getInt(colIndex)) {
+
+                        editorDownload.putBoolean("flag", true);
+                        editorDownload.commit();
+
+                        Toast.makeText(context, "New App downloaded!!", Toast.LENGTH_SHORT).show();
+                        bi.lblAppVersion.setText("TMK APP New Version " + newVer + "  Downloaded.");
+
+                        ActivityManager am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+                        List<ActivityManager.RunningTaskInfo> taskInfo = am.getRunningTasks(1);
+
+                        if (taskInfo.get(0).topActivity.getClassName().equals(MainActivity.class.getName())) {
+//                                InstallNewApp(newVer, preVer);
+                            showDialog(newVer, preVer);
+                        }
+                    }
+                }
+            }
+        }
+    };
 
     public void updateApp(View v) {
         v.setBackgroundColor(Color.GREEN);
@@ -440,31 +554,44 @@ public class MainActivity extends Activity {
         }
     }
 
-    private class DownloadReceiver extends ResultReceiver {
-        public DownloadReceiver(Handler handler) {
-            super(handler);
+    public static class MyDialogFragment extends DialogFragment {
+
+        String newVer, preVer;
+
+        static MyDialogFragment newInstance(String newVer, String preVer) {
+            MyDialogFragment f = new MyDialogFragment();
+
+            Bundle args = new Bundle();
+            args.putString("newVer", newVer);
+            args.putString("preVer", preVer);
+            f.setArguments(args);
+
+            return f;
         }
 
         @Override
-        protected void onReceiveResult(int resultCode, Bundle resultd01ta) {
-            super.onReceiveResult(resultCode, resultd01ta);
-         /*   if (resultCode == DownloadFileService.UPDATE_PROGRESS) {
-                int progress = resultd01ta.getInt("progress");
-                mProgressDialog.setMax(100);
-                if (progress == 100) {
-                    mProgressDialog.dismiss();
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            newVer = getArguments().getString("newVer");
+            preVer = getArguments().getString("preVer");
 
-                    File file = new File(Environment.getExternalStorageDirectory() + "/" + "tmk_bl_sep_25.apk");
-                    if (file.exists()) {
-                        Intent intent = new Intent(Intent.ACTION_VIEW);
-                        intent.setd01taAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
-                    }
-                } else {
-                    mProgressDialog.setProgress(progress);
-                }
-            }*/
+            return new AlertDialog.Builder(getActivity())
+                    .setIcon(R.drawable.exclamation)
+                    .setTitle("TMK-Midline APP is available!")
+                    .setMessage("TMK-Midline App " + newVer + " is now available. Your are currently using older version " + preVer + ".\nInstall new version to use this app.")
+                    .setPositiveButton("INSTALL!!",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int whichButton) {
+                                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                                    intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                }
+                            }
+                    )
+                    .create();
         }
+
     }
+
+
 }

@@ -40,6 +40,8 @@ public class MainApp extends Application {
     public static final String _HOST_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk_midline/api/";
     public static final String _UPDATE_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk_midline/app/app-debug.apk";
     public static final String _UPDATE_URL_NEW = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk_midline/app/";
+//    public static final String _APP_UPDATE_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk_midline/app/";
+
     public static String IMEI;
     public static String DeviceURL = "devices.php";
 
