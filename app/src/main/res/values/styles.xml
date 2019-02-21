@@ -1,12 +1,25 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Material.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="AppTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:scrollViewStyle">@style/BackgroundStyle</item>
+        <item name="android:textViewStyle">@style/labels</item>
+        <item name="android:editTextStyle">@style/textInput</item>
+        <item name="android:buttonStyle">@style/buttons</item>
+        <item name="android:checkboxStyle">@style/checkbox</item>
+        <item name="android:radioButtonStyle">@style/radiobutton</item>
+        <item name="android:spinnerStyle">@style/spinnerStyle</item>
+        <item name="android:spinnerItemStyle">@style/SpinnerItem</item>
+        <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItem</item>
+        <item name="android:actionBarStyle">@style/ActionBarTheme</item>
+        <!-- Customize your theme here. -->
+    </style>
 
-    <style name="radiobutton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+    <style name="radiobutton" parent="AppTheme1">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">24sp</item>
@@ -278,19 +291,7 @@
         <item name="android:padding">16dp</item>
 
     </style>
-    <style name="AppTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="android:scrollViewStyle">@style/BackgroundStyle</item>
-        <item name="android:textViewStyle">@style/labels</item>
-        <item name="android:editTextStyle">@style/textInput</item>
-        <item name="android:buttonStyle">@style/buttons</item>
-        <item name="android:checkboxStyle">@style/checkbox</item>
-        <item name="android:radioButtonStyle">@style/radiobutton</item>
-        <item name="android:spinnerStyle">@style/spinnerStyle</item>
-        <item name="android:spinnerItemStyle">@style/SpinnerItem</item>
-        <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItem</item>
-        <item name="android:actionBarStyle">@style/ActionBarTheme</item>
-        <!-- Customize your theme here. -->
-    </style>
+
     <style name="SpinnerItem">
         <item name="android:textAppearance">@style/SpinnerItemText</item>
     </style>
