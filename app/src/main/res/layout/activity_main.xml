@@ -92,6 +92,7 @@
 
                 <Spinner
                     android:id="@+id/spAreas"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -110,37 +111,29 @@
 
                 <Button
                     android:id="@+id/OpenForm"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_gravity="center_horizontal|center"
+                    android:layout_marginBottom="20dp"
                     android:background="@color/colorPrimary"
                     android:drawableLeft="@android:drawable/ic_menu_search"
-                    android:drawableTint="@color/colorPrimaryBeta"
                     android:onClick="openForm"
-                    android:paddingTop="8dp"
                     android:text="Open Form"
                     android:textColor="@color/white"
-                    android:textSize="22sp" />
+                    android:drawablePadding="8dp" />
 
                 <Button
                     android:id="@+id/syncDevice"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="50dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_gravity="center_horizontal|center"
+                    android:layout_marginBottom="20dp"
                     android:background="@color/colorPrimary"
-                    android:drawableLeft="@android:drawable/ic_menu_upload"
-                    android:drawableTint="@color/colorPrimaryBeta"
+                    android:drawableLeft="@android:drawable/stat_sys_download"
                     android:onClick="syncDevice"
-                    android:paddingTop="8dp"
                     android:text="Download Villages"
                     android:textColor="@color/white"
-                    android:textSize="22sp" />
+                    android:drawablePadding="8dp" />
 
                 <LinearLayout
                     android:id="@+id/adminsec1"
@@ -152,7 +145,7 @@
 
                     <Button
                         android:id="@+id/OpenD"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:layout_marginLeft="5dp"
@@ -170,7 +163,7 @@
 
                     <Button
                         android:id="@+id/OpenE"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:layout_marginLeft="5dp"
@@ -188,7 +181,7 @@
 
                     <Button
                         android:id="@+id/OpenF"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:layout_marginLeft="5dp"
@@ -206,7 +199,7 @@
 
                     <Button
                         android:id="@+id/OpenG"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:layout_marginLeft="5dp"
@@ -224,7 +217,7 @@
 
                     <Button
                         android:id="@+id/OpenH"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:layout_marginLeft="5dp"

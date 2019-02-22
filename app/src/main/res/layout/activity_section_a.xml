@@ -26,6 +26,8 @@
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
             android:layoutDirection="rtl"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:orientation="vertical">
 
             <TextView
@@ -558,7 +560,7 @@
                         android:backgroundTint="@color/green"
                         android:onClick="@{() -> callback.onBtnContinueClick()}"
                         android:text="@string/start_interview"
-                        android:textColor="#1ed61e"
+                        android:textColor="@color/white"
                         android:visibility="@{ta09a.checked ? View.VISIBLE : View.GONE}" />
 
                 </LinearLayout>
