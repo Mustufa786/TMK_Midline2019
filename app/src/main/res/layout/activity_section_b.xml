@@ -569,6 +569,7 @@
                     android:id="@+id/tbdob"
                     style="@style/radiogroup"
                     android:layout_marginTop="32dp"
+
                     android:background="@color/colorPrimaryAlpha">
 
                     <RadioButton

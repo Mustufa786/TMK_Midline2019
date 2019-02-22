@@ -116,8 +116,10 @@
                     android:layout_gravity="center_horizontal|center"
                     android:layout_marginBottom="20dp"
                     android:background="@color/colorPrimary"
-                    android:drawableLeft="@android:drawable/ic_menu_search"
+                    android:drawableLeft="@android:drawable/ic_menu_add"
+                    android:drawableTint="@color/colorPrimaryBeta"
                     android:onClick="openForm"
+                    android:paddingTop="8dp"
                     android:text="Open Form"
                     android:textColor="@color/white"
                     android:drawablePadding="8dp" />
@@ -131,9 +133,10 @@
                     android:background="@color/colorPrimary"
                     android:drawableLeft="@android:drawable/stat_sys_download"
                     android:onClick="syncDevice"
+                    android:paddingTop="8dp"
                     android:text="Download Villages"
                     android:textColor="@color/white"
-                    android:drawablePadding="8dp" />
+                    android:textSize="22sp" />
 
                 <LinearLayout
                     android:id="@+id/adminsec1"
