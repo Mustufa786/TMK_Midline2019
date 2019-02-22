@@ -123,8 +123,8 @@ public class SectionAActivity extends Activity {
                     MainApp.cluster = SubVillagesMap.get(bi.spSubVillages.getSelectedItem().toString());
 
                     bi.ta01.setText(MainApp.cluster);
-
                     bi.ta06.setText(bi.spSubVillages.getSelectedItem().toString());
+                    bi.ta05h.setText(null);
                 } else {
 
                     bi.ta01.setText(null);

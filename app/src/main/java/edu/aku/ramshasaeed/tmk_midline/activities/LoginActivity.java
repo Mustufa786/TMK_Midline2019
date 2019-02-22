@@ -1,5 +1,6 @@
 package edu.aku.ramshasaeed.tmk_midline.activities;
 
+import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -23,6 +24,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.provider.ContactsContract;
+import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
@@ -58,11 +60,6 @@ import edu.aku.ramshasaeed.tmk_midline.contracts.UCsContract;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivityLoginBinding;
-import edu.aku.ramshasaeed.tmk_midline.get.GetAreas;
-import edu.aku.ramshasaeed.tmk_midline.get.GetTalukas;
-import edu.aku.ramshasaeed.tmk_midline.get.GetUCs;
-import edu.aku.ramshasaeed.tmk_midline.get.GetUsers;
-import edu.aku.ramshasaeed.tmk_midline.get.GetVillages;
 
 import static java.lang.Thread.sleep;
 
@@ -153,7 +150,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         });
 
 
-
         db = new DatabaseHelper(this);
 
         populateSpinner(this);
@@ -162,10 +158,28 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         dbBackup();
     }
+
     private void settingIMEI() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         MainApp.IMEI = ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        populateSpinner(this);
+    }
+
     public void populateSpinner(Context context) {
 
         final Context mContext = context;

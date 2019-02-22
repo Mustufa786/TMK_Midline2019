@@ -144,11 +144,12 @@
                     android:paddingLeft="10dp" />
 
                 <Button
+                    android:background="@color/colorPrimaryAlpha"
+                    android:textColor="@color/white"
                     android:id="@+id/checkHH"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="@{() -> callback.onCheckHHClick()}"
-
                     android:text="Check HEAD Name" />
             </LinearLayout>
 
