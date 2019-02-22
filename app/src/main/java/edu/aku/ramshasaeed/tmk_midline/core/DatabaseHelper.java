@@ -1644,7 +1644,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    public int updateFamilyMember() {
+  /*  public int updateFamilyMember() {
         SQLiteDatabase db = this.getReadableDatabase();
 
 // New value for one column
@@ -1682,6 +1682,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
         return count;
     }
+    */
     public boolean checkFormAlreadyFilled(String cluster, String hhno) {
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT * FROM " + FormsTable.TABLE_NAME + " WHERE " + FormsTable.COLUMN_CLUSTER + "='" + cluster + "' AND " + FormsTable.COLUMN_HHNO + " = '" + hhno+ "' AND " + FormsTable.COLUMN_ISTATUS + " = '1'" ;

@@ -48,6 +48,8 @@ xmlns:tools="http://schemas.android.com/tools">
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textColor="@color/colorPrimaryDark"
+
                         tools:text="Table Name" />
 
                     <TextView
@@ -55,6 +57,7 @@ xmlns:tools="http://schemas.android.com/tools">
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:textColor="@color/colorPrimaryDark"
                         tools:text="Status" />
 
                     <ProgressBar
@@ -79,6 +82,8 @@ xmlns:tools="http://schemas.android.com/tools">
                     android:layout_marginBottom="7dp"
                     android:layout_marginLeft="7dp"
                     android:layout_marginRight="7dp"
+                    android:textColor="@color/colorPrimaryDark"
+
                     tools:text="Results:    " />
             </LinearLayout>
         </LinearLayout>
