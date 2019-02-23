@@ -810,14 +810,21 @@
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:layout_marginBottom="1dp"
-                                            android:text="@string/yes" />
+                                            android:text="@string/te14a" />
 
                                         <RadioButton
                                             android:id="@+id/te14b"
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:layout_marginBottom="1dp"
-                                            android:text="@string/no" />
+                                            android:text="@string/te14b" />
+
+                                        <RadioButton
+                                            android:id="@+id/te14c"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="1dp"
+                                            android:text="@string/te14c" />
 
 
                                     </RadioGroup>

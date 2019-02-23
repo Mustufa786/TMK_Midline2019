@@ -254,6 +254,13 @@ public class MainActivity extends Activity {
         }
         registerReceiver(broadcastReceiver, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
+//        Testing visibility
+        if (Integer.valueOf(MainApp.versionName.split("\\.")[0]) > 0) {
+            bi.testing.setVisibility(View.GONE);
+        } else {
+            bi.testing.setVisibility(View.VISIBLE);
+        }
+
     }
 
     public void openForm(View v) {

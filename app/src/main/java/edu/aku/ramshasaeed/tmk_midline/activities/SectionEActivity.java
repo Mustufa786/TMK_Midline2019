@@ -262,6 +262,7 @@ public class SectionEActivity extends AppCompatActivity {
                 : "0");
         sE.put("te14", bi.te14a.isChecked() ? "1"
                 : bi.te14b.isChecked() ? "2"
+                : bi.te14c.isChecked() ? "3"
                 : "0");
         sE.put("te15", bi.te15a.isChecked() ? "1"
                 : bi.te15b.isChecked() ? "2"

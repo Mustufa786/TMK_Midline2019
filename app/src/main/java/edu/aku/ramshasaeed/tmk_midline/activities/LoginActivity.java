@@ -157,6 +157,14 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 //        DB backup
 
         dbBackup();
+
+
+//        Testing visibility
+        if (Integer.valueOf(MainApp.versionName.split("\\.")[0]) > 0) {
+            bi.testing.setVisibility(View.GONE);
+        } else {
+            bi.testing.setVisibility(View.VISIBLE);
+        }
     }
 
     private void settingIMEI() {
