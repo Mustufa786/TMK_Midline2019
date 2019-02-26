@@ -1355,6 +1355,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable._ID,
                 //FormsTable.COLUMN_DSSID,
                 FormsTable.COLUMN_FORMDATE,
+                FormsTable.COLUMN_HHNO,
                 FormsTable.COLUMN_ISTATUS,
                 FormsTable.COLUMN_SYNCED,
 
@@ -1383,6 +1384,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 fc.set_ID(c.getString(c.getColumnIndex(FormsTable.COLUMN_ID)));
                 //fc.setDSSID(c.getString(c.getColumnIndex(FormsTable.COLUMN_DSSID)));
                 fc.setformDate(c.getString(c.getColumnIndex(FormsTable.COLUMN_FORMDATE)));
+                fc.sethhno(c.getString(c.getColumnIndex(FormsTable.COLUMN_HHNO)));
                 fc.setistatus(c.getString(c.getColumnIndex(FormsTable.COLUMN_ISTATUS)));
                 fc.setsynced(c.getString(c.getColumnIndex(FormsTable.COLUMN_SYNCED)));
                 allFC.add(fc);

@@ -155,7 +155,7 @@ public class MainActivity extends Activity {
 
 
                 rSumText += fc.get_ID();
-                rSumText += fc.gethhno();
+                rSumText +=  " " +fc.gethhno()+ " ";
 
                 rSumText += " " + iStatus + " ";
 
