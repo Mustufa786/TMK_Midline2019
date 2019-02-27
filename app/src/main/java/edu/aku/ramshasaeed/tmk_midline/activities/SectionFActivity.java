@@ -1080,6 +1080,7 @@ public class SectionFActivity extends AppCompatActivity {
 
         sHB.put("thb18hr", bi.thb18hr.getText().toString());
         sHB.put("thb18d", bi.thb18d.getText().toString());
+        //thb19 and thb20 are missing!!!
 
         sHB.put("thb21", bi.thb21a.isChecked() ? "1" : bi.thb21b.isChecked() ? "2" : "0");
 
