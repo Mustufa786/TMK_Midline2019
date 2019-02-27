@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -67,12 +68,12 @@ public class SectionEActivity extends AppCompatActivity {
             }
         }
 
-        bi.te03.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstChild));
-/*        bi.te03.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+       bi.te03.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lstChild));
+       bi.te03.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                               @Override
                                               public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                                                   if(i != 0){
-                                                      MotherID = MainApp.familyMembersList.get(Integer.valueOf(childsMap.get(lstChild.get(i)))).getmotherId();
+                                                      MotherID = MainApp.familyMembersList.get(Integer.valueOf(childsMap.get(bi.te03.getSelectedItem().toString())) -1).getmotherId();
                                                       for (int j = 0; j <MainApp.familyMembersList.size();j++){
                                                           if(MainApp.familyMembersList.get(j).getserialNo().equals(MotherID)){
                                                               MotherName =    MainApp.familyMembersList.get(j).getname();
@@ -90,7 +91,7 @@ public class SectionEActivity extends AppCompatActivity {
                                               public void onNothingSelected(AdapterView<?> adapterView) {
 
                                               }
-                                          });*/
+                                          });
 
         bi.te01.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

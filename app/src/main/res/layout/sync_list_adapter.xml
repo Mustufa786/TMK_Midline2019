@@ -5,7 +5,6 @@
     tools:context="edu.aku.hassannaqvi.nns_2018_lab_app.Adapters.syncListAdapter.SyncListViewHolder">
 
     <data>
-
         <import type="android.view.View" />
     </data>
 
