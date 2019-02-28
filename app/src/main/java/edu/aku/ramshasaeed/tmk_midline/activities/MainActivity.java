@@ -128,7 +128,7 @@ public class MainActivity extends Activity {
             rSumText += "\tFORMS' LIST: \r\n";
             String iStatus;
             rSumText += "--------------------------------------------------\r\n";
-            rSumText += "[ Form_ID ] \t[Form Status] \t[Sync Status]----------\r\n";
+            rSumText += "[ Form_ID ] \t[HouseHold ID] \t[Form Status] \t[Sync Status]----------\r\n";
             rSumText += "--------------------------------------------------\r\n";
 
             for (FormsContract fc : todaysForms) {
@@ -138,13 +138,25 @@ public class MainActivity extends Activity {
                             iStatus = "\tComplete";
                             break;
                         case "2":
-                            iStatus = "\tIncomplete";
+                            iStatus = "\tRefused";
                             break;
                         case "3":
-                            iStatus = "\tRefused";
+                            iStatus = "\tHouse was closed";
                             break;
                         case "4":
+                            iStatus = "\tHouse temporarily closed";
+                            break;
+                        case "5":
                             iStatus = "\tRefused";
+                            break;
+                        case "6":
+                            iStatus = "\tHouse was empty";
+                            break;
+                        case "7":
+                            iStatus = "\tIncomplete";
+                            break;
+                        case "8":
+                            iStatus = "\tNo Child U5";
                             break;
                         default:
                             iStatus = "\tN/A";
@@ -153,11 +165,13 @@ public class MainActivity extends Activity {
                     iStatus = "\tN/A";
                 }
 
+
                 rSumText += fc.get_ID();
+                rSumText +=  " " +fc.gethhno()+ " ";
 
                 rSumText += " " + iStatus + " ";
 
-                rSumText += (fc.getsynced() == null ? "\t\tNot Synced" : "\t\tSynced");
+                rSumText += (fc.getsynced() == null  || fc.getsynced().equals("") ? "\t\tNot Synced" : "\t\tSynced");
                 rSumText += "\r\n";
                 rSumText += "--------------------------------------------------\r\n";
             }

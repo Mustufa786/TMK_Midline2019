@@ -135,11 +135,31 @@
                                 android:layout_margin="5dp"
                                 android:padding="15dp"></Spinner>
 
-                            <TextView
-                                android:id="@+id/motherName"
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:visibility="gone" />
+                                android:orientation="horizontal"
+                                android:weightSum="4">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:enabled="false"
+                                    android:text="Mother Name: "
+                                    android:background="@color/dullWhileOverlay"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:visibility="visible" />
+
+                                <TextView
+                                    android:id="@+id/motherName"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="3"
+                                    android:enabled="false"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:visibility="visible" />
+                            </LinearLayout>
 
 
                         </LinearLayout>
@@ -1343,13 +1363,14 @@
                     android:layout_gravity="end"
                     android:layout_marginTop="20dp"
                     android:orientation="horizontal">
+
                     <Button
                         android:id="@+id/btn_End"
                         style="@style/button"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
+                        android:layout_weight="1"
                         android:onClick="@{() -> callback.BtnEnd()}"
                         android:text="@string/end_interview" />
 
@@ -1357,8 +1378,8 @@
                         android:id="@+id/btn_Continue"
                         style="@style/button"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:onClick="@{() -> callback.BtnContinue()}"
                         android:text="@string/nextSection" />
 

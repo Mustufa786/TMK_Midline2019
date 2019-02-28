@@ -151,7 +151,7 @@ public class SectionJActivity extends AppCompatActivity {
         JSONObject sL = new JSONObject();
 
         sL.put("tl01", bi.tl01a.isChecked() ? "1" : bi.tl01b.isChecked() ? "2" : bi.tl01c.isChecked() ? "3"
-                : bi.tl0196.isChecked() ? "96" : "0");
+            : bi.tl0196.isChecked() ? "96" : "0");
         sL.put("tl0196x", bi.tl0196x.getText().toString());
 
         sL.put("tl02", bi.tl02a.isChecked() ? "1" : bi.tl02b.isChecked() ? "2" : "0");
@@ -192,7 +192,7 @@ public class SectionJActivity extends AppCompatActivity {
         sL.put("tl1196x", bi.tl1196x.getText().toString());
 
         MainApp.fc.setsJ(String.valueOf(sL));
-    }
+}
 
     private boolean UpdateDB() {
 

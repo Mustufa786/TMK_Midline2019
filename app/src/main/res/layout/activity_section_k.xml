@@ -46,7 +46,7 @@
                 android:gravity="center"
                 android:text="@string/tmsub1"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textColor="@color/white" />
 
             <View
                 android:layout_width="match_parent"
@@ -168,7 +168,7 @@
                 android:gravity="center"
                 android:text="@string/tmsub2"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textColor="@color/white" />
 
             <View
                 android:layout_width="match_parent"
@@ -289,7 +289,7 @@
                 android:gravity="center"
                 android:text="@string/tmsub3"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/colorPrimaryDark" />
+                android:textColor="@color/white" />
 
             <View
                 android:layout_width="match_parent"

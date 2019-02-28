@@ -35,7 +35,9 @@
                     android:layout_marginTop="16dp"
                     android:layout_weight="15"
                     android:background="@color/colorPrimary"
-                    android:text="TOTAL:"
+                    android:text=":TOTAL"
+                    android:textSize="16dp"
+
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
@@ -45,6 +47,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_weight="15"
+                    android:textSize="16dp"
+
                     android:background="@color/colorPrimaryAlpha"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@color/colorPrimaryDark" />
@@ -55,7 +59,8 @@
                     android:layout_marginTop="16dp"
                     android:layout_weight="15"
                     android:background="@color/colorPrimary"
-                    android:text="MWRA:"
+                    android:text=":MWRA"
+                    android:textSize="16dp"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
@@ -65,6 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_weight="15"
+                    android:textSize="16dp"
                     android:background="@color/colorPrimaryAlpha"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@color/colorPrimaryDark" />
@@ -76,7 +82,8 @@
                     android:layout_marginTop="16dp"
                     android:layout_weight="20"
                     android:background="@color/colorPrimary"
-                    android:text="Child less 5:"
+                    android:text=":Child less 5"
+                    android:textSize="16dp"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@android:color/white" />
 
@@ -86,6 +93,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_weight="15"
+                    android:textSize="16dp"
                     android:background="@color/colorPrimaryAlpha"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="@color/colorPrimaryDark" />
