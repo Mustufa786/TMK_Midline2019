@@ -1113,7 +1113,7 @@ public class SectionBActivity extends AppCompatActivity {
                 bi.tb04b.setError(null);
             }
 
-            if (!ValidatorClasss.EmptySpinner(this, bi.tbmname, getString(R.string.tb09))) {
+            if (!ValidatorClasss.EmptySpinner(this, bi.tbmname, getString(R.string.td09))) {
                 return false;
             }
         }

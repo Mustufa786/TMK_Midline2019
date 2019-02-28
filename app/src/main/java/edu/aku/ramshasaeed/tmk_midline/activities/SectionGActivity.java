@@ -1332,6 +1332,7 @@ public class SectionGActivity extends AppCompatActivity {
         sI.put("ti02b", bi.ti02b.isChecked() ? "2" : "0");
         sI.put("ti02c", bi.ti02c.isChecked() ? "3" : "0");
         sI.put("ti02d", bi.ti02d.isChecked() ? "4" : "0");
+        sI.put("ti02e", bi.ti02e.isChecked() ? "5" : "0");
         sI.put("ti0296", bi.ti0296.isChecked() ? "96" : "0");
         sI.put("ti0296x", bi.ti0296x.getText().toString());
         sI.put("ti03", bi.ti03a.isChecked() ? "1" : bi.ti03b.isChecked() ? "2" : bi.ti03c.isChecked() ? "3" : "0");

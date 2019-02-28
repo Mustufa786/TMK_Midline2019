@@ -421,7 +421,7 @@
                     android:text="@string/tl08h" />
 
                 <CheckBox
-                    android:id="@+id/tl08i"
+                    android:id="@+id/tl0897"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
@@ -484,7 +484,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                 android:hint="@string/other"
-                android:text='@{tl0996.checked? tl1096x.getText.toString : ""}'
+                android:text='@{tl0996.checked? tl1196x.getText.toString : ""}'
                 android:visibility='@{tl0996.checked? View.VISIBLE : View.GONE}'
                 android:inputType="textCapWords"
                  />
@@ -492,74 +492,11 @@
             <!--10-->
 
             <LinearLayout
-                android:id="@+id/fldGrptl10"
+                android:id="@+id/fldGrptl11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/colorPrimary"
-                    android:textColor="@android:color/white"
-                    android:text="@string/tl10" />
-
-                <RadioGroup
-                    android:id="@+id/tl10"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <RadioButton
-                        android:id="@+id/tl10a"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="@string/tl10a" />
-
-                    <RadioButton
-                        android:id="@+id/tl10b"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="@string/tl10b" />
-
-                    <RadioButton
-                        android:id="@+id/tl10c"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="@string/tl10c" />
-
-                    <RadioButton
-                        android:id="@+id/tl10d"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="@string/tl10d" />
-
-                    <RadioButton
-                        android:id="@+id/tl1096"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="@string/other" />
-
-                </RadioGroup>
-
-                <EditText
-                    android:id="@+id/tl1096x"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text='@{tl1096.checked? tl1096x.getText.toString : ""}'
-                    android:visibility='@{tl1096.checked? View.VISIBLE : View.GONE}'
-                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                    android:hint="@string/other"
-                    android:inputType="textCapWords"
-                     />
-
-                <!--12-->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -595,6 +532,13 @@
                         android:text="@string/tl11c" />
 
                     <RadioButton
+                        android:id="@+id/tl11d"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/tl11d" />
+
+                    <RadioButton
                         android:id="@+id/tl1196"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -610,6 +554,62 @@
                     android:layout_marginBottom="1dp"
                     android:text='@{tl1196.checked? tl1196x.getText.toString : ""}'
                     android:visibility='@{tl1196.checked? View.VISIBLE : View.GONE}'
+                    android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:hint="@string/other"
+                    android:inputType="textCapWords"
+                     />
+
+                <!--12-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@android:color/white"
+                    android:text="@string/tl12" />
+
+                <RadioGroup
+                    android:id="@+id/tl12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/tl12a"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/tl12a" />
+
+                    <RadioButton
+                        android:id="@+id/tl12b"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/tl12b" />
+
+                    <RadioButton
+                        android:id="@+id/tl12c"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/tl12c" />
+
+                    <RadioButton
+                        android:id="@+id/tl1296"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/other" />
+
+                </RadioGroup>
+
+                <EditText
+                    android:id="@+id/tl1296x"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:text='@{tl1296.checked? tl1296x.getText.toString : ""}'
+                    android:visibility='@{tl1296.checked? View.VISIBLE : View.GONE}'
                     android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     android:hint="@string/other"
                     android:inputType="textCapWords"

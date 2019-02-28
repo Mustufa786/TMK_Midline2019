@@ -289,6 +289,7 @@ public class SectionAActivity extends Activity {
 
 //        MainApp.billno = bi.ta05u.getText().toString();
 
+        sa.put("sn", "ml");
         sa.put("rndid", MainApp.selectedHead.get_ID());
         sa.put("luid", MainApp.selectedHead.getLUID());
         sa.put("randDT", MainApp.selectedHead.getRandomDT());

@@ -362,7 +362,7 @@ public class SectionHActivity extends AppCompatActivity {
         sJ.put("tjchildName", fm_child.getname());
         sJ.put("tjmotherSerial", fm_child.getmotherId());
 
-//        sJ.put("tj01", bi.tj01.getSelectedItem().toString());
+        sJ.put("tj01", bi.name.getText().toString());
 
         sJ.put("tj02", bi.tj02a.isChecked() ? "1" : bi.tj02b.isChecked() ? "2" : bi.tj02c.isChecked() ? "3"
                 : bi.tj02d.isChecked() ? "4" : bi.tj02e.isChecked() ? "5" : bi.tj02f.isChecked() ? "6"
@@ -426,7 +426,7 @@ public class SectionHActivity extends AppCompatActivity {
         sJ.put("tj12m", bi.tj12m.getText().toString());
 
         sJ.put("tj13", bi.tj13a.isChecked() ? "1" : bi.tj13b.isChecked() ? "2"
-                : bi.tj13c.isChecked() ? "3" : "0");
+                : bi.tj13c.isChecked() ? "97" : "0");
         sJ.put("tj13d", bi.tj13d.getText().toString());
         sJ.put("tj13m", bi.tj13m.getText().toString());
 
