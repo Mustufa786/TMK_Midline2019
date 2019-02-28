@@ -757,14 +757,16 @@ public class SectionBActivity extends AppCompatActivity {
         count.put("tb14", MainApp.TotalMWRACount);
         count.put("tb15", MainApp.TotalChildCount);
         count.put("tb16", MainApp.totalImsCount);
-        count.put("td01", bi.td01.getText().toString());
-        count.put("td02", bi.td02.getText().toString());
-        count.put("td03", bi.td03.getText().toString());
-        count.put("td04", bi.td04.getText().toString());
-        count.put("td05", bi.td05.getText().toString());
-        count.put("td06", bi.td06.getText().toString());
-        count.put("td07", bi.td07.getText().toString());
-        count.put("td08", bi.td08.getText().toString());
+        if (MainApp.TotalMembersCount == 0) {
+            count.put("td01", bi.td01.getText().toString());
+            count.put("td02", bi.td02.getText().toString());
+            count.put("td03", bi.td03.getText().toString());
+            count.put("td04", bi.td04.getText().toString());
+            count.put("td05", bi.td05.getText().toString());
+            count.put("td06", bi.td06.getText().toString());
+            count.put("td07", bi.td07.getText().toString());
+            count.put("td08", bi.td08.getText().toString());
+        }
         MainApp.fc.setsB(String.valueOf(count));
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
