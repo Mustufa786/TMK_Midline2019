@@ -36,7 +36,7 @@ ActivitySectionDBinding bi;
         bi = DataBindingUtil.setContentView(this,R.layout.activity_section_d);
         bi.setCallback(this);
         db = new DatabaseHelper(this);
-        this.setTitle(getResources().getString(R.string.td08eading));
+        this.setTitle(getResources().getString(R.string.tdheading));
         ValidatorClasss.setScrollViewFocus(bi.svsecd);
 
 //        Counter for serial no

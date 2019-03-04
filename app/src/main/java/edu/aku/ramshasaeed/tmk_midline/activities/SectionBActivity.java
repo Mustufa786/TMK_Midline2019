@@ -298,7 +298,7 @@ public class SectionBActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_section_b);
         bi.setCallback(this);
-        this.setTitle(getResources().getString(R.string.td08eading));
+        this.setTitle(getResources().getString(R.string.tdheading));
         applyCountListners();
 //        ButterKnife.bind(this);
 

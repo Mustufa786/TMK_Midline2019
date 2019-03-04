@@ -246,7 +246,7 @@ public class SectionEActivity extends AppCompatActivity {
                 : bi.tha10k.isChecked() ? "11"
                 : "0");
 
-        sE.put("tha11", bi.tha11a.isChecked() ? "1"
+       /* sE.put("tha11", bi.tha11a.isChecked() ? "1"
                 : bi.tha11b.isChecked() ? "2"
                 : bi.tha11c.isChecked() ? "3"
                 : bi.tha11d.isChecked() ? "4"
@@ -256,7 +256,18 @@ public class SectionEActivity extends AppCompatActivity {
                 : bi.tha11h.isChecked() ? "8"
                 : bi.tha11i.isChecked() ? "9"
                 : bi.tha11j.isChecked() ? "10"
-                : "0");
+                : "0");*/
+       //sholud be multiple response
+        sE.put("tha11a", bi.tha11a.isChecked() ? "1" : "0");
+        sE.put("tha11b", bi.tha11b.isChecked() ? "2" : "0");
+        sE.put("tha11c", bi.tha11c.isChecked() ? "3" : "0");
+        sE.put("tha11d", bi.tha11d.isChecked() ? "4" : "0");
+        sE.put("tha11e", bi.tha11e.isChecked() ? "5" : "0");
+        sE.put("tha11f", bi.tha11f.isChecked() ? "6" : "0");
+        sE.put("tha11g", bi.tha11g.isChecked() ? "7" : "0");
+        sE.put("tha11h", bi.tha11h.isChecked() ? "8" : "0");
+        sE.put("tha11i", bi.tha11i.isChecked() ? "9" : "0");
+        sE.put("tha11j", bi.tha11j.isChecked() ? "10" : "0");
 
         sE.put("tha12", bi.tha12a.isChecked() ? "1"
                 : bi.tha12b.isChecked() ? "2"
