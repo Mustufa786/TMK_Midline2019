@@ -105,7 +105,13 @@ public class MainActivity extends Activity {
             StrictMode.setThreadPolicy(policy);
         }
 //        bi.lblheader.setText("Welcome! You're assigned to block ' " + MainApp.regionDss + " '" + MainApp.userName);
+        /*TagID Start*/
+        sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
+        editor = sharedPref.edit();
 
+        /*Download File*/
+        sharedPrefDownload = getSharedPreferences("appDownload", MODE_PRIVATE);
+        editorDownload = sharedPrefDownload.edit();
         if (MainApp.admin) {
             bi.adminsec.setVisibility(View.VISIBLE);
             bi.adminsec1.setVisibility(View.VISIBLE);
@@ -281,11 +287,27 @@ public class MainActivity extends Activity {
 
         if (bi.spAreas.getSelectedItemPosition() != 0) {
 
-            if (!MainApp.userName.equals("0000")) {
-                Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
-                startActivity(oF);
+          /*  if (!MainApp.userName.equals("0000")) {
+
             } else {
                 Toast.makeText(this, "Please restart your Application!!!", Toast.LENGTH_SHORT).show();
+            }
+*/
+            if (versionAppContract.getVersioncode() != null) {
+                if (MainApp.versionCode < Integer.valueOf(versionAppContract.getVersioncode())) {
+                    if (sharedPrefDownload.getBoolean("flag", true) && file.exists()) {
+//                    InstallNewApp(newVer, preVer);
+                        showDialog(newVer, preVer);
+                    } else {
+                        Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
+                        startActivity(oF);
+                    }
+                } else {
+                    Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
+                    startActivity(oF);
+                }
+            } else {
+                Toast.makeText(this, "Sync data!!", Toast.LENGTH_SHORT).show();
             }
         } else {
             Toast.makeText(getApplicationContext(), "Please select data from combobox!!", Toast.LENGTH_LONG).show();
