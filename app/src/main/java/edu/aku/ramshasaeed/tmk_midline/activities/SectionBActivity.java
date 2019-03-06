@@ -1042,6 +1042,23 @@ public class SectionBActivity extends AppCompatActivity {
                 bi.tb08y.setError(null);
             }
         }
+//Restrict user to enter child of age 6 to 14 years
+        if(ageInyears >=5 && ageInyears <= 14){
+            Toast.makeText(this, "ERROR(invalid): " + getString(R.string.year), Toast.LENGTH_SHORT).show();
+            bi.tb08y.setError("Child with the age 6 to 14 years cannot be entered!! ");    // Set Error on last radio button
+            bi.tb08y.requestFocus();
+            Log.i(TAG, "bi.tb08y: Child with the age 6 to 14 years cannot be entered!!");
+            bi.tbdob01.setError("Child with the age 6 to 14 years cannot be entered!!");    // Set Error on last radio button
+            bi.tbdob01.setFocusable(true);
+            bi.tbdob01.setFocusableInTouchMode(true);
+            bi.tbdob01.requestFocus();
+            return false;
+        }else{
+            bi.tbdob01.setError(null);
+            bi.tb08y.setError(null);    // Set Error on last radio button
+
+        }
+
 
 //        09
         if (bi.tb09.getText().toString().isEmpty()) {
