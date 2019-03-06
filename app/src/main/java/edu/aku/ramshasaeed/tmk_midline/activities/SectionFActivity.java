@@ -164,7 +164,7 @@ public class SectionFActivity extends AppCompatActivity {
                             MotherName = MainApp.familyMembersList.get(j).getname();
                         }
                     }
-                    bi.motherName.setText(MotherName);
+                    bi.motherName.setText(MotherName+"_"+MotherID);
                 } else {
                     bi.motherName.setText(null);
 
