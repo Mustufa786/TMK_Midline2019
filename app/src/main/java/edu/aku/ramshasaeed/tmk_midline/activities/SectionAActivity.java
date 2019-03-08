@@ -379,7 +379,7 @@ public class SectionAActivity extends Activity {
         if (!ValidatorClasss.EmptyTextBox(this, bi.ta05h, getString(R.string.ta05h))) {
             return false;
         }
-        if (!ValidatorClasss.PatternTextBox(this, bi.ta05h, getString(R.string.ta05h), "[0-9]{3,3}-[^0-9]{1,1}", "XXX-X")) {
+        if (!ValidatorClasss.PatternTextBox(this, bi.ta05h, getString(R.string.ta05h), "[0-9]{4,4}-[^0-9]{1,1}", "XXXX-X")) {
             return false;
         }
 
