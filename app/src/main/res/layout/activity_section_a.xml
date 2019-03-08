@@ -25,9 +25,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
-            android:layoutDirection="rtl"
             android:focusable="true"
             android:focusableInTouchMode="true"
+            android:layoutDirection="rtl"
             android:orientation="vertical">
 
             <TextView
@@ -94,9 +94,9 @@
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
-                android:layout_height="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
+                    android:layout_weight="1"
                     android:background="@color/colorPrimary"
                     android:text="@string/ta01"
                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -120,15 +120,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-                android:hint="###-#"
+                android:hint="####-#"
                 android:inputType="textCapCharacters"
                 android:layoutDirection="ltr"
-                android:maxLength="5"
-                android:paddingBottom="16dp"
-                android:paddingEnd="12dp"
+                android:maxLength="6"
                 android:paddingStart="12dp"
                 android:paddingTop="16dp"
-                app:met_mask="###-#" />
+                android:paddingEnd="12dp"
+                android:paddingBottom="16dp"
+                app:met_mask="####-#" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -146,13 +146,13 @@
                     android:paddingLeft="10dp" />
 
                 <Button
-                    android:background="@color/colorPrimaryAlpha"
-                    android:textColor="@color/white"
                     android:id="@+id/checkHH"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryAlpha"
                     android:onClick="@{() -> callback.onCheckHHClick()}"
-                    android:text="Check HEAD Name" />
+                    android:text="Check HEAD Name"
+                    android:textColor="@color/white" />
             </LinearLayout>
 
             <LinearLayout
@@ -476,61 +476,61 @@
                         android:inputType="number"
                         android:maxLength="2" />
 
-                <!--    &lt;!&ndash;ta10&ndash;&gt;
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/ta10"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
-
-                    <RadioGroup
-                        android:id="@+id/ta10"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <RadioButton
-                            android:id="@+id/ta10a"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:text="@string/yes" />
-
-                        <RadioButton
-                            android:id="@+id/ta10b"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:text="@string/no" />
-
-                    </RadioGroup>
-
-                    &lt;!&ndash;ta11&ndash;&gt;
-                    <LinearLayout
-                        style="@style/linerlayout_view_wt_bound"
-                        android:visibility="@{ta10a.checked ? View.VISIBLE : View.GONE}">
-
+                    <!--    &lt;!&ndash;ta10&ndash;&gt;
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:background="@color/colorPrimary"
-                            android:text="@string/ta11"
+                            android:text="@string/ta10"
                             android:textAppearance="?android:attr/textAppearanceLarge"
                             android:textColor="@android:color/white" />
 
-                        <EditText
-                            android:id="@+id/ta11"
+                        <RadioGroup
+                            android:id="@+id/ta10"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/ta11"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text='@{ta10a.checked ? ta11.getText.toString : ""}' />
+                            android:layout_height="wrap_content">
 
-                    </LinearLayout>-->
+                            <RadioButton
+                                android:id="@+id/ta10a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
+                                android:text="@string/yes" />
+
+                            <RadioButton
+                                android:id="@+id/ta10b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
+                                android:text="@string/no" />
+
+                        </RadioGroup>
+
+                        &lt;!&ndash;ta11&ndash;&gt;
+                        <LinearLayout
+                            style="@style/linerlayout_view_wt_bound"
+                            android:visibility="@{ta10a.checked ? View.VISIBLE : View.GONE}">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:background="@color/colorPrimary"
+                                android:text="@string/ta11"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="@android:color/white" />
+
+                            <EditText
+                                android:id="@+id/ta11"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/ta11"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text='@{ta10a.checked ? ta11.getText.toString : ""}' />
+
+                        </LinearLayout>-->
 
 
                 </LinearLayout>
