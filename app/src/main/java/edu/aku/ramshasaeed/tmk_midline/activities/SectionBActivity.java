@@ -757,16 +757,24 @@ public class SectionBActivity extends AppCompatActivity {
         count.put("tb14", MainApp.TotalMWRACount);
         count.put("tb15", MainApp.TotalChildCount);
         count.put("tb16", MainApp.totalImsCount);
-        if (MainApp.TotalMembersCount == 0) {
-            count.put("td01", bi.td01.getText().toString());
-            count.put("td02", bi.td02.getText().toString());
-            count.put("td03", bi.td03.getText().toString());
-            count.put("td04", bi.td04.getText().toString());
-            count.put("td05", bi.td05.getText().toString());
-            count.put("td06", bi.td06.getText().toString());
-            count.put("td07", bi.td07.getText().toString());
-            count.put("td08", bi.td08.getText().toString());
+        if (MainApp.TotalMembersCount == 1) {
+            MainApp.td01 = bi.td01.getText().toString();
+            MainApp.td02 = bi.td02.getText().toString();
+            MainApp.td03 = bi.td03.getText().toString();
+            MainApp.td04 = bi.td04.getText().toString();
+            MainApp.td05 = bi.td05.getText().toString();
+            MainApp.td06 = bi.td06.getText().toString();
+            MainApp.td07 = bi.td07.getText().toString();
+            MainApp.td08 = bi.td08.getText().toString();
         }
+        count.put("td01", MainApp.td01);
+        count.put("td02", MainApp.td02);
+        count.put("td03", MainApp.td03);
+        count.put("td04", MainApp.td04);
+        count.put("td05", MainApp.td05);
+        count.put("td06", MainApp.td06);
+        count.put("td07",MainApp.td07);
+        count.put("td08", MainApp.td08);
         MainApp.fc.setsB(String.valueOf(count));
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);

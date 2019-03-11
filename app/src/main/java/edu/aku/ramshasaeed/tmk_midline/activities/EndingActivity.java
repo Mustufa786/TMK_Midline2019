@@ -86,6 +86,14 @@ public class EndingActivity extends Activity {
                 MainApp.childsMap.clear();
 
                 MainApp.counter = 0;
+                MainApp.td01 = "";
+                MainApp.td02 = "";
+                MainApp.td03 = "";
+                MainApp.td04 = "";
+                MainApp.td05 = "";
+                MainApp.td06 = "";
+                MainApp.td07 = "";
+                MainApp.td08 = "";
 
 //    Total No of Alive members got from Section B
 

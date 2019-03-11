@@ -93,6 +93,7 @@ public class MainApp extends Application {
     public static boolean flag = true;
     public static int versionCode;
     public static String versionName;
+    public static String td01,td02,td03,td04,td05,td06,td07,td08;
 
     public static Map<String, FamilyMembersContract> childsMap = new HashMap<>();
     public static ArrayList<String> lstChild = new ArrayList<>();
