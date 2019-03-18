@@ -76,25 +76,29 @@ public class SectionGActivity extends AppCompatActivity {
             }
         }
     };
-    @BindViews({R.id.fldGrpBcgM, R.id.fldGrpOpv0M, R.id.fldGrpPenta1M, R.id.fldGrppcv1M, R.id.fldGrpopv1M, R.id.fldGrppenta2M,
+    @BindViews({R.id.fldGrpBcgM, R.id.fldGrpOpv0M, R.id.fldGrpPenta1M, R.id.fldGrppcv1M, R.id.fldGrpopv1M, R.id.fldGrppenta2M, R.id.fldGrprota1M, R.id.fldGrprota2M,
             R.id.fldGrppcv2M, R.id.fldGrpopv2M, R.id.fldGrpPenta3M, R.id.fldGrppcv3M, R.id.fldGrpopv3M, R.id.fldGrpipvM,
             R.id.fldGrpMeasles1M, R.id.fldGrpMeasles2M})
     List<LinearLayout> fldGrpMother;
-    @BindViews({R.id.bcgC, R.id.opv0C, R.id.penta1C, R.id.pcv1C, R.id.opv1C, R.id.penta2C, R.id.pcv2C, R.id.opv2C, R.id.penta3C,
+    @BindViews({R.id.bcgC, R.id.opv0C, R.id.penta1C, R.id.pcv1C, R.id.opv1C, R.id.penta2C, R.id.pcv2C, R.id.opv2C, R.id.penta3C, R.id.rota1C, R.id.rota2C,
             R.id.pcv3C, R.id.opv3C, R.id.ipvC, R.id.measles1C, R.id.measles2C})
     List<RadioGroup> rdoCard;
     @BindViews({R.id.bcgC, R.id.bcgM, R.id.opv0C, R.id.opv0M, R.id.penta1C, R.id.penta1M, R.id.pcv1C, R.id.pcv1M,
-            R.id.opv1C, R.id.opv1M, R.id.penta2C, R.id.pcv2C, R.id.pcv2M, R.id.opv2C, R.id.opv2M, R.id.penta3C, R.id.penta3M,
+            R.id.opv1C, R.id.opv1M, R.id.penta2C, R.id.pcv2C, R.id.pcv2M, R.id.opv2C, R.id.opv2M, R.id.penta3C, R.id.penta3M, R.id.rota1C, R.id.rota1M, R.id.rota2C, R.id.rota2M,
             R.id.pcv3C, R.id.pcv3M, R.id.opv3C, R.id.opv3M, R.id.ipvC, R.id.ipvM, R.id.measles1C, R.id.measles1M,
             R.id.measles2C, R.id.measles2M})
     List<RadioGroup> rdoAll;
-    @BindViews({R.id.bcgPov, R.id.opv0Pov, R.id.penta1Pov, R.id.pcv1Pov, R.id.opv1Pov, R.id.penta2Pov, R.id.pcv2Pov, R.id.opv2Pov,
+    @BindViews({R.id.bcgPov, R.id.opv0Pov, R.id.penta1Pov, R.id.pcv1Pov, R.id.opv1Pov, R.id.penta2Pov, R.id.pcv2Pov, R.id.opv2Pov, R.id.rota1Pov, R.id.rota2Pov,
             R.id.penta3Pov, R.id.pcv3Pov, R.id.opv3Pov, R.id.ipvPov, R.id.measles1Pov, R.id.measles2Pov})
     List<RadioGroup> placeofVacc;
     @BindViews({R.id.bcgC, R.id.bcgM})
     List<RadioGroup> grpBcg;
     @BindViews({R.id.opv0C, R.id.opv0M})
     List<RadioGroup> grpOpv0;
+    @BindViews({R.id.rota1C, R.id.rota1M})
+    List<RadioGroup> grpRota1;
+    @BindViews({R.id.rota2C, R.id.rota2M})
+    List<RadioGroup> grpRota2;
     @BindViews({R.id.penta1C, R.id.penta1M})
     List<RadioGroup> grpPenta1;
     @BindViews({R.id.pcv1C, R.id.pcv1M})
@@ -650,6 +654,38 @@ public class SectionGActivity extends AppCompatActivity {
             }
         }
     };
+    public RadioGroup.OnCheckedChangeListener Rota1 = new RadioGroup.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+            if (bi.rota1M01.isChecked() || bi.rota1C01.isChecked()) {
+                bi.fldGrpprota1.setVisibility(View.VISIBLE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
+                bi.sc15.setLayoutParams(params);
+            } else if (bi.rota1C02.isChecked() || bi.rota1M02.isChecked()) {
+                bi.fldGrpprota1.setVisibility(View.GONE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                bi.sc15.setLayoutParams(params);
+                bi.rota1Pov.clearCheck();
+
+            }
+        }
+    };
+    public RadioGroup.OnCheckedChangeListener Rota2 = new RadioGroup.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+            if (bi.rota2M01.isChecked() || bi.rota2C01.isChecked()) {
+                bi.fldGrpprota2.setVisibility(View.VISIBLE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 900);
+                bi.sc16.setLayoutParams(params);
+            } else if (bi.rota2C02.isChecked() || bi.rota2M02.isChecked()) {
+                bi.fldGrpprota2.setVisibility(View.GONE);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                bi.sc16.setLayoutParams(params);
+                bi.rota2Pov.clearCheck();
+
+            }
+        }
+    };
     /* @BindViews({R.id.bcgDate, R.id.opv0Date, R.id.opv1Date, R.id.penta1Date, R.id.pcv1Date, R.id.opv2Date, R.id.penta2Date
              , R.id.pcv2Date, R.id.opv3Date, R.id.penta3Date, R.id.pcv3Date, R.id.ipvDate, R.id.measles1Date, R.id.measles2Date})
      List<DatePickerInputEditText> dates;
@@ -826,6 +862,16 @@ public class SectionGActivity extends AppCompatActivity {
         // Penta1
         for (RadioGroup rd : grpPenta1) {
             rd.setOnCheckedChangeListener(penta1);
+
+        }
+        // Rota1
+        for (RadioGroup rd : grpRota1) {
+            rd.setOnCheckedChangeListener(Rota1);
+
+        }
+        // Rota2
+        for (RadioGroup rd : grpRota2) {
+            rd.setOnCheckedChangeListener(Rota2);
 
         }
 
@@ -1240,6 +1286,10 @@ public class SectionGActivity extends AppCompatActivity {
         });*/
     }
 
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+    }
 
     public void onBtnContinueClick() {
 
@@ -1512,6 +1562,7 @@ public class SectionGActivity extends AppCompatActivity {
         if (!ValidatorClasss.EmptySpinner(this, bi.tiname, getString(R.string.name))) {
             return false;
         }
+
          /*   if (bi.tiname.getSelectedItem() == "....") {
                 Toast.makeText(this, "ERROR(Empty)" + getString(R.string.name), Toast.LENGTH_SHORT).show();
                 ((TextView) bi.tiname.getSelectedView()).setText("This Data is Required");
@@ -1771,6 +1822,76 @@ public class SectionGActivity extends AppCompatActivity {
                 }
             }
 
+
+            //============ ROTA 1 / Mother ==========
+            if (bi.rota1M.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.rota1), Toast.LENGTH_SHORT).show();
+                bi.rota1M02.setError("This data is Required!");
+                Log.i(TAG, "rota1M: This data is Required!");
+                bi.rota1M02.setFocusable(true);
+                bi.rota1M02.setFocusableInTouchMode(true);
+                bi.rota1M02.requestFocus();
+                return false;
+            } else {
+                bi.rota1M02.setError(null);
+            }
+
+           /*     if (bi.opv1M01.isChecked() && !bi.opv1datenr.isChecked()) {
+                    if (bi.opv1DateMYear.getText().toString().isEmpty() && bi.opv1DateMMon.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv1) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        bi.opv1DateMYear.setError("This data is Required!");
+                        bi.opv1DateMMon.setError("This data is Required!");
+                        Log.i(TAG, "opv1MDate: This data is Required!");
+                        bi.opv1DateMYear.requestFocus();
+                        return false;
+                    } else {
+                        bi.opv1DateMYear.setError(null);
+                        bi.opv1DateMMon.setError(null);
+                    }
+                }
+*/
+            if (bi.ti03a.isChecked()) {
+                //============ OPV 1 / Card Present ==========
+                if (bi.rota1C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.rota1), Toast.LENGTH_SHORT).show();
+                    bi.rota1C02.setError("This data is Required!");
+                    Log.i(TAG, "rota1C: This data is Required!");
+                    bi.rota1C02.setFocusable(true);
+                    bi.rota1C02.setFocusableInTouchMode(true);
+                    bi.rota1C02.requestFocus();
+                    return false;
+                } else {
+                    bi.rota1C02.setError(null);
+                }
+
+             /*       if (bi.opv1C01.isChecked() && !bi.opv1datenp.isChecked()) {
+                        if (bi.opv1Date.getText().toString().isEmpty()) {
+                            Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv1) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                            bi.opv1Date.setError("This data is Required!");
+                            Log.i(TAG, "opv1Date: This data is Required!");
+                            bi.opv1Date.requestFocus();
+                            return false;
+                        } else {
+                            bi.opv1Date.setError(null);
+                        }
+                    }*/
+            }
+
+
+            if (bi.rota1C01.isChecked() || bi.rota1M01.isChecked()) {
+                if (bi.rota1Pov.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.rota1) + " - " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    bi.rota1Pova.setError("This data is Required!");
+                    Log.i(TAG, "rota1Pov: This data is Required!");
+                    bi.rota1Pova.setFocusable(true);
+                    bi.rota1Pova.setFocusableInTouchMode(true);
+                    bi.rota1Pova.requestFocus();
+                    return false;
+                } else {
+                    bi.rota1Pova.setError(null);
+                }
+            }
+
             //============ Penta 1 / Mother ==========
             if (bi.penta1M.getCheckedRadioButtonId() == -1) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.penta1), Toast.LENGTH_SHORT).show();
@@ -1976,6 +2097,74 @@ public class SectionGActivity extends AppCompatActivity {
                     return false;
                 } else {
                     bi.opv2Pova.setError(null);
+                }
+            }
+            //============ ROTA 2 / Mother ==========
+            if (bi.rota2M.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.rota2), Toast.LENGTH_SHORT).show();
+                bi.rota2M02.setError("This data is Required!");
+                Log.i(TAG, "rota2M: This data is Required!");
+                bi.rota2M02.setFocusable(true);
+                bi.rota2M02.setFocusableInTouchMode(true);
+                bi.rota2M02.requestFocus();
+                return false;
+            } else {
+                bi.rota2M02.setError(null);
+            }
+
+                /*if (bi.opv2M01.isChecked() && !bi.opv2datenr.isChecked()) {
+                    if (bi.opv2DateMYear.getText().toString().isEmpty() && bi.opv2DateMMon.getText().toString().isEmpty()) {
+                        Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv2) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                        bi.opv2DateMYear.setError("This data is Required!");
+                        bi.opv2DateMMon.setError("This data is Required!");
+                        Log.i(TAG, "opv2MDate: This data is Required!");
+                        bi.opv2DateMYear.requestFocus();
+                        return false;
+                    } else {
+                        bi.opv2DateMYear.setError(null);
+                        bi.opv2DateMMon.setError(null);
+                    }
+                }*/
+
+            if (bi.ti03a.isChecked()) {
+                //============ OPV 2 / Card Present ==========
+                if (bi.rota2C.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.rota2), Toast.LENGTH_SHORT).show();
+                    bi.rota2C02.setError("This data is Required!");
+                    Log.i(TAG, "rota2C: This data is Required!");
+                    bi.rota2C02.setFocusable(true);
+                    bi.rota2C02.setFocusableInTouchMode(true);
+                    bi.rota2C02.requestFocus();
+                    return false;
+                } else {
+                    bi.rota2C02.setError(null);
+                }
+
+                   /* if (bi.opv2C01.isChecked() && !bi.opv2datenp.isChecked()) {
+                        if (bi.opv2Date.getText().toString().isEmpty()) {
+                            Toast.makeText(this, "ERROR(empty): " + getString(R.string.opv2) + " - " + getString(R.string.date), Toast.LENGTH_SHORT).show();
+                            bi.opv2Date.setError("This data is Required!");
+                            Log.i(TAG, "opv2Date: This data is Required!");
+                            bi.opv2Date.requestFocus();
+                            return false;
+                        } else {
+                            bi.opv2Date.setError(null);
+                        }
+                    }*/
+            }
+
+
+            if (bi.rota2C01.isChecked() || bi.rota2M01.isChecked()) {
+                if (bi.rota2Pov.getCheckedRadioButtonId() == -1) {
+                    Toast.makeText(this, "ERROR(empty): " + getString(R.string.rota2) + " - " + getString(R.string.place), Toast.LENGTH_SHORT).show();
+                    bi.rota2Pova.setError("This data is Required!");
+                    Log.i(TAG, "rota2Pov: This data is Required!");
+                    bi.rota2Pova.setFocusable(true);
+                    bi.rota2Pova.setFocusableInTouchMode(true);
+                    bi.rota2Pova.requestFocus();
+                    return false;
+                } else {
+                    bi.rota2Pova.setError(null);
                 }
             }
 
