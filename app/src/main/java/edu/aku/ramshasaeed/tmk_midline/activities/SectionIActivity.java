@@ -164,7 +164,7 @@ public class SectionIActivity extends AppCompatActivity {
         sK.put("tk0996x", bi.tk0996x.getText().toString());
 
         sK.put("tk10", bi.tk10a.isChecked() ? "1" : bi.tk10b.isChecked() ? "2" : bi.tk10c.isChecked() ? "3" : bi.tk10d.isChecked() ? "4"
-                : bi.tk10e.isChecked() ? "5" : bi.tk10f.isChecked() ? "6" : bi.tk1096.isChecked() ? "96" : "0");
+                : bi.tk10e.isChecked() ? "5" : bi.tk10f.isChecked() ? "6" : bi.tk10g.isChecked() ? "7" : bi.tk1096.isChecked() ? "96" : "0");
         sK.put("tk1096x", bi.tk1096x.getText().toString());
 
         sK.put("tk11", bi.tk11a.isChecked() ? "1" : bi.tk11b.isChecked() ? "2" : bi.tk11c.isChecked() ? "3" : bi.tk11d.isChecked() ? "4"

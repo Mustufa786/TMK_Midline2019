@@ -730,6 +730,13 @@
                 android:text="@string/tk10f" />
 
             <RadioButton
+                android:id="@+id/tk10g"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/tk10g" />
+
+            <RadioButton
                 android:id="@+id/tk1096"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
