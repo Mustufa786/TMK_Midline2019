@@ -7,7 +7,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.ramshasaeed.tmk_midline.activities.SectionHActivity" />
+            type="edu.aku.ramshasaeed.tmk_midline_monitor.activities.SectionHActivity" />
     </data>
 
     <ScrollView
@@ -240,7 +240,7 @@
             </RadioGroup>
 
 
-            <TextView
+            <!--<TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimary"
@@ -364,7 +364,7 @@
                     android:layout_weight="1"
                     android:text="@string/no" />
 
-            </RadioGroup>
+            </RadioGroup>-->
 
             <LinearLayout
                 android:id="@+id/fldGrpti07"
@@ -455,7 +455,7 @@
 
             <!--If child younger than 6 months-->
 
-            <LinearLayout
+            <!--<LinearLayout
                 android:id="@+id/fldGrpti08"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -547,7 +547,7 @@
                     android:inputType="textCapWords"
                     android:visibility="gone" />
 
-            </LinearLayout>
+            </LinearLayout>-->
 
             <TextView
                 android:layout_width="match_parent"
@@ -670,70 +670,69 @@
                 </RadioGroup>
 
             </LinearLayout>
+            <!--
+                        &lt;!&ndash;12&ndash;&gt;
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorPrimary"
+                            android:text="@string/tj12" />
 
-            <!--12-->
+                        <RadioGroup
+                            android:id="@+id/tj12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
-                android:text="@string/tj12" />
+                            <RadioButton
+                                android:id="@+id/tj12a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
+                                android:text="@string/day" />
 
-            <RadioGroup
-                android:id="@+id/tj12"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                            <EditText
+                                android:id="@+id/tj12d"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
+                                android:hint="@string/day"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:visibility="gone" />
 
-                <RadioButton
-                    android:id="@+id/tj12a"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/day" />
+                            <RadioButton
+                                android:id="@+id/tj12b"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
+                                android:text="@string/month" />
 
-                <EditText
-                    android:id="@+id/tj12d"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:hint="@string/day"
-                    android:inputType="number"
-                    android:maxLength="2"
-                    android:visibility="gone" />
+                            <EditText
+                                android:id="@+id/tj12m"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
+                                android:hint="@string/month"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:visibility="gone" />
 
-                <RadioButton
-                    android:id="@+id/tj12b"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/month" />
+                            <RadioButton
+                                android:id="@+id/tj12c"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
+                                android:text="@string/tj12c" />
 
-                <EditText
-                    android:id="@+id/tj12m"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:hint="@string/month"
-                    android:inputType="number"
-                    android:maxLength="2"
-                    android:visibility="gone" />
-
-                <RadioButton
-                    android:id="@+id/tj12c"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/tj12c" />
-
-                <RadioButton
-                    android:id="@+id/tj1298"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="1dp"
-                    android:text="@string/dkn" />
+                            <RadioButton
+                                android:id="@+id/tj1298"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
+                                android:text="@string/dkn" />
 
 
-            </RadioGroup>
+                        </RadioGroup>-->
 
             <!--13-->
 
@@ -792,7 +791,7 @@
                     android:text="@string/tj13c" />
             </RadioGroup>
 
-            <LinearLayout
+            <!--<LinearLayout
                 android:id="@+id/fldGrpll14"
                 style="@style/linerlayout_view_wt_bound"
                 android:visibility='@{tj13c.checked? View.GONE : View.VISIBLE}'>
@@ -926,7 +925,7 @@
                     android:text='@{tj1496.checked? tj1496x.getText.toString : ""}'
                     android:visibility='@{tj1496.checked? View.VISIBLE : View.GONE}' />
 
-            </LinearLayout>
+            </LinearLayout>-->
 
             <!--  = = = = =  END OF FORM FIELDS  = = = = = -->
 

@@ -9,7 +9,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.ramshasaeed.tmk_midline.activities.SectionJActivity" />
+            type="edu.aku.ramshasaeed.tmk_midline_monitor.activities.SectionJActivity" />
     </data>
 
     <ScrollView
@@ -218,124 +218,125 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/fldGrptl05"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/colorPrimary"
-                    android:textColor="@android:color/white"
-                    android:text="@string/tl05" />
-
-                <RadioGroup
-                    android:id="@+id/tl05"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/tl05a"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="@string/yes" />
-
-                    <RadioButton
-                        android:id="@+id/tl05b"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="@string/no" />
-
-                </RadioGroup>
-
-                <LinearLayout
-                    android:id="@+id/fldGrptl06"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/colorPrimary"
-                        android:textColor="@android:color/white"
-                        android:text="@string/tl06" />
-
-                    <RadioGroup
-                        android:id="@+id/tl06"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <RadioButton
-                            android:id="@+id/tl06a"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/tl06a" />
-
-                        <RadioButton
-                            android:id="@+id/tl06b"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/tl06b" />
-
-                    </RadioGroup>
-
-                    <LinearLayout
-                        android:id="@+id/fldGrptl07"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@color/colorPrimary"
-                            android:textColor="@android:color/white"
-                            android:text="@string/tl07" />
-
-                        <CheckBox
-                            android:id="@+id/tl07a"
+            <!--
+                        <LinearLayout
+                            android:id="@+id/fldGrptl05"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:text="@string/tl07a" />
+                            android:orientation="vertical">
 
-                        <CheckBox
-                            android:id="@+id/tl07b"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:text="@string/tl07b" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@color/colorPrimary"
+                                android:textColor="@android:color/white"
+                                android:text="@string/tl05" />
 
-                        <CheckBox
-                            android:id="@+id/tl07c"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:text="@string/tl07c" />
+                            <RadioGroup
+                                android:id="@+id/tl05"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
 
-                        <CheckBox
-                            android:id="@+id/tl07d"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:text="@string/tl07d" />
+                                <RadioButton
+                                    android:id="@+id/tl05a"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/yes" />
+
+                                <RadioButton
+                                    android:id="@+id/tl05b"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/no" />
+
+                            </RadioGroup>
+
+                            <LinearLayout
+                                android:id="@+id/fldGrptl06"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
 
 
-                    </LinearLayout>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/colorPrimary"
+                                    android:textColor="@android:color/white"
+                                    android:text="@string/tl06" />
 
-                </LinearLayout>
-            </LinearLayout>
+                                <RadioGroup
+                                    android:id="@+id/tl06"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
 
+                                    <RadioButton
+                                        android:id="@+id/tl06a"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="@string/tl06a" />
+
+                                    <RadioButton
+                                        android:id="@+id/tl06b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:text="@string/tl06b" />
+
+                                </RadioGroup>
+
+                                <LinearLayout
+                                    android:id="@+id/fldGrptl07"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/colorPrimary"
+                                        android:textColor="@android:color/white"
+                                        android:text="@string/tl07" />
+
+                                    <CheckBox
+                                        android:id="@+id/tl07a"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/tl07a" />
+
+                                    <CheckBox
+                                        android:id="@+id/tl07b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/tl07b" />
+
+                                    <CheckBox
+                                        android:id="@+id/tl07c"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/tl07c" />
+
+                                    <CheckBox
+                                        android:id="@+id/tl07d"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/tl07d" />
+
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+            -->
 
             <TextView
                 android:layout_width="match_parent"
@@ -428,7 +429,7 @@
                     android:text="@string/tl08i" />
             </LinearLayout>
 
-            <TextView
+            <!--<TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorPrimary"
@@ -487,7 +488,7 @@
                 android:text='@{tl0996.checked? tl1196x.getText.toString : ""}'
                 android:visibility='@{tl0996.checked? View.VISIBLE : View.GONE}'
                 android:inputType="textCapWords"
-                 />
+                 />-->
 
             <!--10-->
 
@@ -497,7 +498,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
+                <!--<TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/colorPrimary"
@@ -557,7 +558,7 @@
                     android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     android:hint="@string/other"
                     android:inputType="textCapWords"
-                     />
+                     />-->
 
                 <!--12-->
                 <TextView

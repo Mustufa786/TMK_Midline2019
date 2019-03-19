@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TMK Midline</string>
+    <string name="app_name">TMK Midline Monitor</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Login</string>
@@ -395,6 +395,7 @@
     <string name="tk10d"> جيريڪين </string>
     <string name="tk10e"> بالٽي </string>
     <string name="tk10f"> مٽڪو </string>
+    <string name="tk10g">واٽر ڪولر</string>
     <string name="tk11"> گھر ۾ ڪهڙي قسم جو ٽوائلٽ/ڪاڪوس استعمال ڪندا آهيو؟ </string>
     <string name="tk11a"> گٽر نالي وارو </string>
     <string name="tk11b"> فليش ٽينڪ </string>
@@ -965,7 +966,6 @@
     <string name="thb36j"> ٻار بيھوش ھوندو آھي </string>
     <string name="thb36k"> ٻار جي چمڙي ڦڪي ٿيندي آھي </string>
     <string name="thb36l"> ٻيو ڪجھ (وضاحت ڪريو) </string>
-    <string name="tk10g">واٽر ڪولر</string>
 
 
 </resources>

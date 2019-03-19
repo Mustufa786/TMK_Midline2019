@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".activities.SectionGActivity">
 
     <data>
@@ -10,7 +9,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.ramshasaeed.tmk_midline.activities.SectionGActivity" />
+            type="edu.aku.ramshasaeed.tmk_midline_monitor.activities.SectionGActivity" />
     </data>
 
     <android.support.v4.widget.NestedScrollView
@@ -24,16 +23,6 @@
             android:animateLayoutChanges="true"
             android:layoutDirection="rtl"
             android:orientation="vertical">
-
-          <!--  <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="2dp"
-                android:background="@color/colorPrimaryDark"
-                android:gravity="center"
-                android:text="@string/"
-                android:textSize="40sp" />-->
 
             <View
                 android:layout_width="match_parent"
@@ -323,69 +312,6 @@
 
                                                 </RadioGroup>
 
-                                            <!--    <LinearLayout
-                                                    android:id="@+id/fldGrpBcgMCheck"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:orientation="vertical">
-
-                                                    <CheckBox
-                                                        android:id="@+id/bcgdatenr"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:layout_marginTop="1dp"
-                                                        android:text="@string/datenr" />
-
-                                                    <LinearLayout
-                                                        android:id="@+id/fldGrpbcgMDate"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:orientation="vertical">
-
-
-
-                                                        <TextView
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:layout_marginTop="5dp"
-                                                            android:background="#efefef"
-                                                            android:text="@string/date"
-                                                            android:textAlignment="center"
-                                                            android:textColor="@color/colorPrimaryDark"
-                                                            android:textStyle="bold" />
-
-
-
-                                                        <LinearLayout
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:orientation="horizontal">
-
-                                                            <EditText
-                                                                android:id="@+id/bcgDateM_year"
-                                                                android:layout_width="match_parent"
-                                                                android:layout_height="wrap_content"
-                                                                android:layout_weight="1"
-                                                                android:hint="@string/year"
-                                                                android:inputType="number"
-                                                                android:maxLength="4" />
-
-                                                            <EditText
-                                                                android:id="@+id/bcgDateM_mon"
-                                                                android:layout_width="match_parent"
-                                                                android:layout_height="wrap_content"
-                                                                android:layout_weight="1"
-                                                                android:hint="@string/month"
-                                                                android:inputType="number"
-                                                                android:maxLength="2" />
-
-
-                                                        </LinearLayout>
-
-                                                    </LinearLayout>
-
-                                                </LinearLayout>-->
-
 
                                             </LinearLayout>
 
@@ -436,54 +362,6 @@
                                                         android:text="@string/no" />
 
                                                 </RadioGroup>
-
-                                              <!--  <LinearLayout
-                                                    android:id="@+id/fldGrpBcgCCheck"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:orientation="vertical">
-
-                                                    <CheckBox
-                                                        android:id="@+id/bcgdatenp"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:layout_marginTop="1dp"
-                                                        android:text="@string/datenp" />
-
-
-                                                    <LinearLayout
-                                                        android:id="@+id/fldGrpBcgCDate"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:orientation="vertical">
-
-
-                                                        <TextView
-                                                            android:id="@+id/text1"
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:layout_marginTop="5dp"
-                                                            android:background="#efefef"
-                                                            android:text="@string/date"
-                                                            android:textAlignment="center"
-                                                            android:textColor="@color/colorPrimaryDark"
-                                                            android:textStyle="bold" />
-
-
-
-                                                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                                            android:id="@+id/bcgDate"
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:layout_marginTop="1dp"
-                                                            android:focusable="false"
-                                                            android:hint="@string/date"
-                                                            android:textColor="@android:color/black"
-                                                            app:dateFormat="dd-MM-yyyy" />
-
-                                                    </LinearLayout>
-
-                                                </LinearLayout>-->
 
 
                                             </LinearLayout>
@@ -641,68 +519,6 @@
 
                                                 </RadioGroup>
 
-                                           <!--     <LinearLayout
-                                                    android:id="@+id/fldGrpOpv0MCheck"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:orientation="vertical">
-
-                                                    <CheckBox
-                                                        android:id="@+id/opv0datenr"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:layout_marginTop="1dp"
-                                                        android:text="@string/datenr" />
-
-                                                    <LinearLayout
-                                                        android:id="@+id/fldGrpopv0MDate"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:orientation="vertical">
-
-
-                                                        <TextView
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:layout_marginTop="5dp"
-                                                            android:background="#efefef"
-                                                            android:text="@string/date"
-                                                            android:textAlignment="center"
-                                                            android:textColor="@color/colorPrimaryDark"
-                                                            android:textStyle="bold" />
-
-
-
-                                                        <LinearLayout
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:orientation="horizontal">
-
-                                                            <EditText
-                                                                android:id="@+id/opv0DateM_year"
-                                                                android:layout_width="match_parent"
-                                                                android:layout_height="wrap_content"
-                                                                android:layout_weight="1"
-                                                                android:hint="@string/year"
-                                                                android:inputType="number"
-                                                                android:maxLength="4" />
-
-                                                            <EditText
-                                                                android:id="@+id/opv0DateM_mon"
-                                                                android:layout_width="match_parent"
-                                                                android:layout_height="wrap_content"
-                                                                android:layout_weight="1"
-                                                                android:hint="@string/month"
-                                                                android:inputType="number"
-                                                                android:maxLength="2" />
-
-
-                                                        </LinearLayout>
-
-                                                    </LinearLayout>
-
-                                                </LinearLayout>-->
-
                                             </LinearLayout>
 
                                             <View
@@ -753,53 +569,6 @@
                                                         android:text="@string/no" />
 
                                                 </RadioGroup>
-
-                                           <!--     <LinearLayout
-                                                    android:id="@+id/fldGrpOpv0CCheck"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:orientation="vertical">
-
-                                                    <CheckBox
-                                                        android:id="@+id/opv0datenp"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:layout_marginTop="1dp"
-                                                        android:text="@string/datenp" />
-
-                                                    <LinearLayout
-                                                        android:id="@+id/fldGrpOpv0CDate"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:orientation="vertical">
-
-
-                                                        <TextView
-                                                            android:id="@+id/text2"
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:layout_marginTop="5dp"
-                                                            android:background="#efefef"
-                                                            android:text="@string/date"
-                                                            android:textAlignment="center"
-                                                            android:textColor="@color/colorPrimaryDark"
-                                                            android:textStyle="bold" />
-
-
-                                                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                                            android:id="@+id/opv0Date"
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:layout_marginTop="1dp"
-                                                            android:focusable="false"
-                                                            android:hint="@string/date"
-                                                            android:textColor="@android:color/black"
-                                                            app:dateFormat="dd-MM-yyyy" />
-
-                                                    </LinearLayout>
-
-                                                </LinearLayout>-->
-
 
                                             </LinearLayout>
 
@@ -993,67 +762,6 @@
 
                                                 </RadioGroup>
 
-                                           <!--     <LinearLayout
-                                                    android:id="@+id/fldGrpOpv1MCheck"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:orientation="vertical">
-
-                                                    <CheckBox
-                                                        android:id="@+id/opv1datenr"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:layout_marginTop="1dp"
-                                                        android:text="@string/datenr" />
-
-                                                    <LinearLayout
-                                                        android:id="@+id/fldGrpopv1MDate"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:orientation="vertical">
-
-
-                                                        <TextView
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:layout_marginTop="5dp"
-                                                            android:background="#efefef"
-                                                            android:text="@string/date"
-                                                            android:textAlignment="center"
-                                                            android:textColor="@color/colorPrimaryDark"
-                                                            android:textStyle="bold" />
-
-
-                                                        <LinearLayout
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:orientation="horizontal">
-
-                                                            <EditText
-                                                                android:id="@+id/opv1DateM_year"
-                                                                android:layout_width="match_parent"
-                                                                android:layout_height="wrap_content"
-                                                                android:layout_weight="1"
-                                                                android:hint="@string/year"
-                                                                android:inputType="number"
-                                                                android:maxLength="4" />
-
-                                                            <EditText
-                                                                android:id="@+id/opv1DateM_mon"
-                                                                android:layout_width="match_parent"
-                                                                android:layout_height="wrap_content"
-                                                                android:layout_weight="1"
-                                                                android:hint="@string/month"
-                                                                android:inputType="number"
-                                                                android:maxLength="2" />
-
-
-                                                        </LinearLayout>
-
-                                                    </LinearLayout>
-
-                                                </LinearLayout>-->
-
                                             </LinearLayout>
 
                                             <View
@@ -1104,53 +812,6 @@
                                                         android:text="@string/no" />
 
                                                 </RadioGroup>
-
-                                            <!--    <LinearLayout
-                                                    android:id="@+id/fldGrpOpv1CCheck"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:orientation="vertical">
-
-                                                    <CheckBox
-                                                        android:id="@+id/opv1datenp"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:layout_marginTop="1dp"
-                                                        android:text="@string/datenp" />
-
-                                                    <LinearLayout
-                                                        android:id="@+id/fldGrpOpv1CDate"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:orientation="vertical">
-
-
-                                                        <TextView
-                                                            android:id="@+id/text3"
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:layout_marginTop="5dp"
-                                                            android:background="#efefef"
-                                                            android:text="@string/date"
-                                                            android:textAlignment="center"
-                                                            android:textColor="@color/colorPrimaryDark"
-                                                            android:textStyle="bold" />
-
-
-
-                                                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                                            android:id="@+id/opv1Date"
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:layout_marginTop="1dp"
-                                                            android:focusable="false"
-                                                            android:hint="@string/date"
-                                                            android:textColor="@android:color/black"
-                                                            app:dateFormat="dd-MM-yyyy" />
-
-                                                    </LinearLayout>
-
-                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -1294,67 +955,6 @@
 
                                                 </RadioGroup>
 
-                                      <!--          <LinearLayout
-                                                    android:id="@+id/fldGrprota1MCheck"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:orientation="vertical">
-
-                                                    <CheckBox
-                                                        android:id="@+id/rota1datenr"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:layout_marginTop="1dp"
-                                                        android:text="@string/datenr" />
-
-                                                    <LinearLayout
-                                                        android:id="@+id/fldGrprota1MDate"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:orientation="vertical">
-
-
-                                                        <TextView
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:layout_marginTop="5dp"
-                                                            android:background="#efefef"
-                                                            android:text="@string/date"
-                                                            android:textAlignment="center"
-                                                            android:textColor="@color/colorPrimaryDark"
-                                                            android:textStyle="bold" />
-
-
-                                                        <LinearLayout
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:orientation="horizontal">
-
-                                                            <EditText
-                                                                android:id="@+id/rota1DateM_year"
-                                                                android:layout_width="match_parent"
-                                                                android:layout_height="wrap_content"
-                                                                android:layout_weight="1"
-                                                                android:hint="@string/year"
-                                                                android:inputType="number"
-                                                                android:maxLength="4" />
-
-                                                            <EditText
-                                                                android:id="@+id/rota1DateM_mon"
-                                                                android:layout_width="match_parent"
-                                                                android:layout_height="wrap_content"
-                                                                android:layout_weight="1"
-                                                                android:hint="@string/month"
-                                                                android:inputType="number"
-                                                                android:maxLength="2" />
-
-
-                                                        </LinearLayout>
-
-                                                    </LinearLayout>
-
-                                                </LinearLayout>-->
-
                                             </LinearLayout>
 
                                             <View
@@ -1405,53 +1005,6 @@
                                                         android:text="@string/no" />
 
                                                 </RadioGroup>
-
-                                            <!--    <LinearLayout
-                                                    android:id="@+id/fldGrprota1CCheck"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:orientation="vertical">
-
-                                                    <CheckBox
-                                                        android:id="@+id/rota1datenp"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:layout_marginTop="1dp"
-                                                        android:text="@string/datenp" />
-
-                                                    <LinearLayout
-                                                        android:id="@+id/fldGrprota1CDate"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:orientation="vertical">
-
-
-                                                        <TextView
-                                                            android:id="@+id/text15"
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:layout_marginTop="5dp"
-                                                            android:background="#efefef"
-                                                            android:text="@string/date"
-                                                            android:textAlignment="center"
-                                                            android:textColor="@color/colorPrimaryDark"
-                                                            android:textStyle="bold" />
-
-
-
-                                                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                                            android:id="@+id/rota1Date"
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:layout_marginTop="1dp"
-                                                            android:focusable="false"
-                                                            android:hint="@string/date"
-                                                            android:textColor="@android:color/black"
-                                                            app:dateFormat="dd-MM-yyyy" />
-
-                                                    </LinearLayout>
-
-                                                </LinearLayout>-->
 
                                             </LinearLayout>
 
@@ -1598,66 +1151,6 @@
 
                                                 </RadioGroup>
 
-                                           <!--     <LinearLayout
-                                                    android:id="@+id/fldGrpPenta1MCheck"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:orientation="vertical">
-
-                                                    <CheckBox
-                                                        android:id="@+id/penta1datenr"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:layout_marginTop="1dp"
-                                                        android:text="@string/datenr" />
-
-                                                    <LinearLayout
-                                                        android:id="@+id/fldGrppenta1MDate"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:orientation="vertical">
-                                                        <TextView
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:layout_marginTop="5dp"
-                                                            android:background="#efefef"
-                                                            android:text="@string/date"
-                                                            android:textAlignment="center"
-                                                            android:textColor="@color/colorPrimaryDark"
-                                                            android:textStyle="bold" />
-
-
-
-                                                        <LinearLayout
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:orientation="horizontal">
-
-                                                            <EditText
-                                                                android:id="@+id/penta1DateM_year"
-                                                                android:layout_width="match_parent"
-                                                                android:layout_height="wrap_content"
-                                                                android:layout_weight="1"
-                                                                android:hint="@string/year"
-                                                                android:inputType="number"
-                                                                android:maxLength="4" />
-
-                                                            <EditText
-                                                                android:id="@+id/penta1DateM_mon"
-                                                                android:layout_width="match_parent"
-                                                                android:layout_height="wrap_content"
-                                                                android:layout_weight="1"
-                                                                android:hint="@string/month"
-                                                                android:inputType="number"
-                                                                android:maxLength="2" />
-
-
-                                                        </LinearLayout>
-
-                                                    </LinearLayout>
-
-                                                </LinearLayout>-->
-
                                             </LinearLayout>
 
                                             <View
@@ -1708,52 +1201,6 @@
                                                         android:text="@string/no" />
 
                                                 </RadioGroup>
-
-                                               <!-- <LinearLayout
-                                                    android:id="@+id/fldGrppenta1CCheck"
-                                                    android:layout_width="match_parent"
-                                                    android:layout_height="wrap_content"
-                                                    android:orientation="vertical">
-
-                                                    <CheckBox
-                                                        android:id="@+id/penta1datenp"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:layout_marginTop="1dp"
-                                                        android:text="@string/datenp" />
-
-                                                    <LinearLayout
-                                                        android:id="@+id/fldGrpPenta1CDate"
-                                                        android:layout_width="match_parent"
-                                                        android:layout_height="wrap_content"
-                                                        android:orientation="vertical">
-
-                                                        <TextView
-                                                            android:id="@+id/text4"
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:layout_marginTop="5dp"
-                                                            android:background="#efefef"
-                                                            android:text="@string/date"
-                                                            android:textAlignment="center"
-                                                            android:textColor="@color/colorPrimaryDark"
-                                                            android:textStyle="bold" />
-
-
-
-                                                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerInputEditText
-                                                            android:id="@+id/penta1Date"
-                                                            android:layout_width="match_parent"
-                                                            android:layout_height="wrap_content"
-                                                            android:layout_marginTop="1dp"
-                                                            android:focusable="false"
-                                                            android:hint="@string/date"
-                                                            android:textColor="@android:color/black"
-                                                            app:dateFormat="dd-MM-yyyy" />
-
-                                                    </LinearLayout>
-
-                                                </LinearLayout>-->
 
 
                                             </LinearLayout>

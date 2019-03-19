@@ -10,7 +10,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.ramshasaeed.tmk_midline.activities.SectionAActivity" />
+            type="edu.aku.ramshasaeed.tmk_midline_monitor.activities.SectionAActivity" />
     </data>
 
     <ScrollView
@@ -230,79 +230,7 @@
 
                 </RadioGroup>
 
-                <!--3-->
-                <!--<TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/ta03"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
-
-                <RadioGroup
-                    android:id="@+id/ta03"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/ta03a"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/ta03a" />
-
-                    <RadioButton
-                        android:id="@+id/ta03b"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/ta03b" />
-
-                    <RadioButton
-                        android:id="@+id/ta03c"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
-                        android:text="@string/ta03c" />
-
-                </RadioGroup>-->
-
-                <!--4-->
-
-                <!--        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:background="@color/colorPrimary"
-                            android:text="@string/ta04"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />
-
-                        <Spinner
-                            android:id="@+id/ta04"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"></Spinner>-->
-                <!--
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="16dp"
-                                    android:background="@color/colorPrimary"
-                                    android:text="@string/ta05u"
-                                    android:textAppearance="?android:attr/textAppearanceLarge"
-                                    android:textColor="@android:color/white" />
-
-                                <EditText
-                                    android:id="@+id/ta05u"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:digits="1234567890"
-                                    android:hint="@string/ta05u"
-                                    android:inputType="number" />-->
-
                 <!--06-->
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -323,45 +251,46 @@
                     android:maxLength="20"
                     android:text="N/A" />
 
-                <!--07-->
+                <!--
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/ta07"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                                &lt;!&ndash;07&ndash;&gt;
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:background="@color/colorPrimary"
+                                    android:text="@string/ta07"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:textColor="@android:color/white" />
 
-                <EditText
-                    android:id="@+id/ta07"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
-                    android:hint="@string/ta07"
-                    android:inputType="text"
-                    android:maxLength="20" />
+                                <EditText
+                                    android:id="@+id/ta07"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
+                                    android:hint="@string/ta07"
+                                    android:inputType="text"
+                                    android:maxLength="20" />
 
-                <!--08-->
+                                &lt;!&ndash;08&ndash;&gt;
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:background="@color/colorPrimary"
+                                    android:text="@string/ta08"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:textColor="@android:color/white" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@color/colorPrimary"
-                    android:text="@string/ta08"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
-
-                <EditText
-                    android:id="@+id/ta08"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
-                    android:hint="@string/ta08"
-                    android:inputType="text"
-                    android:maxLength="20" />
+                                <EditText
+                                    android:id="@+id/ta08"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
+                                    android:hint="@string/ta08"
+                                    android:inputType="text"
+                                    android:maxLength="20" />
+                -->
 
                 <!--9-->
                 <TextView
@@ -426,112 +355,55 @@
                         android:hint="@string/tc03"
                         android:inputType="text"
                         android:maxLength="20" />
+                    <!--
+                                        &lt;!&ndash;tc04&ndash;&gt;
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="16dp"
+                                            android:background="@color/colorPrimary"
+                                            android:text="@string/tc04"
+                                            android:textAppearance="?android:attr/textAppearanceLarge"
+                                            android:textColor="@android:color/white" />
 
-                    <!--tc04-->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/tc04"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
+                                        <RadioGroup
+                                            android:id="@+id/tc04"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
 
-                    <RadioGroup
-                        android:id="@+id/tc04"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                                            <RadioButton
+                                                android:id="@+id/tc04a"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:text="@string/male" />
 
-                        <RadioButton
-                            android:id="@+id/tc04a"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:text="@string/male" />
+                                            <RadioButton
+                                                android:id="@+id/tc04b"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginBottom="1dp"
+                                                android:text="@string/female" />
 
-                        <RadioButton
-                            android:id="@+id/tc04b"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="1dp"
-                            android:text="@string/female" />
+                                        </RadioGroup>
 
-                    </RadioGroup>
+                                        &lt;!&ndash;tc05&ndash;&gt;
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="16dp"
+                                            android:background="@color/colorPrimary"
+                                            android:text="@string/tc05"
+                                            android:textAppearance="?android:attr/textAppearanceLarge"
+                                            android:textColor="@android:color/white" />
 
-                    <!--tc05-->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@color/colorPrimary"
-                        android:text="@string/tc05"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:textColor="@android:color/white" />
-
-                    <EditText
-                        android:id="@+id/tc05"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/tc05"
-                        android:inputType="number"
-                        android:maxLength="2" />
-
-                    <!--    &lt;!&ndash;ta10&ndash;&gt;
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:background="@color/colorPrimary"
-                            android:text="@string/ta10"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:textColor="@android:color/white" />
-
-                        <RadioGroup
-                            android:id="@+id/ta10"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <RadioButton
-                                android:id="@+id/ta10a"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="1dp"
-                                android:text="@string/yes" />
-
-                            <RadioButton
-                                android:id="@+id/ta10b"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="1dp"
-                                android:text="@string/no" />
-
-                        </RadioGroup>
-
-                        &lt;!&ndash;ta11&ndash;&gt;
-                        <LinearLayout
-                            style="@style/linerlayout_view_wt_bound"
-                            android:visibility="@{ta10a.checked ? View.VISIBLE : View.GONE}">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="16dp"
-                                android:background="@color/colorPrimary"
-                                android:text="@string/ta11"
-                                android:textAppearance="?android:attr/textAppearanceLarge"
-                                android:textColor="@android:color/white" />
-
-                            <EditText
-                                android:id="@+id/ta11"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/ta11"
-                                android:inputType="number"
-                                android:maxLength="2"
-                                android:text='@{ta10a.checked ? ta11.getText.toString : ""}' />
-
-                        </LinearLayout>-->
-
+                                        <EditText
+                                            android:id="@+id/tc05"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:hint="@string/tc05"
+                                            android:inputType="number"
+                                            android:maxLength="2" />-->
 
                 </LinearLayout>
 

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".activities.SectionFActivity">
 
@@ -10,7 +9,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.ramshasaeed.tmk_midline.activities.SectionFActivity" />
+            type="edu.aku.ramshasaeed.tmk_midline_monitor.activities.SectionFActivity" />
     </data>
 
 
