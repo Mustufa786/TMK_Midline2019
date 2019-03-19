@@ -77,8 +77,10 @@ public class SectionJActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (bi.tl05a.isChecked()) {
                     bi.fldGrptl06.setVisibility(View.VISIBLE);
+                    bi.fldGrptl07.setVisibility(View.VISIBLE);
                 } else {
                     bi.fldGrptl06.setVisibility(View.GONE);
+                    bi.fldGrptl07.setVisibility(View.GONE);
                     bi.tl06.clearCheck();
                     bi.tl07a.setChecked(false);
                     bi.tl07b.setChecked(false);
@@ -151,7 +153,7 @@ public class SectionJActivity extends AppCompatActivity {
         JSONObject sL = new JSONObject();
 
         sL.put("tl01", bi.tl01a.isChecked() ? "1" : bi.tl01b.isChecked() ? "2" : bi.tl01c.isChecked() ? "3"
-            : bi.tl0196.isChecked() ? "96" : "0");
+                : bi.tl0196.isChecked() ? "96" : "0");
         sL.put("tl0196x", bi.tl0196x.getText().toString());
 
         sL.put("tl02", bi.tl02a.isChecked() ? "1" : bi.tl02b.isChecked() ? "2" : "0");
@@ -192,7 +194,7 @@ public class SectionJActivity extends AppCompatActivity {
         sL.put("tl1296x", bi.tl1296x.getText().toString());
 
         MainApp.fc.setsJ(String.valueOf(sL));
-}
+    }
 
     private boolean UpdateDB() {
 
@@ -212,7 +214,6 @@ public class SectionJActivity extends AppCompatActivity {
     public boolean ValidateForm() {
 
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
-/*
         if (!ValidatorClasss.EmptyRadioButton(this, bi.tl01, bi.tl0196, bi.tl0196x, getString(R.string.tl01))) {
             return false;
         }
@@ -235,12 +236,18 @@ public class SectionJActivity extends AppCompatActivity {
         if (!ValidatorClasss.EmptyRadioButton(this, bi.tl05, bi.tl05a, getString(R.string.tl05))) {
             return false;
         }
-        if (!ValidatorClasss.EmptyRadioButton(this, bi.tl06, bi.tl06a, getString(R.string.tl06))) {
-            return false;
+        if (bi.tl05a.isChecked()) {
+
+            if (!ValidatorClasss.EmptyRadioButton(this, bi.tl06, bi.tl06a, getString(R.string.tl06))) {
+                return false;
+            }
+            if (bi.tl06a.isChecked()) {
+                if (!ValidatorClasss.EmptyCheckBox(this, bi.fldGrptl07, bi.tl07a, getString(R.string.tl07))) {
+                    return false;
+                }
+            }
         }
-        if (!ValidatorClasss.EmptyCheckBox(this, bi.fldGrptl07, bi.tl07a, getString(R.string.tl07))) {
-            return false;
-        }
+
         if (!ValidatorClasss.EmptyCheckBox(this, bi.fldGrptl08, bi.tl08a, getString(R.string.tl08))) {
             return false;
         }
@@ -253,9 +260,9 @@ public class SectionJActivity extends AppCompatActivity {
         if (!ValidatorClasss.EmptyRadioButton(this, bi.tl12, bi.tl1296, bi.tl1296x, getString(R.string.tl12))) {
             return false;
         }
-*/
         return true;
     }
+
     @Override
     public void onBackPressed() {
 
