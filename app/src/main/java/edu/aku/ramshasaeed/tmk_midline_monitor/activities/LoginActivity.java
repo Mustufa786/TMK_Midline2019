@@ -109,15 +109,15 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         try {
             long installedOn = this
                     .getPackageManager()
-                    .getPackageInfo("edu.aku.ramshasaeed.tmk_midline", 0)
+                    .getPackageInfo("edu.aku.ramshasaeed.tmk_midline_monitor", 0)
                     .lastUpdateTime;
             MainApp.versionCode = this
                     .getPackageManager()
-                    .getPackageInfo("edu.aku.ramshasaeed.tmk_midline", 0)
+                    .getPackageInfo("edu.aku.ramshasaeed.tmk_midline_monitor", 0)
                     .versionCode;
             MainApp.versionName = this
                     .getPackageManager()
-                    .getPackageInfo("edu.aku.ramshasaeed.tmk_midline", 0)
+                    .getPackageInfo("edu.aku.ramshasaeed.tmk_midline_monitor", 0)
                     .versionName;
             bi.txtinstalldate.setText("Ver. " + MainApp.versionName + "." + String.valueOf(MainApp.versionCode) + " \r\n( Last Updated: " + new SimpleDateFormat("dd MMM. yyyy").format(new Date(installedOn)) + " )");
         } catch (PackageManager.NameNotFoundException e) {
