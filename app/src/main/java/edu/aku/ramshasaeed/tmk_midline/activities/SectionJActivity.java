@@ -233,20 +233,23 @@ public class SectionJActivity extends AppCompatActivity {
             }
 
         }
-        if (!ValidatorClasss.EmptyRadioButton(this, bi.tl05, bi.tl05a, getString(R.string.tl05))) {
-            return false;
-        }
-        if (bi.tl05a.isChecked()) {
-
-            if (!ValidatorClasss.EmptyRadioButton(this, bi.tl06, bi.tl06a, getString(R.string.tl06))) {
+        if (!bi.tl03a.isChecked()) {
+            if (!ValidatorClasss.EmptyRadioButton(this, bi.tl05, bi.tl05a, getString(R.string.tl05))) {
                 return false;
             }
-            if (bi.tl06a.isChecked()) {
-                if (!ValidatorClasss.EmptyCheckBox(this, bi.fldGrptl07, bi.tl07a, getString(R.string.tl07))) {
+            if (bi.tl05a.isChecked()) {
+
+                if (!ValidatorClasss.EmptyRadioButton(this, bi.tl06, bi.tl06a, getString(R.string.tl06))) {
                     return false;
+                }
+                if (bi.tl06a.isChecked()) {
+                    if (!ValidatorClasss.EmptyCheckBox(this, bi.fldGrptl07, bi.tl07a, getString(R.string.tl07))) {
+                        return false;
+                    }
                 }
             }
         }
+
 
         if (!ValidatorClasss.EmptyCheckBox(this, bi.fldGrptl08, bi.tl08a, getString(R.string.tl08))) {
             return false;
