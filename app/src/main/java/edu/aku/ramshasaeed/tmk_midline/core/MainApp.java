@@ -25,11 +25,8 @@ import java.util.Map;
 
 import edu.aku.ramshasaeed.tmk_midline.activities.EndingActivity;
 import edu.aku.ramshasaeed.tmk_midline.contracts.BLRandomContract;
-import edu.aku.ramshasaeed.tmk_midline.contracts.DeceasedChildContract;
-import edu.aku.ramshasaeed.tmk_midline.contracts.DeceasedMotherContract;
 import edu.aku.ramshasaeed.tmk_midline.contracts.FamilyMembersContract;
 import edu.aku.ramshasaeed.tmk_midline.contracts.FormsContract;
-import edu.aku.ramshasaeed.tmk_midline.contracts.MWRAContract;
 import edu.aku.ramshasaeed.tmk_midline.contracts.SectionIIMContract;
 
 /**
@@ -40,8 +37,13 @@ public class MainApp extends Application {
 
     public static final String _IP = "43.245.131.159"; // Test PHP server
     public static final Integer _PORT = 8080; // Port - with colon (:)
-    public static final String _HOST_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk/api/";
-    public static final String _UPDATE_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk/app/app-debug.apk";
+    public static final String _HOST_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk_midline/api/";
+    public static final String _UPDATE_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk_midline/app/app-debug.apk";
+    public static final String _UPDATE_URL_NEW = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk_midline/app/ml/";
+//    public static final String _APP_UPDATE_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk_midline/app/";
+
+    public static String IMEI;
+    public static String DeviceURL = "devices.php";
 
     /*
         public static final String _IP = "43.245.131.159"; // Test server
@@ -60,8 +62,8 @@ public class MainApp extends Application {
     public static final long MILLISECONDS_IN_DAY = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY;
     private static final long DAYS_IN_YEAR = 365;
     public static final long MILLISECONDS_IN_YEAR = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_YEAR;
-    private static final long DAYS_IN_5_YEAR = 365 * 5;
-    public static final long MILLISECONDS_IN_5Years = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_5_YEAR;
+    private static final long DAYS_IN_50_YEAR = 365 * 49;
+    public static final long MILLISECONDS_IN_50Years = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_50_YEAR;
     private static final long DAYS_IN_MONTH = 30;
     public static final long MILLISECONDS_IN_MONTH = MILLIS_IN_SECOND * SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY * DAYS_IN_MONTH;
 
@@ -91,20 +93,24 @@ public class MainApp extends Application {
     public static boolean flag = true;
     public static int versionCode;
     public static String versionName;
+    public static String td01,td02,td03,td04,td05,td06,td07,td08;
 
     public static Map<String, FamilyMembersContract> childsMap = new HashMap<>();
     public static ArrayList<String> lstChild = new ArrayList<>();
 
     public static int ageRdo = 0;
+    public static List<FamilyMembersContract> members_f_m;
+    public static List<FamilyMembersContract> mwra;
+    public static List<FamilyMembersContract> childUnder2;
+    public static List<FamilyMembersContract> childUnder5;
+    public static int serial_no;
+    public static YoungestChild young_child;
 
 
     //    Ali
     public static String regionDss = "";
     public static List<FamilyMembersContract> familyMembersList;
     public static FamilyMembersContract fmc;
-    public static DeceasedMotherContract dcM;
-    public static DeceasedChildContract dcC;
-    public static MWRAContract mw;
     public static SectionIIMContract ims;
 
     public static int memFlag = 0;
@@ -124,10 +130,10 @@ public class MainApp extends Application {
     protected static LocationManager locationManager;
 
 
-    public static int monthsBetweenDates(Date startDate, Date endDate) {
+    public static int monthsBetweenDates(Date startd01te, Date endDate) {
 
         Calendar start = Calendar.getInstance();
-        start.setTime(startDate);
+        start.setTime(startd01te);
 
         Calendar end = Calendar.getInstance();
         end.setTime(endDate);
@@ -149,6 +155,43 @@ public class MainApp extends Application {
         monthsBetween += (end.get(Calendar.YEAR) - start.get(Calendar.YEAR)) * 12;
         return monthsBetween;
     }
+
+    public static Calendar getCalendarDate(String dd, String mm, String yy) {
+
+        String dob = String.format("%02d", Integer.valueOf(dd)) + "-"
+                + String.format("%02d", Integer.valueOf(mm))
+                + "-" + yy;
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        Calendar calendar = Calendar.getInstance();
+        try {
+            Date date = sdf.parse(dob);
+            calendar.setTime(date);
+            return calendar;
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return calendar;
+    }
+
+    public static long ageInMonthsByDOB(Calendar cal) {
+        Date dob = cal.getTime();
+        Date today = new Date();
+        Long diff = today.getTime() - dob.getTime();
+        double ageInMonths = (diff / (24 * 60 * 60 * 1000)) / 30.4375;
+        long age = (long) Math.floor(ageInMonths);
+        return age;
+    }
+    public static long ageInMonthsByDOB(String dateStr) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        Calendar cal = getCalendarDate(dateStr);
+        Date dob = cal.getTime();
+        Date today = new Date();
+        Long diff = today.getTime() - dob.getTime();
+        long ageInMonths = (diff / (24 * 60 * 60 * 1000)) / 30;
+        return ageInMonths;
+    }
+
     public static Calendar getCalendarDate(String value) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         Calendar calendar = Calendar.getInstance();
@@ -162,16 +205,6 @@ public class MainApp extends Application {
         }
         return calendar;
     }
-    public static long ageInMonthsByDOB(String dateStr) {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        Calendar cal = getCalendarDate(dateStr);
-        Date dob = cal.getTime();
-        Date today = new Date();
-        Long diff = today.getTime() - dob.getTime();
-        long ageInMonths = (diff / (24 * 60 * 60 * 1000)) / 30;
-        return ageInMonths;
-    }
-
     public static long ageInMonths(String year, String month) {
         long ageInMonths = (Integer.valueOf(year) * 12) + Integer.valueOf(month);
         return ageInMonths;
@@ -253,7 +286,7 @@ public class MainApp extends Application {
                                                 int id) {
                                 activity.finish();
                                 Intent end_intent = new Intent(context, EndingActivity.class);
-                                end_intent.putExtra("check", false);
+                                end_intent.putExtra("complete", false);
                                 context.startActivity(end_intent);
                             }
                         });
@@ -267,7 +300,7 @@ public class MainApp extends Application {
         alert.show();
     }
 
-    public static String convertDateFormat(String dateStr) {
+    public static String convertd01teFormat(String dateStr) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         try {
             Date d = sdf.parse(dateStr);
@@ -357,10 +390,7 @@ public class MainApp extends Application {
             return true;
         } else if (isNewer && !isLessAccurate) {
             return true;
-        } else if (isNewer && !isSignificantlyLessAccurate && isFromSameProvider) {
-            return true;
-        }
-        return false;
+        } else return isNewer && !isSignificantlyLessAccurate && isFromSameProvider;
     }
 
     /**
@@ -439,6 +469,24 @@ public class MainApp extends Application {
 
         public void onProviderEnabled(String s) {
 
+        }
+    }
+
+    public static class YoungestChild {
+        int serial;
+        double age;
+
+        public YoungestChild(int serial, double age) {
+            this.serial = serial;
+            this.age = age;
+        }
+
+        public int getSerial() {
+            return serial;
+        }
+
+        public double getAge() {
+            return age;
         }
     }
 

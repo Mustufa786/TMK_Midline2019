@@ -39,6 +39,9 @@ public class BLRandomContract {
         this.LUID = jsonObject.getString(singleChild.COLUMN_LUID);
         this.subVillageCode = jsonObject.getString(singleChild.COLUMN_SUB_VILLAGE_CODE);
         this.structure = jsonObject.getString(singleChild.COLUMN_STRUCTURE_NO);
+
+        this.structure = String.format("%04d", Integer.valueOf(this.structure));
+
         this.extension = jsonObject.getString(singleChild.COLUMN_FAMILY_EXT_CODE);
         this.hh = jsonObject.getString(singleChild.COLUMN_STRUCTURE_NO)
                 + "-" + jsonObject.getString(singleChild.COLUMN_FAMILY_EXT_CODE);

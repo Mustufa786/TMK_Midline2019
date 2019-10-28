@@ -2,70 +2,70 @@ package edu.aku.ramshasaeed.tmk_midline.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
+import android.util.Log;
+import android.view.View;
+import android.widget.RadioGroup;
 import android.widget.Toast;
-
-import org.json.JSONException;
 
 import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
+import edu.aku.ramshasaeed.tmk_midline.databinding.ActivityEndingBinding;
 
 public class EndingActivity extends Activity {
 
     private static final String TAG = EndingActivity.class.getSimpleName();
-
+    ActivityEndingBinding bi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ending);
+        bi = DataBindingUtil.setContentView(this,R.layout.activity_ending);
+        bi.setCallback(this);
 
 
         Boolean check = getIntent().getExtras().getBoolean("complete");
-/*
         if (check) {
-            istatus1.setEnabled(true);
-            istatus2.setEnabled(false);
-            istatus3.setEnabled(false);
-            istatus4.setEnabled(false);
-            istatus5.setEnabled(false);
-            istatus6.setEnabled(false);
-            istatus7.setEnabled(false);
-            istatus8.setEnabled(false);
-            istatus888x.setEnabled(false);
-            istatus888x.setText(null);
+            bi.istatus1.setEnabled(true);
+            bi.istatus2.setEnabled(false);
+            bi.istatus3.setEnabled(false);
+            bi.istatus4.setEnabled(false);
+            bi.istatus5.setEnabled(false);
+            bi.istatus6.setEnabled(false);
+            bi.istatus7.setEnabled(false);
+            bi.istatus8.setEnabled(false);
+            bi.istatus96.setEnabled(false);
+            bi.istatus96x.setEnabled(false);
+            bi.istatus96x.setText(null);
 
         } else {
             //fldGrpmn0823Reason.setVisibility(View.GONE);
-            istatus1.setEnabled(false);
+            bi.istatus1.setEnabled(false);
         }
 
-        istatus.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        bi.istatus.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                if (istatus8.isChecked()) {
-                    istatus888x.setVisibility(View.VISIBLE);
-                    istatus888x.requestFocus();
+                if (bi.istatus96.isChecked()) {
+                    bi.istatus96x.setVisibility(View.VISIBLE);
+                    bi.istatus96x.requestFocus();
                 } else {
-                    istatus888x.setText(null);
-                    istatus888x.setVisibility(View.GONE);
+                    bi.istatus96x.setText(null);
+                    bi.istatus96x.setVisibility(View.GONE);
                 }
             }
         });
-        */
 
     }
 
-    void onBtnEndClick() {
+   public void endInterview() {
 
         Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
-            try {
-                SaveDraft();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            SaveDraft();
             if (UpdateDB()) {
 
                 MainApp.familyMembersList.clear();
@@ -77,6 +77,7 @@ public class EndingActivity extends Activity {
                 MainApp.TotalChildCount = 0;
                 MainApp.imsCount = 1;
                 MainApp.totalImsCount = 0;
+                MainApp.serial_no = 0;
 
                 MainApp.CounterDeceasedMother = 0;
                 MainApp.CounterDeceasedChild = 0;
@@ -85,11 +86,19 @@ public class EndingActivity extends Activity {
                 MainApp.childsMap.clear();
 
                 MainApp.counter = 0;
+                MainApp.td01 = "";
+                MainApp.td02 = "";
+                MainApp.td03 = "";
+                MainApp.td04 = "";
+                MainApp.td05 = "";
+                MainApp.td06 = "";
+                MainApp.td07 = "";
+                MainApp.td08 = "";
 
 //    Total No of Alive members got from Section B
 
 /*                MainApp.currentStatusCount = 0;
-                MainApp.currentDeceasedCheck = 0;
+                MainApp.currentd05ceasedCheck = 0;
                 MainApp.currentMotherCheck = 0;*/
 
                 MainApp.selectedPos = -1;
@@ -112,21 +121,21 @@ public class EndingActivity extends Activity {
         }
     }
 
-    private void SaveDraft() throws JSONException {
+    private void SaveDraft() {
         Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
-       /* MainApp.fc.setIstatus(istatus1.isChecked() ? "1"
-                : istatus2.isChecked() ? "2"
-                : istatus3.isChecked() ? "3"
-                : istatus4.isChecked() ? "4"
-                : istatus5.isChecked() ? "4"
-                : istatus6.isChecked() ? "6"
-                : istatus7.isChecked() ? "7"
-                : istatus8.isChecked() ? "8"
+        MainApp.fc.setistatus(bi.istatus1.isChecked() ? "1"
+                : bi.istatus2.isChecked() ? "2"
+                : bi.istatus3.isChecked() ? "3"
+                : bi.istatus4.isChecked() ? "4"
+                : bi.istatus5.isChecked() ? "4"
+                : bi.istatus6.isChecked() ? "6"
+                : bi.istatus7.isChecked() ? "7"
+                : bi.istatus8.isChecked() ? "8"
+                : bi.istatus96.isChecked() ? "96"
                 : "0");
 
-        MainApp.fc.setIstatus88x(istatus888x.getText().toString());
-*/
+        MainApp.fc.setistatus96x(bi.istatus96x.getText().toString());
 
         Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
     }
@@ -138,7 +147,7 @@ public class EndingActivity extends Activity {
         /*if (MainApp.memFlag != 0) {
             db.updateFamilyMember();
         }
-        if (MainApp.currentDeceasedCheck != 0) {
+        if (MainApp.currentd05ceasedCheck != 0) {
             db.updateDeceasedMother();
         }
         if (MainApp.currentMotherCheck != 0) {
@@ -160,30 +169,28 @@ public class EndingActivity extends Activity {
 
     private boolean formValidation() {
         Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
-/*
-        if (istatus.getCheckedRadioButtonId() == -1) {
+        if (bi.istatus.getCheckedRadioButtonId() == -1) {
             Toast.makeText(this, "ERROR(Not Selected): " + getString(R.string.dcstatus), Toast.LENGTH_LONG).show();
-            istatus1.setError("Please Select One");    // Set Error on last radio button
+            bi.istatus1.setError("Please Select One");    // Set Error on last radio button
             Log.i(TAG, "istatus: This data is Required!");
             return false;
         } else {
-            istatus1.setError(null);
+            bi.istatus1.setError(null);
         }
 
-        if (istatus8.isChecked()) {
+        if (bi.istatus96.isChecked()) {
 
-            if (istatus888x.getText().toString().isEmpty()) {
+            if (bi.istatus96x.getText().toString().isEmpty()) {
                 Toast.makeText(this, "ERROR(empty): " + getString(R.string.other), Toast.LENGTH_SHORT).show();
-                istatus888x.setError("This data is Required!");    // Set Error on last radio button
-                Log.i(TAG, "istatus888x: This data is Required!");
+                bi.istatus96x.setError("This data is Required!");    // Set Error on last radio button
+                Log.i(TAG, "istatus96x: This data is Required!");
                 return false;
             } else {
-                istatus888x.setError(null);
+                bi.istatus96x.setError(null);
             }
 
         }
 
-*/
         return true;
     }
 

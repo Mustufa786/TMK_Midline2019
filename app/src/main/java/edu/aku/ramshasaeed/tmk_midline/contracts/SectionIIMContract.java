@@ -5,15 +5,10 @@ import android.provider.BaseColumns;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-/**
- * Created by gul.sanober on 5/10/2017.
- */
-
 public class SectionIIMContract
 {
 
-    private final String projectName = "UEN TMK";
+    private final String projectName = "UEN-TMK-MIDLINE";
     private String _ID = "";
     private String UID = "";
     private String _UUID = "";

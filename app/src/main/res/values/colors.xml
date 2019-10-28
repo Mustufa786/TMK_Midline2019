@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#b71c1c</color>
+    <color name="colorPrimary">#ef5350</color>
+    <color name="colorPrimaryAlpha">#A1f03c29</color>
+    <color name="colorPrimaryBeta">#f03c29</color>
+
     <color name="colorAccent">#FF4081</color>
     <color name="green">#4caf50</color>
-    <color name="black_overlay">#66000000</color>
+    <color name="black_overlay">#664e342e</color>
     <color name="dullWhite">#d6d6d6</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="red">#f44336</color>
 
 
-    <color name="colorPrimaryAlpha">#c9ff4c4c</color>
-    <color name="colorPrimaryBeta">#f50057</color>
 
+
+    <color name="whiteOverlay">#99ffffff</color>
 
 
     <!--custom-->
@@ -27,5 +30,7 @@
     <color name="dullWhile">#d6d6d6</color>
     <color name="dullWhileOverlay">#99d6d6d6</color>
 
+    <color name="darkRed">#D50000</color>
+    <color name="lightOrange">#FFE0B2</color>
 
 </resources>

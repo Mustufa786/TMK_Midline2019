@@ -1,5 +1,6 @@
 package edu.aku.ramshasaeed.tmk_midline.activities;
 
+import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -12,6 +13,7 @@ import android.content.Loader;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.databinding.DataBindingUtil;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -22,10 +24,22 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.provider.ContactsContract;
+import android.support.v4.app.ActivityCompat;
+import android.telephony.TelephonyManager;
+import android.text.TextUtils;
+import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.github.amlcurran.showcaseview.ShowcaseView;
+import com.github.amlcurran.showcaseview.targets.Target;
+import com.github.amlcurran.showcaseview.targets.ViewTarget;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -45,6 +59,7 @@ import edu.aku.ramshasaeed.tmk_midline.contracts.TalukasContract;
 import edu.aku.ramshasaeed.tmk_midline.contracts.UCsContract;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
+import edu.aku.ramshasaeed.tmk_midline.databinding.ActivityLoginBinding;
 
 import static java.lang.Thread.sleep;
 
@@ -73,7 +88,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     Map<String, String> ucsMap;
 
 
-
     SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
 
@@ -82,11 +96,14 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     DatabaseHelper db;
 
     private UserLoginTask mAuthTask = null;
+    ActivityLoginBinding bi;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        bi = DataBindingUtil.setContentView(this, R.layout.activity_login);
+        bi.setCallback(this);
 //        ButterKnife.bind(this);
 
         try {
@@ -102,7 +119,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     .getPackageManager()
                     .getPackageInfo("edu.aku.ramshasaeed.tmk_midline", 0)
                     .versionName;
-//            txtinstalldate.setText("Ver. " + MainApp.versionName + "." + String.valueOf(MainApp.versionCode) + " \r\n( Last Updated: " + new SimpleDateFormat("dd MMM. yyyy").format(new Date(installedOn)) + " )");
+            bi.txtinstalldate.setText("Ver. " + MainApp.versionName + "." + String.valueOf(MainApp.versionCode) + " \r\n( Last Updated: " + new SimpleDateFormat("dd MMM. yyyy").format(new Date(installedOn)) + " )");
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
@@ -110,8 +127,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         // Set up the login form.
 //        mEmailView = findViewById(R.id.email);
         populateAutoComplete();
-
-    /*    Target viewTarget = new ViewTarget(R.id.syncData, this);
+        settingIMEI();
+        Target viewTarget = new ViewTarget(R.id.syncData, this);
 
         new ShowcaseView.Builder(this)
                 .setTarget(viewTarget)
@@ -121,7 +138,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 .build();
 
 //        mPasswordView = findViewById(R.id.password);
-        mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        bi.password.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == R.id.login || id == EditorInfo.IME_NULL) {
@@ -133,18 +150,6 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         });
 
 
-        mEmailSignInButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if (spUCs.getSelectedItemPosition() != 0 && spTalukas.getSelectedItemPosition() != 0) {
-                    attemptLogin();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Please Sync Data or select from combobox!!", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-*/
         db = new DatabaseHelper(this);
 
         populateSpinner(this);
@@ -152,6 +157,35 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 //        DB backup
 
         dbBackup();
+
+
+//        Testing visibility
+        if (Integer.valueOf(MainApp.versionName.split("\\.")[0]) > 0) {
+            bi.testing.setVisibility(View.GONE);
+        } else {
+            bi.testing.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void settingIMEI() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        MainApp.IMEI = ((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        populateSpinner(this);
     }
 
     public void populateSpinner(Context context) {
@@ -164,30 +198,30 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         lablesTalukas = new ArrayList<>();
         talukasMap = new HashMap<>();
 
-        lablesTalukas.add("Select Taluka..");
+        lablesTalukas.add("Select Taluka...");
 
         for (TalukasContract taluka : TalukasList) {
             lablesTalukas.add(taluka.getTaluka());
 
             talukasMap.put(taluka.getTaluka(), taluka.getTalukacode());
         }
-/*
-        spTalukas.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_dropdown_item, lablesTalukas));
 
-        spTalukas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.spTaluka.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_dropdown_item, lablesTalukas));
+
+        bi.spTaluka.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 // Populate UCs list
 
-                if (spTalukas.getSelectedItemPosition() != 0) {
-                    MainApp.talukaCode = Integer.valueOf(talukasMap.get(spTalukas.getSelectedItem().toString()));
+                if (bi.spTaluka.getSelectedItemPosition() != 0) {
+                    MainApp.talukaCode = Integer.valueOf(talukasMap.get(bi.spTaluka.getSelectedItem().toString()));
                 }
 
                 lablesUCs = new ArrayList<>();
                 ucsMap = new HashMap<>();
                 lablesUCs.add("Select UC..");
 
-                if (spTalukas.getSelectedItemPosition() != 0) {
+                if (bi.spTaluka.getSelectedItemPosition() != 0) {
                     UcsList = db.getAllUCs(String.valueOf(MainApp.talukaCode));
                     for (UCsContract ucs : UcsList) {
                         lablesUCs.add(ucs.getUcs());
@@ -195,7 +229,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     }
                 }
 
-                spUCs.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_dropdown_item, lablesUCs));
+                bi.spUCs.setAdapter(new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_dropdown_item, lablesUCs));
 
             }
 
@@ -205,13 +239,13 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             }
         });
 
-        spUCs.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        bi.spUCs.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 // Populate UCs list
 
-                if (spUCs.getSelectedItemPosition() != 0) {
-                    MainApp.ucCode = Integer.valueOf(ucsMap.get(spUCs.getSelectedItem().toString()));
+                if (bi.spUCs.getSelectedItemPosition() != 0) {
+                    MainApp.ucCode = Integer.valueOf(ucsMap.get(bi.spUCs.getSelectedItem().toString()));
                 }
 
             }
@@ -221,7 +255,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
             }
         });
-        */
+
 
     }
 
@@ -232,10 +266,10 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         if (sharedPref.getBoolean("flag", false)) {
 
-            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()).toString());
+            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
 
-            if (dt != new SimpleDateFormat("dd-MM-yy").format(new Date()).toString()) {
-                editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()).toString());
+            if (dt != new SimpleDateFormat("dd-MM-yy").format(new Date())) {
+                editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
 
                 editor.commit();
             }
@@ -287,7 +321,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
     }
 
-    void onSyncDataClick() {
+    public void onSyncDataClick() {
         //TODO implement
 
         // Require permissions INTERNET & ACCESS_NETWORK_STATE
@@ -297,7 +331,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         if (networkInfo != null && networkInfo.isConnected()) {
 
 //            if (TalukasList.size() == 0) {
-                new syncData(this, true).execute();
+            new syncData(this, true).execute();
 //            } else {
             /*if (spTalukas.getSelectedItemPosition() != 0
                         &&
@@ -324,36 +358,36 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         if (mAuthTask != null) {
             return;
         }
-/*
+
         // Reset errors.
-        mEmailView.setError(null);
-        mPasswordView.setError(null);
+        bi.email.setError(null);
+        bi.password.setError(null);
 
         // Store values at the time of the login attempt.
-        String email = mEmailView.getText().toString();
-        String password = mPasswordView.getText().toString();
+        String email = bi.email.getText().toString();
+        String password = bi.password.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
 
         // Check for a valid password, if the user entered one.
         if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            mPasswordView.setError(getString(R.string.error_invalid_password));
-            focusView = mPasswordView;
+            bi.password.setError(getString(R.string.error_invalid_password));
+            focusView = bi.password;
             cancel = true;
         }
 
         // Check for a valid email address.
         if (TextUtils.isEmpty(email)) {
-            mEmailView.setError(getString(R.string.error_field_required));
-            focusView = mEmailView;
+            bi.email.setError(getString(R.string.error_field_required));
+            focusView = bi.email;
             cancel = true;
         } /*else if (!isEmailValid(email)) {
             mEmailView.setError(getString(R.string.error_invalid_email));
             focusView = mEmailView;
             cancel = true;
         }*/
-/*
+
         if (cancel) {
             // There was an error; don't attempt login and focus the first
             // form field with an error.
@@ -367,7 +401,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
 
         }
-        */
+
     }
 
     private boolean isEmailValid(String email) {
@@ -450,24 +484,26 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
     }
 
-//    @OnClick(R.id.showPassword)
-    void onShowPasswordClick() {
+    //    @OnClick(R.id.showPassword)
+    public void onShowPasswordClick() {
         //TODO implement
-       /* if (mPasswordView.getTransformationMethod() == null) {
-            mPasswordView.setTransformationMethod(new PasswordTransformationMethod());
-            mPasswordView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_lock_black_24dp, 0, 0, 0);
+        if (bi.password.getTransformationMethod() == null) {
+            bi.password.setTransformationMethod(new PasswordTransformationMethod());
+            bi.password.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_lock_black_24dp, 0, 0, 0);
         } else {
-            mPasswordView.setTransformationMethod(null);
-            mPasswordView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_lock_open_black_24dp, 0, 0, 0);
-        }*/
+            bi.password.setTransformationMethod(null);
+            bi.password.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_lock_open_black_24dp, 0, 0, 0);
+        }
     }
 
-    public void gotoMain(View v) {
+    public void gotoMain() {
 
-        finish();
-
-        Intent im = new Intent(LoginActivity.this, MainActivity.class);
-        startActivity(im);
+//        finish();
+        if (bi.spUCs.getSelectedItemPosition() != 0 && bi.spTaluka.getSelectedItemPosition() != 0) {
+            attemptLogin();
+        } else {
+            Toast.makeText(getApplicationContext(), "Please Sync Data or select from combobox!!", Toast.LENGTH_LONG).show();
+        }
     }
 
     private interface ProfileQuery {
@@ -536,10 +572,9 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                     startActivity(iLogin);
 
                 } else {
-                   /* mPasswordView.setError(getString(R.string.error_incorrect_password));
-                    mPasswordView.requestFocus();
+                    bi.password.setError(getString(R.string.error_incorrect_password));
+                    bi.password.requestFocus();
                     Toast.makeText(LoginActivity.this, mEmail + " " + mPassword, Toast.LENGTH_SHORT).show();
-                    */
                 }
             } else {
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
@@ -595,6 +630,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 public void run() {
 
                     if (flag) {
+                        startActivity(new Intent(LoginActivity.this, SyncActivity.class));
                       /*  Toast.makeText(LoginActivity.this, "Sync Talukas", Toast.LENGTH_LONG).show();
                         new GetTalukas(mContext).execute();
                         Toast.makeText(LoginActivity.this, "Sync UC's", Toast.LENGTH_LONG).show();
@@ -604,11 +640,12 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                         Toast.makeText(LoginActivity.this, "Sync Villages", Toast.LENGTH_LONG).show();
                         new GetVillages(mContext).execute();
                         Toast.makeText(LoginActivity.this, "Sync User", Toast.LENGTH_LONG).show();
-                        new GetUsers(mContext).execute();
-                        */
+                        new GetUsers(mContext).execute();*/
+
+
                     } else {
                         Toast.makeText(LoginActivity.this, "Sync BL Random", Toast.LENGTH_LONG).show();
-                      //  new GetBLRandom(mContext).execute();
+                        //  new GetBLRandom(mContext).execute();
                     }
                 }
             });
@@ -636,6 +673,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
             }, 1200);
         }
     }
+
 
 }
 

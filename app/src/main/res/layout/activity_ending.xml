@@ -86,9 +86,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/istatus7" />
-
                 <RadioButton
                     android:id="@+id/istatus8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/istatus8" />
+
+                <RadioButton
+                    android:id="@+id/istatus96"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/other" />
@@ -96,7 +101,7 @@
             </RadioGroup>
 
             <EditText
-                android:id="@+id/istatus888x"
+                android:id="@+id/istatus96x"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
@@ -110,7 +115,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:layout_weight="1"
-                android:onClick="endInterview"
+                android:onClick="@{() -> callback.endInterview()}"
+
                 android:text="@string/end_interview"
                 android:textColor="#ff1e1e" />
 

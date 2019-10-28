@@ -1,12 +1,21 @@
 package edu.aku.ramshasaeed.tmk_midline.activities;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.DownloadManager;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
@@ -37,15 +46,21 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import edu.aku.ramshasaeed.tmk_midline.R;
 import edu.aku.ramshasaeed.tmk_midline.contracts.AreasContract;
 import edu.aku.ramshasaeed.tmk_midline.contracts.FormsContract;
+import edu.aku.ramshasaeed.tmk_midline.contracts.VersionAppContract;
 import edu.aku.ramshasaeed.tmk_midline.core.AndroidDatabaseManager;
 import edu.aku.ramshasaeed.tmk_midline.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline.databinding.ActivityMainBinding;
+import edu.aku.ramshasaeed.tmk_midline.get.GetBLRandom;
+import edu.aku.ramshasaeed.tmk_midline.sync.SyncFamilyMembers;
+import edu.aku.ramshasaeed.tmk_midline.sync.SyncForms;
+import edu.aku.ramshasaeed.tmk_midline.sync.SyncIM;
 
 
 public class MainActivity extends Activity {
@@ -66,62 +81,44 @@ public class MainActivity extends Activity {
     private Boolean exit = false;
     private String rSumText = "";
     ActivityMainBinding bi;
+    SharedPreferences sharedPrefDownload;
+    SharedPreferences.Editor editorDownload;
+    DownloadManager downloadManager;
+    String preVer = "", newVer = "";
+    VersionAppContract versionAppContract;
+    DatabaseHelper db;
+    static File file;
+    Long refID;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_main);
         bi.setCallback(this);
+        this.setTitle("\t\t\t\t\t\t\t\t\t\t"+getResources().getString(R.string.app_name));
+
 
 //        ButterKnife.bind(this);
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
-        bi.lblheader.setText("Welcome! You're assigned to block ' " + MainApp.regionDss + " '" + MainApp.userName);
-
-        if (MainApp.admin) {
-            bi.adminsec.setVisibility(View.VISIBLE);
-        } else {
-            bi.adminsec.setVisibility(View.GONE);
-        }
-
-
+//        bi.lblheader.setText("Welcome! You're assigned to block ' " + MainApp.regionDss + " '" + MainApp.userName);
         /*TagID Start*/
         sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
         editor = sharedPref.edit();
 
-        builder = new AlertDialog.Builder(MainActivity.this);
-        ImageView img = new ImageView(getApplicationContext());
-        img.setImageResource(R.drawable.tagimg);
-        img.setPadding(0, 15, 0, 15);
-        builder.setCustomTitle(img);
-
-        final EditText input = new EditText(MainActivity.this);
-        input.setInputType(InputType.TYPE_CLASS_TEXT);
-        builder.setView(input);
-
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                m_Text = input.getText().toString();
-                if (!m_Text.equals("")) {
-                    editor.putString("tagName", m_Text);
-                    editor.commit();
-                }
-            }
-        });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-
-        if (sharedPref.getString("tagName", null) == "" || sharedPref.getString("tagName", null) == null) {
-            builder.show();
+        /*Download File*/
+        sharedPrefDownload = getSharedPreferences("appDownload", MODE_PRIVATE);
+        editorDownload = sharedPrefDownload.edit();
+        if (MainApp.admin) {
+            bi.adminsec.setVisibility(View.VISIBLE);
+            bi.adminsec1.setVisibility(View.VISIBLE);
+        } else {
+            bi.adminsec.setVisibility(View.GONE);
+            bi.adminsec1.setVisibility(View.GONE);
         }
-        /*TagID End*/
-
 
         DatabaseHelper db = new DatabaseHelper(this);
         Collection<FormsContract> todaysForms = db.getTodayForms();
@@ -137,23 +134,35 @@ public class MainActivity extends Activity {
             rSumText += "\tFORMS' LIST: \r\n";
             String iStatus;
             rSumText += "--------------------------------------------------\r\n";
-            rSumText += "[ DSS_ID ] \t[Form Status] \t[Sync Status]----------\r\n";
+            rSumText += "[ Form_ID ] \t[HouseHold ID] \t[Form Status] \t[Sync Status]----------\r\n";
             rSumText += "--------------------------------------------------\r\n";
 
             for (FormsContract fc : todaysForms) {
-                if (fc.getIstatus() != null) {
-                    switch (fc.getIstatus()) {
+                if (fc.getistatus() != null) {
+                    switch (fc.getistatus()) {
                         case "1":
                             iStatus = "\tComplete";
                             break;
                         case "2":
-                            iStatus = "\tIncomplete";
+                            iStatus = "\tRefused";
                             break;
                         case "3":
-                            iStatus = "\tRefused";
+                            iStatus = "\tHouse was closed";
                             break;
                         case "4":
+                            iStatus = "\tHouse temporarily closed";
+                            break;
+                        case "5":
                             iStatus = "\tRefused";
+                            break;
+                        case "6":
+                            iStatus = "\tHouse was empty";
+                            break;
+                        case "7":
+                            iStatus = "\tIncomplete";
+                            break;
+                        case "8":
+                            iStatus = "\tNo Child U5";
                             break;
                         default:
                             iStatus = "\tN/A";
@@ -162,11 +171,13 @@ public class MainActivity extends Activity {
                     iStatus = "\tN/A";
                 }
 
-                rSumText += fc.getDSSID();
+
+                rSumText += fc.get_ID();
+                rSumText +=  " " +fc.gethhno()+ " ";
 
                 rSumText += " " + iStatus + " ";
 
-                rSumText += (fc.getSynced() == null ? "\t\tNot Synced" : "\t\tSynced");
+                rSumText += (fc.getsynced() == null  || fc.getsynced().equals("") ? "\t\tNot Synced" : "\t\tSynced");
                 rSumText += "\r\n";
                 rSumText += "--------------------------------------------------\r\n";
             }
@@ -175,6 +186,7 @@ public class MainActivity extends Activity {
 
         if (MainApp.admin) {
             bi.adminsec.setVisibility(View.VISIBLE);
+            bi.adminsec1.setVisibility(View.VISIBLE);
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             rSumText += "Last Data Download: \t" + syncPref.getString("LastDownSyncServer", "Never Updated");
             rSumText += "\r\n";
@@ -216,6 +228,58 @@ public class MainActivity extends Activity {
 
             }
         });
+//        Version Checking
+        versionAppContract = db.getVersionApp();
+        if (versionAppContract.getVersioncode() != null) {
+
+            preVer = MainApp.versionName + "." + MainApp.versionCode;
+            newVer = versionAppContract.getVersionname() + "." + versionAppContract.getVersioncode();
+
+            if (MainApp.versionCode < Integer.valueOf(versionAppContract.getVersioncode())) {
+                bi.lblAppVersion.setVisibility(View.VISIBLE);
+
+                String fileName = DatabaseHelper.DATABASE_NAME.replace(".db", "-New-Apps");
+                file = new File(Environment.getExternalStorageDirectory() + File.separator + fileName, versionAppContract.getPathname());
+
+                if (file.exists()) {
+                    bi.lblAppVersion.setText("TMK Midline APP New Version " + newVer + "  Downloaded.");
+//                    InstallNewApp(newVer, preVer);
+                    showDialog(newVer, preVer);
+                } else {
+                    NetworkInfo networkInfo = ((ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+                    if (networkInfo != null && networkInfo.isConnected()) {
+
+                        bi.lblAppVersion.setText("TMK Midline APP New Version " + newVer + " Downloading..");
+                        downloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+                        Uri uri = Uri.parse(MainApp._UPDATE_URL_NEW + versionAppContract.getPathname());
+                        DownloadManager.Request request = new DownloadManager.Request(uri);
+                        request.setDestinationInExternalPublicDir(fileName, versionAppContract.getPathname())
+                                .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+                                .setTitle("Downloading TMK Midline new App ver." + newVer);
+                        refID = downloadManager.enqueue(request);
+
+                        editorDownload.putLong("refID", refID);
+                        editorDownload.putBoolean("flag", false);
+                        editorDownload.commit();
+
+                    } else {
+                        bi.lblAppVersion.setText("TMK Midline APP New Version " + newVer + "  Available..\n(Can't download.. Internet connectivity issue!!)");
+                    }
+                }
+
+            } else {
+                bi.lblAppVersion.setVisibility(View.GONE);
+                bi.lblAppVersion.setText(null);
+            }
+        }
+        registerReceiver(broadcastReceiver, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+
+//        Testing visibility
+        if (Integer.valueOf(MainApp.versionName.split("\\.")[0]) > 0) {
+            bi.testing.setVisibility(View.GONE);
+        } else {
+            bi.testing.setVisibility(View.VISIBLE);
+        }
 
     }
 
@@ -223,170 +287,77 @@ public class MainActivity extends Activity {
 
         if (bi.spAreas.getSelectedItemPosition() != 0) {
 
-            if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
-               /* Intent oF = new Intent(MainActivity.this, SectionAActivity.class).putExtra("flag", true);
-                startActivity(oF);*/
+          /*  if (!MainApp.userName.equals("0000")) {
+
             } else {
-
-                builder = new AlertDialog.Builder(MainActivity.this);
-                ImageView img = new ImageView(getApplicationContext());
-                img.setImageResource(R.drawable.tagimg);
-                img.setPadding(0, 15, 0, 15);
-                builder.setCustomTitle(img);
-
-                final EditText input = new EditText(MainActivity.this);
-                input.setInputType(InputType.TYPE_CLASS_TEXT);
-                builder.setView(input);
-
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        m_Text = input.getText().toString();
-                        if (!m_Text.equals("")) {
-                            editor.putString("tagName", m_Text);
-                            editor.commit();
-
-                            if (!MainApp.userName.equals("0000")) {
-                              /*  Intent oF = new Intent(MainActivity.this, SectionAActivity.class).putExtra("flag", true);
-                                startActivity(oF);*/
-                            }
-                        }
+                Toast.makeText(this, "Please restart your Application!!!", Toast.LENGTH_SHORT).show();
+            }
+*/
+            if (versionAppContract.getVersioncode() != null) {
+                if (MainApp.versionCode < Integer.valueOf(versionAppContract.getVersioncode())) {
+                    if (sharedPrefDownload.getBoolean("flag", true) && file.exists()) {
+//                    InstallNewApp(newVer, preVer);
+                        showDialog(newVer, preVer);
+                    } else {
+                        Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
+                        startActivity(oF);
                     }
-                });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-
-                builder.show();
+                } else {
+                    Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
+                    startActivity(oF);
+                }
+            } else {
+                Toast.makeText(this, "Sync data!!", Toast.LENGTH_SHORT).show();
             }
         } else {
             Toast.makeText(getApplicationContext(), "Please select data from combobox!!", Toast.LENGTH_LONG).show();
         }
     }
 
-    public void openForm1(View v) {
+    public void openD() {
+        Intent oF = new Intent(MainActivity.this, SectionDActivity.class);
+        startActivity(oF);
 
-        if (bi.spAreas.getSelectedItemPosition() != 0) {
-
-            if (sharedPref.getString("tagName", null) != "" && sharedPref.getString("tagName", null) != null && !MainApp.userName.equals("0000")) {
-                /*Intent oF = new Intent(MainActivity.this, SectionAActivity.class).putExtra("flag", false);
-                startActivity(oF);*/
-            } else {
-
-                builder = new AlertDialog.Builder(MainActivity.this);
-                ImageView img = new ImageView(getApplicationContext());
-                img.setImageResource(R.drawable.tagimg);
-                img.setPadding(0, 15, 0, 15);
-                builder.setCustomTitle(img);
-
-                final EditText input = new EditText(MainActivity.this);
-                input.setInputType(InputType.TYPE_CLASS_TEXT);
-                builder.setView(input);
-
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        m_Text = input.getText().toString();
-                        if (!m_Text.equals("")) {
-                            editor.putString("tagName", m_Text);
-                            editor.commit();
-
-                            if (!MainApp.userName.equals("0000")) {
-                              /*  Intent oF = new Intent(MainActivity.this, SectionAActivity.class).putExtra("flag", false);
-                                startActivity(oF);*/
-                            }
-                        }
-                    }
-                });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-
-                builder.show();
-            }
-        } else {
-            Toast.makeText(getApplicationContext(), "Please select data from combobox!!", Toast.LENGTH_LONG).show();
-        }
     }
-public void openMembers(){
+    public void openE() {
+        Intent oF = new Intent(MainActivity.this, SectionEActivity.class);
+        startActivity(oF);
 
-}
+    }
+    public void openF() {
+        Intent oF = new Intent(MainActivity.this, SectionFActivity.class);
+        startActivity(oF);
+
+    }
+    public void openG() {
+        Intent oF = new Intent(MainActivity.this, SectionGActivity.class);
+        startActivity(oF);
+
+    }
+    public void openH() {
+        Intent oF = new Intent(MainActivity.this, SectionHActivity.class);
+        startActivity(oF);
+
+    }
+    public void openI() {
+        Intent oF = new Intent(MainActivity.this, SectionIActivity.class);
+        startActivity(oF);
+
+    }
+    public void openJ() {
+        Intent oF = new Intent(MainActivity.this, SectionJActivity.class);
+        startActivity(oF);
+
+    }
+    public void openK() {
+        Intent oF = new Intent(MainActivity.this, SectionKActivity.class);
+        startActivity(oF);
+
+    }
 
     public void openA(View v) {
-      /*  Intent iA = new Intent(this, SectionAActivity.class);
-        startActivity(iA);*/
-    }
-
-    public void openB(View v) {
-       /* Intent iB = new Intent(this, SectionBActivity.class);
-        startActivity(iB);*/
-    }
-
-    public void openC(View v) {
-       /* Intent iC = new Intent(this, SectionCActivity.class);
-        startActivity(iC);*/
-    }
-
-    public void openD(View v) {
-       /* Intent iD = new Intent(this, SectionDActivity.class);
-        startActivity(iD);*/
-    }
-
-    public void openE(View v) {
-       /* Intent iE = new Intent(this, SectionEActivity.class);
-        startActivity(iE);*/
-    }
-
-    public void openF(View v) {
-        /*Intent iF = new Intent(this, SectionFActivity.class);
-        startActivity(iF);*/
-    }
-
-    public void openG(View v) {
-       /* Intent iG = new Intent(this, SectionGActivity.class);
-        startActivity(iG);*/
-    }
-
-    public void openI(View v) {
-       /* Intent iI = new Intent(this, SectionIActivity.class);
-        startActivity(iI);*/
-    }
-
-    public void openJ(View v) {
-        /*Intent iJ = new Intent(this, SectionJActivity.class);
-        startActivity(iJ);*/
-    }
-
-    public void openK(View v) {
-        /*Intent iK = new Intent(this, SectionKActivity.class);
-        startActivity(iK);*/
-    }
-
-    public void openL(View v) {
-      /*  Intent iL = new Intent(this, SectionLActivity.class);
-        startActivity(iL);*/
-    }
-
-    public void openM(View v) {
-       /* Intent iM = new Intent(this, SectionMActivity.class);
-        startActivity(iM);*/
-    }
-
-
-    public void openHA(View v) {
-       /* Intent iB = new Intent(this, SectionHAActivity.class);
-        startActivity(iB);*/
-    }
-
-    public void openHB(View v) {
-       /* Intent iB = new Intent(this, SectionHBActivity.class);
-        startActivity(iB);*/
+        Intent iA = new Intent(this, SectionAActivity.class);
+        startActivity(iA);
     }
 
     public void opendownload(View v) {
@@ -402,7 +373,7 @@ public void openMembers(){
                                                 int id) {
                                 // this is how you fire the downloader
                                 mProgressDialog = new ProgressDialog(MainActivity.this);
-                                mProgressDialog.setMessage("Downloading TMK APK..");
+                                mProgressDialog.setMessage("Downloading TMK MIDLINE APK..");
                                 mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
                                 mProgressDialog.setIndeterminate(false);
                                 mProgressDialog.setProgress(0);
@@ -434,6 +405,52 @@ public void openMembers(){
         }
 
     }
+
+    void showDialog(String newVer, String preVer) {
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        Fragment prev = getFragmentManager().findFragmentByTag("dialog");
+        if (prev != null) {
+            ft.remove(prev);
+        }
+        ft.addToBackStack(null);
+
+        DialogFragment newFragment = MyDialogFragment.newInstance(newVer, preVer);
+        newFragment.show(ft, "dialog");
+
+    }
+
+    BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (DownloadManager.ACTION_DOWNLOAD_COMPLETE.equals(intent.getAction())) {
+
+                DownloadManager.Query query = new DownloadManager.Query();
+                query.setFilterById(sharedPrefDownload.getLong("refID", 0));
+
+                downloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+                Cursor cursor = downloadManager.query(query);
+                if (cursor.moveToFirst()) {
+                    int colIndex = cursor.getColumnIndex(DownloadManager.COLUMN_STATUS);
+                    if (DownloadManager.STATUS_SUCCESSFUL == cursor.getInt(colIndex)) {
+
+                        editorDownload.putBoolean("flag", true);
+                        editorDownload.commit();
+
+                        Toast.makeText(context, "New App downloaded!!", Toast.LENGTH_SHORT).show();
+                        bi.lblAppVersion.setText("TMK APP New Version " + newVer + "  Downloaded.");
+
+                        ActivityManager am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+                        List<ActivityManager.RunningTaskInfo> taskInfo = am.getRunningTasks(1);
+
+                        if (taskInfo.get(0).topActivity.getClassName().equals(MainActivity.class.getName())) {
+//                                InstallNewApp(newVer, preVer);
+                            showDialog(newVer, preVer);
+                        }
+                    }
+                }
+            }
+        }
+    };
 
     public void updateApp(View v) {
         v.setBackgroundColor(Color.GREEN);
@@ -510,26 +527,21 @@ public void openMembers(){
                 getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
+            startActivity(new Intent(MainActivity.this, SyncActivity.class));
 
+
+/*
 
             Toast.makeText(getApplicationContext(), "Syncing Forms", Toast.LENGTH_SHORT).show();
-//            new SyncForms(this, true).execute();
+            new SyncForms(this).execute();
 
-            /*Toast.makeText(getApplicationContext(), "Syncing Family Members", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Syncing Family Members", Toast.LENGTH_SHORT).show();
             new SyncFamilyMembers(this).execute();
-
-            Toast.makeText(getApplicationContext(), "Syncing MWRAs", Toast.LENGTH_SHORT).show();
-            new SyncMwras(this).execute();
-
-            Toast.makeText(getApplicationContext(), "Syncing Deceased Mother", Toast.LENGTH_SHORT).show();
-            new SyncDeceasedMother(this).execute();
-
-            Toast.makeText(getApplicationContext(), "Syncing Deceased Child", Toast.LENGTH_SHORT).show();
-            new SyncDeceasedChild(this).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing IM", Toast.LENGTH_SHORT).show();
             new SyncIM(this).execute();
 */
+
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();
 
@@ -551,7 +563,7 @@ public void openMembers(){
         if (networkInfo != null && networkInfo.isConnected()) {
 
             // Sync Random
-            /*new GetBLRandom(this).execute();*/
+            new GetBLRandom(this).execute();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();
@@ -585,31 +597,49 @@ public void openMembers(){
         }
     }
 
-    private class DownloadReceiver extends ResultReceiver {
-        public DownloadReceiver(Handler handler) {
-            super(handler);
+    public static class MyDialogFragment extends DialogFragment {
+
+        String newVer, preVer;
+
+        static MyDialogFragment newInstance(String newVer, String preVer) {
+            MyDialogFragment f = new MyDialogFragment();
+
+            Bundle args = new Bundle();
+            args.putString("newVer", newVer);
+            args.putString("preVer", preVer);
+            f.setArguments(args);
+
+            return f;
         }
 
         @Override
-        protected void onReceiveResult(int resultCode, Bundle resultData) {
-            super.onReceiveResult(resultCode, resultData);
-         /*   if (resultCode == DownloadFileService.UPDATE_PROGRESS) {
-                int progress = resultData.getInt("progress");
-                mProgressDialog.setMax(100);
-                if (progress == 100) {
-                    mProgressDialog.dismiss();
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            newVer = getArguments().getString("newVer");
+            preVer = getArguments().getString("preVer");
 
-                    File file = new File(Environment.getExternalStorageDirectory() + "/" + "tmk_bl_sep_25.apk");
-                    if (file.exists()) {
-                        Intent intent = new Intent(Intent.ACTION_VIEW);
-                        intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
-                    }
-                } else {
-                    mProgressDialog.setProgress(progress);
-                }
-            }*/
+            return new AlertDialog.Builder(getActivity())
+                    .setIcon(R.drawable.exclamation)
+                    .setTitle("TMK-Midline APP is available!")
+                    .setMessage("TMK-Midline App " + newVer + " is now available. Your are currently using older version " + preVer + ".\nInstall new version to use this app.")
+                    .setPositiveButton("INSTALL!!",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int whichButton) {
+                                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                                    intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                }
+                            }
+                    )
+                    .create();
         }
+
     }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(broadcastReceiver);
+    }
+
+
 }
