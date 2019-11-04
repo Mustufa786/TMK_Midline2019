@@ -9,7 +9,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.ramshasaeed.tmk_midline.activities.MainActivity" />
+            type="edu.aku.ramshasaeed.tmk_midline19.activities.MainActivity" />
 
     </data>
 

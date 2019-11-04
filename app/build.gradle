@@ -18,11 +18,11 @@ android {
         versionProps.store(versionPropsFile.newWriter(), null)
 
         defaultConfig {
-            applicationId "edu.aku.ramshasaeed.tmk_midline"
+            applicationId "edu.aku.ramshasaeed.tmk_midline19"
             minSdkVersion 22
-            targetSdkVersion 22
+            targetSdkVersion 28
             versionCode code
-            versionName "2.1"
+            versionName "0.1"
             testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         }
     } else {

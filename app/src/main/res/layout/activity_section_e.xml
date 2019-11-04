@@ -8,7 +8,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.ramshasaeed.tmk_midline.activities.SectionEActivity" />
+            type="edu.aku.ramshasaeed.tmk_midline19.activities.SectionEActivity" />
     </data>
 
     <LinearLayout
