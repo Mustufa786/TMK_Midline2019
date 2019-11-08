@@ -637,7 +637,6 @@ public class SectionBActivity extends AppCompatActivity {
         int updcount = db.updateCount();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -713,7 +712,6 @@ public class SectionBActivity extends AppCompatActivity {
     }
 
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         // TOTAL MEMBERS
         MainApp.TotalMembersCount++;
@@ -880,7 +878,6 @@ public class SectionBActivity extends AppCompatActivity {
         MainApp.fmc.set_ID(String.valueOf(updcount));
 
         if (updcount != 0) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
             MainApp.fmc.set_UID(
                     (MainApp.fc.getdeviceid() + MainApp.fmc.get_ID()));

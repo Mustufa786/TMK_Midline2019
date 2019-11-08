@@ -99,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:text='@{tl0196.checked? tl0196x.getText.toString : ""}'
+                android:text='@{tl0196.checked? tl0196x.getText().toString() : ""}'
                 android:visibility='@{tl0196.checked? View.VISIBLE : View.GONE}'
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                 android:hint="@string/other"
@@ -484,7 +484,7 @@
                 android:layout_marginBottom="1dp"
                 android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                 android:hint="@string/other"
-                android:text='@{tl0996.checked? tl1196x.getText.toString : ""}'
+                android:text='@{tl0996.checked? tl1196x.getText().toString() : ""}'
                 android:visibility='@{tl0996.checked? View.VISIBLE : View.GONE}'
                 android:inputType="textCapWords"
                  />
@@ -552,7 +552,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text='@{tl1196.checked? tl1196x.getText.toString : ""}'
+                    android:text='@{tl1196.checked? tl1196x.getText().toString() : ""}'
                     android:visibility='@{tl1196.checked? View.VISIBLE : View.GONE}'
                     android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     android:hint="@string/other"
@@ -608,7 +608,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="1dp"
-                    android:text='@{tl1296.checked? tl1296x.getText.toString : ""}'
+                    android:text='@{tl1296.checked? tl1296x.getText().toString() : ""}'
                     android:visibility='@{tl1296.checked? View.VISIBLE : View.GONE}'
                     android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     android:hint="@string/other"

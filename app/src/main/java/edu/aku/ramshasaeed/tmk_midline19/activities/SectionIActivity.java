@@ -136,7 +136,6 @@ public class SectionIActivity extends AppCompatActivity {
     }
 
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         JSONObject sK = new JSONObject();
 
@@ -176,8 +175,6 @@ public class SectionIActivity extends AppCompatActivity {
         sK.put("tk14", bi.tk14a.isChecked() ? "1" : bi.tk14b.isChecked() ? "2" : bi.tk1498.isChecked() ? "98" : "0");
 
         MainApp.fc.setsI(String.valueOf(sK));
-
-        Toast.makeText(this, "Validation Successful! - Saving Draft...", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -249,7 +246,6 @@ public class SectionIActivity extends AppCompatActivity {
         int updcount = db.updateSI();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();

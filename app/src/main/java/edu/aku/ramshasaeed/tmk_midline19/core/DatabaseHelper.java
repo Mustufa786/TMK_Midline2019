@@ -55,29 +55,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + FormsTable.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + FormsTable.COLUMN_PROJECT_NAME + " TEXT,"
             + FormsTable.COLUMN_UID + " TEXT," +
-            FormsTable.COLUMN_FORMDATE + " TEXT,"+
-            FormsTable.COLUMN_USER + " TEXT,"+
-            FormsTable.COLUMN_ISTATUS + " TEXT,"+
-            FormsTable.COLUMN_ISTATUS96X + " TEXT,"+
-            FormsTable.COLUMN_SA + " TEXT,"+
-            FormsTable.COLUMN_SB + " TEXT,"+
-            FormsTable.COLUMN_SE + " TEXT,"+
-            FormsTable.COLUMN_SF + " TEXT,"+
-            FormsTable.COLUMN_SG + " TEXT,"+
-            FormsTable.COLUMN_SH + " TEXT,"+
-            FormsTable.COLUMN_SI + " TEXT,"+
-            FormsTable.COLUMN_SJ + " TEXT,"+
-            FormsTable.COLUMN_SK + " TEXT,"+
-            FormsTable.COLUMN_APPVER + " TEXT,"+
-            FormsTable.COLUMN_GPSLAT + " TEXT,"+
-            FormsTable.COLUMN_GPSLNG + " TEXT,"+
-            FormsTable.COLUMN_GPSDT + " TEXT,"+
-            FormsTable.COLUMN_GPSACC + " TEXT,"+
-            FormsTable.COLUMN_SYNCED + " TEXT,"+
-            FormsTable.COLUMN_SYNCED_DATE + " TEXT,"+
-            FormsTable.COLUMN_DEVICEID + " TEXT,"+
-            FormsTable.COLUMN_CLUSTER + " TEXT,"+
-            FormsTable.COLUMN_HHNO + " TEXT,"+
+            FormsTable.COLUMN_FORMDATE + " TEXT," +
+            FormsTable.COLUMN_USER + " TEXT," +
+            FormsTable.COLUMN_ISTATUS + " TEXT," +
+            FormsTable.COLUMN_ISTATUS96X + " TEXT," +
+            FormsTable.COLUMN_SA + " TEXT," +
+            FormsTable.COLUMN_SB + " TEXT," +
+            FormsTable.COLUMN_SE + " TEXT," +
+            FormsTable.COLUMN_SF + " TEXT," +
+            FormsTable.COLUMN_SG + " TEXT," +
+            FormsTable.COLUMN_SH + " TEXT," +
+            FormsTable.COLUMN_SI + " TEXT," +
+            FormsTable.COLUMN_SJ + " TEXT," +
+            FormsTable.COLUMN_SK + " TEXT," +
+            FormsTable.COLUMN_APPVER + " TEXT," +
+            FormsTable.COLUMN_GPSLAT + " TEXT," +
+            FormsTable.COLUMN_GPSLNG + " TEXT," +
+            FormsTable.COLUMN_GPSDT + " TEXT," +
+            FormsTable.COLUMN_GPSACC + " TEXT," +
+            FormsTable.COLUMN_SYNCED + " TEXT," +
+            FormsTable.COLUMN_SYNCED_DATE + " TEXT," +
+            FormsTable.COLUMN_DEVICEID + " TEXT," +
+            FormsTable.COLUMN_CLUSTER + " TEXT," +
+            FormsTable.COLUMN_HHNO + " TEXT," +
             FormsTable.COLUMN_DEVICETAGID + " TEXT"
             + " );";
 
@@ -109,24 +109,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + familyMembers.TABLE_NAME + "("
             + familyMembers.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
             + FamilyMembersContract.familyMembers.COLUMN_PROJECT_NAME + " TEXT," +
-            familyMembers.COLUMN_UID + " TEXT,"+
-            familyMembers.COLUMN_UUID + " TEXT,"+
-            familyMembers.COLUMN_FORMDATE + " TEXT,"+
-            familyMembers.COLUMN_DEVICEID + " TEXT,"+
-            familyMembers.COLUMN_USER + " TEXT,"+
-            familyMembers.COLUMN_DEVICETAGID + " TEXT,"+
-            familyMembers.COLUMN_NAME + " TEXT,"+
-            familyMembers.COLUMN_DOB + " TEXT,"+
-            familyMembers.COLUMN_AGE + " TEXT,"+
-            familyMembers.COLUMN_SB + " TEXT,"+
-            familyMembers.COLUMN_SYNCED + " TEXT,"+
-            familyMembers.COLUMN_SYNCED_DATE + " TEXT,"+
-            familyMembers.COLUMN_ISTATUS + " TEXT,"+
-            familyMembers.COLUMN_SERIALNO + " TEXT,"+
-            familyMembers.COLUMN_MOTHERID + " TEXT,"+
-            familyMembers.COLUMN_TYPE + " TEXT,"+
-            familyMembers.COLUMN_APP_VER + " TEXT,"+
-            familyMembers.COLUMN_CLUSTERNO + " TEXT,"+
+            familyMembers.COLUMN_UID + " TEXT," +
+            familyMembers.COLUMN_UUID + " TEXT," +
+            familyMembers.COLUMN_FORMDATE + " TEXT," +
+            familyMembers.COLUMN_DEVICEID + " TEXT," +
+            familyMembers.COLUMN_USER + " TEXT," +
+            familyMembers.COLUMN_DEVICETAGID + " TEXT," +
+            familyMembers.COLUMN_NAME + " TEXT," +
+            familyMembers.COLUMN_DOB + " TEXT," +
+            familyMembers.COLUMN_AGE + " TEXT," +
+            familyMembers.COLUMN_SB + " TEXT," +
+            familyMembers.COLUMN_SYNCED + " TEXT," +
+            familyMembers.COLUMN_SYNCED_DATE + " TEXT," +
+            familyMembers.COLUMN_ISTATUS + " TEXT," +
+            familyMembers.COLUMN_SERIALNO + " TEXT," +
+            familyMembers.COLUMN_MOTHERID + " TEXT," +
+            familyMembers.COLUMN_TYPE + " TEXT," +
+            familyMembers.COLUMN_APP_VER + " TEXT," +
+            familyMembers.COLUMN_CLUSTERNO + " TEXT," +
             familyMembers.COLUMN_HHNO + " TEXT"
             + " );";
 
@@ -266,6 +266,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
         }
     }
+
     public void syncVersionApp(JSONArray Versionlist) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(VersionAppTable.TABLE_NAME, null, null);
@@ -288,6 +289,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
         }
     }
+
     public VersionAppContract getVersionApp() {
 
         SQLiteDatabase db = this.getReadableDatabase();
@@ -914,6 +916,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
+    public int updateChildG2() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(singleIm.COLUMN_SI, MainApp.ims.getsI());
+
+// Which row to update, based on the ID
+        String selection = singleIm._ID + " = ?";
+        String[] selectionArgs = {String.valueOf(MainApp.ims.get_ID())};
+
+        int count = db.update(singleIm.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
 
     public void updateSyncedForms(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -1063,7 +1083,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_HHNO,
 
 
-
         };
         String whereClause = null;
         String[] whereArgs = null;
@@ -1098,7 +1117,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return allFC;
     }
-
 
 
     public Collection<SectionIIMContract> getUnsyncedIM() {
@@ -1179,7 +1197,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 familyMembers.COLUMN_HHNO,
 
         };
-        String whereClause =familyMembers.COLUMN_SYNCED + " is null OR " + familyMembers.COLUMN_SYNCED + " = '' ";
+        String whereClause = familyMembers.COLUMN_SYNCED + " is null OR " + familyMembers.COLUMN_SYNCED + " = '' ";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
@@ -1212,8 +1230,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return allCC;
     }
-
-
 
 
     public Collection<FormsContract> getUnsyncedForms() {
@@ -1249,7 +1265,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_HHNO,
 
         };
-        String whereClause = FormsTable.COLUMN_SYNCED + " is null OR "+FormsTable.COLUMN_SYNCED+" = ''";
+        String whereClause = FormsTable.COLUMN_SYNCED + " is null OR " + FormsTable.COLUMN_SYNCED + " = ''";
         String[] whereArgs = null;
         String groupBy = null;
         String having = null;
@@ -1646,48 +1662,48 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-  /*  public int updateFamilyMember() {
-        SQLiteDatabase db = this.getReadableDatabase();
+    /*  public int updateFamilyMember() {
+          SQLiteDatabase db = this.getReadableDatabase();
 
-// New value for one column
-        ContentValues values = new ContentValues();
-        values.put(familyMembers.COLUMN_ISTATUS, MainApp.fc.getistatus());
-
-
-// Which row to update, based on the ID
-        String selection = " uuid=?";
-        String[] selectionArgs = {String.valueOf(MainApp.fc.get_UID())};
-
-        int count = db.update(familyMembers.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-        return count;
-    }
+  // New value for one column
+          ContentValues values = new ContentValues();
+          values.put(familyMembers.COLUMN_ISTATUS, MainApp.fc.getistatus());
 
 
+  // Which row to update, based on the ID
+          String selection = " uuid=?";
+          String[] selectionArgs = {String.valueOf(MainApp.fc.get_UID())};
 
-    public int updateIM() {
-        SQLiteDatabase db = this.getReadableDatabase();
+          int count = db.update(familyMembers.TABLE_NAME,
+                  values,
+                  selection,
+                  selectionArgs);
+          return count;
+      }
 
-// New value for one column
-        ContentValues values = new ContentValues();
-        values.put(singleIm.COLUMN_ISTATUS, MainApp.fc.getistatus());
 
-// Which row to update, based on the ID
-        String selection = " uuid=?";
-        String[] selectionArgs = {String.valueOf(MainApp.fc.get_UID())};
 
-        int count = db.update(singleIm.TABLE_NAME,
-                values,
-                selection,
-                selectionArgs);
-        return count;
-    }
-    */
+      public int updateIM() {
+          SQLiteDatabase db = this.getReadableDatabase();
+
+  // New value for one column
+          ContentValues values = new ContentValues();
+          values.put(singleIm.COLUMN_ISTATUS, MainApp.fc.getistatus());
+
+  // Which row to update, based on the ID
+          String selection = " uuid=?";
+          String[] selectionArgs = {String.valueOf(MainApp.fc.get_UID())};
+
+          int count = db.update(singleIm.TABLE_NAME,
+                  values,
+                  selection,
+                  selectionArgs);
+          return count;
+      }
+      */
     public boolean checkFormAlreadyFilled(String cluster, String hhno) {
         SQLiteDatabase db = this.getReadableDatabase();
-        String query = "SELECT * FROM " + FormsTable.TABLE_NAME + " WHERE " + FormsTable.COLUMN_CLUSTER + "='" + cluster + "' AND " + FormsTable.COLUMN_HHNO + " = '" + hhno+ "' AND " + FormsTable.COLUMN_ISTATUS + " = '1'" ;
+        String query = "SELECT * FROM " + FormsTable.TABLE_NAME + " WHERE " + FormsTable.COLUMN_CLUSTER + "='" + cluster + "' AND " + FormsTable.COLUMN_HHNO + " = '" + hhno + "' AND " + FormsTable.COLUMN_ISTATUS + " = '1'";
         Cursor mCursor = db.rawQuery(query, null);
         if (mCursor != null) {
             if (mCursor.getCount() > 0) {

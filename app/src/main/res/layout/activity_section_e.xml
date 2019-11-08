@@ -392,7 +392,7 @@
                                 android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                 android:hint="@string/other"
                                 android:inputType="text"
-                                android:text='@{tha0796.checked? tha0796x.getText.toString : ""}'
+                                android:text='@{tha0796.checked? tha0796x.getText().toString() : ""}'
                                 android:visibility='@{tha0796.checked? View.VISIBLE : View.GONE}' />
 
 
@@ -1050,7 +1050,7 @@
                                             android:hint="@string/tha20a"
                                             android:inputType="number"
                                             android:maxLength="2"
-                                            android:text='@{tha20a.checked? tha20hr.getText.toString : ""}'
+                                            android:text='@{tha20a.checked? tha20hr.getText().toString() : ""}'
                                             android:visibility='@{tha20a.checked? View.VISIBLE : View.GONE}' />
 
                                         <RadioButton
@@ -1070,7 +1070,7 @@
                                             android:hint="@string/tha20b"
                                             android:inputType="number"
                                             android:maxLength="2"
-                                            android:text='@{tha20b.checked? tha20day.getText.toString : ""}'
+                                            android:text='@{tha20b.checked? tha20day.getText().toString() : ""}'
                                             android:visibility='@{tha20b.checked? View.VISIBLE : View.GONE}' />
 
                                         <RadioButton

@@ -763,7 +763,7 @@
                     android:hint="@string/day"
                     android:inputType="number"
                     android:maxLength="2"
-                    android:text='@{tj13a.checked? tj13d.getText.toString : ""}'
+                    android:text='@{tj13a.checked? tj13d.getText().toString() : ""}'
                     android:visibility='@{tj13a.checked? View.VISIBLE : View.GONE}' />
 
                 <RadioButton
@@ -781,7 +781,7 @@
                     android:hint="@string/month"
                     android:inputType="number"
                     android:maxLength="2"
-                    android:text='@{tj13b.checked? tj13m.getText.toString : ""}'
+                    android:text='@{tj13b.checked? tj13m.getText().toString() : ""}'
                     android:visibility='@{tj13b.checked? View.VISIBLE : View.GONE}' />
 
                 <RadioButton
@@ -923,7 +923,7 @@
                     android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
                     android:hint="@string/other"
                     android:inputType="textCapWords"
-                    android:text='@{tj1496.checked? tj1496x.getText.toString : ""}'
+                    android:text='@{tj1496.checked? tj1496x.getText().toString() : ""}'
                     android:visibility='@{tj1496.checked? View.VISIBLE : View.GONE}' />
 
             </LinearLayout>

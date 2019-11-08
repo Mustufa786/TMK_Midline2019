@@ -1228,7 +1228,7 @@
                                     android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                     android:hint="@string/other"
                                     android:inputType="text"
-                                    android:text='@{thb3696.checked? thb3696x.getText.toString : ""}'
+                                    android:text='@{thb3696.checked? thb3696x.getText().toString() : ""}'
                                     android:visibility='@{thb3696.checked? View.VISIBLE : View.GONE}' />
                             </LinearLayout>
 

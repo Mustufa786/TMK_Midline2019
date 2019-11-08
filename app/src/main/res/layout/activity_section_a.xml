@@ -528,7 +528,7 @@
                                 android:hint="@string/ta11"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text='@{ta10a.checked ? ta11.getText.toString : ""}' />
+                                android:text='@{ta10a.checked ? ta11.getText().toString() : ""}' />
 
                         </LinearLayout>-->
 

@@ -44,48 +44,11 @@ public class SectionAActivity extends Activity {
     private static final String TAG = SectionAActivity.class.getName();
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
     Collection<BLRandomContract> selected;
-
-
     DatabaseHelper db;
-    String[] ucs = new String[]{"....",
-            "Allah Yar Turk",
-            "Bulri Shah Karim",
-            "Dando",
-            "Ghulam Shah Bagrani",
-            "Jinhan Soomro",
-            "Lakhat",
-            "Mullakatiar",
-            "Nazarpur",
-            "Shaikh Bhirkio",
-            "Saeed Khan Lund",
-            "Saeed Matto",
-            "Saeedpur",
-            "Tando Saeendad",
-            "Tando Ghulam Hyder",
-            "TMK 01",
-            "TMK 02",
-            "TMK 03"};
-
-
-    int ucsPos = 0;
-
-    Collection<VillagesContract> village;
-    Map<String, String> villageMap;
-
-    ArrayList<String> lablesSubVillages;
+    ArrayList<String> labelsSubVillages;
     Collection<VillagesContract> SubVillagesList;
     Map<String, String> SubVillagesMap;
 
-    /*
-        @BindView(R.id.spSubVillages)
-        Spinner spSubVillages;
-
-        @BindView(R.id.newHHheadname)
-        EditText newHHheadname;
-
-        @BindView(R.id.fldGrpt03a)
-        LinearLayout fldGrpt03a;
-    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,20 +63,20 @@ public class SectionAActivity extends Activity {
         MainApp.childUnder5 = new ArrayList<>();
         MainApp.serial_no = 0;
 
-        lablesSubVillages = new ArrayList<>();
+        labelsSubVillages = new ArrayList<>();
         SubVillagesMap = new HashMap<>();
-        lablesSubVillages.add("Select Sub Village..");
+        labelsSubVillages.add("Select Sub Village..");
 
         SubVillagesList = db.getVillage(String.valueOf(MainApp.areaCode));
 
         if (SubVillagesList.size() != 0) {
             for (VillagesContract vil : SubVillagesList) {
-                lablesSubVillages.add(vil.getVillagename());
+                labelsSubVillages.add(vil.getVillagename());
                 SubVillagesMap.put(vil.getVillagename(), vil.getVillagecode());
             }
         }
 
-        bi.spSubVillages.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, lablesSubVillages));
+        bi.spSubVillages.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, labelsSubVillages));
 
         bi.spSubVillages.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -147,22 +110,8 @@ public class SectionAActivity extends Activity {
         bi.ta09.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
-                /*if (i == R.id.ta09a) {
-                    bi.btnContinue.setVisibility(View.VISIBLE);
-                    bi.fldGrpRespInfo.setVisibility(View.VISIBLE);
-                    bi.btnEnd.setVisibility(View.GONE);
-                } else {
-                    bi.btnContinue.setVisibility(View.GONE);
-                    bi.fldGrpRespInfo.setVisibility(View.GONE);
-                    bi.tc03.setText(null);
-                    bi.tc04.clearCheck();
-                    bi.tc05.setText(null);
-                    bi.btnEnd.setVisibility(View.VISIBLE);
-                }*/
-
                 if (i != bi.ta09a.getId())
                     ClearClass.ClearAllFields(bi.fldGrpRespInfo, null);
-
             }
         });
 
@@ -287,9 +236,7 @@ public class SectionAActivity extends Activity {
         MainApp.cluster = bi.ta01.getText().toString();
         MainApp.hhno = bi.ta05h.getText().toString();
 
-//        MainApp.billno = bi.ta05u.getText().toString();
-
-        sa.put("sn", "ml");
+        sa.put("sn", "ml_19");
         sa.put("rndid", MainApp.selectedHead.get_ID());
         sa.put("luid", MainApp.selectedHead.getLUID());
         sa.put("randDT", MainApp.selectedHead.getRandomDT());
@@ -308,14 +255,10 @@ public class SectionAActivity extends Activity {
         sa.put("tc03", bi.tc03.getText().toString());
         sa.put("tc04", bi.tc04a.isChecked() ? "1" : bi.tc04b.isChecked() ? "2" : "0");
         sa.put("tc05", bi.tc05.getText().toString());
-//        sa.put("ta05u", bi.ta05u.getText().toString());
         sa.put("ta06", bi.ta06.getText().toString());
         sa.put("ta07", bi.ta07.getText().toString());
         sa.put("ta08", bi.ta08.getText().toString());
         sa.put("ta09", bi.ta09a.isChecked() ? "1" : bi.ta09b.isChecked() ? "2" : bi.ta09c.isChecked() ? "3" : "0");
-       /* sa.put("ta10", bi.ta10a.isChecked() ? "1" : bi.ta10b.isChecked() ? "2" : "0");
-        sa.put("ta11", bi.ta11.getText().toString());*/
-//        sa.put("app_version", MainApp.versionName + "." + MainApp.versionCode);
 
         MainApp.fc.setsA(String.valueOf(sa));
         setGPS();
@@ -425,14 +368,6 @@ public class SectionAActivity extends Activity {
                 } else {
                     bi.tc05.setError(null);
                 }
-                /*
-                if (!ValidatorClasss.EmptyRadioButton(this, bi.ta10, bi.ta10a, getString(R.string.ta10))) {
-                    return false;
-                }
-                if (!ValidatorClasss.EmptyTextBox(this, bi.ta11, getString(R.string.ta11))) {
-                    return false;
-                }
-                return ValidatorClasss.RangeTextBox(this, bi.ta11, 1, 25, getString(R.string.ta11), " Under 5");*/
 
             }
 
