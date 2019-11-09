@@ -62,8 +62,6 @@ public class EndingActivity extends Activity {
     }
 
    public void endInterview() {
-
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             SaveDraft();
             if (UpdateDB()) {

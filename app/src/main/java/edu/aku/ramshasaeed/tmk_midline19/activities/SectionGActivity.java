@@ -11,16 +11,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
-import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.List;
-
-import butterknife.BindViews;
 import butterknife.ButterKnife;
 import edu.aku.ramshasaeed.tmk_midline19.R;
 import edu.aku.ramshasaeed.tmk_midline19.contracts.FamilyMembersContract;
@@ -33,59 +29,6 @@ import edu.aku.ramshasaeed.tmk_midline19.validation.ValidatorClasss;
 public class SectionGActivity extends AppCompatActivity {
     ActivitySectionGBinding bi;
     private static final String TAG = SectionIActivity.class.getSimpleName();
-
-    @BindViews({R.id.fldGrpBcgM, R.id.fldGrpOpv0M, R.id.fldGrpPenta1M, R.id.fldGrppcv1M, R.id.fldGrpopv1M, R.id.fldGrppenta2M, R.id.fldGrprota1M, R.id.fldGrprota2M,
-            R.id.fldGrppcv2M, R.id.fldGrpopv2M, R.id.fldGrpPenta3M, R.id.fldGrppcv3M, R.id.fldGrpopv3M, R.id.fldGrpipvM,
-            R.id.fldGrpMeasles1M, R.id.fldGrpMeasles2M})
-    List<LinearLayout> fldGrpMother;
-    @BindViews({R.id.bcgC, R.id.opv0C, R.id.penta1C, R.id.pcv1C, R.id.opv1C, R.id.penta2C, R.id.pcv2C, R.id.opv2C, R.id.penta3C, R.id.rota1C, R.id.rota2C,
-            R.id.pcv3C, R.id.opv3C, R.id.ipvC, R.id.measles1C, R.id.measles2C})
-    List<RadioGroup> rdoCard;
-    @BindViews({R.id.bcgC, R.id.bcgM, R.id.opv0C, R.id.opv0M, R.id.penta1C, R.id.penta1M, R.id.pcv1C, R.id.pcv1M,
-            R.id.opv1C, R.id.opv1M, R.id.penta2C, R.id.pcv2C, R.id.pcv2M, R.id.opv2C, R.id.opv2M, R.id.penta3C, R.id.penta3M, R.id.rota1C, R.id.rota1M, R.id.rota2C, R.id.rota2M,
-            R.id.pcv3C, R.id.pcv3M, R.id.opv3C, R.id.opv3M, R.id.ipvC, R.id.ipvM, R.id.measles1C, R.id.measles1M,
-            R.id.measles2C, R.id.measles2M})
-    List<RadioGroup> rdoAll;
-    @BindViews({R.id.bcgPov, R.id.opv0Pov, R.id.penta1Pov, R.id.pcv1Pov, R.id.opv1Pov, R.id.penta2Pov, R.id.pcv2Pov, R.id.opv2Pov, R.id.rota1Pov, R.id.rota2Pov,
-            R.id.penta3Pov, R.id.pcv3Pov, R.id.opv3Pov, R.id.ipvPov, R.id.measles1Pov, R.id.measles2Pov})
-    List<RadioGroup> placeofVacc;
-    @BindViews({R.id.bcgC, R.id.bcgM})
-    List<RadioGroup> grpBcg;
-    @BindViews({R.id.opv0C, R.id.opv0M})
-    List<RadioGroup> grpOpv0;
-    @BindViews({R.id.rota1C, R.id.rota1M})
-    List<RadioGroup> grpRota1;
-    @BindViews({R.id.rota2C, R.id.rota2M})
-    List<RadioGroup> grpRota2;
-    @BindViews({R.id.penta1C, R.id.penta1M})
-    List<RadioGroup> grpPenta1;
-    @BindViews({R.id.pcv1C, R.id.pcv1M})
-    List<RadioGroup> grpPcv1;
-    @BindViews({R.id.opv1C, R.id.opv1M})
-    List<RadioGroup> grpOpv1;
-    @BindViews({R.id.penta2C, R.id.penta2M})
-    List<RadioGroup> grpPenta2;
-    @BindViews({R.id.pcv2C, R.id.pcv2M})
-    List<RadioGroup> grpPcv2;
-    @BindViews({R.id.opv2C, R.id.opv2M})
-    List<RadioGroup> grpOpv2;
-    @BindViews({R.id.penta3C, R.id.penta3M})
-    List<RadioGroup> grpPenta3;
-    @BindViews({R.id.pcv3C, R.id.pcv3M})
-    List<RadioGroup> grpPcv3;
-    @BindViews({R.id.opv3C, R.id.opv3M})
-    List<RadioGroup> grpOpv3;
-    @BindViews({R.id.ipvC, R.id.ipvM})
-    List<RadioGroup> grpIpv;
-    @BindViews({R.id.measles1C, R.id.measles1M})
-    List<RadioGroup> grpMeasles1;
-    @BindViews({R.id.measles2C, R.id.measles2M})
-    List<RadioGroup> grpMeasles2;
-
-    @BindViews({R.id.fldGrpBcgC, R.id.fldGrpopv0C, R.id.fldGrpPenta1C, R.id.fldGrppcv1C, R.id.fldGrpopv1C, R.id.fldGrprota1C, R.id.fldGrprota2C, R.id.fldGrppenta2C,
-            R.id.fldGrppcv2C, R.id.fldGrpopv2C, R.id.fldGrpenta3C, R.id.fldGrppcv3C, R.id.fldGrpopv3C, R.id.fldGrpipvC,
-            R.id.fldGrpmeasles1C, R.id.fldGrpmeasles2C})
-    List<LinearLayout> fldGrpCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,13 +76,6 @@ public class SectionGActivity extends AppCompatActivity {
                     bi.ti0296.setChecked(false);
                     bi.ti0296x.setText(null);
                 } else {
-                    for (RadioGroup re : rdoAll) {
-                        re.clearCheck();
-                    }
-
-                    for (RadioGroup re : placeofVacc) {
-                        re.clearCheck();
-                    }
                     bi.fldGrpti02.setVisibility(View.VISIBLE);
                 }
             }

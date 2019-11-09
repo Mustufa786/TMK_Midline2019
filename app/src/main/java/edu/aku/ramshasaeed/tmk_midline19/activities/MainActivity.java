@@ -46,6 +46,7 @@ import java.util.List;
 import java.util.Map;
 
 import edu.aku.ramshasaeed.tmk_midline19.R;
+import edu.aku.ramshasaeed.tmk_midline19.activities.anthro.SectionInfoAnthroActivity;
 import edu.aku.ramshasaeed.tmk_midline19.contracts.AreasContract;
 import edu.aku.ramshasaeed.tmk_midline19.contracts.FormsContract;
 import edu.aku.ramshasaeed.tmk_midline19.contracts.VersionAppContract;
@@ -89,7 +90,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_main);
         bi.setCallback(this);
-        this.setTitle("\t\t\t\t\t\t\t\t\t\t"+getResources().getString(R.string.app_name));
+        this.setTitle("\t\t\t\t\t\t\t\t\t\t" + getResources().getString(R.string.app_name));
 
 
 //        ButterKnife.bind(this);
@@ -166,11 +167,11 @@ public class MainActivity extends Activity {
 
 
                 rSumText += fc.get_ID();
-                rSumText +=  " " +fc.gethhno()+ " ";
+                rSumText += " " + fc.gethhno() + " ";
 
                 rSumText += " " + iStatus + " ";
 
-                rSumText += (fc.getsynced() == null  || fc.getsynced().equals("") ? "\t\tNot Synced" : "\t\tSynced");
+                rSumText += (fc.getsynced() == null || fc.getsynced().equals("") ? "\t\tNot Synced" : "\t\tSynced");
                 rSumText += "\r\n";
                 rSumText += "--------------------------------------------------\r\n";
             }
@@ -276,34 +277,38 @@ public class MainActivity extends Activity {
 
     }
 
-    public void openForm(View v) {
+    public void openForm(int choice) {
+
+        Class activity = null;
+        switch (choice) {
+            case 1:
+                activity = SectionAActivity.class;
+                break;
+            case 2:
+                activity = SectionInfoAnthroActivity.class;
+                break;
+        }
+
 
         if (bi.spAreas.getSelectedItemPosition() != 0) {
 
-          /*  if (!MainApp.userName.equals("0000")) {
-
-            } else {
-                Toast.makeText(this, "Please restart your Application!!!", Toast.LENGTH_SHORT).show();
-            }
-*/
             if (versionAppContract.getVersioncode() != null) {
                 if (MainApp.versionCode < Integer.valueOf(versionAppContract.getVersioncode())) {
                     if (sharedPrefDownload.getBoolean("flag", true) && file.exists()) {
-//                    InstallNewApp(newVer, preVer);
                         showDialog(newVer, preVer);
                     } else {
-                        Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
+                        Intent oF = new Intent(MainActivity.this, activity);
                         startActivity(oF);
                     }
                 } else {
-                    Intent oF = new Intent(MainActivity.this, SectionAActivity.class);
+                    Intent oF = new Intent(MainActivity.this, activity);
                     startActivity(oF);
                 }
             } else {
                 Toast.makeText(this, "Sync data!!", Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(getApplicationContext(), "Please select data from combobox!!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Please select data from dropdown!!", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -312,36 +317,43 @@ public class MainActivity extends Activity {
         startActivity(oF);
 
     }
+
     public void openE() {
         Intent oF = new Intent(MainActivity.this, SectionEActivity.class);
         startActivity(oF);
 
     }
+
     public void openF() {
         Intent oF = new Intent(MainActivity.this, SectionFActivity.class);
         startActivity(oF);
 
     }
+
     public void openG() {
         Intent oF = new Intent(MainActivity.this, SectionGActivity.class);
         startActivity(oF);
 
     }
+
     public void openH() {
         Intent oF = new Intent(MainActivity.this, SectionHActivity.class);
         startActivity(oF);
 
     }
+
     public void openI() {
         Intent oF = new Intent(MainActivity.this, SectionIActivity.class);
         startActivity(oF);
 
     }
+
     public void openJ() {
         Intent oF = new Intent(MainActivity.this, SectionJActivity.class);
         startActivity(oF);
 
     }
+
     public void openK() {
         Intent oF = new Intent(MainActivity.this, SectionKActivity.class);
         startActivity(oF);
@@ -628,6 +640,7 @@ public class MainActivity extends Activity {
         }
 
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();

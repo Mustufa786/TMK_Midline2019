@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.Map;
 
 import edu.aku.ramshasaeed.tmk_midline19.activities.EndingActivity;
+import edu.aku.ramshasaeed.tmk_midline19.contracts.AnthroContract;
 import edu.aku.ramshasaeed.tmk_midline19.contracts.BLRandomContract;
 import edu.aku.ramshasaeed.tmk_midline19.contracts.FamilyMembersContract;
 import edu.aku.ramshasaeed.tmk_midline19.contracts.FormsContract;
@@ -76,6 +77,7 @@ public class MainApp extends Application {
 
     public static Boolean admin = false;
     public static FormsContract fc;
+    public static AnthroContract ac;
     public static String userName = "0000";
     //    Total No of members got from Section A
 

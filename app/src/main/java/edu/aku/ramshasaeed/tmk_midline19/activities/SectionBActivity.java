@@ -699,7 +699,6 @@ public class SectionBActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
                 startActivity(new Intent(this, SectionBActivity.class));
@@ -804,31 +803,15 @@ public class SectionBActivity extends AppCompatActivity {
 
         sB.put("ta01", MainApp.cluster);
         sB.put("ta05h", MainApp.hhno);
-//        sB.put("ta05u", MainApp.billno);
-
 
         sB.put("tb01", MainApp.serial_no);
         sB.put("tb02", bi.tb02.getText().toString());
         if (ageInyears < 5) {
             MainApp.fmc.setmotherId(mothersMap.get(bi.tbmname.getSelectedItem().toString() + "_" + mothersSerials.get(mothersList.indexOf(bi.tbmname.getSelectedItem().toString()))));
             sB.put("tb06", bi.tbmname.getSelectedItem().toString());
-
         }
-     /*   sB.put("tb03", bi.tb03a.isChecked() ? "1" : bi.tb03b.isChecked() ? "2" : bi.tb03c.isChecked() ? "3"
-                : bi.tb03d.isChecked() ? "4" : bi.tb03e.isChecked() ? "5" : bi.tb03f.isChecked() ? "6"
-                : bi.tb03g.isChecked() ? "7" : bi.tb03h.isChecked() ? "8" : bi.tb03i.isChecked() ? "9" : bi.tb03j.isChecked() ? "10"
-                : bi.tb03k.isChecked() ? "11" : bi.tb03l.isChecked() ? "12" : bi.tb03m.isChecked() ? "13"
-                : bi.tb03n.isChecked() ? "14" : bi.tb0388.isChecked() ? "88" : "0");
-
-        sB.put("tb0388x", bi.tb0388x.getText().toString());
-
-        if (!MainApp.isHead) {
-            MainApp.isHead = bi.tb03a.isChecked();
-        }
-        */
 
         sB.put("tb04", bi.tb04a.isChecked() ? "1" : bi.tb04b.isChecked() ? "2" : "0");
-       /* sB.put("tb05", bi.tb05.getText().toString());*/
 
         if (bi.tbdob01.isChecked()) {
             sB.put("tb07", bi.tb07.getText().toString());
@@ -838,23 +821,13 @@ public class SectionBActivity extends AppCompatActivity {
             sB.put("tb08m", bi.tb08m.getText().toString());
         }
 
-//        sB.put("tb09", bi.tb09.getText().toString().equals("NA") ? "97" : bi.tb09.getText().toString());
         sB.put("tb09", bi.tb09.getText().toString());
         sB.put("tb10", bi.tb10a.isChecked() ? "1" : bi.tb10b.isChecked() ? "2" : bi.tb10c.isChecked() ? "3"
                 : bi.tb10d.isChecked() ? "4" : bi.tb10e.isChecked() ? "5" : bi.tb10f.isChecked() ? "6"
                 : bi.tb10g.isChecked() ? "7" : bi.tb10h.isChecked() ? "8" : bi.tb10ia.isChecked() ? "9" : bi.tb10j.isChecked() ? "10"
                 : bi.tb10k.isChecked() ? "11" : bi.tb10l.isChecked() ? "12" : bi.tb1097.isChecked() ? "97"
                 : "0");
-     /*   sB.put("tb11", bi.tb11a.isChecked() ? "1" : bi.tb11b.isChecked() ? "2"
-                : bi.tb11d.isChecked() ? "3" : bi.tb11e.isChecked() ? "4" : "0");
 
-        sB.put("tb12", bi.tb12a.isChecked() ? "1" : bi.tb12b.isChecked() ? "2" : "0");*/
-//        sB.put("appver", MainApp.versionName + "." + MainApp.versionCode);
-
-       /* if (bi.tb12a.isChecked()) {
-            MainApp.isRsvp = true;
-        }
-*/
         MainApp.ageRdo = bi.tbdob.indexOfChild(findViewById(bi.tbdob.getCheckedRadioButtonId())) + 1;
         MainApp.fmc.setsB(String.valueOf(sB));
         if (ageInyears < 5) {

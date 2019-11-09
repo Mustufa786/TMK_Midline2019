@@ -3,6 +3,8 @@ package edu.aku.ramshasaeed.tmk_midline19.contracts;
 import android.database.Cursor;
 import android.provider.BaseColumns;
 
+import com.google.gson.annotations.SerializedName;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -29,10 +31,29 @@ public class FamilyMembersContract {
     private String app_ver = "";
     private String clusterNo = "";
     private String hhNo = "";
-
     private double ageDouble;
 
+    //Only for Anthro -- Start
+    private String mmname = "";
+    private String gender = "";
 
+    public String getMmname() {
+        return mmname;
+    }
+
+    public void setMmname(String mmname) {
+        this.mmname = mmname;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    // -- End
 
     public FamilyMembersContract() {
     }
@@ -227,33 +248,38 @@ public class FamilyMembersContract {
 
     public FamilyMembersContract Sync(JSONObject jsonObject) throws JSONException {
 
-        this._ID= jsonObject.getString(familyMembers.COLUMN_ID);
-        this._UID= jsonObject.getString(familyMembers.COLUMN_UID);
-        this._UUID= jsonObject.getString(familyMembers.COLUMN_UUID);
-        this.formDate= jsonObject.getString(familyMembers.COLUMN_FORMDATE);
-        this.deviceId= jsonObject.getString(familyMembers.COLUMN_DEVICEID);
-        this.user= jsonObject.getString(familyMembers.COLUMN_USER);
-        this.devicetagID= jsonObject.getString(familyMembers.COLUMN_DEVICETAGID);
-        this.name= jsonObject.getString(familyMembers.COLUMN_NAME);
-        this.dob= jsonObject.getString(familyMembers.COLUMN_DOB);
-        this.age= jsonObject.getString(familyMembers.COLUMN_AGE);
-        this.sB= jsonObject.getString(familyMembers.COLUMN_SB);
-        this.synced= jsonObject.getString(familyMembers.COLUMN_SYNCED);
-        this.syncedDate= jsonObject.getString(familyMembers.COLUMN_SYNCED_DATE);
-        this.istatus= jsonObject.getString(familyMembers.COLUMN_ISTATUS);
-        this.serialNo= jsonObject.getString(familyMembers.COLUMN_SERIALNO);
-        this.motherId= jsonObject.getString(familyMembers.COLUMN_MOTHERID);
-        this.type= jsonObject.getString(familyMembers.COLUMN_TYPE);
-        this.app_ver= jsonObject.getString(familyMembers.COLUMN_APP_VER);
-        this.clusterNo= jsonObject.getString(familyMembers.COLUMN_CLUSTERNO);
-        this.hhNo= jsonObject.getString(familyMembers.COLUMN_HHNO);
+        this._ID = jsonObject.getString(familyMembers.COLUMN_ID);
+        this._UID = jsonObject.getString(familyMembers.COLUMN_UID);
+        this._UUID = jsonObject.getString(familyMembers.COLUMN_UUID);
+        this.formDate = jsonObject.getString(familyMembers.COLUMN_FORMDATE);
+        this.deviceId = jsonObject.getString(familyMembers.COLUMN_DEVICEID);
+        this.user = jsonObject.getString(familyMembers.COLUMN_USER);
+        this.devicetagID = jsonObject.getString(familyMembers.COLUMN_DEVICETAGID);
+        this.name = jsonObject.getString(familyMembers.COLUMN_NAME);
+        this.dob = jsonObject.getString(familyMembers.COLUMN_DOB);
+        this.age = jsonObject.getString(familyMembers.COLUMN_AGE);
+        this.sB = jsonObject.getString(familyMembers.COLUMN_SB);
+        this.synced = jsonObject.getString(familyMembers.COLUMN_SYNCED);
+        this.syncedDate = jsonObject.getString(familyMembers.COLUMN_SYNCED_DATE);
+        this.istatus = jsonObject.getString(familyMembers.COLUMN_ISTATUS);
+        this.serialNo = jsonObject.getString(familyMembers.COLUMN_SERIALNO);
+        this.motherId = jsonObject.getString(familyMembers.COLUMN_MOTHERID);
+        this.type = jsonObject.getString(familyMembers.COLUMN_TYPE);
+        this.app_ver = jsonObject.getString(familyMembers.COLUMN_APP_VER);
+        this.clusterNo = jsonObject.getString(familyMembers.COLUMN_CLUSTERNO);
+        this.hhNo = jsonObject.getString(familyMembers.COLUMN_HHNO);
 
 
         return this;
 
     }
 
-    public FamilyMembersContract Hydrate(Cursor cursor) {
+    public FamilyMembersContract Hydrate(Cursor cursor, boolean flag) {
+        this.age = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_AGE));
+        if (flag)
+            if (Integer.valueOf(age) >= 5)
+                return null;
+        this.sB = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_SB));
         this._ID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_ID));
         this._UID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_UID));
         this._UUID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_UUID));
@@ -263,8 +289,6 @@ public class FamilyMembersContract {
         this.devicetagID = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DEVICETAGID));
         this.name = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_NAME));
         this.dob = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_DOB));
-        this.age = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_AGE));
-        this.sB = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_SB));
         this.synced = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_SYNCED));
         this.syncedDate = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_SYNCED_DATE));
         this.istatus = cursor.getString(cursor.getColumnIndex(familyMembers.COLUMN_ISTATUS));
@@ -295,7 +319,6 @@ public class FamilyMembersContract {
         json.put(familyMembers.COLUMN_DOB, this.dob == null ? JSONObject.NULL : this.dob);
         json.put(familyMembers.COLUMN_AGE, this.age == null ? JSONObject.NULL : this.age);
         if (!this.sB.equals("")) {
-
             json.put(familyMembers.COLUMN_SB, this.sB.equals("") ? JSONObject.NULL : new JSONObject(this.sB));
         }
         json.put(familyMembers.COLUMN_ISTATUS, this.istatus == null ? JSONObject.NULL : this.istatus);
@@ -307,9 +330,31 @@ public class FamilyMembersContract {
         json.put(familyMembers.COLUMN_HHNO, this.hhNo == null ? JSONObject.NULL : this.hhNo);
 
 
-
         return json;
     }
+
+    public final class FamilyMembersSB {
+
+        @SerializedName("tb06")
+        private String mmname;
+        @SerializedName("tb01")
+        private String serial;
+        @SerializedName("tb04")
+        private String gender;
+
+        public String getMmname() {
+            return mmname;
+        }
+
+        public String getSerial() {
+            return serial;
+        }
+
+        public String getGender() {
+            return gender;
+        }
+    }
+
 
     public static abstract class familyMembers implements BaseColumns {
 

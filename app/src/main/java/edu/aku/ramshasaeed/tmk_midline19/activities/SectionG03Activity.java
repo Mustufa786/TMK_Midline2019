@@ -67,22 +67,16 @@ public class SectionG03Activity extends AppCompatActivity {
             }
         }
     };
-    @BindViews({R.id.fldGrpBcgM, R.id.fldGrpOpv0M, R.id.fldGrpPenta1M, R.id.fldGrppcv1M, R.id.fldGrpopv1M, R.id.fldGrppenta2M, R.id.fldGrprota1M, R.id.fldGrprota2M,
-            R.id.fldGrppcv2M, R.id.fldGrpopv2M, R.id.fldGrpPenta3M, R.id.fldGrppcv3M, R.id.fldGrpopv3M, R.id.fldGrpipvM,
-            R.id.fldGrpMeasles1M, R.id.fldGrpMeasles2M})
+    @BindViews({R.id.fldGrpMeasles1M, R.id.fldGrpMeasles2M})
     List<LinearLayout> fldGrpMother;
-    @BindViews({R.id.bcgC, R.id.opv0C, R.id.penta1C, R.id.pcv1C, R.id.opv1C, R.id.penta2C, R.id.pcv2C, R.id.opv2C, R.id.penta3C, R.id.rota1C, R.id.rota2C,
-            R.id.pcv3C, R.id.opv3C, R.id.ipvC, R.id.measles1C, R.id.measles2C})
+    @BindViews({R.id.measles1C, R.id.measles2C})
     List<RadioGroup> rdoCard;
     @BindViews({R.id.measles1C, R.id.measles1M})
     List<RadioGroup> grpMeasles1;
     @BindViews({R.id.measles2C, R.id.measles2M})
     List<RadioGroup> grpMeasles2;
-    String maxDate2Years;
     boolean ti03;
-    @BindViews({R.id.fldGrpBcgC, R.id.fldGrpopv0C, R.id.fldGrpPenta1C, R.id.fldGrppcv1C, R.id.fldGrpopv1C, R.id.fldGrprota1C, R.id.fldGrprota2C, R.id.fldGrppenta2C,
-            R.id.fldGrppcv2C, R.id.fldGrpopv2C, R.id.fldGrpenta3C, R.id.fldGrppcv3C, R.id.fldGrpopv3C, R.id.fldGrpipvC,
-            R.id.fldGrpmeasles1C, R.id.fldGrpmeasles2C})
+    @BindViews({R.id.fldGrpmeasles1C, R.id.fldGrpmeasles2C})
     List<LinearLayout> fldGrpCard;
 
     @Override

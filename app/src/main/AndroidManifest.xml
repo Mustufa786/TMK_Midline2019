@@ -125,6 +125,16 @@
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden"/>
         <activity
+            android:name=".activities.anthro.SectionInfoAnthroActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".activities.anthro.SectionAnthroBActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme1"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
             android:name=".activities.SyncActivity"
             android:theme="@style/AppTheme1"
             android:screenOrientation="portrait"/>
