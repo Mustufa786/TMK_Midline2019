@@ -33,7 +33,9 @@
                     android:id="@+id/fldgrpte00"
                     style="@style/cardView">
 
-                    <LinearLayout style="@style/linerlayout_view_wt_bound">
+                    <LinearLayout
+                        style="@style/linerlayout_view_wt_bound"
+                        android:visibility="gone">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -240,7 +242,7 @@
                             android:text='@{tsa0498.checked ? "" : tsa04.getText().toString()}'
                             app:mask="###.#"
                             app:maxValue="200"
-                            app:minValue="10"
+                            app:minValue="100"
                             app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
                             app:type="range" />
 
@@ -377,6 +379,7 @@
                             android:id="@+id/tsb04"
                             style="@style/EditText_number"
                             android:hint="###.#"
+                            android:text='@{tsb03a.checked? tsb04.getText().toString() : ""}'
                             app:mask="###.#"
                             app:maxValue="140.0"
                             app:minValue="10.0"
@@ -508,6 +511,7 @@
                             android:id="@+id/tsb08"
                             style="@style/EditText_number"
                             android:hint="###.#"
+                            android:text='@{tsb07a.checked? tsb08.getText().toString() : ""}'
                             app:mask="###.#"
                             app:maxValue="40.0"
                             app:minValue="0.5"
@@ -639,6 +643,7 @@
                             android:id="@+id/tsb12"
                             style="@style/EditText_number"
                             android:hint="###.#"
+                            android:text='@{tsb11a.checked? tsb12.getText().toString() : ""}'
                             app:mask="###.#"
                             app:maxValue="25"
                             app:minValue="5"

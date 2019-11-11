@@ -409,6 +409,7 @@ public class SectionBActivity extends AppCompatActivity {
                     bi.fldGrpOcc.setVisibility(GONE);
 //                    bi.fldGrpMarital.setVisibility(View.GONE);
                     bi.tb10.clearCheck();
+                    bi.tb11.clearCheck();
 //                    bi.tb11.clearCheck();
                 } else if (ageInyears > 5 && ageInyears < 14) {
                     bi.fldGrpMName.setVisibility(GONE);
@@ -509,6 +510,7 @@ public class SectionBActivity extends AppCompatActivity {
                         bi.fldGrpGender.setVisibility(View.VISIBLE);
 
                         bi.tb10.clearCheck();
+                        bi.tb11.clearCheck();
 //                        bi.tb11.clearCheck();
 
                     } else if (ageInyears > 5 && ageInyears < 14) {
@@ -649,6 +651,9 @@ public class SectionBActivity extends AppCompatActivity {
     //    @OnClick(R.id.btn_ContNextSec)
     public void onBtnContinueClick() {
         //TODO implement
+
+        if (!formValidation()) return;
+
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                 SectionBActivity.this);
         alertDialogBuilder
@@ -659,7 +664,6 @@ public class SectionBActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog,
                                                 int id) {
 
-                                Toast.makeText(SectionBActivity.this, "Processing This Section", Toast.LENGTH_SHORT).show();
                                 if (formValidation()) {
                                     try {
                                         SaveDraft();
@@ -668,10 +672,8 @@ public class SectionBActivity extends AppCompatActivity {
                                     }
                                     if (UpdateDB() && UpdateCount()) {
 
-                                        Toast.makeText(SectionBActivity.this, "Starting Next Section", Toast.LENGTH_SHORT).show();
-
                                         finish();
-                                        startActivity(new Intent(getApplicationContext(), SectionIActivity.class));
+                                        startActivity(new Intent(SectionBActivity.this, SectionIActivity.class));
                                     }
                                 } else {
                                     Toast.makeText(SectionBActivity.this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -770,7 +772,7 @@ public class SectionBActivity extends AppCompatActivity {
         count.put("td04", MainApp.td04);
         count.put("td05", MainApp.td05);
         count.put("td06", MainApp.td06);
-        count.put("td07",MainApp.td07);
+        count.put("td07", MainApp.td07);
         count.put("td08", MainApp.td08);
         MainApp.fc.setsB(String.valueOf(count));
 
@@ -827,6 +829,8 @@ public class SectionBActivity extends AppCompatActivity {
                 : bi.tb10g.isChecked() ? "7" : bi.tb10h.isChecked() ? "8" : bi.tb10ia.isChecked() ? "9" : bi.tb10j.isChecked() ? "10"
                 : bi.tb10k.isChecked() ? "11" : bi.tb10l.isChecked() ? "12" : bi.tb1097.isChecked() ? "97"
                 : "0");
+
+        sB.put("tb11", bi.tb11a.isChecked() ? "1" : bi.tb11b.isChecked() ? "2" : "0");
 
         MainApp.ageRdo = bi.tbdob.indexOfChild(findViewById(bi.tbdob.getCheckedRadioButtonId())) + 1;
         MainApp.fmc.setsB(String.valueOf(sB));
@@ -921,7 +925,9 @@ public class SectionBActivity extends AppCompatActivity {
                     Toast.makeText(SectionBActivity.this, "Total member must be equal or greater than number of male and female", Toast.LENGTH_SHORT).show();
 
                 } else {
-
+                    bi.td01.setError(null);
+                    bi.td02.setError(null);
+                    bi.td03.setError(null);
                 }
 
                 if (Integer.parseInt(bi.td01.getText().toString()) < sum02) {
@@ -931,7 +937,9 @@ public class SectionBActivity extends AppCompatActivity {
                     Toast.makeText(SectionBActivity.this, "Total member must be equal or greater than no of children", Toast.LENGTH_SHORT).show();
 
                 } else {
-
+                    bi.td01.setError(null);
+                    bi.td02.setError(null);
+                    bi.td03.setError(null);
                 }
             }
 
@@ -1021,7 +1029,7 @@ public class SectionBActivity extends AppCompatActivity {
             }
         }
 //Restrict user to enter child of age 6 to 14 years
-        if(ageInyears >=5 && ageInyears <= 14){
+        if (ageInyears >= 5 && ageInyears <= 14) {
             Toast.makeText(this, "ERROR(invalid): " + getString(R.string.year), Toast.LENGTH_SHORT).show();
             bi.tb08y.setError("Child with the age 6 to 14 years cannot be entered!! ");    // Set Error on last radio button
             bi.tb08y.requestFocus();
@@ -1031,7 +1039,7 @@ public class SectionBActivity extends AppCompatActivity {
             bi.tbdob01.setFocusableInTouchMode(true);
             bi.tbdob01.requestFocus();
             return false;
-        }else{
+        } else {
             bi.tbdob01.setError(null);
             bi.tb08y.setError(null);    // Set Error on last radio button
 
@@ -1095,6 +1103,19 @@ public class SectionBActivity extends AppCompatActivity {
             } else {
                 bi.tb1097.setError(null);
             }
+
+//        11
+            if (bi.tb11.getCheckedRadioButtonId() == -1) {
+                Toast.makeText(this, "ERROR(empty): " + getString(R.string.tb11), Toast.LENGTH_SHORT).show();
+                bi.tb11a.setError("This data is Required!");    // Set Error on last radio button
+                bi.tb11a.setFocusable(true);
+                bi.tb11a.setFocusableInTouchMode(true);
+                bi.tb11a.requestFocus();
+                Log.i(TAG, "bi.tb11: This data is Required!");
+                return false;
+            } else {
+                bi.tb11a.setError(null);
+            }
         }
 
         if (ageInyears < 5) {
@@ -1143,7 +1164,7 @@ public class SectionBActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Toast.makeText(getApplicationContext(), "You Can't go back", Toast.LENGTH_LONG).show();
+        Toast.makeText(SectionBActivity.this, "You Can't go back", Toast.LENGTH_LONG).show();
     }
 
 }

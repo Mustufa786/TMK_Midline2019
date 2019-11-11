@@ -10,6 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.ramshasaeed.tmk_midline19.R;
+import edu.aku.ramshasaeed.tmk_midline19.activities.anthro.SectionAnthroBActivity;
 import edu.aku.ramshasaeed.tmk_midline19.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline19.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline19.databinding.ActivitySectionKBinding;
@@ -29,11 +30,12 @@ public class SectionKActivity extends AppCompatActivity {
 
 
     }
+
     public void BtnEnd() {
         MainApp.endActivity(this, this);
     }
 
-   public void onBtnContinueClick() {
+    public void onBtnContinueClick() {
         //TODO implement
         if (formValidation()) {
             try {
@@ -45,16 +47,8 @@ public class SectionKActivity extends AppCompatActivity {
 
                 finish();
 
-                if (MainApp.TotalChildCount > 0) {
-                    Intent secNext = new Intent(this, SectionEActivity.class);
-                    startActivity(secNext);
-                } else if (MainApp.totalImsCount > 0) {
-                    Intent secNext = new Intent(this, SectionGActivity.class);
-                    startActivity(secNext);
-                } else {
-                    Intent secNext = new Intent(this, EndingActivity.class).putExtra("complete",true);
-                    startActivity(secNext);
-                }
+                startActivity(new Intent(this, SectionAnthroBActivity.class));
+
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -140,6 +134,7 @@ public class SectionKActivity extends AppCompatActivity {
         }
         return ValidatorClasss.EmptyRadioButton(this, bi.tm12, bi.tm12a, getString(R.string.tm12));
     }
+
     @Override
     public void onBackPressed() {
 

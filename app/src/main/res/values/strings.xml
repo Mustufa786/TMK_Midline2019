@@ -54,14 +54,14 @@
     <string name="td08">  شادي شده عورتون 15کان 49 سالن تائين </string>
     <string name="tdsub"> گهر۾موجود 5 سالن کان گھٽ عمروارن ٻارن جا نالا۽ پيدائش جي تاريخ (ڪارڊ/سرٽيفيڪٽ/ياداشت ذريعي پيدائش جي تاريخ) لکو پاڻمرادوطريقي ڪارسان01 کان شروع ڪيو ويندو. </string>
     <string name="td00"> ٻارجوسريل نمبر </string>
-<!--    <string name="td01"> ٻار جو نالو </string>
-    <string name="td02"> پيءُ جو نالو </string>
-    <string name="td03"> جنس </string>
-    <string name="td04"> پيدائش جي تاريخ </string>-->
+    <!--    <string name="td01"> ٻار جو نالو </string>
+        <string name="td02"> پيءُ جو نالو </string>
+        <string name="td03"> جنس </string>
+        <string name="td04"> پيدائش جي تاريخ </string>-->
     <string name="td04a"> ڏينهن </string>
     <string name="td04b"> مھينو </string>
     <string name="td04c"> سال </string>
-   <!-- <string name="td05"> عمر (جيڪڏھن توھان کي پيدائش جي تاريخ ياد نه آھي ته عمر ياداشت ذريعي لکو فقط مھينا ۽ سال) </string>-->
+    <!-- <string name="td05"> عمر (جيڪڏھن توھان کي پيدائش جي تاريخ ياد نه آھي ته عمر ياداشت ذريعي لکو فقط مھينا ۽ سال) </string>-->
     <string name="td05a"> سال </string>
     <string name="td05b"> مھينا </string>
     <string name="td09"> ماءُ جو نالو </string>
@@ -167,7 +167,7 @@
     <string name="td12k"> Retired </string>
     <string name="td12l"> Teacher </string>
     <string name="td1297"> Not Applicable </string>
-    <string name="tb11"> ازدواجي حيثيت </string>
+    <string name="tb11"> ڇا (عورت جو نالو) جنهنجو ٻار گذريل پنجن سالن دوران وفات ڪري ويو هجي؟ </string>
     <string name="tb11a"> Single </string>
     <string name="tb11b"> Married </string>
     <string name="tb11c"> Unmarried </string>
@@ -827,10 +827,10 @@
     <string name="place02"> Private Hospital </string>
     <string name="place03">  Home </string>
     <string name="place04"> Dont Know </string>
- <!--   <string name="place05"> DHQ </string>
-    <string name="place06"> Private Clinic </string>
-    <string name="place07"> Private hospital </string>
-    <string name="place08"> Home </string>-->
+    <!--   <string name="place05"> DHQ </string>
+       <string name="place06"> Private Clinic </string>
+       <string name="place07"> Private hospital </string>
+       <string name="place08"> Home </string>-->
     <string name="date"> Date of Immunization </string>
     <string name="atbirth"> At Birth </string>
     <string name="bcg"> BCG </string>
@@ -862,8 +862,6 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
-
-
 
 
     <!--section F-->

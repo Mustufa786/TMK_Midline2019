@@ -20,6 +20,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layoutDirection="rtl"
             android:orientation="vertical"
             android:textDirection="rtl">
 
@@ -36,10 +37,10 @@
                     android:layout_weight="15"
                     android:background="@color/colorPrimary"
                     android:text=":TOTAL"
-                    android:textSize="16dp"
-
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/TotalMem"
@@ -47,11 +48,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_weight="15"
-                    android:textSize="16dp"
-
                     android:background="@color/colorPrimaryAlpha"
+
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/colorPrimaryDark" />
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -60,9 +61,9 @@
                     android:layout_weight="15"
                     android:background="@color/colorPrimary"
                     android:text=":MWRA"
-                    android:textSize="16dp"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/Totalmwra"
@@ -70,10 +71,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_weight="15"
-                    android:textSize="16dp"
                     android:background="@color/colorPrimaryAlpha"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/colorPrimaryDark" />
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/textView"
@@ -83,9 +84,9 @@
                     android:layout_weight="20"
                     android:background="@color/colorPrimary"
                     android:text=":Child less 5"
-                    android:textSize="16dp"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp" />
 
                 <TextView
                     android:id="@+id/TotalChild"
@@ -93,18 +94,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_weight="15"
-                    android:textSize="16dp"
                     android:background="@color/colorPrimaryAlpha"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/colorPrimaryDark" />
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16dp" />
 
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:layout_marginBottom="5dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
                 android:background="@color/colorPrimary" />
 
             <View
@@ -638,8 +639,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
                         android:layout_marginTop="16dp"
+                        android:layout_marginBottom="1dp"
                         android:background="@color/colorPrimary"
                         android:text="@string/tb08"
                         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -648,8 +649,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
                         android:layout_marginTop="12dp"
+                        android:layout_marginBottom="1dp"
                         android:background="@color/colorPrimaryAlpha"
                         android:text="@string/year"
                         android:textColor="@color/colorPrimaryDark" />
@@ -666,8 +667,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="1dp"
                         android:layout_marginTop="12dp"
+                        android:layout_marginBottom="1dp"
                         android:background="@color/colorPrimaryAlpha"
                         android:text="@string/month"
                         android:textColor="@color/colorPrimaryDark" />
@@ -919,6 +920,40 @@
 
                     </RadioGroup>
 
+
+                    <!--tb11-->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/tb11"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@android:color/white" />
+
+                    <RadioGroup
+                        android:id="@+id/tb11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/tb11a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/yes" />
+
+                        <RadioButton
+                            android:id="@+id/tb11b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:layout_weight="1"
+                            android:text="@string/no" />
+                    </RadioGroup>
+
                 </LinearLayout>
 
                 <!--     <LinearLayout
@@ -1068,17 +1103,6 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btn_End"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:onClick="@{() -> callback.onBtnEnd()}"
-                    android:text="@string/end_interview"
-                    android:textColor="#ff1e1e" />
-
-                <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
-
-                <Button
                     android:id="@+id/btn_ContNextSec"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -1097,6 +1121,18 @@
                     android:text="@string/addMember"
                     android:textColor="#1ed61e" />
                 <!--'onClick' for btn_Continue will call next section form e.g.: openSection2-->
+
+                <Button
+                    android:id="@+id/btn_End"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> callback.onBtnEnd()}"
+                    android:text="@string/end_interview"
+                    android:textColor="#ff1e1e" />
+
+                <!--'onClick' for btn_End will NOT change and always call 'endInterview'-->
+
 
             </LinearLayout>
 
