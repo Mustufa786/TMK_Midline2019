@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import edu.aku.ramshasaeed.tmk_midline19.R;
+import edu.aku.ramshasaeed.tmk_midline19.activities.anthro.SectionAnthroBActivity;
 import edu.aku.ramshasaeed.tmk_midline19.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline19.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline19.databinding.ActivitySectionFBinding;
@@ -164,7 +165,7 @@ public class SectionFActivity extends AppCompatActivity {
                             MotherName = MainApp.familyMembersList.get(j).getname();
                         }
                     }
-                    bi.motherName.setText(MotherName+"_"+MotherID);
+                    bi.motherName.setText(MotherName + "_" + MotherID);
                 } else {
                     bi.motherName.setText(null);
 
@@ -584,7 +585,7 @@ public class SectionFActivity extends AppCompatActivity {
                     Intent secNext = new Intent(this, SectionGActivity.class);
                     startActivity(secNext);
                 } else {
-                    startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+                    startActivity(new Intent(this, SectionAnthroBActivity.class));
                 }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();

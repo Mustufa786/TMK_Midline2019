@@ -171,7 +171,7 @@ public class AnthroContract {
         public static final String COLUMN_NAME_NULLABLE = "NULLHACK";
 
         public static final String COLUMN_PROJECT_NAME = "project_name";
-        public static final String COLUMN_ID = "id";
+        public static final String COLUMN_ID = "_id";
         public static final String COLUMN_UUID = "uuid";
         public static final String COLUMN_UID = "uid";
         public static final String COLUMN_SI = "sI";

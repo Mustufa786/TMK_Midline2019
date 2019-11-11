@@ -3,9 +3,13 @@ package edu.aku.ramshasaeed.tmk_midline19.activities.anthro;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -14,26 +18,32 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import edu.aku.ramshasaeed.tmk_midline19.R;
 import edu.aku.ramshasaeed.tmk_midline19.activities.EndingActivity;
-import edu.aku.ramshasaeed.tmk_midline19.activities.SectionEActivity;
-import edu.aku.ramshasaeed.tmk_midline19.activities.SectionGActivity;
+import edu.aku.ramshasaeed.tmk_midline19.contracts.AnthroContract;
+import edu.aku.ramshasaeed.tmk_midline19.contracts.FamilyMembersContract;
 import edu.aku.ramshasaeed.tmk_midline19.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline19.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline19.databinding.ActivitySectionAnthroBBinding;
 import edu.aku.ramshasaeed.tmk_midline19.validation.ValidatorClass02;
 
-/*import static edu.aku.ramshasaeed.tmk_midline19.activities.anthro.SectionInfoAnthroActivity.childrenName;
-import static edu.aku.ramshasaeed.tmk_midline19.activities.anthro.SectionInfoAnthroActivity.selectedChildrenMap;
-import static edu.aku.ramshasaeed.tmk_midline19.core.MainApp.ac;*/
+import static edu.aku.ramshasaeed.tmk_midline19.core.MainApp.ac;
 
 public class SectionAnthroBActivity extends AppCompatActivity {
     ActivitySectionAnthroBBinding bi;
     DatabaseHelper db;
     String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
     int position = 0;
+    public static Map<String, FamilyMembersContract> selectedChildrenMap;
+    public static ArrayList<String> childrenName = null;
+    private Collection<FamilyMembersContract> selectedChildren;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +53,22 @@ public class SectionAnthroBActivity extends AppCompatActivity {
         db = new DatabaseHelper(this);
         this.setTitle(getString(R.string.tsh));
 
+        //Setting Data
+        if (childrenName == null) {
+            selectedChildren = db.getUnder5Children(MainApp.fc.get_UID(), MainApp.cluster, MainApp.hhno);
+            selectedChildrenMap = new HashMap<>();
+            childrenName = new ArrayList<>(Arrays.asList("...."));
+
+            for (FamilyMembersContract fm : selectedChildren) {
+                //Set map
+                selectedChildrenMap.put(fm.getname() + "_(child of: " + fm.getMmname() + ")", fm);
+                childrenName.add(fm.getname() + "_(child of: " + fm.getMmname() + ")");
+
+            }
+        }
+
         //Set Child Name
-        /*bi.tsa00.setAdapter(new ArrayAdapter<>(this, android.R.layout.select_dialog_item, SectionInfoAnthroActivity.childrenName));
+        bi.tsa00.setAdapter(new ArrayAdapter<>(this, android.R.layout.select_dialog_item, childrenName));
 
         bi.tsa00.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -56,7 +80,7 @@ public class SectionAnthroBActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
-        });*/
+        });
 
         RadioGroup[] rdb = {bi.tsb03, bi.tsb07, bi.tsb11};
         for (RadioGroup radio : rdb) {
@@ -151,16 +175,16 @@ public class SectionAnthroBActivity extends AppCompatActivity {
 
     private void SaveDraft() throws JSONException {
 
-        /*ac = new AnthroContract();
+        ac = new AnthroContract();
         ac.setDevicetagID(getSharedPreferences("tagName", MODE_PRIVATE).getString("tagName", null));
         ac.setFormDate(dtToday);
         ac.setUser(MainApp.userName);
         ac.setDeviceID(Settings.Secure.getString(getApplicationContext().getContentResolver(),
-                Settings.Secure.ANDROID_ID));*/
+                Settings.Secure.ANDROID_ID));
 
         JSONObject sb = new JSONObject();
 
-        /*sb.put("appver", MainApp.versionName + "." + MainApp.versionCode);
+        sb.put("appver", MainApp.versionName + "." + MainApp.versionCode);
         sb.put("ta03", MainApp.talukaCode);
         sb.put("ta04", MainApp.ucCode);
         sb.put("ta04A", MainApp.areaCode);
@@ -169,12 +193,12 @@ public class SectionAnthroBActivity extends AppCompatActivity {
 
         FamilyMembersContract fm = selectedChildrenMap.get(bi.tsa00.getSelectedItem().toString());
 
-        ac.set_UUID(fm.get_UUID());*/
+        ac.set_UUID(fm.get_UUID());
 
-        /*sb.put("serial", fm.getserialNo());
+        sb.put("serial", fm.getserialNo());
         sb.put("mothername", fm.getMmname());
         sb.put("mother_id", fm.getmotherId());
-        sb.put("FMUID", fm.get_UID());*/
+        sb.put("FMUID", fm.get_UID());
 
         sb.put("tsa01", bi.tsa01a.isChecked() ? "1"
                 : bi.tsa01b.isChecked() ? "2"
@@ -204,13 +228,12 @@ public class SectionAnthroBActivity extends AppCompatActivity {
                 : bi.tsb11b.isChecked() ? "2" : "0");
         sb.put("tsb12", bi.tsb12.getText().toString());
 
-        /*ac.setsI(String.valueOf(sb));
-
+        ac.setsI(String.valueOf(sb));
 
         selectedChildrenMap.remove(bi.tsa00.getSelectedItem().toString());
-        childrenName.remove(position);*/
+        childrenName.remove(position);
 
-        MainApp.fc.setsG(String.valueOf(sb));
+//        MainApp.fc.setsG(String.valueOf(sb));
 
     }
 
@@ -225,17 +248,7 @@ public class SectionAnthroBActivity extends AppCompatActivity {
 
             if (UpdateDB()) {
                 finish();
-//                startActivity(new Intent(this, AnthroEndingActivity.class).putExtra("complete", true));
-                if (MainApp.TotalChildCount > 0) {
-                    Intent secNext = new Intent(this, SectionEActivity.class);
-                    startActivity(secNext);
-                } else if (MainApp.totalImsCount > 0) {
-                    Intent secNext = new Intent(this, SectionGActivity.class);
-                    startActivity(secNext);
-                } else {
-                    Intent secNext = new Intent(this, EndingActivity.class).putExtra("complete", true);
-                    startActivity(secNext);
-                }
+                startActivity(new Intent(this, selectedChildrenMap.size() == 0 ? EndingActivity.class : SectionAnthroBActivity.class).putExtra("complete", true));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
@@ -244,7 +257,7 @@ public class SectionAnthroBActivity extends AppCompatActivity {
 
     public void BtnEnd() {
 
-        /*if (ValidatorClass02.EmptySpinner(this, bi.tsa00, getString(R.string.tsa00))) {
+        if (ValidatorClass02.EmptySpinner(this, bi.tsa00, getString(R.string.tsa00))) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -253,21 +266,21 @@ public class SectionAnthroBActivity extends AppCompatActivity {
 
             if (UpdateDB()) {
                 finish();
-                startActivity(new Intent(this, AnthroEndingActivity.class).putExtra("complete", false));
+                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", false));
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }*/
+        }
 
 
-        MainApp.endActivity(this, this);
+//        MainApp.endActivity(this, this);
 
     }
 
     private boolean UpdateDB() {
 
-        /*Long updcount = db.addAnthro(ac);
-        MainApp.ac.set_ID(String.valueOf(updcount));
+        Long updcount = db.addAnthro(ac);
+        ac.set_ID(String.valueOf(updcount));
 
         if (updcount != 0) {
 
@@ -279,9 +292,9 @@ public class SectionAnthroBActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }*/
+        }
 
-        DatabaseHelper db = new DatabaseHelper(this);
+        /*DatabaseHelper db = new DatabaseHelper(this);
 
         int updcount = db.updateSG();
 
@@ -290,7 +303,7 @@ public class SectionAnthroBActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
             return false;
-        }
+        }*/
     }
 
     public boolean formValidation() {

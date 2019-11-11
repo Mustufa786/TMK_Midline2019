@@ -33,9 +33,7 @@
                     android:id="@+id/fldgrpte00"
                     style="@style/cardView">
 
-                    <LinearLayout
-                        style="@style/linerlayout_view_wt_bound"
-                        android:visibility="gone">
+                    <LinearLayout style="@style/linerlayout_view_wt_bound">
 
                         <TextView
                             android:layout_width="match_parent"
