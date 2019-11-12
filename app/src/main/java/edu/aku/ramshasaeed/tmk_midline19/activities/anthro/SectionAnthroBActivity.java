@@ -177,7 +177,15 @@ public class SectionAnthroBActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if (i != bi.tsb13a.getId())
-                    ClearClass.ClearAllFields(bi.fldGrpSecE02, true);
+                    ClearClass.ClearAllFields(bi.fldGrpSecE02, null);
+            }
+        });
+
+        bi.tsfa04.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.tsfa04b.getId())
+                    ClearClass.ClearAllFields(bi.fldGrpSecE01b, null);
             }
         });
 
@@ -192,6 +200,7 @@ public class SectionAnthroBActivity extends AppCompatActivity {
                 : bi.tsfa02c.isChecked() ? "3" : "0");
         sb.put("tsfa03", bi.tsfa03.getText().toString());
         sb.put("tsfa0398", bi.tsfa0398.isChecked() ? "98" : "0");
+        sb.put("tsfa04", bi.tsfa04a.isChecked() ? "1" : bi.tsfa04b.isChecked() ? "2" : "0");
 
         MainApp.fc.setsG(String.valueOf(sb));
 

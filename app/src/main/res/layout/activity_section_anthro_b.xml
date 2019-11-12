@@ -30,44 +30,8 @@
                     android:id="@+id/fldGrpSecE01"
                     style="@style/linerlayout_view_wt_bound">
 
-                    <!--tsfa01-->
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/fldgrptsfa01"
-                        style="@style/cardView">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:background="@color/colorPrimary"
-                                android:text="@string/tsfa01"
-                                android:textAppearance="?android:attr/textAppearanceLarge"
-                                android:textColor="@android:color/white"
-                                android:textSize="20sp" />
-
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/tsfa01"
-                                style="@style/EditText_number"
-                                android:hint="###.#"
-                                app:mask="###.#"
-                                app:maxValue="200"
-                                app:minValue="100"
-                                app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
-                                app:type="range" />
-
-                        </LinearLayout>
-
-                    </android.support.v7.widget.CardView>
-
-                    <!--tsfa02-->
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/fldgrpte03"
-                        style="@style/cardView">
+                    <!--tsfa04-->
+                    <android.support.v7.widget.CardView style="@style/cardView">
 
                         <LinearLayout style="@style/linerlayout_view_wt_bound">
 
@@ -76,36 +40,29 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
                                 android:background="@color/colorPrimary"
-                                android:text="@string/tsfa02"
+                                android:text="@string/tsfa04"
                                 android:textAppearance="?android:attr/textAppearanceLarge"
                                 android:textColor="@android:color/white"
                                 android:textSize="20sp" />
 
                             <RadioGroup
-                                android:id="@+id/tsfa02"
+                                android:id="@+id/tsfa04"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content">
 
                                 <RadioButton
-                                    android:id="@+id/tsfa02a"
+                                    android:id="@+id/tsfa04a"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="1dp"
-                                    android:text="@string/tsfa02a" />
+                                    android:text="@string/yes" />
 
                                 <RadioButton
-                                    android:id="@+id/tsfa02b"
+                                    android:id="@+id/tsfa04b"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="1dp"
-                                    android:text="@string/tsfa02b" />
-
-                                <RadioButton
-                                    android:id="@+id/tsfa02c"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="1dp"
-                                    android:text="@string/tsfa02c" />
+                                    android:text="@string/no" />
 
                             </RadioGroup>
 
@@ -113,47 +70,137 @@
 
                     </android.support.v7.widget.CardView>
 
-                    <!--tsfa03-->
-                    <android.support.v7.widget.CardView
-                        android:id="@+id/fldgrpte04"
-                        style="@style/cardView">
+                    <LinearLayout
+                        android:id="@+id/fldGrpSecE01b"
+                        style="@style/linerlayout_view_wt_bound"
+                        android:visibility="@{tsfa04a.checked ? View.VISIBLE : View.GONE}">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                        <!--tsfa01-->
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/fldgrptsfa01"
+                            style="@style/cardView">
 
-                            <TextView
+                            <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:background="@color/colorPrimary"
-                                android:text="@string/tsfa03"
-                                android:textAppearance="?android:attr/textAppearanceLarge"
-                                android:textColor="@android:color/white"
-                                android:textSize="20sp" />
+                                android:orientation="vertical">
 
-                            <CheckBox
-                                android:id="@+id/tsfa0398"
-                                style="@style/checkbox"
-                                android:tag="-1"
-                                android:text="@string/tsfa03b" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@color/colorPrimary"
+                                    android:text="@string/tsfa01"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="20sp" />
 
-                            <com.edittextpicker.aliazaz.EditTextPicker
-                                android:id="@+id/tsfa03"
-                                style="@style/EditText_number"
-                                android:enabled="@{tsfa0398.checked ? false : true}"
-                                android:hint="###.#"
-                                android:text='@{tsfa0398.checked ? "" : tsfa03.getText().toString()}'
-                                app:mask="###.#"
-                                app:maxValue="200"
-                                app:minValue="100"
-                                app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
-                                app:type="range" />
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/tsfa01"
+                                    style="@style/EditText_number"
+                                    android:hint="###.#"
+                                    app:mask="###.#"
+                                    app:maxValue="200"
+                                    app:minValue="100"
+                                    app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
+                                    app:type="range" />
 
-                        </LinearLayout>
+                            </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                        </android.support.v7.widget.CardView>
+
+                        <!--tsfa02-->
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/fldgrpte03"
+                            style="@style/cardView">
+
+                            <LinearLayout style="@style/linerlayout_view_wt_bound">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@color/colorPrimary"
+                                    android:text="@string/tsfa02"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="20sp" />
+
+                                <RadioGroup
+                                    android:id="@+id/tsfa02"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <RadioButton
+                                        android:id="@+id/tsfa02a"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/tsfa02a" />
+
+                                    <RadioButton
+                                        android:id="@+id/tsfa02b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/tsfa02b" />
+
+                                    <RadioButton
+                                        android:id="@+id/tsfa02c"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="1dp"
+                                        android:text="@string/tsfa02c" />
+
+                                </RadioGroup>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                        <!--tsfa03-->
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/fldgrpte04"
+                            style="@style/cardView">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_horizontal"
+                                    android:background="@color/colorPrimary"
+                                    android:text="@string/tsfa03"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="20sp" />
+
+                                <CheckBox
+                                    android:id="@+id/tsfa0398"
+                                    style="@style/checkbox"
+                                    android:tag="-1"
+                                    android:text="@string/tsfa03b" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/tsfa03"
+                                    style="@style/EditText_number"
+                                    android:enabled="@{tsfa0398.checked ? false : true}"
+                                    android:hint="###.#"
+                                    android:text='@{tsfa0398.checked ? "" : tsfa03.getText().toString()}'
+                                    app:mask="###.#"
+                                    app:maxValue="200"
+                                    app:minValue="100"
+                                    app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
+                                    app:type="range" />
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
