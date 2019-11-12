@@ -347,8 +347,9 @@ public class SectionAnthroBActivity extends AppCompatActivity {
     }
 
     public boolean formValidation() {
-        if (!ValidatorClass02.EmptyCheckingContainer(this, bi.fldGrpSecE01))
-            return false;
+        if (selectedChildren != null)
+            if (!ValidatorClass02.EmptyCheckingContainer(this, bi.fldGrpSecE01))
+                return false;
         return ValidatorClass02.EmptyCheckingContainer(this, bi.fldGrpSecE);
     }
 }
