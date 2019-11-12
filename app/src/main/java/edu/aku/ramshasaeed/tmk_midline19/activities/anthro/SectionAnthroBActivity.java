@@ -32,6 +32,7 @@ import edu.aku.ramshasaeed.tmk_midline19.contracts.FamilyMembersContract;
 import edu.aku.ramshasaeed.tmk_midline19.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline19.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline19.databinding.ActivitySectionAnthroBBinding;
+import edu.aku.ramshasaeed.tmk_midline19.validation.ClearClass;
 import edu.aku.ramshasaeed.tmk_midline19.validation.ValidatorClass02;
 
 import static edu.aku.ramshasaeed.tmk_midline19.core.MainApp.ac;
@@ -65,7 +66,8 @@ public class SectionAnthroBActivity extends AppCompatActivity {
                 childrenName.add(fm.getname() + "_(child of: " + fm.getMmname() + ")");
 
             }
-        }
+        } else
+            bi.fldGrpSecE01.setVisibility(View.GONE);
 
         //Set Child Name
         bi.tsa00.setAdapter(new ArrayAdapter<>(this, android.R.layout.select_dialog_item, childrenName));
@@ -171,6 +173,28 @@ public class SectionAnthroBActivity extends AppCompatActivity {
         bi.tsb09.addTextChangedListener(tsb09_10);
         bi.tsb10.addTextChangedListener(tsb09_10);
 
+        bi.tsb13.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i != bi.tsb13a.getId())
+                    ClearClass.ClearAllFields(bi.fldGrpSecE02, true);
+            }
+        });
+
+    }
+
+    private void SaveDraft02() throws JSONException {
+
+        JSONObject sb = new JSONObject();
+        sb.put("tsfa01", bi.tsfa01.getText().toString());
+        sb.put("tsfa02", bi.tsfa02a.isChecked() ? "1"
+                : bi.tsfa02b.isChecked() ? "2"
+                : bi.tsfa02c.isChecked() ? "3" : "0");
+        sb.put("tsfa03", bi.tsfa03.getText().toString());
+        sb.put("tsfa0398", bi.tsfa0398.isChecked() ? "98" : "0");
+
+        MainApp.fc.setsG(String.valueOf(sb));
+
     }
 
     private void SaveDraft() throws JSONException {
@@ -193,7 +217,7 @@ public class SectionAnthroBActivity extends AppCompatActivity {
 
         FamilyMembersContract fm = selectedChildrenMap.get(bi.tsa00.getSelectedItem().toString());
 
-        ac.set_UUID(fm.get_UUID());
+        ac.set_UUID(MainApp.fc.get_UID());
 
         sb.put("serial", fm.getserialNo());
         sb.put("mothername", fm.getMmname());
@@ -206,12 +230,6 @@ public class SectionAnthroBActivity extends AppCompatActivity {
         sb.put("tsa02", bi.tsa02a.isChecked() ? "1"
                 : bi.tsa02b.isChecked() ? "2"
                 : bi.tsa02c.isChecked() ? "3" : "0");
-        sb.put("tsa03", bi.tsa03a.isChecked() ? "1"
-                : bi.tsa03b.isChecked() ? "2"
-                : bi.tsa03c.isChecked() ? "3" : "0");
-        sb.put("tsa04", bi.tsa04.getText().toString());
-        sb.put("tsa0498", bi.tsa0498.isChecked() ? "98" : "0");
-
         sb.put("tsb01", bi.tsb01.getText().toString());
         sb.put("tsb02", bi.tsb02.getText().toString());
         sb.put("tsb03", bi.tsb03a.isChecked() ? "1"
@@ -227,6 +245,9 @@ public class SectionAnthroBActivity extends AppCompatActivity {
         sb.put("tsb11", bi.tsb11a.isChecked() ? "1"
                 : bi.tsb11b.isChecked() ? "2" : "0");
         sb.put("tsb12", bi.tsb12.getText().toString());
+        sb.put("tsb13", bi.tsb13a.isChecked() ? "1"
+                : bi.tsb13b.isChecked() ? "2"
+                : bi.tsb13c.isChecked() ? "3" : "0");
 
         ac.setsI(String.valueOf(sb));
 
@@ -241,6 +262,16 @@ public class SectionAnthroBActivity extends AppCompatActivity {
 
         if (formValidation()) {
             try {
+
+                if (selectedChildren != null) {
+                    SaveDraft02();
+                    int updcount = db.updateSG();
+                    if (updcount != 1) {
+                        Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
+
                 SaveDraft();
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -257,7 +288,7 @@ public class SectionAnthroBActivity extends AppCompatActivity {
 
     public void BtnEnd() {
 
-        if (ValidatorClass02.EmptySpinner(this, bi.tsa00, getString(R.string.tsa00))) {
+        /*if (ValidatorClass02.EmptySpinner(this, bi.tsa00, getString(R.string.tsa00))) {
             try {
                 SaveDraft();
             } catch (JSONException e) {
@@ -270,10 +301,10 @@ public class SectionAnthroBActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
             }
-        }
+        }*/
 
 
-//        MainApp.endActivity(this, this);
+        MainApp.endActivity(this, this);
 
     }
 
@@ -307,6 +338,8 @@ public class SectionAnthroBActivity extends AppCompatActivity {
     }
 
     public boolean formValidation() {
+        if (!ValidatorClass02.EmptyCheckingContainer(this, bi.fldGrpSecE01))
+            return false;
         return ValidatorClass02.EmptyCheckingContainer(this, bi.fldGrpSecE);
     }
 }
