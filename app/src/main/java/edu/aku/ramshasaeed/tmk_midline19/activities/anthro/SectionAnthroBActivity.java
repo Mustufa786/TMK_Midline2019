@@ -189,6 +189,14 @@ public class SectionAnthroBActivity extends AppCompatActivity {
             }
         });
 
+        bi.tsfa02.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == bi.tsfa02b.getId())
+                    ClearClass.ClearAllFields(bi.fldgrpte04, null);
+            }
+        });
+
     }
 
     private void SaveDraft02() throws JSONException {
@@ -324,8 +332,8 @@ public class SectionAnthroBActivity extends AppCompatActivity {
 
         if (updcount != 0) {
 
-            MainApp.fc.set_UID(
-                    (MainApp.fc.getdeviceid() + MainApp.fc.get_ID()));
+            ac.setUID(
+                    (MainApp.ac.getDeviceID() + MainApp.ac.get_ID()));
             db.updateAnthroFormID();
 
             return true;

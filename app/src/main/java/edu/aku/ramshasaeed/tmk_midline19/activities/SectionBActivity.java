@@ -811,6 +811,7 @@ public class SectionBActivity extends AppCompatActivity {
         if (ageInyears < 5) {
             MainApp.fmc.setmotherId(mothersMap.get(bi.tbmname.getSelectedItem().toString() + "_" + mothersSerials.get(mothersList.indexOf(bi.tbmname.getSelectedItem().toString()))));
             sB.put("tb06", bi.tbmname.getSelectedItem().toString());
+            MainApp.fmc.setMmname(bi.tbmname.getSelectedItem().toString());
         }
 
         sB.put("tb04", bi.tb04a.isChecked() ? "1" : bi.tb04b.isChecked() ? "2" : "0");

@@ -301,7 +301,7 @@ public class SectionHActivity extends AppCompatActivity {
 
         // Get Youngest Child
         fm_child = MainApp.familyMembersList.get(MainApp.young_child.getSerial() - 1);
-        bi.name.setText(fm_child.getname().toUpperCase());
+        bi.name.setText(fm_child.getname().toUpperCase() + " _Mother:" + fm_child.getMmname());
 
     }
 

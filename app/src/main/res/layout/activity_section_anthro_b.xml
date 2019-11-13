@@ -161,7 +161,8 @@
                         <!--tsfa03-->
                         <android.support.v7.widget.CardView
                             android:id="@+id/fldgrpte04"
-                            style="@style/cardView">
+                            style="@style/cardView"
+                            android:visibility="@{tsfa02b.checked ? View.GONE : View.VISIBLE}">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -188,12 +189,12 @@
                                     android:id="@+id/tsfa03"
                                     style="@style/EditText_number"
                                     android:enabled="@{tsfa0398.checked ? false : true}"
-                                    android:hint="###.#"
+                                    android:hint="##.#"
                                     android:text='@{tsfa0398.checked ? "" : tsfa03.getText().toString()}'
-                                    app:mask="###.#"
-                                    app:maxValue="200"
-                                    app:minValue="100"
-                                    app:pattern="^(\\d{3,3}\\.\\d{1,1})$"
+                                    app:mask="##.#"
+                                    app:maxValue="3.0"
+                                    app:minValue="0.1"
+                                    app:pattern="^(\\d{2,2}\\.\\d{1,1})$"
                                     app:type="range" />
 
                             </LinearLayout>
