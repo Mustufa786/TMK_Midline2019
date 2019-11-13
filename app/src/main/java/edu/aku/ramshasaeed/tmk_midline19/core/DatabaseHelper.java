@@ -1787,45 +1787,62 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
-    /*  public int updateFamilyMember() {
-          SQLiteDatabase db = this.getReadableDatabase();
+    public int updateFamilyMember() {
+        SQLiteDatabase db = this.getReadableDatabase();
 
-  // New value for one column
-          ContentValues values = new ContentValues();
-          values.put(familyMembers.COLUMN_ISTATUS, MainApp.fc.getistatus());
-
-
-  // Which row to update, based on the ID
-          String selection = " uuid=?";
-          String[] selectionArgs = {String.valueOf(MainApp.fc.get_UID())};
-
-          int count = db.update(familyMembers.TABLE_NAME,
-                  values,
-                  selection,
-                  selectionArgs);
-          return count;
-      }
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(familyMembers.COLUMN_ISTATUS, MainApp.fc.getistatus());
 
 
+        // Which row to update, based on the ID
+        String selection = " uuid=?";
+        String[] selectionArgs = {String.valueOf(MainApp.fc.get_UID())};
 
-      public int updateIM() {
-          SQLiteDatabase db = this.getReadableDatabase();
+        int count = db.update(familyMembers.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
 
-  // New value for one column
-          ContentValues values = new ContentValues();
-          values.put(singleIm.COLUMN_ISTATUS, MainApp.fc.getistatus());
 
-  // Which row to update, based on the ID
-          String selection = " uuid=?";
-          String[] selectionArgs = {String.valueOf(MainApp.fc.get_UID())};
+    public int updateIM() {
+        SQLiteDatabase db = this.getReadableDatabase();
 
-          int count = db.update(singleIm.TABLE_NAME,
-                  values,
-                  selection,
-                  selectionArgs);
-          return count;
-      }
-      */
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(singleIm.COLUMN_ISTATUS, MainApp.fc.getistatus());
+
+        // Which row to update, based on the ID
+        String selection = " uuid=?";
+        String[] selectionArgs = {String.valueOf(MainApp.fc.get_UID())};
+
+        int count = db.update(singleIm.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
+    public int updateAnthro() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(SingleAnthros.COLUMN_ISTATUS, MainApp.fc.getistatus());
+
+        // Which row to update, based on the ID
+        String selection = " uuid=?";
+        String[] selectionArgs = {String.valueOf(MainApp.fc.get_UID())};
+
+        int count = db.update(SingleAnthros.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
     public boolean checkFormAlreadyFilled(String cluster, String hhno) {
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT * FROM " + FormsTable.TABLE_NAME + " WHERE " + FormsTable.COLUMN_CLUSTER + "='" + cluster + "' AND " + FormsTable.COLUMN_HHNO + " = '" + hhno + "' AND " + FormsTable.COLUMN_ISTATUS + " = '1'";

@@ -30,6 +30,7 @@ import java.util.List;
 import edu.aku.ramshasaeed.tmk_midline19.R;
 import edu.aku.ramshasaeed.tmk_midline19.adapter.SyncListAdapter;
 import edu.aku.ramshasaeed.tmk_midline19.adapter.UploadListAdapter;
+import edu.aku.ramshasaeed.tmk_midline19.contracts.AnthroContract;
 import edu.aku.ramshasaeed.tmk_midline19.contracts.FamilyMembersContract;
 import edu.aku.ramshasaeed.tmk_midline19.contracts.FormsContract;
 import edu.aku.ramshasaeed.tmk_midline19.contracts.FormsContract.FormsTable;
@@ -248,11 +249,11 @@ public class SyncActivity extends AppCompatActivity {
                     "updateSyncedForms",
                     FormsContract.class,
                     MainApp._HOST_URL + FormsTable._URL,
-                    db.getUnsyncedForms(),0,uploadListAdapter,uploadlist
+                    db.getUnsyncedForms(), 0, uploadListAdapter, uploadlist
             ).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing Family Members", Toast.LENGTH_SHORT).show();
-            if (uploadlistActivityCreated){
+            if (uploadlistActivityCreated) {
                 uploadmodel = new SyncModel();
                 uploadmodel.setstatusID(0);
                 uploadlist.add(uploadmodel);
@@ -268,7 +269,7 @@ public class SyncActivity extends AppCompatActivity {
             ).execute();
 
             Toast.makeText(getApplicationContext(), "Syncing IM", Toast.LENGTH_SHORT).show();
-            if (uploadlistActivityCreated){
+            if (uploadlistActivityCreated) {
                 uploadmodel = new SyncModel();
                 uploadmodel.setstatusID(0);
                 uploadlist.add(uploadmodel);
@@ -279,9 +280,24 @@ public class SyncActivity extends AppCompatActivity {
                     "updateIM",
                     SectionIIMContract.class,
                     MainApp._HOST_URL + SectionIIMContract.singleIm._URL,
-                    db.getUnsyncedIM(),2,uploadListAdapter,uploadlist
+                    db.getUnsyncedIM(), 2, uploadListAdapter, uploadlist
             ).execute();
 
+            Toast.makeText(getApplicationContext(), "Syncing Anthro", Toast.LENGTH_SHORT).show();
+            if (uploadlistActivityCreated) {
+                uploadmodel = new SyncModel();
+                uploadmodel.setstatusID(0);
+                uploadlist.add(uploadmodel);
+            }
+
+            new SyncAllData(
+                    this,
+                    "Anthro",
+                    "updateAnthro",
+                    AnthroContract.class,
+                    MainApp._HOST_URL + AnthroContract.SingleAnthros._URL,
+                    db.getUnsyncedAnthro(), 3, uploadListAdapter, uploadlist
+            ).execute();
 
 
             uploadlistActivityCreated = false;
