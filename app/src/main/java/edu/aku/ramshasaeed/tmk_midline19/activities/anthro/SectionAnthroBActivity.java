@@ -111,7 +111,7 @@ public class SectionAnthroBActivity extends AppCompatActivity {
                     return;
                 float values = Math.abs(Float.valueOf(bi.tsb01.getText().toString()) - Float.valueOf(bi.tsb02.getText().toString()));
                 bi.tsb03.clearCheck();
-                bi.tsb03.check(values >= 0.6 ? bi.tsb03a.getId() : bi.tsb03b.getId());
+                bi.tsb03.check(values > 0.6 ? bi.tsb03a.getId() : bi.tsb03b.getId());
             }
 
             @Override
@@ -136,7 +136,7 @@ public class SectionAnthroBActivity extends AppCompatActivity {
                     return;
                 float values = Math.abs(Float.valueOf(bi.tsb05.getText().toString()) - Float.valueOf(bi.tsb06.getText().toString()));
                 bi.tsb07.clearCheck();
-                bi.tsb07.check(values >= 0.1 ? bi.tsb07a.getId() : bi.tsb07b.getId());
+                bi.tsb07.check(values > 0.1 ? bi.tsb07a.getId() : bi.tsb07b.getId());
             }
 
             @Override
@@ -161,7 +161,7 @@ public class SectionAnthroBActivity extends AppCompatActivity {
                     return;
                 float values = Math.abs(Float.valueOf(bi.tsb09.getText().toString()) - Float.valueOf(bi.tsb10.getText().toString()));
                 bi.tsb11.clearCheck();
-                bi.tsb11.check(values >= 1.3 ? bi.tsb11a.getId() : bi.tsb11b.getId());
+                bi.tsb11.check(values > 1.3 ? bi.tsb11a.getId() : bi.tsb11b.getId());
             }
 
             @Override
