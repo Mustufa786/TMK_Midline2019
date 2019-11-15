@@ -15,6 +15,8 @@ import edu.aku.ramshasaeed.tmk_midline19.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline19.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline19.databinding.ActivityEndingBinding;
 
+import static edu.aku.ramshasaeed.tmk_midline19.activities.anthro.SectionAnthroBActivity.childrenName;
+
 public class EndingActivity extends Activity {
 
     private static final String TAG = EndingActivity.class.getSimpleName();
@@ -107,6 +109,8 @@ public class EndingActivity extends Activity {
                 MainApp.isHead = false;
 
                 MainApp.flag = true;
+
+                childrenName = null;
 
                 finish();
 
