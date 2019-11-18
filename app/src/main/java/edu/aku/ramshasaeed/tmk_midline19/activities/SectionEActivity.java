@@ -79,7 +79,7 @@ public class SectionEActivity extends AppCompatActivity {
                             MotherName = MainApp.familyMembersList.get(j).getname();
                         }
                     }
-                    bi.motherName.setText(MotherName+"_"+MotherID);
+                    bi.motherName.setText(MotherName + "_" + MotherID);
                 } else {
                     bi.motherName.setText(null);
 
@@ -255,7 +255,7 @@ public class SectionEActivity extends AppCompatActivity {
                 : bi.tha11i.isChecked() ? "9"
                 : bi.tha11j.isChecked() ? "10"
                 : "0");*/
-       //sholud be multiple response
+        //sholud be multiple response
         sE.put("tha11a", bi.tha11a.isChecked() ? "1" : "0");
         sE.put("tha11b", bi.tha11b.isChecked() ? "2" : "0");
         sE.put("tha11c", bi.tha11c.isChecked() ? "3" : "0");
@@ -324,7 +324,9 @@ public class SectionEActivity extends AppCompatActivity {
                 : bi.tha34i.isChecked() ? "9"
                 : bi.tha34j.isChecked() ? "10"
                 : bi.tha34k.isChecked() ? "11"
+                : bi.tha3496.isChecked() ? "96"
                 : "0");
+        sE.put("tha3496x", bi.tha3496x.getText().toString());
 
         MainApp.fc.setsE(String.valueOf(sE));
     }

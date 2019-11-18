@@ -1347,8 +1347,25 @@
                                     android:layout_marginBottom="1dp"
                                     android:text="@string/tha34k" />
 
+                                <RadioButton
+                                    android:id="@+id/tha3496"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/other" />
 
                             </RadioGroup>
+
+                            <EditText
+                                android:id="@+id/tha3496x"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="1dp"
+                                android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                                android:hint="@string/other"
+                                android:inputType="textCapWords"
+                                android:text='@{tha3496.checked? tha3496x.getText().toString() : ""}'
+                                android:visibility='@{tha3496.checked? View.VISIBLE : View.GONE}' />
 
                         </LinearLayout>
 
