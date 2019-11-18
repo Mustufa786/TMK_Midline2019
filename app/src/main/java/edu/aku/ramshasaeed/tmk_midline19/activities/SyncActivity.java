@@ -173,7 +173,7 @@ public class SyncActivity extends AppCompatActivity {
                         model.setstatusID(0);
                         list.add(model);
                     }
-                    new GetAllData(mContext, "User", SyncListAdapter, list).execute();
+                    new GetAllData(mContext, "username", SyncListAdapter, list).execute();
 
 //                   getting BL Random
                     Toast.makeText(SyncActivity.this, "Sync BL Random", Toast.LENGTH_SHORT).show();

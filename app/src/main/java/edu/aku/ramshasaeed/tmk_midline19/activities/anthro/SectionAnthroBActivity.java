@@ -20,7 +20,6 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -44,7 +43,7 @@ public class SectionAnthroBActivity extends AppCompatActivity {
     int position = 0;
     public static Map<String, FamilyMembersContract> selectedChildrenMap;
     public static ArrayList<String> childrenName = null;
-    private Collection<FamilyMembersContract> selectedChildren;
+    boolean anthroFlag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +55,12 @@ public class SectionAnthroBActivity extends AppCompatActivity {
 
         //Setting Data
         if (childrenName == null) {
-            selectedChildren = db.getUnder5Children(MainApp.fc.get_UID(), MainApp.cluster, MainApp.hhno);
             selectedChildrenMap = new HashMap<>();
             childrenName = new ArrayList<>(Arrays.asList("...."));
 
-            for (FamilyMembersContract fm : selectedChildren) {
+            anthroFlag = true;
+
+            for (FamilyMembersContract fm : MainApp.childUnder5) {
                 //Set map
                 selectedChildrenMap.put(fm.getname() + "_(child of: " + fm.getMmname() + ")", fm);
                 childrenName.add(fm.getname() + "_(child of: " + fm.getMmname() + ")");
@@ -280,7 +280,7 @@ public class SectionAnthroBActivity extends AppCompatActivity {
         if (formValidation()) {
             try {
 
-                if (selectedChildren != null) {
+                if (anthroFlag) {
                     SaveDraft02();
                     int updcount = db.updateSG();
                     if (updcount != 1) {
@@ -355,7 +355,7 @@ public class SectionAnthroBActivity extends AppCompatActivity {
     }
 
     public boolean formValidation() {
-        if (selectedChildren != null)
+        if (anthroFlag)
             if (!ValidatorClass02.EmptyCheckingContainer(this, bi.fldGrpSecE01))
                 return false;
         return ValidatorClass02.EmptyCheckingContainer(this, bi.fldGrpSecE);

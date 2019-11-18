@@ -307,6 +307,10 @@ public class MainActivity extends Activity {
             } else {
                 Toast.makeText(this, "Sync data!!", Toast.LENGTH_SHORT).show();
             }
+
+            /*Intent oF = new Intent(MainActivity.this, activity);
+            startActivity(oF);*/
+
         } else {
             Toast.makeText(getApplicationContext(), "Please select data from dropdown!!", Toast.LENGTH_LONG).show();
         }

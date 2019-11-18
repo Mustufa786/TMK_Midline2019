@@ -369,7 +369,7 @@ public class FamilyMembersContract {
         public static final String COLUMN_UUID = "_uuid";
         public static final String COLUMN_FORMDATE = "formdate";
         public static final String COLUMN_DEVICEID = "deviceid";
-        public static final String COLUMN_USER = "user";
+        public static final String COLUMN_USER = "username";
         public static final String COLUMN_DEVICETAGID = "devicetagid";
         public static final String COLUMN_NAME = "name";
         public static final String COLUMN_DOB = "dob";

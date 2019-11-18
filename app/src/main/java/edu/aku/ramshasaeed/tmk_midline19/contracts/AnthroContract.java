@@ -176,7 +176,7 @@ public class AnthroContract {
         public static final String COLUMN_UID = "uid";
         public static final String COLUMN_SI = "sI";
         public static final String COLUMN_FORMDATE = "formdate";
-        public static final String COLUMN_USER = "user";
+        public static final String COLUMN_USER = "username";
         public static final String COLUMN_DEVICEID = "deviceid";
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_DEVICETAGID = "tagid";

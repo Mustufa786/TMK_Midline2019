@@ -395,7 +395,7 @@ public class FormsContract {
         public static final String COLUMN_FORMDATE = "formdate";
         public static final String COLUMN_CLUSTER = "cluster_no";
         public static final String COLUMN_HHNO = "hhno";
-        public static final String COLUMN_USER = "user";
+        public static final String COLUMN_USER = "username";
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_ISTATUS96X = "istatus96x";
         public static final String COLUMN_SA = "sa";
