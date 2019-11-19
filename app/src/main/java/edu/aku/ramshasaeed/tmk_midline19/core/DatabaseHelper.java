@@ -875,7 +875,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    public void updateFamilyMember(String id) {
+    public void updateFamilyMemberStatus(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
 // New value for one column
@@ -894,7 +894,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-    public void updateIM(String id) {
+    public void updateIMStatus(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
 // New value for one column
@@ -1841,6 +1841,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selection,
                 selectionArgs);
         return count;
+    }
+
+    public void updateAnthroStatus(String id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(SingleAnthros.COLUMN_SYNCED, true);
+        values.put(SingleAnthros.COLUMN_SYNCED_DATE, new Date().toString());
+
+// Which row to update, based on the title
+        String where = SingleAnthros.COLUMN_ID + " = ?";
+        String[] whereArgs = {id};
+
+        int count = db.update(
+                SingleAnthros.TABLE_NAME,
+                values,
+                where,
+                whereArgs);
     }
 
     public boolean checkFormAlreadyFilled(String cluster, String hhno) {

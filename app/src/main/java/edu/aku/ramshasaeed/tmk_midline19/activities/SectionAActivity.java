@@ -42,7 +42,7 @@ import edu.aku.ramshasaeed.tmk_midline19.validation.ValidatorClasss;
 public class SectionAActivity extends Activity {
     ActivitySectionABinding bi;
     private static final String TAG = SectionAActivity.class.getName();
-    String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
+    String dtToday = new SimpleDateFormat("dd-MM-yyyy HH:mm").format(new Date().getTime());
     Collection<BLRandomContract> selected;
     DatabaseHelper db;
     ArrayList<String> labelsSubVillages;

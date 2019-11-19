@@ -39,7 +39,7 @@ import static edu.aku.ramshasaeed.tmk_midline19.core.MainApp.ac;
 public class SectionAnthroBActivity extends AppCompatActivity {
     ActivitySectionAnthroBBinding bi;
     DatabaseHelper db;
-    String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
+    String dtToday = new SimpleDateFormat("dd-MM-yyyy HH:mm").format(new Date().getTime());
     int position = 0;
     public static Map<String, FamilyMembersContract> selectedChildrenMap;
     public static ArrayList<String> childrenName = null;

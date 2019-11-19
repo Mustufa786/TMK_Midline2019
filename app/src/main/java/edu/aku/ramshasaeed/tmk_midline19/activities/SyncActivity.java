@@ -57,7 +57,7 @@ public class SyncActivity extends AppCompatActivity {
     List<SyncModel> uploadlist;
     Boolean listActivityCreated;
     Boolean uploadlistActivityCreated;
-    String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
+    String dtToday = new SimpleDateFormat("dd-MM-yyyy HH:mm").format(new Date().getTime());
 
 
     @Override
@@ -262,7 +262,7 @@ public class SyncActivity extends AppCompatActivity {
             new SyncAllData(
                     this,
                     "FamilyMembers",
-                    "updateFamilyMember",
+                    "updateFamilyMemberStatus",
                     FamilyMembersContract.class,
                     MainApp._HOST_URL + FamilyMembersContract.familyMembers._URL,
                     db.getUnsyncedFamilyMembers(), 1, uploadListAdapter, uploadlist
@@ -277,7 +277,7 @@ public class SyncActivity extends AppCompatActivity {
             new SyncAllData(
                     this,
                     "IM",
-                    "updateIM",
+                    "updateIMStatus",
                     SectionIIMContract.class,
                     MainApp._HOST_URL + SectionIIMContract.singleIm._URL,
                     db.getUnsyncedIM(), 2, uploadListAdapter, uploadlist
@@ -293,7 +293,7 @@ public class SyncActivity extends AppCompatActivity {
             new SyncAllData(
                     this,
                     "Anthro",
-                    "updateAnthro",
+                    "updateAnthroStatus",
                     AnthroContract.class,
                     MainApp._HOST_URL + AnthroContract.SingleAnthros._URL,
                     db.getUnsyncedAnthro(), 3, uploadListAdapter, uploadlist

@@ -61,7 +61,7 @@ public class MainActivity extends Activity {
 
     private final String TAG = "MainActivity";
 
-    String dtToday = new SimpleDateFormat("dd-MM-yy HH:mm").format(new Date().getTime());
+    String dtToday = new SimpleDateFormat("dd-MM-yyyy HH:mm").format(new Date().getTime());
 
     SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
