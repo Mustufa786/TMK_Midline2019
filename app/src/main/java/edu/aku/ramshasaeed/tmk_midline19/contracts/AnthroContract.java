@@ -183,6 +183,6 @@ public class AnthroContract {
         public static final String COLUMN_SYNCED = "synced";
         public static final String COLUMN_SYNCED_DATE = "synced_date";
 
-        public static String _URL = "anthro.php";
+        public static String _URL = "anthros.php";
     }
 }
