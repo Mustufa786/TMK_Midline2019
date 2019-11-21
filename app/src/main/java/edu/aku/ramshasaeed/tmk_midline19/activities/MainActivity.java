@@ -292,7 +292,7 @@ public class MainActivity extends Activity {
 
         if (bi.spAreas.getSelectedItemPosition() != 0) {
 
-            /*if (versionAppContract.getVersioncode() != null) {
+            if (versionAppContract.getVersioncode() != null) {
                 if (MainApp.versionCode < Integer.valueOf(versionAppContract.getVersioncode())) {
                     if (sharedPrefDownload.getBoolean("flag", true) && file.exists()) {
                         showDialog(newVer, preVer);
@@ -306,10 +306,10 @@ public class MainActivity extends Activity {
                 }
             } else {
                 Toast.makeText(this, "Sync data!!", Toast.LENGTH_SHORT).show();
-            }*/
+            }
 
-            Intent oF = new Intent(MainActivity.this, activity);
-            startActivity(oF);
+            /*Intent oF = new Intent(MainActivity.this, activity);
+            startActivity(oF);*/
 
         } else {
             Toast.makeText(getApplicationContext(), "Please select data from dropdown!!", Toast.LENGTH_LONG).show();

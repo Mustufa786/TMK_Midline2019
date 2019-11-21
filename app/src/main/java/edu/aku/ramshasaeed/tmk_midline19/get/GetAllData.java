@@ -161,26 +161,6 @@ public class GetAllData extends AsyncTask<String, String, String> {
             urlConnection.setReadTimeout(100000 /* milliseconds */);
             urlConnection.setConnectTimeout(150000 /* milliseconds */);
 
-            switch (syncClass) {
-                case "Talukas":
-                case "UCs":
-                case "Areas":
-                case "Villages":
-                case "Users":
-                case "VersionApp":
-                            urlConnection.setRequestMethod("POST");
-                            urlConnection.setDoOutput(true);
-                            urlConnection.setDoInput(true);
-                            urlConnection.setRequestProperty("Content-Type", "application/json");
-                            urlConnection.setRequestProperty("charset", "utf-8");
-                            urlConnection.setUseCaches(false);
-                            // Starts the query
-                            urlConnection.connect();
-
-                    break;
-            }
-
-
             Log.d(TAG, "doInBackground: " + urlConnection.getResponseCode());
             publishProgress(syncClass);
             if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
