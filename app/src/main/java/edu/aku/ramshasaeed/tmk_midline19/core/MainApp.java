@@ -39,11 +39,11 @@ import edu.aku.ramshasaeed.tmk_midline19.contracts.SectionIIMContract;
 
 public class MainApp extends Application {
 
-    public static final String _IP = "f38158"; // Test PHP server
+    public static final String _IP = "vcoe1.aku.edu"; // Test PHP server
     public static final Integer _PORT = 80; // Port - with colon (:)
-    public static final String _HOST_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk/api/";
-    public static final String _UPDATE_URL = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk/app/app-debug.apk";
-    public static final String _UPDATE_URL_NEW = "http://" + MainApp._IP + ":" + MainApp._PORT + "/tmk/app/ml/";
+    public static final String _HOST_URL = "https://" + MainApp._IP + "/tmk/api/";
+    public static final String _UPDATE_URL = "https://" + MainApp._IP + "/tmk/app/app-debug.apk";
+    public static final String _UPDATE_URL_NEW = "https://" + MainApp._IP + "/tmk/app/ml/";
 
     public static String IMEI;
     public static String DeviceURL = "devices.php";
