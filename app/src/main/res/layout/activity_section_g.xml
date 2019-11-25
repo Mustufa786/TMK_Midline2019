@@ -9,7 +9,7 @@
 
         <variable
             name="callback"
-            type="edu.aku.ramshasaeed.tmk_midline_monitor.activities.SectionGActivity" />
+            type="edu.aku.ramshasaeed.tmk_midline_monitor19.activities.SectionGActivity" />
     </data>
 
     <android.support.v4.widget.NestedScrollView

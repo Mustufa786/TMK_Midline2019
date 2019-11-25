@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.aku.ramshasaeed.tmk_midline_monitor">
+    package="edu.aku.ramshasaeed.tmk_midline_monitor19">
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
     <uses-feature android:name="android.hardware.location.gps" />
@@ -17,7 +17,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
-        android:name="edu.aku.ramshasaeed.tmk_midline_monitor.core.MainApp"
+        android:name="edu.aku.ramshasaeed.tmk_midline_monitor19.core.MainApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -25,7 +25,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="edu.aku.ramshasaeed.tmk_midline_monitor.activities.SplashscreenActivity"
+            android:name="edu.aku.ramshasaeed.tmk_midline_monitor19.activities.SplashscreenActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,90 +34,90 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="edu.aku.ramshasaeed.tmk_midline_monitor.activities.LoginActivity"
+            android:name="edu.aku.ramshasaeed.tmk_midline_monitor19.activities.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:windowSoftInputMode="adjustResize|stateHidden"/>
 
         <activity
-            android:name="edu.aku.ramshasaeed.tmk_midline_monitor.activities.MainActivity"
+            android:name="edu.aku.ramshasaeed.tmk_midline_monitor19.activities.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden"/>
 
         <activity
-            android:name="edu.aku.ramshasaeed.tmk_midline_monitor.core.AndroidDatabaseManager"
+            android:name="edu.aku.ramshasaeed.tmk_midline_monitor19.core.AndroidDatabaseManager"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
 
         <activity
-            android:name="edu.aku.ramshasaeed.tmk_midline_monitor.activities.SectionAActivity"
+            android:name="edu.aku.ramshasaeed.tmk_midline_monitor19.activities.SectionAActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden"/>
 
         <activity
-            android:name="edu.aku.ramshasaeed.tmk_midline_monitor.activities.SectionDActivity"
+            android:name="edu.aku.ramshasaeed.tmk_midline_monitor19.activities.SectionDActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden">
 
         </activity>
         <activity
-            android:name="edu.aku.ramshasaeed.tmk_midline_monitor.activities.SectionBActivity"
+            android:name="edu.aku.ramshasaeed.tmk_midline_monitor19.activities.SectionBActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden">
 
         </activity>
         <activity
-            android:name="edu.aku.ramshasaeed.tmk_midline_monitor.activities.SectionEActivity"
+            android:name="edu.aku.ramshasaeed.tmk_midline_monitor19.activities.SectionEActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden">
 
         </activity>
         <activity
-            android:name="edu.aku.ramshasaeed.tmk_midline_monitor.activities.SectionFActivity"
+            android:name="edu.aku.ramshasaeed.tmk_midline_monitor19.activities.SectionFActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden">
 
         </activity>
         <activity
-            android:name="edu.aku.ramshasaeed.tmk_midline_monitor.activities.SectionGActivity"
+            android:name="edu.aku.ramshasaeed.tmk_midline_monitor19.activities.SectionGActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden">
 
         </activity>
         <activity
-            android:name="edu.aku.ramshasaeed.tmk_midline_monitor.activities.SectionHActivity"
+            android:name="edu.aku.ramshasaeed.tmk_midline_monitor19.activities.SectionHActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden"/>
         <activity
-            android:name="edu.aku.ramshasaeed.tmk_midline_monitor.activities.SectionIActivity"
+            android:name="edu.aku.ramshasaeed.tmk_midline_monitor19.activities.SectionIActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden"/>
         <activity
-            android:name="edu.aku.ramshasaeed.tmk_midline_monitor.activities.SectionJActivity"
+            android:name="edu.aku.ramshasaeed.tmk_midline_monitor19.activities.SectionJActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden"/>
         <activity
-            android:name="edu.aku.ramshasaeed.tmk_midline_monitor.activities.SectionKActivity"
+            android:name="edu.aku.ramshasaeed.tmk_midline_monitor19.activities.SectionKActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden"/>
         <activity
-            android:name="edu.aku.ramshasaeed.tmk_midline_monitor.activities.EndingActivity"
+            android:name="edu.aku.ramshasaeed.tmk_midline_monitor19.activities.EndingActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme1"
             android:windowSoftInputMode="adjustResize|stateHidden"/>
         <activity
-            android:name="edu.aku.ramshasaeed.tmk_midline_monitor.activities.SyncActivity"
+            android:name="edu.aku.ramshasaeed.tmk_midline_monitor19.activities.SyncActivity"
             android:theme="@style/AppTheme1"
             android:screenOrientation="portrait"/>
     </application>
