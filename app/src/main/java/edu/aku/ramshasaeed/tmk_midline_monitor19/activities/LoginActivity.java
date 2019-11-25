@@ -107,17 +107,19 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 //        ButterKnife.bind(this);
 
         try {
+            String packageName = getApplicationContext().getPackageName();
+
             long installedOn = this
                     .getPackageManager()
-                    .getPackageInfo("edu.aku.ramshasaeed.tmk_midline_monitor", 0)
+                    .getPackageInfo(packageName, 0)
                     .lastUpdateTime;
             MainApp.versionCode = this
                     .getPackageManager()
-                    .getPackageInfo("edu.aku.ramshasaeed.tmk_midline_monitor", 0)
+                    .getPackageInfo(packageName, 0)
                     .versionCode;
             MainApp.versionName = this
                     .getPackageManager()
-                    .getPackageInfo("edu.aku.ramshasaeed.tmk_midline_monitor", 0)
+                    .getPackageInfo(packageName, 0)
                     .versionName;
             bi.txtinstalldate.setText("Ver. " + MainApp.versionName + "." + MainApp.versionCode + " \r\n( Last Updated: " + new SimpleDateFormat("dd MMM. yyyy").format(new Date(installedOn)) + " )");
         } catch (PackageManager.NameNotFoundException e) {
@@ -266,10 +268,10 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 
         if (sharedPref.getBoolean("flag", false)) {
 
-            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
+            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
 
-            if (dt != new SimpleDateFormat("dd-MM-yy").format(new Date())) {
-                editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
+            if (dt != new SimpleDateFormat("dd-MM-yyyy").format(new Date())) {
+                editor.putString("dt", new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
 
                 editor.commit();
             }

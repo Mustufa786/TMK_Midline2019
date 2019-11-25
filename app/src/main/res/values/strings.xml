@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TMK Midline Monitor</string>
+    <string name="app_name">TMK Midline Monitor - 2019</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Login</string>
@@ -967,5 +967,48 @@
     <string name="thb36k"> ٻار جي چمڙي ڦڪي ٿيندي آھي </string>
     <string name="thb36l"> ٻيو ڪجھ (وضاحت ڪريو) </string>
 
+
+    <!--Anthro-->
+    <string name="tsh"> ماڊيول؛ ٻارجي جسماني پئمائش ۽ معائنو </string>
+    <string name="tsah1"> گهر جي عورت سربراه لاءِ وڏي آواز ۾ پڙهو؛ هاڻي آئون توهان ۽ توهان جي گهر جي مرد سربراه جي باري ۾ ڪجه سوال پڇنديس </string>
+    <string name="tsa00"> ٻار جو نالو </string>
+    <string name="tsa01"> ڇا توهان کي لڳي ٿو ته توهان جي ٻار (نالو) جو قد سندس عمر جي حساب سان صحيع آهي؟ </string>
+    <string name="tsa01a"> قد عمر جي حساب سان صحيع آهي </string>
+    <string name="tsa01b"> قد عمر جي حساب سان وڌيڪ ڊگهو آهي </string>
+    <string name="tsa01c"> قد عمر جي حساب سان ننڍو آهي </string>
+    <string name="tsa02"> ڇا توهان کي لڳي ٿو ته توهان جي ٻار (نالو) جو وزن سندس عمر جي حساب سان صحيع آهي؟ </string>
+    <string name="tsa02a"> وزن عمر جي حساب سان صحيع آهي </string>
+    <string name="tsa02b"> وزن عمر جي حساب سان گهڻووڌيڪ آهي </string>
+    <string name="tsa02c"> وزن عمر جي حساب سان گهٽ آهي </string>
+
+    <string name="tsbh1"> سيڪشن 2 جسماني پئمائش ۽ طبي معائنو </string>
+    <string name="tsbh2"> وڏي آواز ۾ پڙهو: هاڻي اسين (ٻار جو نالو) جو ڪجهه جسماني پئمائش ۽ طبي معائنو (قد جي ماپ، وزن ۽ ڏنئوري جي ماپ) ڪرڻ وڃي رهيا آهيون، هر ماپ گهٽ ۾ گهٽ ٻه دفعا ٿيندي. </string>
+    <string name="tsb01"> قد جي ماپ (سينٽي ميٽر۾) پهريون دفعو </string>
+    <string name="tsb02"> قد جي ماپ (سينٽي ميٽر۾) ٻيون دفعو </string>
+    <string name="tsb03"> ڇا پهرين ٻن دفعن جي قد ماپ ۾ 6. سينٽي ميٽر کان وڌيڪ فرق آهي؟(جيڪڏهن ها ته ماپ ٽيون دفعو ڪريو) </string>
+    <string name="tsb04"> قد جي ماپ (سينٽي ميٽر۾) ٽيون دفعو </string>
+    <string name="tsb05"> وزن جي تور (ڪلوگرام ۾ ) پهريون دفعو </string>
+    <string name="tsb06"> وزن جي تور (ڪلوگرام ۾ ) ٻيون دفعو </string>
+    <string name="tsb07"> ڇا پهرين ٻن دفعن جي وزن جي تور ۾ 1. ڪلوگرام (يعني 100 گرام) کان وڌيڪ فرق آهي؟(جيڪڏهن ها ته وزن جي تور ٽيون دفعو ڪريو) </string>
+    <string name="tsb08"> وزن جي تور (ڪلوگرام ۾ ) ٽيون دفعو </string>
+    <string name="tsb09"> کاٻي ڏنئوري جي گهير جي وچ واري حصي جي ماپ (سينٽي ميٽر ۾) پهريون دفعو </string>
+    <string name="tsb10"> کاٻي ڏنئوري جي گهير جي  وچ واري حصي جي ماپ (سينٽي ميٽر ۾) ٻيون دفعو </string>
+    <string name="tsb11"> ڇا ٻن دفعن جي ماپ ۾ 1.3 ملي ميٽر کان وڌيڪ فرق آهي؟(جيڪڏهن ها ته ماپ ٽيون دفعو ڪريو) </string>
+    <string name="tsb12"> کاٻي ڏنئوري جي گهير جي وچ واري حصي جي ماپ (سينٽي ميٽر ۾) ٽيون دفعو </string>
+    <string name="tsb13"> ٻار جي جسماني پئمائش جو نتيجو </string>
+    <string name="tsb13a"> پئمائش جي لاءِ راضي آهي </string>
+    <string name="tsb13b"> پئمائش لاء انڪار ڪيو ويو </string>
+    <string name="tsb13c"> ٻار موجود نه آهي </string>
+
+
+    <string name="tsfa01"> قد جي ماپ (سينٽي ميٽر۾) پهريون دفعو </string>
+    <string name="tsfa02"> توهان جي مقابلي ۾ توهان جو مڙس ( ٻار جي پيءَ جو نالو) قد ۾ ڪيترو ڊگهو آهي؟ </string>
+    <string name="tsfa02a"> توهان کان وڌيڪ ڊگهو آهي </string>
+    <string name="tsfa02b"> توهان جي برابر آهي </string>
+    <string name="tsfa02c"> توهان کان ننڍو آهي </string>
+    <string name="tsfa03"> اندازن ڪيترو ڊگهو يا ننڍو آهي مهرباني ڪري فرق انچ ۾لکو </string>
+    <string name="tsfa03a"> انڇ </string>
+    <string name="tsfa03b"> خبر نه آهي </string>
+    <string name="tsfa04"> چا ماءُ ٻار جي جسماني پئمائش جي اجازت ڏني؟ </string>
 
 </resources>

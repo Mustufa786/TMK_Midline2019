@@ -10,6 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import edu.aku.ramshasaeed.tmk_midline_monitor19.R;
+import edu.aku.ramshasaeed.tmk_midline_monitor19.activities.anthro.SectionAnthroBActivity;
 import edu.aku.ramshasaeed.tmk_midline_monitor19.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline_monitor19.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline_monitor19.databinding.ActivitySectionKBinding;
@@ -29,13 +30,13 @@ public class SectionKActivity extends AppCompatActivity {
 
 
     }
+
     public void BtnEnd() {
         MainApp.endActivity(this, this);
     }
 
-   public void onBtnContinueClick() {
+    public void onBtnContinueClick() {
         //TODO implement
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -43,7 +44,6 @@ public class SectionKActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
@@ -54,8 +54,7 @@ public class SectionKActivity extends AppCompatActivity {
                     Intent secNext = new Intent(this, SectionGActivity.class);
                     startActivity(secNext);
                 } else {
-                    Intent secNext = new Intent(this, EndingActivity.class).putExtra("complete",true);
-                    startActivity(secNext);
+                    startActivity(new Intent(this, SectionAnthroBActivity.class));
                 }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -64,7 +63,6 @@ public class SectionKActivity extends AppCompatActivity {
     }
 
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         JSONObject sM = new JSONObject();
 
@@ -96,7 +94,6 @@ public class SectionKActivity extends AppCompatActivity {
         int updcount = db.updateSK();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -106,8 +103,6 @@ public class SectionKActivity extends AppCompatActivity {
 
 
     public boolean formValidation() {
-
-        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
         if (!ValidatorClasss.EmptyRadioButton(this, bi.tm01, bi.tm01a, getString(R.string.tm01))) {
             return false;
@@ -144,6 +139,7 @@ public class SectionKActivity extends AppCompatActivity {
         }
         return ValidatorClasss.EmptyRadioButton(this, bi.tm12, bi.tm12a, getString(R.string.tm12));
     }
+
     @Override
     public void onBackPressed() {
 

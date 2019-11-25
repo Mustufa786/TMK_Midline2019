@@ -216,7 +216,7 @@ public class SectionIIMContract
         public static final String COLUMN_UID = "uid";
         public static final String COLUMN_SI = "sI";
         public static final String COLUMN_FORMDATE = "formdate";
-        public static final String COLUMN_USER = "user";
+        public static final String COLUMN_USER = "username";
         //        public static final String COLUMN_CHILDID = "childid";
 //        public static final String COLUMN_MM = "mm";
 //        public static final String COLUMN_DSSID = "dssid";

@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import edu.aku.ramshasaeed.tmk_midline_monitor19.R;
+import edu.aku.ramshasaeed.tmk_midline_monitor19.activities.anthro.SectionAnthroBActivity;
 import edu.aku.ramshasaeed.tmk_midline_monitor19.contracts.FamilyMembersContract;
 import edu.aku.ramshasaeed.tmk_midline_monitor19.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline_monitor19.core.MainApp;
@@ -293,8 +294,6 @@ public class SectionHActivity extends AppCompatActivity {
 
     public void onBtnContinueClick() {
         //TODO implement
-
-        Toast.makeText(this, "Processing This Section", Toast.LENGTH_SHORT).show();
         if (formValidation()) {
             try {
                 SaveDraft();
@@ -302,10 +301,9 @@ public class SectionHActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
-                startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+                startActivity(new Intent(this, SectionAnthroBActivity.class));
 
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -321,7 +319,6 @@ public class SectionHActivity extends AppCompatActivity {
         int updcount = db.updateSH();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -331,7 +328,6 @@ public class SectionHActivity extends AppCompatActivity {
     }
 
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         JSONObject sJ = new JSONObject();
 

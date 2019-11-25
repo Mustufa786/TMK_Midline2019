@@ -25,6 +25,7 @@ public class FormsContract {
     private String sI = "";
     private String sJ = "";
     private String sK = "";
+    private String sL = "";
     private String appVer = "";
     private String gpsLat = "";
     private String gpsLng = "";
@@ -58,6 +59,7 @@ public class FormsContract {
         this.sI = jsonObject.getString(FormsTable.COLUMN_SI);
         this.sJ = jsonObject.getString(FormsTable.COLUMN_SJ);
         this.sK = jsonObject.getString(FormsTable.COLUMN_SK);
+        this.sL = jsonObject.getString(FormsTable.COLUMN_SL);
         this.appVer = jsonObject.getString(FormsTable.COLUMN_APPVER);
         this.gpsLat = jsonObject.getString(FormsTable.COLUMN_GPSLAT);
         this.gpsLng = jsonObject.getString(FormsTable.COLUMN_GPSLNG);
@@ -90,6 +92,7 @@ public class FormsContract {
         this.sI = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SI));
         this.sJ = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SJ));
         this.sK = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SK));
+        this.sL = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_SL));
         this.appVer = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_APPVER));
         this.gpsLat = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSLAT));
         this.gpsLng = cursor.getString(cursor.getColumnIndex(FormsTable.COLUMN_GPSLNG));
@@ -320,6 +323,14 @@ public class FormsContract {
         this.hhno = hhno;
     }
 
+    public String getsL() {
+        return sL;
+    }
+
+    public void setsL(String sL) {
+        this.sL = sL;
+    }
+
     public JSONObject toJSONObject() throws JSONException {
 
         JSONObject json = new JSONObject();
@@ -368,6 +379,10 @@ public class FormsContract {
 
             json.put(FormsTable.COLUMN_SK, this.sK.equals("") ? JSONObject.NULL : new JSONObject(this.sK));
         }
+        if (!this.sL.equals("")) {
+
+            json.put(FormsTable.COLUMN_SL, this.sL.equals("") ? JSONObject.NULL : new JSONObject(this.sL));
+        }
 
         json.put(FormsTable.COLUMN_APPVER, this.appVer == null ? JSONObject.NULL : this.appVer);
         json.put(FormsTable.COLUMN_GPSLAT, this.gpsLat == null ? JSONObject.NULL : this.gpsLat);
@@ -391,7 +406,7 @@ public class FormsContract {
         public static final String COLUMN_FORMDATE = "formdate";
         public static final String COLUMN_CLUSTER = "cluster_no";
         public static final String COLUMN_HHNO = "hhno";
-        public static final String COLUMN_USER = "user";
+        public static final String COLUMN_USER = "username";
         public static final String COLUMN_ISTATUS = "istatus";
         public static final String COLUMN_ISTATUS96X = "istatus96x";
         public static final String COLUMN_SA = "sa"; // Info
@@ -404,6 +419,7 @@ public class FormsContract {
         public static final String COLUMN_SI = "sk";  // Water
         public static final String COLUMN_SJ = "sl";  // Handwash
         public static final String COLUMN_SK = "sm";  // Spot check
+        public static final String COLUMN_SL = "sn";  // Spot check
         public static final String COLUMN_APPVER = "app_version";
         public static final String COLUMN_GPSLAT = "gpslat";
         public static final String COLUMN_GPSLNG = "gpslng";

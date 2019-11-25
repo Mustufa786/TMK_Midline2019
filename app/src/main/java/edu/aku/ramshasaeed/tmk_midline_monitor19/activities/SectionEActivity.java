@@ -164,7 +164,6 @@ public class SectionEActivity extends AppCompatActivity {
             }
 
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
@@ -182,7 +181,6 @@ public class SectionEActivity extends AppCompatActivity {
         int updcount = db.updateSE();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -320,7 +318,6 @@ public class SectionEActivity extends AppCompatActivity {
     }
 
     private boolean formValidation() {
-        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
         if (!ValidatorClasss.EmptyRadioButton(this, bi.tha01, bi.tha01a, getString(R.string.tha01))) {
             return false;
         }

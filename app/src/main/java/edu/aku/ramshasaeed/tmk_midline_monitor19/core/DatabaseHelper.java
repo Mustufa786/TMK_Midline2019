@@ -16,7 +16,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 import edu.aku.ramshasaeed.tmk_midline_monitor19.contracts.AreasContract;
 import edu.aku.ramshasaeed.tmk_midline_monitor19.contracts.AreasContract.singleAreas;
@@ -69,6 +68,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             FormsTable.COLUMN_SI + " TEXT," +
             FormsTable.COLUMN_SJ + " TEXT," +
             FormsTable.COLUMN_SK + " TEXT," +
+            FormsTable.COLUMN_SL + " TEXT," +
             FormsTable.COLUMN_APPVER + " TEXT," +
             FormsTable.COLUMN_GPSLAT + " TEXT," +
             FormsTable.COLUMN_GPSLNG + " TEXT," +
@@ -126,6 +126,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             familyMembers.COLUMN_ISTATUS + " TEXT," +
             familyMembers.COLUMN_SERIALNO + " TEXT," +
             familyMembers.COLUMN_MOTHERID + " TEXT," +
+            familyMembers.COLUMN_TYPE + " TEXT," +
+            familyMembers.COLUMN_APP_VER + " TEXT," +
+            familyMembers.COLUMN_CLUSTERNO + " TEXT," +
+            familyMembers.COLUMN_HHNO + " TEXT"
+            + " );";
+
+    private static final String SQL_CREATE_GET_MEMBERS = "CREATE TABLE "
+            + familyMembers.TABLE_NAME_GET + "("
+            + familyMembers.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + FamilyMembersContract.familyMembers.COLUMN_PROJECT_NAME + " TEXT," +
+            familyMembers.COLUMN_UID + " TEXT," +
+            familyMembers.COLUMN_UUID + " TEXT," +
+            familyMembers.COLUMN_FORMDATE + " TEXT," +
+            familyMembers.COLUMN_DEVICEID + " TEXT," +
+            familyMembers.COLUMN_USER + " TEXT," +
+            familyMembers.COLUMN_DEVICETAGID + " TEXT," +
+            familyMembers.COLUMN_NAME + " TEXT," +
+            familyMembers.COLUMN_DOB + " TEXT," +
+            familyMembers.COLUMN_AGE + " TEXT," +
+            familyMembers.COLUMN_SB + " TEXT," +
+            familyMembers.COLUMN_SYNCED + " TEXT," +
+            familyMembers.COLUMN_SYNCED_DATE + " TEXT," +
+            familyMembers.COLUMN_ISTATUS + " TEXT," +
+            familyMembers.COLUMN_SERIALNO + " TEXT," +
+            familyMembers.COLUMN_MOTHERID + " TEXT," +
+            familyMembers.COLUMN_MMNAME + " TEXT," +
             familyMembers.COLUMN_TYPE + " TEXT," +
             familyMembers.COLUMN_APP_VER + " TEXT," +
             familyMembers.COLUMN_CLUSTERNO + " TEXT," +
@@ -201,7 +227,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private final String TAG = "DatabaseHelper";
 
 
-    public String spDateT = new SimpleDateFormat("dd-MM-yy").format(new Date().getTime());
+    public String spDateT = new SimpleDateFormat("dd-MM-yyyy").format(new Date().getTime());
 
 
     public DatabaseHelper(Context context) {
@@ -223,6 +249,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_AREAS);
         db.execSQL(SQL_CREATE_BL_RANDOM);
         db.execSQL(SQL_CREATE_VERSIONAPP);
+
+
+        db.execSQL(SQL_CREATE_GET_MEMBERS);
     }
 
     @Override
@@ -665,6 +694,47 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public void syncMembers(JSONArray syncList) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(familyMembers.TABLE_NAME_GET, null, null);
+        try {
+            JSONArray jsonArray = syncList;
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObjectCC = jsonArray.getJSONObject(i);
+
+                FamilyMembersContract fmc = new FamilyMembersContract();
+                fmc.Sync(jsonObjectCC);
+
+                ContentValues values = new ContentValues();
+
+                values.put(familyMembers.COLUMN_PROJECT_NAME, fmc.getprojectName());
+                values.put(familyMembers.COLUMN_UID, fmc.get_UID());
+                values.put(familyMembers.COLUMN_UUID, fmc.get_UUID());
+                values.put(familyMembers.COLUMN_FORMDATE, fmc.getformDate());
+                values.put(familyMembers.COLUMN_DEVICEID, fmc.getdeviceId());
+                values.put(familyMembers.COLUMN_USER, fmc.getuser());
+                values.put(familyMembers.COLUMN_DEVICETAGID, fmc.getdevicetagID());
+                values.put(familyMembers.COLUMN_NAME, fmc.getname());
+                values.put(familyMembers.COLUMN_DOB, fmc.getdob());
+                values.put(familyMembers.COLUMN_AGE, fmc.getage());
+
+                values.put(familyMembers.COLUMN_ISTATUS, fmc.getistatus());
+                values.put(familyMembers.COLUMN_SERIALNO, fmc.getserialNo());
+                values.put(familyMembers.COLUMN_MOTHERID, fmc.getmotherId());
+                values.put(familyMembers.COLUMN_MMNAME, fmc.getMmname());
+                values.put(familyMembers.COLUMN_TYPE, fmc.gettype());
+                values.put(familyMembers.COLUMN_APP_VER, fmc.getapp_ver());
+                values.put(familyMembers.COLUMN_CLUSTERNO, fmc.getclusterNo());
+                values.put(familyMembers.COLUMN_HHNO, fmc.gethhNo());
+
+                db.insert(familyMembers.TABLE_NAME_GET, null, values);
+            }
+        } catch (Exception e) {
+        } finally {
+            db.close();
+        }
+    }
+
     public void syncUser(JSONArray userlist) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(UsersContract.singleUser.TABLE_NAME, null, null);
@@ -693,7 +763,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-
     public boolean Login(String username, String password) throws SQLException {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -706,108 +775,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return false;
     }
-
-
-    public List<FormsContract> getFormsByDSS(String dssID) {
-        List<FormsContract> formList = new ArrayList<FormsContract>();
-        // Select All Query
-        String selectQuery = "SELECT  * FROM " + FormsTable.TABLE_NAME;
-
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor c = db.rawQuery(selectQuery, null);
-
-        // looping through all rows and adding to list
-        if (c.moveToFirst()) {
-            do {
-                FormsContract fc = new FormsContract();
-                formList.add(fc.Hydrate(c));
-            } while (c.moveToNext());
-        }
-
-        // return contact list
-        return formList;
-    }
-
-   /* public Collection<MotherLst> getMotherByUUID(String uuid) {
-
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = null;
-        // COLUMNS RETURNED: child_name, child_id, mother_name, mother_id, date_of_birth, serial
-        Collection<MotherLst> memList = new ArrayList<>();
-        try {
-
-//            c = db.rawQuery(SQL_SELECT_MOTHER_BY_CHILD, new String[]{"c", "('1', '2')", uuid});
-            c = db.rawQuery(SQL_SELECT_MOTHER_BY_CHILD, new String[]{"c", uuid});
-
-            while (c.moveToNext()) {
-
-                MotherLst mc = new MotherLst();
-                memList.add(mc.Hydrate(c));
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
-        return memList;
-    }*/
-
-    public Collection<FamilyMembersContract> getChildFromMember(String dssID, String uuid) {
-
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = null;
-        // COLUMNS RETURNED: child_name, child_id, mother_name, mother_id, date_of_birth, serial
-        Collection<FamilyMembersContract> memList = new ArrayList<>();
-        try {
-
-//            c = db.rawQuery(SQL_SELECT_CHILD, new String[]{"c", dssID, uuid, "('1', '2')"});
-            c = db.rawQuery(SQL_SELECT_CHILD, new String[]{"c", dssID, uuid});
-
-            while (c.moveToNext()) {
-                FamilyMembersContract mc = new FamilyMembersContract();
-                memList.add(mc.Hydrate(c));
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
-        return memList;
-    }
-
-
-    public Collection<FamilyMembersContract> getMWRA(String dssID, String uuid) {
-
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = null;
-        // COLUMNS RETURNED: child_name, child_id, mother_name, mother_id, date_of_birth, serial
-        Collection<FamilyMembersContract> memList = new ArrayList<>();
-        try {
-
-//            c = db.rawQuery(SQL_SELECT_CHILD, new String[]{"c", dssID, uuid, "('1', '2')"});
-            c = db.rawQuery(SQL_SELECT_CHILD, new String[]{"c", dssID, uuid});
-
-            while (c.moveToNext()) {
-                FamilyMembersContract mc = new FamilyMembersContract();
-                memList.add(mc.Hydrate(c));
-            }
-        } finally {
-            if (c != null) {
-                c.close();
-            }
-            if (db != null) {
-                db.close();
-            }
-        }
-        return memList;
-    }
-
 
     public Long addForm(FormsContract fc) {
 
@@ -831,6 +798,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(FormsTable.COLUMN_SI, fc.getsI());
         values.put(FormsTable.COLUMN_SJ, fc.getsJ());
         values.put(FormsTable.COLUMN_SK, fc.getsK());
+        values.put(FormsTable.COLUMN_SL, fc.getsL());
         values.put(FormsTable.COLUMN_APPVER, fc.getappVer());
         values.put(FormsTable.COLUMN_GPSLAT, fc.getgpsLat());
         values.put(FormsTable.COLUMN_GPSLNG, fc.getgpsLng());
@@ -923,7 +891,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-
     public void updateSyncedForms(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -942,7 +909,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 where,
                 whereArgs);
     }
-
 
     public void updateFamilyMember(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -963,7 +929,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-
     public void updateIM(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -983,7 +948,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 whereArgs);
     }
 
-
     public int updateFormID() {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -1001,7 +965,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
         return count;
     }
-
 
     public int updateFamilyMemberID() {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -1059,6 +1022,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_SI,
                 FormsTable.COLUMN_SJ,
                 FormsTable.COLUMN_SK,
+                FormsTable.COLUMN_SL,
                 FormsTable.COLUMN_APPVER,
                 FormsTable.COLUMN_GPSLAT,
                 FormsTable.COLUMN_GPSLNG,
@@ -1106,7 +1070,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return allFC;
     }
-
 
     public Collection<SectionIIMContract> getUnsyncedIM() {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -1207,7 +1170,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             while (c.moveToNext()) {
                 FamilyMembersContract cc = new FamilyMembersContract();
-                allCC.add(cc.Hydrate(c));
+                allCC.add(cc.Hydrate(c, false));
             }
         } finally {
             if (c != null) {
@@ -1219,7 +1182,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return allCC;
     }
-
 
     public Collection<FormsContract> getUnsyncedForms() {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -1241,6 +1203,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_SI,
                 FormsTable.COLUMN_SJ,
                 FormsTable.COLUMN_SK,
+                FormsTable.COLUMN_SL,
                 FormsTable.COLUMN_APPVER,
                 FormsTable.COLUMN_GPSLAT,
                 FormsTable.COLUMN_GPSLNG,
@@ -1308,6 +1271,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 FormsTable.COLUMN_SI,
                 FormsTable.COLUMN_SJ,
                 FormsTable.COLUMN_SK,
+                FormsTable.COLUMN_SL,
                 FormsTable.COLUMN_APPVER,
                 FormsTable.COLUMN_GPSLAT,
                 FormsTable.COLUMN_GPSLNG,
@@ -1614,6 +1578,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count;
     }
 
+    public int updateSL() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+// New value for one column
+        ContentValues values = new ContentValues();
+        values.put(FormsTable.COLUMN_SL, MainApp.fc.getsL());
+
+// Which row to update, based on the ID
+        String selection = FormsTable._ID + " = ?";
+        String[] selectionArgs = {String.valueOf(MainApp.fc.get_ID())};
+
+        int count = db.update(FormsTable.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+        return count;
+    }
+
     public int updateCount() {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -1650,6 +1632,64 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 selectionArgs);
         return count;
     }
+
+    public Collection<FamilyMembersContract> getUnder5Children(String subAreaCode, String hh) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = null;
+        String[] columns = {
+                familyMembers.COLUMN_ID,
+                familyMembers.COLUMN_UID,
+                familyMembers.COLUMN_UUID,
+                familyMembers.COLUMN_FORMDATE,
+                familyMembers.COLUMN_DEVICEID,
+                familyMembers.COLUMN_USER,
+                familyMembers.COLUMN_DEVICETAGID,
+                familyMembers.COLUMN_NAME,
+                familyMembers.COLUMN_DOB,
+                familyMembers.COLUMN_AGE,
+                familyMembers.COLUMN_SB,
+                familyMembers.COLUMN_SYNCED,
+                familyMembers.COLUMN_SYNCED_DATE,
+                familyMembers.COLUMN_ISTATUS,
+                familyMembers.COLUMN_SERIALNO,
+                familyMembers.COLUMN_MOTHERID,
+                familyMembers.COLUMN_TYPE,
+                familyMembers.COLUMN_APP_VER,
+                familyMembers.COLUMN_CLUSTERNO,
+                familyMembers.COLUMN_HHNO,
+                familyMembers.COLUMN_MMNAME,
+
+        };
+        String whereClause = familyMembers.COLUMN_UUID + " =? AND " + familyMembers.COLUMN_CLUSTERNO + " =? AND " + familyMembers.COLUMN_HHNO + " =? ";
+        String[] whereArgs = {subAreaCode, hh};
+        String groupBy = null;
+        String having = null;
+        String orderBy = familyMembers.COLUMN_ID + " ASC";
+        ArrayList<FamilyMembersContract> allCC = new ArrayList<>();
+        try {
+            c = db.query(
+                    familyMembers.TABLE_NAME_GET,  // The table to query
+                    columns,                   // The columns to return
+                    whereClause,               // The columns for the WHERE clause
+                    whereArgs,                 // The values for the WHERE clause
+                    groupBy,                   // don't group the rows
+                    having,                    // don't filter by row groups
+                    orderBy                    // The sort order
+            );
+            while (c.moveToNext()) {
+                allCC.add(new FamilyMembersContract().Hydrate(c, true));
+            }
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return allCC;
+    }
+
 
     /*  public int updateFamilyMember() {
           SQLiteDatabase db = this.getReadableDatabase();

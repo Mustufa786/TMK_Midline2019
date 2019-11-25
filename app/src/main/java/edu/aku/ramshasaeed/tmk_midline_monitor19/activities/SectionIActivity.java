@@ -136,7 +136,6 @@ public class SectionIActivity extends AppCompatActivity {
     }
 
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         JSONObject sK = new JSONObject();
 
@@ -182,8 +181,6 @@ public class SectionIActivity extends AppCompatActivity {
     }
 
     public boolean ValidateForm() {
-
-        Toast.makeText(this, "Validating This Section ", Toast.LENGTH_SHORT).show();
 
         if (!ValidatorClasss.EmptyRadioButton(this, bi.tk01, bi.tk0196, bi.tk0196x, getString(R.string.tk01))) {
             return false;
@@ -235,7 +232,6 @@ public class SectionIActivity extends AppCompatActivity {
         int updcount = db.updateSI();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();
@@ -251,7 +247,6 @@ public class SectionIActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 

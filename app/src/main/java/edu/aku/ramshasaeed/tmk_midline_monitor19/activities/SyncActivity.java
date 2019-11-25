@@ -305,10 +305,10 @@ public class SyncActivity extends AppCompatActivity {
 
         if (sharedPref.getBoolean("flag", false)) {
 
-            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
+            String dt = sharedPref.getString("dt", new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
 
-            if (dt != new SimpleDateFormat("dd-MM-yy").format(new Date())) {
-                editor.putString("dt", new SimpleDateFormat("dd-MM-yy").format(new Date()));
+            if (dt != new SimpleDateFormat("dd-MM-yyyy").format(new Date())) {
+                editor.putString("dt", new SimpleDateFormat("dd-MM-yyyy").format(new Date()));
 
                 editor.commit();
             }

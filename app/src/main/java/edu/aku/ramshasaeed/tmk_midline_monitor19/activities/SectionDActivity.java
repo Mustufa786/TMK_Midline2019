@@ -277,7 +277,6 @@ ActivitySectionDBinding bi;
 
 
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         // children
         if (ageInyears < 5) {
@@ -328,7 +327,6 @@ ActivitySectionDBinding bi;
         MainApp.fmc.set_ID(String.valueOf(updcount));
 
         if (updcount != 0) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
             MainApp.fmc.set_UID(
                     (MainApp.fc.getdeviceid() + MainApp.fmc.get_ID()));

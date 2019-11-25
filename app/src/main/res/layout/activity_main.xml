@@ -134,7 +134,7 @@
                     android:drawableLeft="@android:drawable/stat_sys_download"
                     android:onClick="syncDevice"
                     android:paddingTop="8dp"
-                    android:text="Download Villages"
+                    android:text="Download Data"
                     android:textColor="@color/white"
                     android:textSize="22sp" />
 
@@ -364,31 +364,6 @@
                         android:text="Test GPS Coordinates"
                         android:textColor="@color/white"
                         android:textSize="22sp" />
-
-                    <!--
-                                        <Button
-                                            android:id="@+id/downloadApp"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginBottom="8dp"
-                                            android:layout_marginTop="16dp"
-                                            android:background="@color/red"
-                                            android:onClick="opendownload"
-                                            android:text="DOWNLOAD APP"
-                                            android:textColor="@color/white"
-                                            android:visibility="gone" />-->
-
-
-                    <Button
-                        android:id="@+id/updateApp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginTop="16dp"
-                        android:background="#D60000"
-                        android:onClick="updateApp"
-                        android:text="Update App"
-                        android:visibility="gone" />
 
 
                 </LinearLayout>

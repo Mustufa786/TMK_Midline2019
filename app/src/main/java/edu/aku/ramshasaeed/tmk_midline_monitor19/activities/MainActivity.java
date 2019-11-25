@@ -17,7 +17,6 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.databinding.DataBindingUtil;
-import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -32,11 +31,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -53,8 +47,7 @@ import edu.aku.ramshasaeed.tmk_midline_monitor19.core.AndroidDatabaseManager;
 import edu.aku.ramshasaeed.tmk_midline_monitor19.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline_monitor19.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline_monitor19.databinding.ActivityMainBinding;
-import edu.aku.ramshasaeed.tmk_midline_monitor19.get.GetBLRandom;
-
+import edu.aku.ramshasaeed.tmk_midline_monitor19.get.GetAllDataInd;
 
 public class MainActivity extends Activity {
 
@@ -89,7 +82,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         bi = DataBindingUtil.setContentView(this, R.layout.activity_main);
         bi.setCallback(this);
-        this.setTitle("\t\t\t\t\t\t\t\t\t\t"+getResources().getString(R.string.app_name));
+        this.setTitle("\t\t\t\t\t\t\t\t\t\t" + getResources().getString(R.string.app_name));
 
 
 //        ButterKnife.bind(this);
@@ -166,11 +159,11 @@ public class MainActivity extends Activity {
 
 
                 rSumText += fc.get_ID();
-                rSumText +=  " " +fc.gethhno()+ " ";
+                rSumText += " " + fc.gethhno() + " ";
 
                 rSumText += " " + iStatus + " ";
 
-                rSumText += (fc.getsynced() == null  || fc.getsynced().equals("") ? "\t\tNot Synced" : "\t\tSynced");
+                rSumText += (fc.getsynced() == null || fc.getsynced().equals("") ? "\t\tNot Synced" : "\t\tSynced");
                 rSumText += "\r\n";
                 rSumText += "--------------------------------------------------\r\n";
             }
@@ -308,36 +301,43 @@ public class MainActivity extends Activity {
         startActivity(oF);
 
     }
+
     public void openE() {
         Intent oF = new Intent(MainActivity.this, SectionEActivity.class);
         startActivity(oF);
 
     }
+
     public void openF() {
         Intent oF = new Intent(MainActivity.this, SectionFActivity.class);
         startActivity(oF);
 
     }
+
     public void openG() {
         Intent oF = new Intent(MainActivity.this, SectionGActivity.class);
         startActivity(oF);
 
     }
+
     public void openH() {
         Intent oF = new Intent(MainActivity.this, SectionHActivity.class);
         startActivity(oF);
 
     }
+
     public void openI() {
         Intent oF = new Intent(MainActivity.this, SectionIActivity.class);
         startActivity(oF);
 
     }
+
     public void openJ() {
         Intent oF = new Intent(MainActivity.this, SectionJActivity.class);
         startActivity(oF);
 
     }
+
     public void openK() {
         Intent oF = new Intent(MainActivity.this, SectionKActivity.class);
         startActivity(oF);
@@ -401,62 +401,6 @@ public class MainActivity extends Activity {
         }
     };
 
-    public void updateApp(View v) {
-        v.setBackgroundColor(Color.GREEN);
-
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-                MainActivity.this);
-        alertDialogBuilder
-                .setMessage("Are you sure to download new app??")
-                .setCancelable(false)
-                .setPositiveButton("Yes",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog,
-                                                int id) {
-                                // this is how you fire the downloader
-                                try {
-                                    URL url = new URL(MainApp._UPDATE_URL);
-                                    HttpURLConnection c = (HttpURLConnection) url.openConnection();
-                                    c.setRequestMethod("GET");
-                                    c.setDoOutput(true);
-                                    c.connect();
-
-                                    String PATH = Environment.getExternalStorageDirectory() + "/download/";
-                                    File file = new File(PATH);
-                                    file.mkdirs();
-                                    File outputFile = new File(file, "app.apk");
-                                    FileOutputStream fos = new FileOutputStream(outputFile);
-
-                                    InputStream is = c.getInputStream();
-
-                                    byte[] buffer = new byte[1024];
-                                    int len1 = 0;
-                                    while ((len1 = is.read(buffer)) != -1) {
-                                        fos.write(buffer, 0, len1);
-                                    }
-                                    fos.close();
-                                    is.close();//till here, it works fine - .apk is download to my sdcard in download file
-
-                                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                                    intent.setDataAndType(Uri.fromFile(new File(Environment.getExternalStorageDirectory() + "/download/" + "app.apk")), "application/vnd.android.package-archive");
-                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                    startActivity(intent);
-
-                                } catch (IOException e) {
-                                    Toast.makeText(getApplicationContext(), "Update error!", Toast.LENGTH_LONG).show();
-                                }
-                            }
-                        });
-        alertDialogBuilder.setNegativeButton("No",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                });
-        AlertDialog alert = alertDialogBuilder.create();
-        alert.show();
-    }
-
     public void openDB(View v) {
         Intent dbmanager = new Intent(getApplicationContext(), AndroidDatabaseManager.class);
         startActivity(dbmanager);
@@ -493,7 +437,9 @@ public class MainActivity extends Activity {
         if (networkInfo != null && networkInfo.isConnected()) {
 
             // Sync Random
-            new GetBLRandom(this).execute();
+            new GetAllDataInd(this, "BLRandom").execute();
+            // Sync Members
+            new GetAllDataInd(this, "Members").execute();
 
             SharedPreferences syncPref = getSharedPreferences("SyncInfo", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = syncPref.edit();
@@ -511,7 +457,7 @@ public class MainActivity extends Activity {
         if (exit) {
             finish(); // finish activity
 
-            startActivity(new Intent(this, LoginActivity.class));
+            startActivity(new Intent(this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
 
         } else {
             Toast.makeText(this, "Press Back again to Exit.",
@@ -565,6 +511,7 @@ public class MainActivity extends Activity {
         }
 
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();

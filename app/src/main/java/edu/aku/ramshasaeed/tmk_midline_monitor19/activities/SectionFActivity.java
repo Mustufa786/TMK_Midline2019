@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import edu.aku.ramshasaeed.tmk_midline_monitor19.R;
+import edu.aku.ramshasaeed.tmk_midline_monitor19.activities.anthro.SectionAnthroBActivity;
 import edu.aku.ramshasaeed.tmk_midline_monitor19.core.DatabaseHelper;
 import edu.aku.ramshasaeed.tmk_midline_monitor19.core.MainApp;
 import edu.aku.ramshasaeed.tmk_midline_monitor19.databinding.ActivitySectionFBinding;
@@ -164,7 +165,7 @@ public class SectionFActivity extends AppCompatActivity {
                             MotherName = MainApp.familyMembersList.get(j).getname();
                         }
                     }
-                    bi.motherName.setText(MotherName+"_"+MotherID);
+                    bi.motherName.setText(MotherName + "_" + MotherID);
                 } else {
                     bi.motherName.setText(null);
 
@@ -577,7 +578,6 @@ public class SectionFActivity extends AppCompatActivity {
             }
 
             if (UpdateDB()) {
-                Toast.makeText(this, "Starting Next Section", Toast.LENGTH_SHORT).show();
 
                 finish();
 
@@ -585,7 +585,7 @@ public class SectionFActivity extends AppCompatActivity {
                     Intent secNext = new Intent(this, SectionGActivity.class);
                     startActivity(secNext);
                 } else {
-                    startActivity(new Intent(this, EndingActivity.class).putExtra("complete", true));
+                    startActivity(new Intent(this, SectionAnthroBActivity.class));
                 }
             } else {
                 Toast.makeText(this, "Failed to Update Database!", Toast.LENGTH_SHORT).show();
@@ -608,7 +608,6 @@ public class SectionFActivity extends AppCompatActivity {
         int updcount = db.updateSF();
 
         if (updcount == 1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
             return true;
         } else {
             Toast.makeText(this, "Updating Database... ERROR!", Toast.LENGTH_SHORT).show();

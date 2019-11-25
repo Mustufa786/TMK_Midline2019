@@ -617,7 +617,6 @@ public class SectionGActivity extends AppCompatActivity {
         MainApp.ims.set_ID(String.valueOf(updcount));
 
         if (updcount != -1) {
-            Toast.makeText(this, "Updating Database... Successful!", Toast.LENGTH_SHORT).show();
 
             MainApp.ims.setUID(
                     (MainApp.fc.getdeviceid() + MainApp.ims.get_ID()));
@@ -632,7 +631,6 @@ public class SectionGActivity extends AppCompatActivity {
     }
 
     private void SaveDraft() throws JSONException {
-        Toast.makeText(this, "Saving Draft for  This Section", Toast.LENGTH_SHORT).show();
 
         SharedPreferences sharedPref = getSharedPreferences("tagName", MODE_PRIVATE);
 
