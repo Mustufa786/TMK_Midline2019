@@ -1660,7 +1660,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 familyMembers.COLUMN_MMNAME,
 
         };
-        String whereClause = familyMembers.COLUMN_UUID + " =? AND " + familyMembers.COLUMN_CLUSTERNO + " =? AND " + familyMembers.COLUMN_HHNO + " =? ";
+        String whereClause = familyMembers.COLUMN_CLUSTERNO + " =? AND " + familyMembers.COLUMN_HHNO + " =? ";
         String[] whereArgs = {subAreaCode, hh};
         String groupBy = null;
         String having = null;
