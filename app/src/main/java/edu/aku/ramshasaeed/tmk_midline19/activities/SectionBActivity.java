@@ -849,7 +849,7 @@ public class SectionBActivity extends AppCompatActivity {
             // Youngest child in HH
             if (young_child_in_hh == null)
                 young_child_in_hh = fmc;
-            else if (Integer.valueOf(young_child_in_hh.getage()) > Integer.valueOf(young_child_in_hh.getage()))
+            else if (Integer.valueOf(young_child_in_hh.getage()) > Integer.valueOf(fmc.getage()))
                 young_child_in_hh = fmc;
 
         }
