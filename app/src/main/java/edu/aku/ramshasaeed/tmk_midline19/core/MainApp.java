@@ -115,7 +115,9 @@ public class MainApp extends Application {
     public static List<FamilyMembersContract> childUnder2;
     public static List<FamilyMembersContract> childUnder5;
     public static int serial_no;
-    public static YoungestChild young_child;
+    public static YoungestChild young_child = null;
+
+    public static FamilyMembersContract young_child_in_hh;
 
 
     //    Ali

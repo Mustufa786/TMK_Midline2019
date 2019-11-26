@@ -38,6 +38,8 @@ import edu.aku.ramshasaeed.tmk_midline19.validation.ValidatorClasss;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
+import static edu.aku.ramshasaeed.tmk_midline19.core.MainApp.fmc;
+import static edu.aku.ramshasaeed.tmk_midline19.core.MainApp.young_child_in_hh;
 
 public class SectionBActivity extends AppCompatActivity {
 
@@ -739,6 +741,7 @@ public class SectionBActivity extends AppCompatActivity {
                     MainApp.young_child = MainApp.young_child.getAge() < (ageMonths / 12) ? MainApp.young_child : new MainApp.YoungestChild(MainApp.serial_no, ageMonths / 12);
 
             }
+
             // u5
             MainApp.TotalChildCount++;
         }
@@ -842,6 +845,13 @@ public class SectionBActivity extends AppCompatActivity {
             }
             // u5
             MainApp.childUnder5.add(MainApp.fmc);
+
+            // Youngest child in HH
+            if (young_child_in_hh == null)
+                young_child_in_hh = fmc;
+            else if (Integer.valueOf(young_child_in_hh.getage()) > Integer.valueOf(young_child_in_hh.getage()))
+                young_child_in_hh = fmc;
+
         }
         if (ageInyears > 5) {
             MainApp.members_f_m.add(MainApp.fmc);

@@ -35,6 +35,7 @@ import edu.aku.ramshasaeed.tmk_midline19.validation.ClearClass;
 import edu.aku.ramshasaeed.tmk_midline19.validation.ValidatorClass02;
 
 import static edu.aku.ramshasaeed.tmk_midline19.core.MainApp.ac;
+import static edu.aku.ramshasaeed.tmk_midline19.core.MainApp.young_child_in_hh;
 
 public class SectionAnthroBActivity extends AppCompatActivity {
     ActivitySectionAnthroBBinding bi;
@@ -61,6 +62,9 @@ public class SectionAnthroBActivity extends AppCompatActivity {
             anthroFlag = true;
 
             for (FamilyMembersContract fm : MainApp.childUnder5) {
+                if (fm.getmotherId() != young_child_in_hh.getmotherId())
+                    continue;
+
                 //Set map
                 selectedChildrenMap.put(fm.getname() + "_(child of: " + fm.getMmname() + ")", fm);
                 childrenName.add(fm.getname() + "_(child of: " + fm.getMmname() + ")");
