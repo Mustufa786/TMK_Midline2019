@@ -58,7 +58,7 @@ public class SectionAnthroBActivity extends AppCompatActivity {
 
         for (FamilyMembersContract fm : members) {
             //Set map
-            selectedChildrenMap.put(fm.getname() + "_(child of: " + fm.getname() + ")", fm);
+            selectedChildrenMap.put(fm.getname() + "_(child of: " + fm.getMmname() + ")", fm);
             childrenName.add(fm.getname() + "_(child of: " + fm.getMmname() + ")");
 
         }
