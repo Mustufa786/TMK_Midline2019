@@ -847,10 +847,13 @@ public class SectionBActivity extends AppCompatActivity {
             MainApp.childUnder5.add(MainApp.fmc);
 
             // Youngest child in HH
-            if (young_child_in_hh == null)
+            if (young_child_in_hh == null) {
                 young_child_in_hh = fmc;
-            else if (Integer.valueOf(young_child_in_hh.getage()) > Integer.valueOf(fmc.getage()))
+                young_child_in_hh.setAgeDouble(ageMonths / 12);
+            } else if (young_child_in_hh.getAgeDouble() > (ageMonths / 12)) {
                 young_child_in_hh = fmc;
+                young_child_in_hh.setAgeDouble(ageMonths / 12);
+            }
 
         }
         if (ageInyears > 5) {
